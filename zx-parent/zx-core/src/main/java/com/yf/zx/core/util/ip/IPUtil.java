@@ -7,10 +7,10 @@ import java.net.UnknownHostException;
  * IPUtil [IP工具类]
  *  
  * @author zhang.yifeng
- * @CreateDate 2017年7月18日
+ * @CreateDate 2017年7月19日
  * @version 1.0.0
  * @since  1.0.0 
- * @see com.jshx.utils 
+ * @see com.yf.zx.core.util.ip 
  *
  */
 public class IPUtil {

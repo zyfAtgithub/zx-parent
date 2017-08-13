@@ -11,7 +11,7 @@ public class UserController {
      */
     public static void main(String[] args) {
     	ClassPathXmlApplicationContext ctx=null;
-        ctx=new ClassPathXmlApplicationContext("spring/applicationContext.xml");
+        ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
         UserDao userDao=(UserDao) ctx.getBean("userDao");
         User user=new User();
         //添加两条数据

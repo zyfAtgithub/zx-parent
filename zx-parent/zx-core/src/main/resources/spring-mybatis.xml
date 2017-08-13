@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xmlns:context="http://www.springframework.org/schema/context"  
+       xmlns:tx="http://www.springframework.org/schema/tx"  
+       xmlns:p="http://www.springframework.org/schema/p"  
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  
+       http://www.springframework.org/schema/beans/spring-beans.xsd  
+       http://www.springframework.org/schema/context  
+       http://www.springframework.org/schema/context/spring-context.xsd  
+       http://www.springframework.org/schema/tx  
+       http://www.springframework.org/schema/tx/spring-tx-4.3.xsd  
+       ">  
+  
+    <!-- 引入jdbc配置文件 -->  
+    <context:property-placeholder location="classpath:jdbc.properties"/>  
+  
+      <!-- 引入属性文件 -->
+    <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"
+        destroy-method="close" autowire="no">
+        <property name="fairQueue" value="false" />
+        <property name="minIdle" value="1" />
+        <property name="maxIdle" value="5" />
+        <property name="maxActive" value="5" />
+        <property name="initialSize" value="1" />
+        <property name="testOnBorrow" value="true" />
+        <property name="validationQuery" value="select 1" />
+        <property name="validationInterval" value="500000" /><!-- 5min -->
+        <property name="removeAbandoned" value="true" />
+        <property name="removeAbandonedTimeout" value="30" />
+        <property name="driverClassName" value="${ticket.database.driver}" />
+        <property name="url" value="${ticket.database.url}" />
+        <property name="username" value="${ticket.database.username}" />
+        <property name="password" value="${ticket.database.password}" />
+    </bean>
+
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis/mapper.xml" />
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.qunar.study.mapper" />
+        <property name="sqlSessionFactoryBeanName" value="sessionFactory" />
+    </bean>
+
+    <!-- 事务管理器 -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+</beans>  

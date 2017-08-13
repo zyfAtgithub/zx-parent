@@ -11,7 +11,6 @@
 	<!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
 	<context:component-scan base-package="com.yf.zx.web" />
 	
-	<!--全量数据下载，10s执行一次，由业务状态上报任务触发 -->
 	<bean id="callWsTaskJob"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject" ref="callWsTask"/> 
@@ -21,13 +20,26 @@
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="callWsTaskJob" />		
 		<property name="cronExpression" value="0 59 23 * * ?" />		
-		
 	</bean>
+
+	<!--拨测 2m执行一次 -->
+	<bean id="dialTestingTaskJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="dialTestingTask"/> 
+        <property name="targetMethod" value="runTask"/>
+	</bean>	
+	<bean id="dialTestingTaskJobGrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="dialTestingTaskJob" />		
+		<property name="cronExpression" value="0 0/2 * * * ?" />		
+	</bean>
+	
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-		<property name="startupDelay" value="10"/>
+		<property name="startupDelay" value="0"/>
 		<property name="triggers">
 			<list>
-				<ref bean="callWsTaskJobGrigger" />
+				<!-- <ref bean="callWsTaskJobGrigger" /> -->
+				<ref bean="dialTestingTaskJobGrigger" />
 			</list>
 		</property>
 	</bean>

@@ -20,14 +20,13 @@
 	<bean id="callWsTaskJobGrigger"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="callWsTaskJob" />		
-		<property name="cronExpression" value="0/10 * * * * ?" />		
+		<property name="cronExpression" value="0 59 23 * * ?" />		
 		
 	</bean>
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="startupDelay" value="10"/>
 		<property name="triggers">
 			<list>
-				<!-- 全量数据下载 -->
 				<ref bean="callWsTaskJobGrigger" />
 			</list>
 		</property>

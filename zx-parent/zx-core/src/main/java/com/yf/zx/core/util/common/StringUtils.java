@@ -15,6 +15,17 @@ public final class StringUtils {
 	public static boolean isNull(Object obj) {
 		return obj == null;
 	}
+
+	/**
+	 * 空判断
+	 *  
+	 * @author zhang.yifeng 
+	 * @param obj
+	 * @return boolean
+	 */
+	public static boolean isEmpty(String str) {
+		return "".equals(str);
+	}
 	
 	/**
 	 * 空判断
@@ -24,7 +35,18 @@ public final class StringUtils {
 	 * @return boolean
 	 */
 	public static boolean isNullOrEmpty(String str) {
-		return isNull(str) || "".equals(str);
+		return isNull(str) || isEmpty(str);
+	}
+
+	/**
+	 * 空判断
+	 *  
+	 * @author zhang.yifeng 
+	 * @param str
+	 * @return boolean
+	 */
+	public static boolean isNotNullAndEmpty(String str) {
+		return !isNullOrEmpty(str);
 	}
 	
 	/**

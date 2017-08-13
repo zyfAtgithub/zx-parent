@@ -1,6 +1,7 @@
 com\ct10000\beian\JrdQuerybeianstatusResponse.class
 com\ct10000\beian\QueryBeianStatusPortType.class
 com\ct10000\beian\QueryBeianStatusPortType_QueryBeianStatusHttpPort_Client.class
+com\yf\zx\web\job\DialTestingTask.class
 com\ct10000\beian\QueryBeianStatus.class
 com\ct10000\beian\package-info.class
 com\yf\zx\web\webservice\test\HelloImp.class

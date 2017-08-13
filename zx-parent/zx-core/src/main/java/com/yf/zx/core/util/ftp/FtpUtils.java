@@ -24,12 +24,12 @@ import org.slf4j.LoggerFactory;
  * @see com.yf.core.util.ftp 
  *
  */
-public class FTPUtils {
+public class FtpUtils {
 
 	/**
 	 * logger
 	 */
-	private static Logger logger = LoggerFactory.getLogger(FTPUtils.class);
+	private static Logger logger = LoggerFactory.getLogger(FtpUtils.class);
 
 	
 	/** 本地文件系统字符编码 */
@@ -42,7 +42,7 @@ public class FTPUtils {
 	 * @param ftpInfo FTP信息
 	 * @return FTPClient
 	 */
-	private static FTPClient getFtpClient(FTPInfo ftpInfo) {
+	private static FTPClient getFtpClient(FtpInfo ftpInfo) {
 		if (ftpInfo == null) {
 			logger.warn("FTP连接信息不能为空！");
 			return null;
@@ -136,7 +136,7 @@ public class FTPUtils {
 	 * @author zhang.yifeng 
 	 * @param ftpInfo
 	 */
-	public static void downLoadFile(FTPInfo ftpInfo) {
+	public static void downLoadFile(FtpInfo ftpInfo) {
 		//1、获取FTP客户端
 		FTPClient ftpClient = getFtpClient(ftpInfo);
 
@@ -211,7 +211,7 @@ public class FTPUtils {
 	public static void main(String[] args) throws IOException {
 //		FTPInfo ftpGov = new FTPInfo("211.99.132.176", 10221, "ftpadmin", "ftpadmin");
 //		FTPInfo ftpLocal = new FTPInfo("192.168.1.105", 21, "zftp", "zftp", "gbk", "aspnet_client/system_web/4_0_30319", "d:/");
-		FTPInfo ftpGov = new FTPInfo("localhost", 21, "zftp", "1111", "gbk", "/", "e:\\ftpclient\\");
+		FtpInfo ftpGov = new FtpInfo("localhost", 21, "zftp", "1111", "gbk", "/", "e:\\ftpclient\\");
 		downLoadFile(ftpGov);
 		System.out.println("Hello");
 	}

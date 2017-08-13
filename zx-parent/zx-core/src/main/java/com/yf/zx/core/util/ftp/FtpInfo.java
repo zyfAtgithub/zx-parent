@@ -1,7 +1,7 @@
 package com.yf.zx.core.util.ftp;
 
 /**
- * FTPInfo [FTP信息]
+ * FtpInfo [Ftp信息]
  * 
  * @author zhang.yifeng
  * @CreateDate 2017年6月20日
@@ -10,7 +10,7 @@ package com.yf.zx.core.util.ftp;
  * @see com.yf.core.util.ftp 
  *
  */
-public class FTPInfo {
+public class FtpInfo {
 
 	/** FTP地址 */
 	private String ftpIp;
@@ -33,7 +33,7 @@ public class FTPInfo {
 	/** 要下载保存的本地目录 */
 	private String localPath;
 	
-	public FTPInfo(String ftpIp, int ftpPort, String loginName, String loginPwd) {
+	public FtpInfo(String ftpIp, int ftpPort, String loginName, String loginPwd) {
 		this.ftpIp = ftpIp;
 		this.ftpPort = ftpPort;
 		this.loginName = loginName;
@@ -42,7 +42,7 @@ public class FTPInfo {
 		this.fileEncoding = System.getProperty("file.encoding");
 	}
 
-	public FTPInfo(String ftpIp, Integer ftpPort, String loginName, String loginPwd, String fileEncoding) {
+	public FtpInfo(String ftpIp, Integer ftpPort, String loginName, String loginPwd, String fileEncoding) {
 		this.ftpIp = ftpIp;
 		this.ftpPort = ftpPort;
 		this.loginName = loginName;
@@ -50,7 +50,7 @@ public class FTPInfo {
 		this.fileEncoding = fileEncoding;
 	}
 	
-	public FTPInfo(String ftpIp, Integer ftpPort, String loginName, String loginPwd, String fileEncoding,
+	public FtpInfo(String ftpIp, Integer ftpPort, String loginName, String loginPwd, String fileEncoding,
 			String ftpPath, String localPath) {
 		this.ftpIp = ftpIp;
 		this.ftpPort = ftpPort;

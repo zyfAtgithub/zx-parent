@@ -6,6 +6,9 @@ import java.io.RandomAccessFile;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.yf.zx.core.util.constants.Constants;
 
 /**
@@ -20,7 +23,12 @@ import com.yf.zx.core.util.constants.Constants;
  *
  */
 public class FileUtils {
-
+	
+	/**
+	 * logger
+	 */
+	private static Logger logger = LoggerFactory.getLogger(FileUtils.class);
+	
 	/**
 	 * 根据所给路径判断文件的存在性
 	 * @param fileAbsPath
@@ -58,7 +66,7 @@ public class FileUtils {
 		try {
 			f.createNewFile();
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("文件创建失败！", e);
 			return;
 		}
 	}
@@ -71,8 +79,7 @@ public class FileUtils {
 				randomFile = new RandomAccessFile(fileAbsPath, "rw");
 				return randomFile.length();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("文件访问出错！", e);
 			}
 			finally {
 				if (randomFile != null) {
@@ -159,7 +166,7 @@ public class FileUtils {
 					try {
 						randomFile.close();
 					} catch (IOException e) {
-						e.printStackTrace();
+						logger.error("文件流关闭出错！", e);
 						return false;
 					}
 				}
@@ -172,7 +179,7 @@ public class FileUtils {
 			randomFile.write((content + "\r\n").getBytes());
 			return true;
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("文件访问异常！", e);
 			return false;
 		}
 		finally {
@@ -180,7 +187,7 @@ public class FileUtils {
 				try {
 					randomFile.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error("文件流关闭出错！", e);
 					return false;
 				}
 			}

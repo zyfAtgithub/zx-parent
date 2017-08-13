@@ -14,7 +14,7 @@ import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SftpException;
 
 /**
- * SFTPUtils 
+ * SftpUtils 
  *  
  * @author zhang.yifeng
  * @CreateDate 2017年6月21日
@@ -23,7 +23,7 @@ import com.jcraft.jsch.SftpException;
  * @see com.yf.core.util.ftp 
  *
  */
-public class SFTPUtils {
+public class SftpUtils {
 	/**
 	 * 连接sftp服务器
 	 * 

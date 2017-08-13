@@ -8,14 +8,13 @@
 		<artifactId>zx-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.yf.zx</groupId>
 	<artifactId>zx-web</artifactId>
 	<packaging>war</packaging>
 	<name>zx-web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
-			<groupId>com.yf.zx</groupId>
+			<groupId>com.yf</groupId>
 			<artifactId>zx-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

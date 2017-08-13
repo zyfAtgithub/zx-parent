@@ -8,7 +8,6 @@
 		<artifactId>zx-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.yf.zx</groupId>
 	<artifactId>zx-core</artifactId>
 	<name>zx-core</name>
 	<url>http://maven.apache.org</url>

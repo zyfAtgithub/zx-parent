@@ -8,9 +8,9 @@
   <name>zx-parent</name>
   <modules>
     <module>zx-core</module>
+    <module>zx-biz</module>
     <module>zx-web</module>
   </modules>
-  
   
   <build>
 		<plugins>

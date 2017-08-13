@@ -59,18 +59,6 @@
         <property name= "minEvictableIdleTimeMillis" value="1800000" />
 	</bean>
 	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource4Hawq2" />
-		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
-	</bean>
-	
-		<!-- 为DAO操作模型设置数据源[videolog_p] -->
-	<bean id="jdbcTemplate4Hawq" class="org.springframework.jdbc.core.JdbcTemplate">
-		<constructor-arg>
-			<ref bean="dataSource4Hawq2" />
-		</constructor-arg>
-	</bean>
-	
 	<bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.yf.zx.core.bussiness.sys.user.dao.UserDao"></property>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>

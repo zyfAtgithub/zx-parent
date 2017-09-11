@@ -33,6 +33,12 @@ public class FtpInfo {
 	/** 要下载保存的本地目录 */
 	private String localPath;
 	
+	/** 上次内容 */
+	private String uploadContent;
+
+	/** 上次文件名 */
+	private String uploadFileName;
+	
 	public FtpInfo(String ftpIp, int ftpPort, String loginName, String loginPwd) {
 		this.ftpIp = ftpIp;
 		this.ftpPort = ftpPort;
@@ -61,6 +67,18 @@ public class FtpInfo {
 		this.localPath = localPath;
 	}
 
+	public FtpInfo(String ftpIp, Integer ftpPort, String loginName, String loginPwd, String fileEncoding,
+			String ftpPath, String uploadContent, String uploadFileName) {
+		this.ftpIp = ftpIp;
+		this.ftpPort = ftpPort;
+		this.loginName = loginName;
+		this.loginPwd = loginPwd;
+		this.fileEncoding = fileEncoding;
+		this.ftpPath = ftpPath;
+		this.uploadContent = uploadContent;
+		this.uploadFileName = uploadFileName;
+	}
+	
 	public String getFtpIp() {
 		return ftpIp;
 	}
@@ -117,11 +135,27 @@ public class FtpInfo {
 		this.localPath = localPath;
 	}
 
+	public String getUploadContent() {
+		return uploadContent;
+	}
+
+	public void setUploadContent(String uploadContent) {
+		this.uploadContent = uploadContent;
+	}
+
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+
 	@Override
 	public String toString() {
-		return "FTPInfo [ftpIp=" + ftpIp + ", ftpPort=" + ftpPort + ", loginName=" + loginName + ", loginPwd="
+		return "FtpInfo [ftpIp=" + ftpIp + ", ftpPort=" + ftpPort + ", loginName=" + loginName + ", loginPwd="
 				+ loginPwd + ", fileEncoding=" + fileEncoding + ", ftpPath=" + ftpPath + ", localPath=" + localPath
-				+ "]";
+				+ ", uploadContent=" + uploadContent + ", uploadFileName=" + uploadFileName + "]";
 	}
 	
 }

@@ -103,8 +103,8 @@ public class SftpUtils {
 		String host = "42.123.92.9";
 		int port = 12321;
 		String username = "ismmysftp";
-		String password = "TBPoBgObWXvx5ZEcVbb9jrmOn40W2zAX";
+		String password = "HoZf0uiWZ8rP4t159HPVBd1z0CxPWzyf";
 		ChannelSftp sftp = connect(host, port, username, password);
-		download("upload/bak/3", "201705151020403.txt.bak", "d:\\aa.txt", sftp);
+		download("/upload/flume", "plugin_monitor.log_20170901080000_1.COMPLETED", "d:\\aa.txt", sftp);
 	}
 }

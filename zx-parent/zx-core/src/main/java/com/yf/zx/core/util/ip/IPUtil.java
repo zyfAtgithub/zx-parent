@@ -8,6 +8,9 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 
 import com.yf.zx.core.util.common.StringUtils;
+import com.yf.zx.core.util.http.HttpclientUtil;
+
+import net.sf.json.JSONObject;
 
 /**
  * IPUtil [IP工具类]
@@ -98,11 +101,24 @@ public class IPUtil {
         return request.getRemoteAddr();
     }
 	
+	/**
+	 * 获取本机公网ip地址
+	 *  
+	 * @author zhang.yifeng
+	 */
+	public static void getPublicIpInfo() {
+		JSONObject res = HttpclientUtil.get("http://whois.pconline.com.cn/ipJson.jsp?json=true", 100, 100);
+		String ip = res.optString("ip", "");
+		String pro = res.optString("pro", "");
+		String city = res.optString("city", "");
+		String addr = res.optString("addr", "");
+		System.out.println("公网Ip是：" + ip);
+		System.out.println("所在省是：" + pro);
+		System.out.println("所在市是：" + city);
+		System.out.println("所在地址是：" + addr);
+	}
+	
 	public static void main(String[] args) {
-		getLocalIP();
-		getLocalHostName();
-		System.out.println(validateIp(getLocalIP()));
-		System.out.println(System.currentTimeMillis());
-		System.out.println(new Date(1502503200000l));
+		getPublicIpInfo();
 	}
 }

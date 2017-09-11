@@ -250,5 +250,14 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
+
+		<!-- ========================javax-mail begin===================== -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.5.2</version>
+		</dependency>
+		<!-- ========================javax-mail end===================== -->
+
 	</dependencies>
 </project>

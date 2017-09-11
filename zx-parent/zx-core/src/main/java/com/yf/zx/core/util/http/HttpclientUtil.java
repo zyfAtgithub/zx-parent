@@ -215,6 +215,8 @@ public class HttpclientUtil {
 		jsonResult.put("begin", DateUtils.date2String(new Date(begin), "yyyyMMddHHmmssSSS"));
 		try {
 			HttpResponse response = httpclient.execute(hg);
+			String result=EntityUtils.toString(response.getEntity());
+			jsonResult.putAll(JSONObject.fromObject(result));
 			long end = System.currentTimeMillis();
 			jsonResult.put("end", DateUtils.date2String(new Date(end), "yyyyMMddHHmmssSSS"));
 			jsonResult.put("statusCode", response.getStatusLine().getStatusCode());
@@ -250,7 +252,7 @@ public class HttpclientUtil {
 	}
 	
 	public static void main(String[] args) {
-		JSONObject res = HttpclientUtil.get("http://cdntest.ctdns.net/", 200, 400);
+		JSONObject res = HttpclientUtil.get("http://whois.pconline.com.cn/ipJson.jsp?json=true", 200, 400);
 		System.out.println(res.toString());
 	}
 }

@@ -1,8 +1,10 @@
 package com.yf.zx.core.util.ftp;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.SocketException;
@@ -14,14 +16,16 @@ import org.apache.commons.net.ftp.FTPReply;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.yf.zx.core.util.common.StringUtils;
+
 /**
  * FTPUtils [FTP工具类，支持FTP协议]
- *  
+ * 
  * @author zhang.yifeng
  * @CreateDate 2017年6月20日
  * @version 1.0.0
- * @since  1.0.0 
- * @see com.yf.core.util.ftp 
+ * @since 1.0.0
+ * @see com.yf.core.util.ftp
  *
  */
 public class FtpUtils {
@@ -31,15 +35,18 @@ public class FtpUtils {
 	 */
 	private static Logger logger = LoggerFactory.getLogger(FtpUtils.class);
 
-	
 	/** 本地文件系统字符编码 */
 	private static String LOCAL_CHARSET = System.getProperty("file.encoding");
 
+	/** FTP路径分割符  */
+	private static final String FTP_PATH_SEPARATOR = "/";
+	
 	/**
 	 * 获取FTP客户端
-	 *  
-	 * @author zhang.yifeng 
-	 * @param ftpInfo FTP信息
+	 * 
+	 * @author zhang.yifeng
+	 * @param ftpInfo
+	 *            FTP信息
 	 * @return FTPClient
 	 */
 	private static FTPClient getFtpClient(FtpInfo ftpInfo) {
@@ -47,19 +54,18 @@ public class FtpUtils {
 			logger.warn("FTP连接信息不能为空！");
 			return null;
 		}
-		
+
 		logger.info("FTP地址:[{}]，FTP端口:[{}]", ftpInfo.getFtpIp(), ftpInfo.getFtpPort());
 		logger.info("FTP登录名:[{}]，FTP登录密码:[{}]", ftpInfo.getLoginName(), ftpInfo.getLoginPwd());
-		
-		FTPClient ftpClient =  new FTPClient();
-		
-		//建立FTP连接
+
+		FTPClient ftpClient = new FTPClient();
+
+		// 建立FTP连接
 		try {
-			//默认21端口
+			// 默认21端口
 			if (ftpInfo.getFtpPort() == null) {
 				ftpClient.connect(ftpInfo.getFtpIp(), 21);
-			}
-			else {
+			} else {
 				ftpClient.connect(ftpInfo.getFtpIp(), ftpInfo.getFtpPort());
 			}
 			logger.info("=======FTP连接成功！=======");
@@ -70,13 +76,13 @@ public class FtpUtils {
 			logger.error("=======FTP连接异常[IO异常]！=======", e);
 			return null;
 		}
-		
-		//登录FTP服务器
+
+		// 登录FTP服务器
 		try {
 			boolean loginRes = ftpClient.login(ftpInfo.getLoginName(), ftpInfo.getLoginPwd());
-			if (!loginRes){//登录失败
+			if (!loginRes) {// 登录失败
 				logger.warn("=======FTP登录失败!=======");
-				//断开连接
+				// 断开连接
 				disconnectFtp(ftpClient);
 				return null;
 			}
@@ -95,23 +101,22 @@ public class FtpUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
-		//检查连接是否成功
+
+		// 检查连接是否成功
 		int reply = ftpClient.getReplyCode();
 		logger.info("replyCode:" + reply);
 		if (!FTPReply.isPositiveCompletion(reply)) {
-			//断开连接
+			// 断开连接
 			disconnectFtp(ftpClient);
 			return null;
 		}
 		return ftpClient;
 	}
-	
+
 	/**
 	 * FTP断连
-	 *  
-	 * @author zhang.yifeng 
+	 * 
+	 * @author zhang.yifeng
 	 * @param ftpClient
 	 */
 	private static void disconnectFtp(FTPClient ftpClient) {
@@ -129,28 +134,28 @@ public class FtpUtils {
 			logger.info("=======FTP断连成功！=======");
 		}
 	}
-	
+
 	/**
 	 * 下载FTP文件
-	 *  
-	 * @author zhang.yifeng 
+	 * 
+	 * @author zhang.yifeng
 	 * @param ftpInfo
 	 */
 	public static void downLoadFile(FtpInfo ftpInfo) {
-		//1、获取FTP客户端
+		// 1、获取FTP客户端
 		FTPClient ftpClient = getFtpClient(ftpInfo);
 
 		if (ftpClient == null) {
 			logger.error("=======FTP客户端获取失败！=======");
 			return;
 		}
-		
+
 		if (ftpInfo.getFtpPath() == null) {
 			logger.error("=======请设置要切换的FTP目录！=======");
 			return;
 		}
-		
-		//2、FTP客户端设置
+
+		// 2、FTP客户端设置
 		ftpClient.setRemoteVerificationEnabled(false);
 		ftpClient.enterLocalPassiveMode();
 		try {
@@ -159,12 +164,12 @@ public class FtpUtils {
 			logger.error("=======FTP设置文件类型异常！=======", e);
 			return;
 		}
-		
-		
+
 		boolean changed = false;
 		try {
-			//切换工作目录
-			changed = ftpClient.changeWorkingDirectory(new String(ftpInfo.getFtpPath().getBytes(ftpInfo.getFileEncoding()),"iso-8859-1"));
+			// 切换工作目录
+			changed = ftpClient.changeWorkingDirectory(
+					new String(ftpInfo.getFtpPath().getBytes(ftpInfo.getFileEncoding()), "iso-8859-1"));
 		} catch (UnsupportedEncodingException e) {
 			logger.error("编码格式异常", e);
 			return;
@@ -172,8 +177,8 @@ public class FtpUtils {
 			logger.error("=======FTP工作目录切换异常！=======", e);
 			return;
 		}
-		
-		//切换成功，执行下载
+
+		// 切换成功，执行下载
 		if (changed) {
 			try {
 				FTPFile[] f = ftpClient.listFiles();
@@ -193,26 +198,141 @@ public class FtpUtils {
 			} finally {
 				disconnectFtp(ftpClient);
 			}
-		}
-		else {
+		} else {
 			logger.error("=======FTP工作目录切换失败！=======");
 		}
 	}
-	
+
 	/**
 	 * FTP文件上传 TODO
-	 *  
+	 * 
 	 * @author zhang.yifeng
 	 */
-	public static void uploadFile() {
+	public static boolean uploadFile(FtpInfo ftpInfo) {
+		boolean flag = false;
+		if (StringUtils.isNullOrEmpty(ftpInfo.getFileEncoding())) {
+			logger.error("=======文件编码不能为空！=======");
+			return flag;
+		}
+
+		if (StringUtils.isNullOrEmpty(ftpInfo.getUploadContent())) {
+			logger.error("=======上传内容不能为空！=======");
+			return flag;
+		}
 		
+		// 1、获取FTP客户端
+		FTPClient ftpClient = getFtpClient(ftpInfo);
+
+		if (ftpClient == null) {
+			logger.error("=======FTP客户端获取失败！=======");
+			return flag;
+		}
+
+		if (ftpInfo.getFtpPath() == null) {
+			logger.error("=======请设置要切换的FTP目录！=======");
+			return flag;
+		}
+
+		InputStream is = null;
+		
+		// 2、FTP客户端设置
+		ftpClient.setRemoteVerificationEnabled(false);
+		ftpClient.enterLocalPassiveMode();
+		try {
+			ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+			
+			//3、切换目录，不存在就创建	
+			logger.info("FTP当前目录[{}]", ftpClient.printWorkingDirectory());
+			if (!createDir(ftpClient, ftpInfo)) {
+				logger.info("FTP当前目录[{}]", ftpClient.printWorkingDirectory());
+				 throw new RuntimeException("切入FTP目录失败：" + ftpInfo.getFtpPath());  
+			}
+			
+			
+			ftpClient.enterLocalPassiveMode();
+			
+			is = new ByteArrayInputStream(ftpInfo.getUploadContent().getBytes("UTF-8"));
+			String fileName = new String(ftpInfo.getUploadFileName().getBytes(ftpInfo.getFileEncoding()),"iso-8859-1");
+			flag = ftpClient.storeFile(fileName, is);	 
+			if (flag) {
+				logger.info("=======上传成功!=======");
+		 	}
+			else {
+				System.out.println("=======上传失败!=======");
+				logger.info("=======FTP上传上报数据时出现错误，上传失败！=======");
+	        }
+		} catch (IOException e) {
+			logger.error("=======FTP设置文件类型异常！=======", e);
+			return false;
+		}
+		finally {
+			if (is != null) {
+				try {
+					is.close();
+				} catch (IOException e) {
+					logger.error("=======输入流关闭异常！=======", e);
+				}
+			}
+			disconnectFtp(ftpClient);
+		}
+		
+		return flag;
+		
+	}
+
+	private static boolean createDir(FTPClient ftpClient, FtpInfo ftpInfo) {
+		if (StringUtils.isNullOrEmpty(ftpInfo.getFtpPath())) {
+			return false;
+		}
+		
+		try {
+			String dir = new String(ftpInfo.getFtpPath().getBytes(ftpInfo.getFileEncoding()), "iso-8859-1");
+			
+			//尝试切入目录
+			if (ftpClient.changeWorkingDirectory(dir)) {
+				//1、成功切入。直接return true
+				return true;
+			}
+			//2、切入失败，循环创建子目录
+			String[] subDirs = dir.split(FTP_PATH_SEPARATOR);
+			StringBuffer sbfDir = new StringBuffer(FTP_PATH_SEPARATOR);
+			for (String subDir : subDirs) {
+				sbfDir.append(FTP_PATH_SEPARATOR).append(subDir);
+				//3、该级目录已存在，进入下一级目录
+				if (ftpClient.changeWorkingDirectory(sbfDir.toString())) {
+					continue;
+				}
+				//4、该级目录不存在，创建
+				if (!ftpClient.makeDirectory(sbfDir.toString())) {
+					//创建失败
+					logger.error("=======目录[{}]创建失败！=======", sbfDir.toString());
+					return false;
+				}
+				logger.info("=======成功创建目录[{}]！=======", sbfDir.toString());
+				logger.info("切换到跟目录[{}]",ftpClient.changeWorkingDirectory("/"));
+			}
+			
+			//将目录切换至指定路径
+			return ftpClient.changeWorkingDirectory(dir); 
+		
+		}  catch (UnsupportedEncodingException e) {
+			logger.error("=======编码格式异常！=======", e);
+			return false;
+		} catch (IOException e) {
+			logger.error("=======FTP工作目录切换异常！=======", e);
+			return false;
+		}
 	}
 	
 	public static void main(String[] args) throws IOException {
-//		FTPInfo ftpGov = new FTPInfo("211.99.132.176", 10221, "ftpadmin", "ftpadmin");
-//		FTPInfo ftpLocal = new FTPInfo("192.168.1.105", 21, "zftp", "zftp", "gbk", "aspnet_client/system_web/4_0_30319", "d:/");
-		FtpInfo ftpGov = new FtpInfo("localhost", 21, "zftp", "1111", "gbk", "/", "e:\\ftpclient\\");
-		downLoadFile(ftpGov);
-		System.out.println("Hello");
+		// FTPInfo ftpGov = new FTPInfo("211.99.132.176", 10221, "ftpadmin",
+		// "ftpadmin");
+		// FTPInfo ftpLocal = new FTPInfo("192.168.1.105", 21, "zftp", "zftp", "gbk",
+		// "aspnet_client/system_web/4_0_30319", "d:/");
+//		FtpInfo ftpGov = new FtpInfo("10.0.0.2", 21, "zftp", "123456", "gbk", "cdn_home/1", "F:\\ftp\\");
+//		downLoadFile(ftpGov);
+		FtpInfo ftpGov2 = new FtpInfo("10.0.0.2", 21, "zftp", "123456", "gbk", "cdn_home/1/99", "ssss", "xxx.xml");
+//		FtpInfo ftpGov2 = new FtpInfo("192.168.1.111", 21, "zftp", "zftp", "gbk", "cdn_home/1/89", "ssss", "xxx.xml");
+		uploadFile(ftpGov2);
 	}
 }

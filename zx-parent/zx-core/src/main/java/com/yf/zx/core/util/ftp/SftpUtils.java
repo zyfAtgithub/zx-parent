@@ -230,7 +230,6 @@ public class SftpUtils {
 					logger.warn("=======本地下载目录[{}]创建失败！=======", file.getParent());
 					return downloadflag;
 				}
-				;
 			}
 			sftp.get(downloadFile, new FileOutputStream(file));
 			logger.info("=======sftp 文件下载成功！=======");

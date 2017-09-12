@@ -23,6 +23,17 @@ public final class StringUtils {
 	 * @param obj
 	 * @return boolean
 	 */
+	public static boolean isNotNull(Object obj) {
+		return !isNull(obj);
+	}
+	
+	/**
+	 * 空判断
+	 *  
+	 * @author zhang.yifeng 
+	 * @param obj
+	 * @return boolean
+	 */
 	public static boolean isEmpty(String str) {
 		return "".equals(str);
 	}

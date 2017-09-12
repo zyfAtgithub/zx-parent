@@ -1,5 +1,7 @@
 package com.yf.zx.core.util.ftp;
 
+import java.io.File;
+
 /**
  * FtpInfo [Ftp信息]
  * 
@@ -29,15 +31,21 @@ public class FtpInfo {
 	
 	/**要切换的FTP目录*/
 	private String ftpPath;
+
+	/** ftp文件名 */
+	private String ftpFileName;
 	
-	/** 要下载保存的本地目录 */
+	/** 本地目录 */
 	private String localPath;
 	
-	/** 上次内容 */
+	/** 本地文件名 */
+	private String localFileName;
+
+	/** 上传内容 */
 	private String uploadContent;
 
-	/** 上次文件名 */
-	private String uploadFileName;
+	/** 本地待上传的文件 */
+	private File localFile;
 	
 	public FtpInfo(String ftpIp, int ftpPort, String loginName, String loginPwd) {
 		this.ftpIp = ftpIp;
@@ -56,29 +64,61 @@ public class FtpInfo {
 		this.fileEncoding = fileEncoding;
 	}
 	
+	/**
+	 * ftp 上传
+	 * @param ftpIp FTP地址
+	 * @param ftpPort 端口
+	 * @param loginName 登录名
+	 * @param loginPwd 登录密码
+	 * @param fileEncoding 文件系统编码
+	 * @param ftpPath 要切换的FTP目录
+	 * @param uploadFile
+	 * @param ftpFileName
+	 */
 	public FtpInfo(String ftpIp, Integer ftpPort, String loginName, String loginPwd, String fileEncoding,
-			String ftpPath, String localPath) {
+			String ftpPath, File localFile, String ftpFileName) {
 		this.ftpIp = ftpIp;
 		this.ftpPort = ftpPort;
 		this.loginName = loginName;
 		this.loginPwd = loginPwd;
 		this.fileEncoding = fileEncoding;
 		this.ftpPath = ftpPath;
-		this.localPath = localPath;
+		this.localFile = localFile;
+		this.ftpFileName = ftpFileName;
 	}
 
+	/**
+	 * ftp 上传/下载
+	 * @param ftpIp FTP地址
+	 * @param ftpPort 端口
+	 * @param loginName 登录名
+	 * @param loginPwd 登录密码
+	 * @param fileEncoding 文件系统编码
+	 * @param ftpPath 要切换的FTP目录
+	 * @param para1 [参数1，mode=1时，表示上传内容 ,mode=2时，表示要下载的ftp文件名]
+	 * @param para2 [参数1，mode=1时，表示上传文件名 ,mode=2时，表示要下载保存的本地目录]
+	 * @param mode [1：上传，2：下载]
+	 */
 	public FtpInfo(String ftpIp, Integer ftpPort, String loginName, String loginPwd, String fileEncoding,
-			String ftpPath, String uploadContent, String uploadFileName) {
+			String ftpPath, String para1, String para2, int mode) {
 		this.ftpIp = ftpIp;
 		this.ftpPort = ftpPort;
 		this.loginName = loginName;
 		this.loginPwd = loginPwd;
 		this.fileEncoding = fileEncoding;
 		this.ftpPath = ftpPath;
-		this.uploadContent = uploadContent;
-		this.uploadFileName = uploadFileName;
+		if (1 == mode) {
+			//上传
+			this.uploadContent = para1;
+			this.ftpFileName = para2;
+		}
+		else if (2 == mode) {
+			//下载
+			this.localFileName = para1;
+			this.localPath = para2;
+		}
 	}
-	
+
 	public String getFtpIp() {
 		return ftpIp;
 	}
@@ -127,12 +167,28 @@ public class FtpInfo {
 		this.ftpPath = ftpPath;
 	}
 
+	public String getFtpFileName() {
+		return ftpFileName;
+	}
+
+	public void setFtpFileName(String ftpFileName) {
+		this.ftpFileName = ftpFileName;
+	}
+
 	public String getLocalPath() {
 		return localPath;
 	}
 
 	public void setLocalPath(String localPath) {
 		this.localPath = localPath;
+	}
+
+	public String getLocalFileName() {
+		return localFileName;
+	}
+
+	public void setLocalFileName(String localFileName) {
+		this.localFileName = localFileName;
 	}
 
 	public String getUploadContent() {
@@ -143,19 +199,11 @@ public class FtpInfo {
 		this.uploadContent = uploadContent;
 	}
 
-	public String getUploadFileName() {
-		return uploadFileName;
+	public File getLocalFile() {
+		return localFile;
 	}
 
-	public void setUploadFileName(String uploadFileName) {
-		this.uploadFileName = uploadFileName;
+	public void setLocalFile(File localFile) {
+		this.localFile = localFile;
 	}
-
-	@Override
-	public String toString() {
-		return "FtpInfo [ftpIp=" + ftpIp + ", ftpPort=" + ftpPort + ", loginName=" + loginName + ", loginPwd="
-				+ loginPwd + ", fileEncoding=" + fileEncoding + ", ftpPath=" + ftpPath + ", localPath=" + localPath
-				+ ", uploadContent=" + uploadContent + ", uploadFileName=" + uploadFileName + "]";
-	}
-	
 }

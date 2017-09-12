@@ -287,3 +287,435 @@ org.apache.commons.net.ftp.FTPConnectionClosedException: FTP response 421 receiv
 [2017-09-12 10:24:02]FTP当前目录[/]
 [2017-09-12 10:32:55]=======上传成功!=======
 [2017-09-12 10:32:55]=======FTP断连成功！=======
+[2017-09-12 14:41:02]========getSession ok！=======
+[2017-09-12 14:41:05]========openChannel ok！=======
+[2017-09-12 14:41:05]========connect ok！=======
+[2017-09-12 14:41:05]=======sftp 文件下载成功！=======
+[2017-09-12 14:41:42]========getSession ok！=======
+[2017-09-12 14:41:43]========openChannel ok！=======
+[2017-09-12 14:41:43]========connect [10.0.0.2] ok！=======
+[2017-09-12 14:41:43]=======sftp 文件下载成功！=======
+[2017-09-12 14:41:59]========getSession ok！=======
+[2017-09-12 14:42:00]========openChannel ok！=======
+[2017-09-12 14:42:00]========succeed to connect [10.0.0.2]！=======
+[2017-09-12 14:42:00]=======sftp 文件下载成功！=======
+[2017-09-12 14:43:08]========getSession ok！=======
+[2017-09-12 14:43:09]========openChannel ok！=======
+[2017-09-12 14:43:09]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 14:43:09]=======sftp 文件下载成功！=======
+[2017-09-12 14:43:56]========username[]=======
+[2017-09-12 14:43:56]========host[]=======
+[2017-09-12 14:43:56]========port[]=======
+[2017-09-12 14:43:56]========getSession ok！=======
+[2017-09-12 14:43:57]========openChannel ok！=======
+[2017-09-12 14:43:57]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 14:43:57]=======sftp 文件下载成功！=======
+[2017-09-12 14:44:07]========username[mysftp]=======
+[2017-09-12 14:44:07]========host[10.0.0.2]=======
+[2017-09-12 14:44:07]========port[22]=======
+[2017-09-12 14:44:07]========getSession ok！=======
+[2017-09-12 14:44:08]========openChannel ok！=======
+[2017-09-12 14:44:09]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 14:44:09]=======sftp 文件下载成功！=======
+[2017-09-12 14:44:20]========username:[mysftp]=======
+[2017-09-12 14:44:20]========host:[10.0.0.2]=======
+[2017-09-12 14:44:20]========port:[22]=======
+[2017-09-12 14:44:21]========getSession ok！=======
+[2017-09-12 14:44:22]========openChannel ok！=======
+[2017-09-12 14:44:22]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 14:44:22]=======sftp 文件下载成功！=======
+[2017-09-12 14:44:55]========username:[mysftp]=======
+[2017-09-12 14:44:55]========host:[10.0.0.2]=======
+[2017-09-12 14:44:55]========port:[22]=======
+[2017-09-12 14:44:55]========getSession ok！=======
+[2017-09-12 14:44:56]========openChannel ok！=======
+[2017-09-12 14:44:56]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 14:44:58]=======sftp 文件下载成功！=======
+[2017-09-12 14:46:02]========username:[mysftp]=======
+[2017-09-12 14:46:02]========host:[10.0.0.2]=======
+[2017-09-12 14:46:02]========port:[22]=======
+[2017-09-12 14:46:56]========getSession ok！=======
+[2017-09-12 14:47:04]========openChannel ok！=======
+[2017-09-12 14:47:04]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 14:47:05]=======sftp 文件下载成功！=======
+[2017-09-12 14:48:08]========username:[mysftp]=======
+[2017-09-12 14:48:08]========host:[10.0.0.2]=======
+[2017-09-12 14:48:08]========port:[22]=======
+[2017-09-12 14:48:08]========password:[123]=======
+[2017-09-12 14:48:08]========getSession ok！=======
+[2017-09-12 14:48:09]========openChannel ok！=======
+[2017-09-12 14:48:09]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 14:48:09]=======sftp 文件下载成功！=======
+[2017-09-12 15:09:59]========username:[mysftp]=======
+[2017-09-12 15:09:59]========host:[10.0.0.2]=======
+[2017-09-12 15:09:59]========port:[22]=======
+[2017-09-12 15:09:59]========password:[123]=======
+[2017-09-12 15:09:59]========getSession ok！=======
+[2017-09-12 15:10:00]========openChannel ok！=======
+[2017-09-12 15:10:00]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:10:00]=======sftp 文件下载成功！=======
+[2017-09-12 15:10:48]========username:[mysftp]=======
+[2017-09-12 15:10:48]========host:[10.0.0.2]=======
+[2017-09-12 15:10:48]========port:[22]=======
+[2017-09-12 15:10:48]========password:[123]=======
+[2017-09-12 15:10:48]========getSession ok！=======
+[2017-09-12 15:10:49]========openChannel ok！=======
+[2017-09-12 15:10:50]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:10:50]=======sftp 文件下载成功！=======
+[2017-09-12 15:11:42]========username:[mysftp]=======
+[2017-09-12 15:11:42]========host:[10.0.0.2]=======
+[2017-09-12 15:11:42]========port:[22]=======
+[2017-09-12 15:11:42]========password:[123]=======
+[2017-09-12 15:11:42]========getSession ok！=======
+[2017-09-12 15:11:43]========openChannel ok！=======
+[2017-09-12 15:11:43]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:11:43]=======sftp 文件下载成功！=======
+[2017-09-12 15:13:35]========username:[mysftp]=======
+[2017-09-12 15:13:35]========host:[10.0.0.2]=======
+[2017-09-12 15:13:35]========port:[22]=======
+[2017-09-12 15:13:35]========password:[123]=======
+[2017-09-12 15:13:35]========getSession ok！=======
+[2017-09-12 15:13:36]========openChannel ok！=======
+[2017-09-12 15:13:36]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:13:36]=======本地下载目录[g:\]创建失败！=======
+[2017-09-12 15:14:16]========username:[mysftp]=======
+[2017-09-12 15:14:16]========host:[10.0.0.2]=======
+[2017-09-12 15:14:16]========port:[22]=======
+[2017-09-12 15:14:16]========password:[123]=======
+[2017-09-12 15:14:16]========getSession ok！=======
+[2017-09-12 15:14:18]========openChannel ok！=======
+[2017-09-12 15:14:18]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:14:18]=======本地下载目录[g:\]创建失败！=======
+[2017-09-12 15:14:18]=======channel 断连成功！=======
+[2017-09-12 15:14:18]=======Session 断连成功！=======
+[2017-09-12 15:14:30]========username:[mysftp]=======
+[2017-09-12 15:14:30]========host:[10.0.0.2]=======
+[2017-09-12 15:14:30]========port:[22]=======
+[2017-09-12 15:14:30]========password:[123]=======
+[2017-09-12 15:14:30]========getSession ok！=======
+[2017-09-12 15:14:31]========openChannel ok！=======
+[2017-09-12 15:14:31]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:14:31]=======本地下载目录[g:\]创建失败！=======
+[2017-09-12 15:14:31]=======channel 断连成功！=======
+[2017-09-12 15:14:31]=======Session 断连成功！=======
+[2017-09-12 15:14:52]========username:[mysftp]=======
+[2017-09-12 15:14:52]========host:[10.0.0.2]=======
+[2017-09-12 15:14:52]========port:[22]=======
+[2017-09-12 15:14:52]========password:[123]=======
+[2017-09-12 15:14:52]========getSession ok！=======
+[2017-09-12 15:14:53]========openChannel ok！=======
+[2017-09-12 15:14:53]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:14:54]=======sftp 文件下载成功！=======
+[2017-09-12 15:14:54]=======channel 断连成功！=======
+[2017-09-12 15:14:54]=======Session 断连成功！=======
+[2017-09-12 15:15:48]========username:[mysftp]=======
+[2017-09-12 15:15:48]========host:[10.0.0.2]=======
+[2017-09-12 15:15:48]========port:[22]=======
+[2017-09-12 15:15:48]========password:[123]=======
+[2017-09-12 15:15:48]========getSession ok！=======
+[2017-09-12 15:15:49]========openChannel ok！=======
+[2017-09-12 15:15:49]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:15:49]=======sftp 文件下载成功！=======
+[2017-09-12 15:15:49]=======channel.disconnect ok！=======
+[2017-09-12 15:15:49]=======sshSession.disconnect ok！=======
+[2017-09-12 15:17:08]========username:[mysftp]=======
+[2017-09-12 15:17:08]========host:[10.0.0.2]=======
+[2017-09-12 15:17:08]========port:[22]=======
+[2017-09-12 15:17:08]========password:[123]=======
+[2017-09-12 15:17:08]========getSession ok！=======
+[2017-09-12 15:17:09]========openChannel ok！=======
+[2017-09-12 15:17:09]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:17:09]=======sftp 文件下载成功！=======
+[2017-09-12 15:17:09]=======channel.disconnect ok！=======
+[2017-09-12 15:17:09]=======sshSession.disconnect ok！=======
+[2017-09-12 15:17:09]========username:[mysftp]=======
+[2017-09-12 15:17:09]========host:[10.0.0.2]=======
+[2017-09-12 15:17:09]========port:[22]=======
+[2017-09-12 15:17:09]========password:[123]=======
+[2017-09-12 15:17:09]========getSession ok！=======
+[2017-09-12 15:17:09]========openChannel ok！=======
+[2017-09-12 15:17:10]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:18:06]========username:[mysftp]=======
+[2017-09-12 15:18:06]========host:[10.0.0.2]=======
+[2017-09-12 15:18:06]========port:[22]=======
+[2017-09-12 15:18:06]========password:[123]=======
+[2017-09-12 15:18:06]========getSession ok！=======
+[2017-09-12 15:18:07]========openChannel ok！=======
+[2017-09-12 15:18:07]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:18:07]=======sftp 文件下载出现异常！=======
+2: No such file
+	at com.jcraft.jsch.ChannelSftp.throwStatusError(ChannelSftp.java:2873)
+	at com.jcraft.jsch.ChannelSftp._get(ChannelSftp.java:1061)
+	at com.jcraft.jsch.ChannelSftp.get(ChannelSftp.java:1030)
+	at com.jcraft.jsch.ChannelSftp.get(ChannelSftp.java:1008)
+	at com.yf.zx.core.util.ftp.SftpUtils.download(SftpUtils.java:161)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:193)
+[2017-09-12 15:18:07]=======channel.disconnect ok！=======
+[2017-09-12 15:18:07]=======sshSession.disconnect ok！=======
+[2017-09-12 15:18:07]========username:[mysftp]=======
+[2017-09-12 15:18:07]========host:[10.0.0.2]=======
+[2017-09-12 15:18:07]========port:[22]=======
+[2017-09-12 15:18:07]========password:[123]=======
+[2017-09-12 15:18:07]========getSession ok！=======
+[2017-09-12 15:18:07]========openChannel ok！=======
+[2017-09-12 15:18:08]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:19:58]=======文件[d:\e15051146029276428.xml]不存在！=======
+[2017-09-12 15:28:25]=======文件[d:\e15051146029276428.xml]不存在！=======
+[2017-09-12 15:28:44]========username:[mysftp]=======
+[2017-09-12 15:28:44]========host:[10.0.0.2]=======
+[2017-09-12 15:28:44]========port:[22]=======
+[2017-09-12 15:28:44]========password:[123]=======
+[2017-09-12 15:28:44]========getSession ok！=======
+[2017-09-12 15:28:45]========openChannel ok！=======
+[2017-09-12 15:28:46]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:28:46]=======ftp目录[/upload/cdn_home/09890唱卡拉斯/2017-09-444]创建失败！=======
+[2017-09-12 15:29:05]========username:[mysftp]=======
+[2017-09-12 15:29:05]========host:[10.0.0.2]=======
+[2017-09-12 15:29:05]========port:[22]=======
+[2017-09-12 15:29:05]========password:[123]=======
+[2017-09-12 15:29:05]========getSession ok！=======
+[2017-09-12 15:29:06]========openChannel ok！=======
+[2017-09-12 15:29:06]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:29:06]=======ftp目录[/upload/cdn_home/4/2017-09-444]创建失败！=======
+[2017-09-12 15:29:46]========username:[mysftp]=======
+[2017-09-12 15:29:46]========host:[10.0.0.2]=======
+[2017-09-12 15:29:46]========port:[22]=======
+[2017-09-12 15:29:46]========password:[123]=======
+[2017-09-12 15:29:46]========getSession ok！=======
+[2017-09-12 15:29:47]========openChannel ok！=======
+[2017-09-12 15:29:47]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:29:47]=======channel.disconnect ok！=======
+[2017-09-12 15:29:47]=======sshSession.disconnect ok！=======
+[2017-09-12 15:31:36]========username:[mysftp]=======
+[2017-09-12 15:31:36]========host:[10.0.0.2]=======
+[2017-09-12 15:31:36]========port:[22]=======
+[2017-09-12 15:31:36]========password:[123]=======
+[2017-09-12 15:31:36]========getSession ok！=======
+[2017-09-12 15:31:37]========openChannel ok！=======
+[2017-09-12 15:31:37]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:31:37]=======sftp.quit ok！=======
+[2017-09-12 15:31:37]=======channel.disconnect ok！=======
+[2017-09-12 15:31:37]=======sshSession.disconnect ok！=======
+[2017-09-12 15:32:19]========username:[mysftp]=======
+[2017-09-12 15:32:19]========host:[10.0.0.2]=======
+[2017-09-12 15:32:19]========port:[22]=======
+[2017-09-12 15:32:19]========password:[123]=======
+[2017-09-12 15:32:19]========getSession ok！=======
+[2017-09-12 15:32:20]========openChannel ok！=======
+[2017-09-12 15:32:20]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:32:20]=======sftp.quit ok！=======
+[2017-09-12 15:32:20]=======channel.disconnect ok！=======
+[2017-09-12 15:32:20]=======sshSession.disconnect ok！=======
+[2017-09-12 15:36:09]========username:[mysftp]=======
+[2017-09-12 15:36:09]========host:[10.0.0.2]=======
+[2017-09-12 15:36:09]========port:[22]=======
+[2017-09-12 15:36:09]========password:[123]=======
+[2017-09-12 15:36:09]========getSession ok！=======
+[2017-09-12 15:36:10]========openChannel ok！=======
+[2017-09-12 15:36:10]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:36:10]创建路径错误：
+2: No such file
+	at com.jcraft.jsch.ChannelSftp.throwStatusError(ChannelSftp.java:2873)
+	at com.jcraft.jsch.ChannelSftp._realpath(ChannelSftp.java:2367)
+	at com.jcraft.jsch.ChannelSftp.cd(ChannelSftp.java:342)
+	at com.yf.zx.core.util.ftp.SftpUtils.createDir(SftpUtils.java:173)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:138)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:275)
+[2017-09-12 15:36:10]=======ftp目录[/upload/打算离开大陆客/daskll]创建失败！=======
+[2017-09-12 15:36:10]=======sftp.quit ok！=======
+[2017-09-12 15:36:10]=======channel.disconnect ok！=======
+[2017-09-12 15:36:10]=======sshSession.disconnect ok！=======
+[2017-09-12 15:36:21]========username:[mysftp]=======
+[2017-09-12 15:36:21]========host:[10.0.0.2]=======
+[2017-09-12 15:36:21]========port:[22]=======
+[2017-09-12 15:36:21]========password:[123]=======
+[2017-09-12 15:36:21]========getSession ok！=======
+[2017-09-12 15:36:22]========openChannel ok！=======
+[2017-09-12 15:36:22]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:36:22]=======sftp.quit ok！=======
+[2017-09-12 15:36:22]=======channel.disconnect ok！=======
+[2017-09-12 15:36:22]=======sshSession.disconnect ok！=======
+[2017-09-12 15:37:00]========username:[mysftp]=======
+[2017-09-12 15:37:00]========host:[10.0.0.2]=======
+[2017-09-12 15:37:00]========port:[22]=======
+[2017-09-12 15:37:00]========password:[123]=======
+[2017-09-12 15:37:00]========getSession ok！=======
+[2017-09-12 15:37:01]========openChannel ok！=======
+[2017-09-12 15:37:01]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:37:01]创建路径错误：
+2: No such file
+	at com.jcraft.jsch.ChannelSftp.throwStatusError(ChannelSftp.java:2873)
+	at com.jcraft.jsch.ChannelSftp._realpath(ChannelSftp.java:2367)
+	at com.jcraft.jsch.ChannelSftp.cd(ChannelSftp.java:342)
+	at com.yf.zx.core.util.ftp.SftpUtils.createDir(SftpUtils.java:181)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:138)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:275)
+[2017-09-12 15:37:01]=======ftp目录[/upload/打算离开大陆客/daskll]创建失败！=======
+[2017-09-12 15:37:01]=======sftp.quit ok！=======
+[2017-09-12 15:37:01]=======channel.disconnect ok！=======
+[2017-09-12 15:37:01]=======sshSession.disconnect ok！=======
+[2017-09-12 15:37:42]========username:[mysftp]=======
+[2017-09-12 15:37:42]========host:[10.0.0.2]=======
+[2017-09-12 15:37:42]========port:[22]=======
+[2017-09-12 15:37:42]========password:[123]=======
+[2017-09-12 15:37:42]========getSession ok！=======
+[2017-09-12 15:37:43]========openChannel ok！=======
+[2017-09-12 15:37:44]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:37:44]创建路径错误：
+2: No such file
+	at com.jcraft.jsch.ChannelSftp.throwStatusError(ChannelSftp.java:2873)
+	at com.jcraft.jsch.ChannelSftp._realpath(ChannelSftp.java:2367)
+	at com.jcraft.jsch.ChannelSftp.cd(ChannelSftp.java:342)
+	at com.yf.zx.core.util.ftp.SftpUtils.createDir(SftpUtils.java:178)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:138)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:275)
+[2017-09-12 15:37:44]=======ftp目录[/upload/打算离开大陆客/daskll]创建失败！=======
+[2017-09-12 15:37:44]=======sftp.quit ok！=======
+[2017-09-12 15:37:44]=======channel.disconnect ok！=======
+[2017-09-12 15:37:44]=======sshSession.disconnect ok！=======
+[2017-09-12 15:38:07]========username:[mysftp]=======
+[2017-09-12 15:38:07]========host:[10.0.0.2]=======
+[2017-09-12 15:38:07]========port:[22]=======
+[2017-09-12 15:38:07]========password:[123]=======
+[2017-09-12 15:38:07]========getSession ok！=======
+[2017-09-12 15:38:08]========openChannel ok！=======
+[2017-09-12 15:38:08]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:38:08]创建路径错误：
+2: No such file
+	at com.jcraft.jsch.ChannelSftp.throwStatusError(ChannelSftp.java:2873)
+	at com.jcraft.jsch.ChannelSftp._realpath(ChannelSftp.java:2367)
+	at com.jcraft.jsch.ChannelSftp.cd(ChannelSftp.java:342)
+	at com.yf.zx.core.util.ftp.SftpUtils.createDir(SftpUtils.java:178)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:138)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:275)
+[2017-09-12 15:38:08]=======ftp目录[/upload/打算离开大陆客/daskll]创建失败！=======
+[2017-09-12 15:38:08]=======sftp.quit ok！=======
+[2017-09-12 15:38:08]=======channel.disconnect ok！=======
+[2017-09-12 15:38:08]=======sshSession.disconnect ok！=======
+[2017-09-12 15:38:51]========username:[mysftp]=======
+[2017-09-12 15:38:51]========host:[10.0.0.2]=======
+[2017-09-12 15:38:51]========port:[22]=======
+[2017-09-12 15:38:51]========password:[123]=======
+[2017-09-12 15:38:51]========getSession ok！=======
+[2017-09-12 15:38:52]========openChannel ok！=======
+[2017-09-12 15:38:52]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:38:52]========sftp连接异常！======
+4: The encoding can not be changed for this sftp server.
+	at com.jcraft.jsch.ChannelSftp.setFilenameEncoding(ChannelSftp.java:2981)
+	at com.yf.zx.core.util.ftp.SftpUtils.connect(SftpUtils.java:101)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:135)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:276)
+[2017-09-12 15:38:52]=======sftp.quit ok！=======
+[2017-09-12 15:38:52]=======channel.disconnect ok！=======
+[2017-09-12 15:38:52]=======sshSession.disconnect ok！=======
+[2017-09-12 15:39:07]========username:[mysftp]=======
+[2017-09-12 15:39:07]========host:[10.0.0.2]=======
+[2017-09-12 15:39:07]========port:[22]=======
+[2017-09-12 15:39:07]========password:[123]=======
+[2017-09-12 15:39:07]========getSession ok！=======
+[2017-09-12 15:39:08]========openChannel ok！=======
+[2017-09-12 15:39:08]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:39:08]========sftp连接异常！======
+4: The encoding can not be changed for this sftp server.
+	at com.jcraft.jsch.ChannelSftp.setFilenameEncoding(ChannelSftp.java:2981)
+	at com.yf.zx.core.util.ftp.SftpUtils.connect(SftpUtils.java:101)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:135)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:276)
+[2017-09-12 15:39:08]=======sftp.quit ok！=======
+[2017-09-12 15:39:08]=======channel.disconnect ok！=======
+[2017-09-12 15:39:08]=======sshSession.disconnect ok！=======
+[2017-09-12 15:42:08]========username:[mysftp]=======
+[2017-09-12 15:42:08]========host:[10.0.0.2]=======
+[2017-09-12 15:42:08]========port:[22]=======
+[2017-09-12 15:42:08]========password:[123]=======
+[2017-09-12 15:42:08]========getSession ok！=======
+[2017-09-12 15:42:09]========openChannel ok！=======
+[2017-09-12 15:42:09]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:42:09]========sftp连接异常！======
+4: The encoding can not be changed for this sftp server.
+	at com.jcraft.jsch.ChannelSftp.setFilenameEncoding(ChannelSftp.java:2981)
+	at com.yf.zx.core.util.ftp.SftpUtils.connect(SftpUtils.java:102)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:154)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:295)
+[2017-09-12 15:42:09]=======sftp.quit ok！=======
+[2017-09-12 15:42:09]=======channel.disconnect ok！=======
+[2017-09-12 15:42:09]=======sshSession.disconnect ok！=======
+[2017-09-12 15:43:18]========username:[mysftp]=======
+[2017-09-12 15:43:18]========host:[10.0.0.2]=======
+[2017-09-12 15:43:18]========port:[22]=======
+[2017-09-12 15:43:18]========password:[123]=======
+[2017-09-12 15:43:18]========getSession ok！=======
+[2017-09-12 15:43:19]========openChannel ok！=======
+[2017-09-12 15:43:19]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:43:19]创建路径错误：
+2: Failure
+	at com.jcraft.jsch.ChannelSftp.throwStatusError(ChannelSftp.java:2876)
+	at com.jcraft.jsch.ChannelSftp._realpath(ChannelSftp.java:2367)
+	at com.jcraft.jsch.ChannelSftp.cd(ChannelSftp.java:342)
+	at com.yf.zx.core.util.ftp.SftpUtils.createDir(SftpUtils.java:200)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:160)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:297)
+[2017-09-12 15:43:19]=======ftp目录[/upload/打算离开大陆客/daskll]创建失败！=======
+[2017-09-12 15:43:19]=======sftp.quit ok！=======
+[2017-09-12 15:43:19]=======channel.disconnect ok！=======
+[2017-09-12 15:43:19]=======sshSession.disconnect ok！=======
+[2017-09-12 15:45:53]========username:[mysftp]=======
+[2017-09-12 15:45:53]========host:[10.0.0.2]=======
+[2017-09-12 15:45:53]========port:[22]=======
+[2017-09-12 15:45:53]========password:[123]=======
+[2017-09-12 15:45:53]========getSession ok！=======
+[2017-09-12 15:45:54]========openChannel ok！=======
+[2017-09-12 15:45:54]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:45:54]创建路径错误：
+2: No such file
+	at com.jcraft.jsch.ChannelSftp.throwStatusError(ChannelSftp.java:2873)
+	at com.jcraft.jsch.ChannelSftp._realpath(ChannelSftp.java:2367)
+	at com.jcraft.jsch.ChannelSftp.cd(ChannelSftp.java:342)
+	at com.yf.zx.core.util.ftp.SftpUtils.createDir(SftpUtils.java:201)
+	at com.yf.zx.core.util.ftp.SftpUtils.sftpUploadFile(SftpUtils.java:161)
+	at com.yf.zx.core.util.ftp.SftpUtils.main(SftpUtils.java:298)
+[2017-09-12 15:45:54]=======ftp目录[/upload/打算离开大陆客/daskll]创建失败！=======
+[2017-09-12 15:45:54]=======sftp.quit ok！=======
+[2017-09-12 15:45:54]=======channel.disconnect ok！=======
+[2017-09-12 15:45:54]=======sshSession.disconnect ok！=======
+[2017-09-12 15:46:38]========username:[mysftp]=======
+[2017-09-12 15:46:38]========host:[10.0.0.2]=======
+[2017-09-12 15:46:38]========port:[22]=======
+[2017-09-12 15:46:38]========password:[123]=======
+[2017-09-12 15:46:38]========getSession ok！=======
+[2017-09-12 15:46:39]========openChannel ok！=======
+[2017-09-12 15:46:39]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:46:39]=======sftp.quit ok！=======
+[2017-09-12 15:46:39]=======channel.disconnect ok！=======
+[2017-09-12 15:46:39]=======sshSession.disconnect ok！=======
+[2017-09-12 15:47:33]========username:[mysftp]=======
+[2017-09-12 15:47:33]========host:[10.0.0.2]=======
+[2017-09-12 15:47:33]========port:[22]=======
+[2017-09-12 15:47:33]========password:[123]=======
+[2017-09-12 15:47:33]========getSession ok！=======
+[2017-09-12 15:47:34]========openChannel ok！=======
+[2017-09-12 15:47:34]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:47:34]=======sftp.quit ok！=======
+[2017-09-12 15:47:34]=======channel.disconnect ok！=======
+[2017-09-12 15:47:34]=======sshSession.disconnect ok！=======
+[2017-09-12 15:49:27]========username:[mysftp]=======
+[2017-09-12 15:49:27]========host:[10.0.0.2]=======
+[2017-09-12 15:49:27]========port:[22]=======
+[2017-09-12 15:49:27]========password:[123]=======
+[2017-09-12 15:49:27]========getSession ok！=======
+[2017-09-12 15:49:28]========openChannel ok！=======
+[2017-09-12 15:49:29]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:49:29]=======sftp 文件下载成功！=======
+[2017-09-12 15:49:29]=======sftp.quit ok！=======
+[2017-09-12 15:49:29]=======channel.disconnect ok！=======
+[2017-09-12 15:49:29]=======sshSession.disconnect ok！=======
+[2017-09-12 15:49:29]========username:[mysftp]=======
+[2017-09-12 15:49:29]========host:[10.0.0.2]=======
+[2017-09-12 15:49:29]========port:[22]=======
+[2017-09-12 15:49:29]========password:[123]=======
+[2017-09-12 15:49:29]========getSession ok！=======
+[2017-09-12 15:49:29]========openChannel ok！=======
+[2017-09-12 15:49:29]========connect to [10.0.0.2] successfully！=======
+[2017-09-12 15:49:29]=======sftp.quit ok！=======
+[2017-09-12 15:49:29]=======channel.disconnect ok！=======
+[2017-09-12 15:49:29]=======sshSession.disconnect ok！=======

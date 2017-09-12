@@ -1,8 +1,5 @@
 package com.yf.zx.core.util.common;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public final class StringUtils {
 
 	/**
@@ -88,11 +85,64 @@ public final class StringUtils {
 		return obj.toString();
 	}
 	
+	/**
+	 * trim功能升级[支持传入指定要trim的字串]
+	 *  
+	 * @author zhang.yifeng 
+	 * @param str 原字串
+	 * @param trimStr 要trim的字串
+	 * @return trim后的字串
+	 */
+	public static String trim(String str, String trimStr) {
+		if (isNullOrEmpty(str)) {
+			return "";
+		}
+		if (" ".equals(trimStr)) {
+			return str.trim();
+		}
+
+		str = trimStart(str, trimStr);
+		str = trimEnd(str, trimStr);
+		return str;
+	}
+	
+	/**
+	 * trim头部
+	 *  
+	 * @author zhang.yifeng 
+	 * @param str
+	 * @param trimStr
+	 * @return
+	 */
+	private static String trimStart(String str, String trimStr) {
+		if (!str.startsWith(trimStr)) {
+			return str;
+		}
+		int trimedStartIndex = 0;
+		trimedStartIndex = str.indexOf(trimStr);
+		str = str.substring(trimedStartIndex + trimStr.length(), str.length());
+		return trimStart(str, trimStr);
+	}
+
+	/**
+	 * trim尾部
+	 *  
+	 * @author zhang.yifeng 
+	 * @param str
+	 * @param trimStr
+	 * @return
+	 */
+	private static String trimEnd(String str, String trimStr) {
+		if (!str.endsWith(trimStr)) {
+			return str;
+		}
+		int trimedEndIndex = 0;
+		trimedEndIndex = str.lastIndexOf(trimStr);
+		str = str.substring(0, trimedEndIndex);
+		return trimEnd(str, trimStr);
+	}
+	
 	public static void main(String[] args) {
-		List<String> al = new ArrayList<String>();
-		al.add("a");
-		al.add("a");
-		al.add("a");
-		System.out.println(StringUtils.convert2String(al));
+		System.out.print(trim("xxsxajkl  xasxxx", "x"));
 	}
 }

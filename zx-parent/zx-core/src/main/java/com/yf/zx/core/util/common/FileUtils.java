@@ -30,11 +30,11 @@ public class FileUtils {
 	private static Logger logger = LoggerFactory.getLogger(FileUtils.class);
 	
 	/**
-	 * 根据所给路径判断文件的存在性
+	 * 根据所给路径判断文件[目录]的存在性
 	 * @param fileAbsPath
 	 * @return
 	 */
-	private static boolean judgeFileExist(String fileAbsPath) {
+	public static boolean judgeFileExist(String fileAbsPath) {
 		if (StringUtils.isNullOrEmpty(fileAbsPath)) {
 			return false;
 		}

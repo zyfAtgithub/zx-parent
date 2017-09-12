@@ -2,7 +2,6 @@ package com.yf.zx.core.util.ip;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Date;
 import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;

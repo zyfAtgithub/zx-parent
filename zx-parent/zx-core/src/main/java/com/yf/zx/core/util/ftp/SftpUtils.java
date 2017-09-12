@@ -14,7 +14,9 @@ import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
+import com.jcraft.jsch.SftpATTRS;
 import com.jcraft.jsch.SftpException;
+import com.yf.zx.core.util.common.FileUtils;
 
 /**
  * SftpUtils
@@ -27,7 +29,7 @@ import com.jcraft.jsch.SftpException;
  *
  */
 public class SftpUtils {
-	
+
 	/**
 	 * logger
 	 */
@@ -35,18 +37,18 @@ public class SftpUtils {
 
 	/** Sftp主机 */
 	private String host;
-	
+
 	/** Sftp主机端口 */
 	private int port;
-	
+
 	/** Sftp 用户名 */
 	private String username;
 
 	/** Sftp 密码 */
 	private String password;
-	
+
 	private Session sshSession;
-	
+
 	private Channel channel;
 
 	private ChannelSftp sftp;
@@ -76,10 +78,15 @@ public class SftpUtils {
 		boolean connflag = false;
 		JSch jsch = new JSch();
 		try {
+
+			logger.debug("========username:[{}]=======", username);
+			logger.debug("========host:[{}]=======", host);
+			logger.debug("========port:[{}]=======", port);
+			logger.debug("========password:[{}]=======", password);
 			sshSession = jsch.getSession(username, host, port);
-			
+
 			logger.info("========getSession ok！=======");
-			
+
 			sshSession.setPassword(password);
 			Properties sshConfig = new Properties();
 			sshConfig.put("StrictHostKeyChecking", "no");
@@ -88,7 +95,7 @@ public class SftpUtils {
 			channel = sshSession.openChannel("sftp");
 			logger.info("========openChannel ok！=======");
 			channel.connect();
-			logger.info("========connect ok！=======");
+			logger.info("========connect to [{}] successfully！=======", host);
 			sftp = (ChannelSftp) channel;
 			connflag = true;
 		} catch (JSchException e) {
@@ -101,8 +108,8 @@ public class SftpUtils {
 	/**
 	 * 
 	 * 上传文件
-	 *  
-	 * @author zhang.yifeng 
+	 * 
+	 * @author zhang.yifeng
 	 * 
 	 * @param directory
 	 *            上传的目录
@@ -113,14 +120,87 @@ public class SftpUtils {
 	 * @throws SftpException
 	 * @throws JSchException
 	 */
-	public boolean sftpUploadFile(String directory, String uploadFile) throws FileNotFoundException, SftpException, JSchException {
-		if (!connect()) {
+	public boolean sftpUploadFile(String directory, String uploadFile) {
+		try {
+
+			File file = new File(uploadFile);
+
+			if (!FileUtils.judgeFileExist(uploadFile)) {
+				logger.warn("=======文件[{}]不存在！=======", uploadFile);
+				return false;
+			}
+
+			if (!connect()) {
+				return false;
+			}
+
+			if (!createDir(directory, sftp)) {
+				logger.warn("=======ftp目录[{}]创建失败！=======", directory);
+				return false;
+			}
+
+			sftp.put(new FileInputStream(file), file.getName(), ChannelSftp.OVERWRITE);
+		} catch (FileNotFoundException e) {
+			logger.error("上传的文件不存在", e);
 			return false;
+		} catch (SftpException e) {
+			logger.error("文件上传异常", e);
+			return false;
+		} finally {
+			close();
 		}
-		sftp.cd(directory);
-		File file = new File(uploadFile);
-		sftp.put(new FileInputStream(file), file.getName());
 		return true;
+	}
+
+	/**
+	 * 创建一个文件目录
+	 */
+	public boolean createDir(String createpath, ChannelSftp sftp) {
+		boolean succ = false;
+		try {
+			if (isDirExist(createpath, sftp)) {
+				sftp.cd(createpath);
+			}
+			String pathArry[] = createpath.split("/");
+			StringBuffer filePath = new StringBuffer("/");
+			for (String path : pathArry) {
+				if (path.equals("")) {
+					continue;
+				}
+				filePath.append(path + "/");
+				if (isDirExist(filePath.toString(), sftp)) {
+					sftp.cd(filePath.toString());
+				} else {
+					// 建立目录
+					sftp.mkdir(new String(filePath.toString()));
+					// 进入并设置为当前目录
+					sftp.cd(filePath.toString());
+				}
+			}
+			sftp.cd(createpath);
+			succ = true;
+		} catch (SftpException e) {
+			logger.error("创建路径错误：", e);
+			succ = false;
+		}
+		return succ;
+	}
+
+	/**
+	 * 判断目录是否存在
+	 */
+	public boolean isDirExist(String directory, ChannelSftp sftp) {
+		boolean isDirExistFlag = false;
+		try {
+			SftpATTRS sftpATTRS = sftp.lstat(directory);
+			isDirExistFlag = true;
+			return sftpATTRS.isDir();
+		} catch (Exception e) {
+			if (e.getMessage().toLowerCase().equals("no such file")) {
+				isDirExistFlag = false;
+			}
+		}
+		return isDirExistFlag;
 	}
 
 	/**
@@ -129,23 +209,31 @@ public class SftpUtils {
 	 * @param directory
 	 *            下载目录
 	 * @param downloadFile
-	 *            下载的文件
+	 *            下载的文件名
 	 * @param saveFile
-	 *            存在本地的路径
+	 *            存在本地的路径[文件全路径]
 	 * @param sftp
 	 */
-	public boolean download(String host, int port, String userName, String password, String directory, String downloadFile,
-			String saveFile) {
+	public boolean download(String directory, String downloadFile, String saveFile) {
 		boolean downloadflag = false;
 		try {
 			if (!connect()) {
 				return downloadflag;
 			}
 			sftp.cd(directory);
+
 			File file = new File(saveFile);
+			if (!FileUtils.judgeFileExist(file.getParent())) {
+				// 目录不存在
+				if (!FileUtils.mkdirs(new File(file.getParent()))) {
+					sftp.quit();
+					logger.warn("=======本地下载目录[{}]创建失败！=======", file.getParent());
+					return downloadflag;
+				}
+				;
+			}
 			sftp.get(downloadFile, new FileOutputStream(file));
 			logger.info("=======sftp 文件下载成功！=======");
-			sftp.quit();
 		} catch (Exception e) {
 			downloadflag = false;
 			logger.error("=======sftp 文件下载出现异常！=======", e);
@@ -160,20 +248,30 @@ public class SftpUtils {
 	 *
 	 */
 	public void close() {
+		if (sftp != null) {
+			sftp.quit();
+			logger.info("=======sftp.quit ok！=======");
+		}
 		if (channel != null) {
 			channel.disconnect();
+			logger.info("=======channel.disconnect ok！=======");
 		}
 		if (sshSession != null) {
 			sshSession.disconnect();
+			logger.info("=======sshSession.disconnect ok！=======");
 		}
 	}
 
-	public static void main(String[] args) throws JSchException {
+	public static void main(String[] args) throws Exception {
 		String host = "10.0.0.2";
 		int port = 22;
 		String username = "mysftp";
 		String password = "123";
-		new SftpUtils(host, port, username, password).download(host, port, username, password, "/upload/cdn_home/4/2017-09-11", "15051146029276428.xml",
-		 "d:\\15051146029276428.xml");
+		 new SftpUtils(host, port, username,
+		 password).download("/upload/打算离开大陆客/daskll", "15051146029276428.xml",
+		 "f:\\dddede\\15051146029276428.xml");
+
+		new SftpUtils(host, port, username, password).sftpUploadFile("/upload/打算离开大陆客/daskll",
+				"d:\\15051146029276428.xml");
 	}
 }

@@ -17,6 +17,7 @@ import org.apache.commons.net.ftp.FTPReply;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.yf.zx.core.util.common.FileUtils;
 import com.yf.zx.core.util.common.StringUtils;
 
 /**
@@ -187,12 +188,34 @@ public class FtpUtils {
 			try {
 				FTPFile[] f = ftpClient.listFiles();
 				logger.info("远程文件个数:[{}]", f.length);
+				boolean assginFtpfilename = false;
+				if (StringUtils.isNotNullAndEmpty(ftpInfo.getFtpFileName())) {
+					assginFtpfilename = true;
+				}
 				for (FTPFile ftpFile : f) {
 					try {
+						if (assginFtpfilename) {
+							if (!ftpFile.getName().equals(ftpInfo.getFtpFileName())) {
+								continue;
+							}
+						}
+
+						if (!FileUtils.judgeFileExist(ftpInfo.getLocalPath())) {
+							// 目录不存在
+							if (!FileUtils.mkdirs(new File(ftpInfo.getLocalPath()))) {
+								logger.warn("=======本地下载目录[{}]创建失败！=======", ftpInfo.getLocalPath());
+								return downflag;
+							}
+						}
+						
 						File localFile = new File(ftpInfo.getLocalPath() + ftpFile.getName());
 						OutputStream is = new FileOutputStream(localFile);
 						ftpClient.retrieveFile(ftpFile.getName(), is);
 						is.close();
+						if (assginFtpfilename) {
+							//只下载一个指定的文件，后面就不用再继续循环了
+							break;
+						}
 					} catch (IOException e) {
 						logger.error("=======FTP下载文件时异常！=======", e);
 					}
@@ -340,10 +363,10 @@ public class FtpUtils {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		FtpInfo ftpGov = new FtpInfo("10.0.0.2", 21, "zftp", "123456", "gbk", "cdn_home/1", "", "F:\\ftp\\", 1);
-		downLoadFile(ftpGov);
-		File f = new File("F:\\BaiduNetdiskDownload\\传智播客_Activiti工作流视频（企业开发实例讲解）.zip");
-		FtpInfo ftpGov2 = new FtpInfo("10.0.0.2", 21, "zftp", "123456", "gbk", "cdn_home/1/99", f, "传智播客_Activiti工作流视频（企业开发实例讲解）.zip");
+//		FtpInfo ftpGov = new FtpInfo("10.0.0.2", 21, "zftp", "123456", "gbk", "cdn_home/1", "3333.txt", "F:\\ftp\\tst\\", 2);
+//		downLoadFile(ftpGov);
+		File f = new File("F:\\work_doc\\cdn_ism.sql");
+		FtpInfo ftpGov2 = new FtpInfo("42.123.92.9", 21, "ismftp", "ismftp", "gbk", "cdn_home/1/99", f, "cdn_ism.sql");
 		uploadFile(ftpGov2);
 	}
 }

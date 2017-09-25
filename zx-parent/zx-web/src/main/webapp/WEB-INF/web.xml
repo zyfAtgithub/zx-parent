@@ -30,4 +30,17 @@
 		<url-pattern>/service/*</url-pattern>
 	</servlet-mapping>  
 
+	
+	<!-- SpringMvc配置开始 -->
+	<servlet>  
+	    <servlet-name>dispatcherServlet</servlet-name>  
+	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+	    <load-on-startup>1</load-on-startup>  
+	</servlet>  
+	<servlet-mapping>  
+	    <servlet-name>dispatcherServlet</servlet-name>  
+	    <url-pattern>/</url-pattern>  
+	</servlet-mapping>  
+	<!-- SpringMvc配置结束 -->
+
 </web-app>  

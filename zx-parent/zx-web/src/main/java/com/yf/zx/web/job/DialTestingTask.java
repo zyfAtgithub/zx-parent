@@ -32,12 +32,12 @@ public class DialTestingTask {
             	System.out.println(DateUtils.getNowTimeStr(DateUtils.DATETIME_FORMAT2)+" "+TASK_NAME+"-开始");
             	log.error(DateUtils.getNowTimeStr(DateUtils.DATETIME_FORMAT2)+" "+TASK_NAME+"-开始"); 
             	long begin = System.currentTimeMillis();
-            	DialTesting task = new DialTesting();
-        		String prefix = DateUtils.getNowTimeStr("yyyyMMddHHssS");
-        		for (int i = 1; i <= 20; i++) {
-        			Thread th = new Thread(task, prefix + "-" + i + ".txt");
-        			th.start();
-        		}
+//            	DialTesting task = new DialTesting();
+//        		String prefix = DateUtils.getNowTimeStr("yyyyMMddHHssS");
+//        		for (int i = 1; i <= 20; i++) {
+//        			Thread th = new Thread(task, prefix + "-" + i + ".txt");
+//        			th.start();
+//        		}
             	long end=System.currentTimeMillis();           
             	System.out.println(DateUtils.getNowTimeStr(DateUtils.DATETIME_FORMAT2)+" "+TASK_NAME+"-结束[耗时："+(end-begin)/1000+"秒]");
             	log.error(DateUtils.getNowTimeStr(DateUtils.DATETIME_FORMAT2)+" "+TASK_NAME+"-结束[耗时："+(end-begin)/1000+"秒]");

@@ -4,7 +4,6 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.yf.zx.core.util.common.DateUtils;
-import com.yf.zx.core.util.http.DialTesting;
 
 @Service("dialTestingTask")
 public class DialTestingTask {

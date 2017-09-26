@@ -1,9 +1,6 @@
 package com.yf.zx.core.util.encrypt;
-import java.io.UnsupportedEncodingException;  
-import java.security.MessageDigest;  
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;  
-  
-import sun.misc.BASE64Encoder;  
   
 /**
  * MD5Util 
@@ -20,7 +17,7 @@ public final class MD5Util {
     /**Determine encrypt algorithm MD5*/  
     private static final String ALGORITHM_MD5 = "MD5";  
     /**UTF-8 Encoding*/  
-    private static final String UTF_8 = "UTF-8";  
+//    private static final String UTF_8 = "UTF-8";  
       
     /** 
      * MD5 16bit Encrypt Methods. 
@@ -129,18 +126,18 @@ public final class MD5Util {
         }  
     }  
       
-    /** 
-     * MD5 16bit Encrypt Methods. 
-     * @param readyEncryptStr ready encrypt string 
-     * @return String encrypt result string 
-     * @throws NoSuchAlgorithmException  
-     * @throws UnsupportedEncodingException  
-     * */  
-    public static final String MD5_64bit(String readyEncryptStr) throws NoSuchAlgorithmException, UnsupportedEncodingException{  
-        MessageDigest md = MessageDigest.getInstance(ALGORITHM_MD5);  
-        BASE64Encoder base64Encoder = new BASE64Encoder();  
-        return base64Encoder.encode(md.digest(readyEncryptStr.getBytes(UTF_8)));  
-    }  
+//    /** 
+//     * MD5 16bit Encrypt Methods. 
+//     * @param readyEncryptStr ready encrypt string 
+//     * @return String encrypt result string 
+//     * @throws NoSuchAlgorithmException  
+//     * @throws UnsupportedEncodingException  
+//     * */  
+//    public static final String MD5_64bit(String readyEncryptStr) throws NoSuchAlgorithmException, UnsupportedEncodingException{  
+//        MessageDigest md = MessageDigest.getInstance(ALGORITHM_MD5);  
+//        BASE64Encoder base64Encoder = new BASE64Encoder();  
+//        return base64Encoder.encode(md.digest(readyEncryptStr.getBytes(UTF_8)));  
+//    }  
       
     public static void main(String[] args) {  
         try {  
@@ -153,8 +150,8 @@ public final class MD5Util {
             System.out.println("1:  " + md532);  
             System.out.println("2:  " + md5321);  
             System.out.println("3:  " + md5322);  
-            String md564 = MD5Util.MD5_64bit("kaka123");  
-            System.out.println("64bit-md5:\n" + md564); //  
+//            String md564 = MD5Util.MD5_64bit("kaka123");  
+//            System.out.println("64bit-md5:\n" + md564); //  
         } catch (Exception e) {  
             e.printStackTrace();  
         }  

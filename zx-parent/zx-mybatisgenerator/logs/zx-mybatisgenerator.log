@@ -5,3 +5,23 @@
 [2017-09-26 17:41:45]@Before
 [2017-09-26 17:41:46][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
 [2017-09-26 17:41:46]@After
+[2017-09-26 17:44:07]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ac7a4e4: startup date [Tue Sep 26 17:44:07 CST 2017]; root of context hierarchy
+[2017-09-26 17:44:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\classes\conf\spring-mybatis.xml]
+[2017-09-26 17:44:08]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\classes\conf\spring-service.xml]
+[2017-09-26 17:44:08]Loaded JDBC driver: com.mysql.jdbc.Driver
+[2017-09-26 17:44:08]@Before
+[2017-09-26 17:44:09][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-09-26 17:44:09]@After
+[2017-09-26 18:07:43]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@36d64342: startup date [Tue Sep 26 18:07:43 CST 2017]; root of context hierarchy
+[2017-09-26 18:07:44]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-mybatis.xml]
+[2017-09-26 18:07:44]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-service.xml]
+[2017-09-26 18:07:44]Loaded JDBC driver: com.mysql.jdbc.Driver
+[2017-09-26 18:07:45]@Before
+[2017-09-26 18:07:45][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-09-26 18:07:45]@After
+[2017-09-26 18:08:01]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@36d64342: startup date [Tue Sep 26 18:08:01 CST 2017]; root of context hierarchy
+[2017-09-26 18:08:01]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-mybatis.xml]
+[2017-09-26 18:08:02]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-service.xml]
+[2017-09-26 18:08:02]Loaded JDBC driver: com.mysql.jdbc.Driver
+[2017-09-26 18:08:02]@Before
+[2017-09-26 18:08:03]@After

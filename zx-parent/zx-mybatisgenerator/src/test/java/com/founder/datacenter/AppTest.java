@@ -5,23 +5,28 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.yf.zx.user.service.UserService;
 
 public class AppTest {
+	
+	Logger logger = LoggerFactory.getLogger(AppTest.class);
+	
     BeanFactory factory;
 
     @Before
     public void before() {
         factory = new ClassPathXmlApplicationContext("conf/spring-*.xml");
-        System.out.println("@Before");
+        logger.info("@Before");
     }
 
     @After
     public void after() {
-        System.out.println("@After");
+        logger.info("@After");
     }
 
     @Test

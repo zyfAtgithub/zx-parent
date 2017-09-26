@@ -1,0 +1,7 @@
+[2017-09-26 17:41:44]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@36d64342: startup date [Tue Sep 26 17:41:44 CST 2017]; root of context hierarchy
+[2017-09-26 17:41:44]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\classes\conf\spring-mybatis.xml]
+[2017-09-26 17:41:45]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\classes\conf\spring-service.xml]
+[2017-09-26 17:41:45]Loaded JDBC driver: com.mysql.jdbc.Driver
+[2017-09-26 17:41:45]@Before
+[2017-09-26 17:41:46][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-09-26 17:41:46]@After

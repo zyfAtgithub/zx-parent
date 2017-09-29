@@ -133,6 +133,9 @@ public class FileUtil {
 
 	/**
 	 * 写文件
+	 * TODO 文件锁
+	 * http://www.blogjava.net/Tomshi-Xu/archive/2012/10/26/390291.html
+	 * 
 	 * @param fileName
 	 * @param content
 	 */

@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-   	   http://www.springframework.org/schema/beans/spring-beans.xsd   
-       http://www.springframework.org/schema/context
-	   http://www.springframework.org/schema/context/spring-context.xsd">
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+				http://www.springframework.org/schema/mvc
+				http://www.springframework.org/schema/mvc/spring-mvc.xsd
+				http://www.springframework.org/schema/context
+				http://www.springframework.org/schema/context/spring-context.xsd">
 		<!-- 启用spring mvc 注解 -->
 		<context:annotation-config />
+
+		<!-- 中配置<mvc:default-servlet-handler />后，
+			会在Spring MVC上下文中定义一个org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler，
+			它会像一个检查员，对进入DispatcherServlet的URL进行筛查，如果发现是静态资源的请求，
+			就将该请求转由Web应用服务器默认的Servlet处理，如果不是静态资源的请求，才由DispatcherServlet继续处理。
+			一般Web应用服务器默认的Servlet名称是"default"，因此DefaultServletHttpRequestHandler可以找到它。
+			如果你所有的Web应用服务器的默认Servlet名称不是"default"，则需要通过default-servlet-name属性显示指定：
+			<mvc:default-servlet-handler default-servlet-name="所使用的Web服务器默认使用的Servlet名称" /> 
+		-->		
+
+	<mvc:resources location="/" mapping="/**"/>
 
 		<!-- 设置使用注解的类所在的jar包 -->
 		<context:component-scan base-package="controller"></context:component-scan>

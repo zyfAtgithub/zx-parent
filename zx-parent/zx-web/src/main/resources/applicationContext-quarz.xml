@@ -39,7 +39,7 @@
 		<property name="triggers">
 			<list>
 				<!-- <ref bean="callWsTaskJobGrigger" /> -->
-				<ref bean="dialTestingTaskJobGrigger" />
+				<!-- <ref bean="dialTestingTaskJobGrigger" /> -->
 			</list>
 		</property>
 	</bean>

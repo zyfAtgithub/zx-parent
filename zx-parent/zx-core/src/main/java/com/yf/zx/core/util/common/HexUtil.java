@@ -13,10 +13,10 @@ public class HexUtil {
     };
      
     /**
-     * byte[] -> hexString
+     * byte[] -&gt; hexString
      * 
-     * @param input
-     * @return
+     * @param input 待加密的字节数组
+     * @return string
      */
     public static String encode(byte[] input){
         if (input == null)
@@ -31,10 +31,10 @@ public class HexUtil {
     }
      
     /**
-     * hexString -> byte[]
+     * hexString -&gt; byte[]
      * 
-     * @param input
-     * @return
+     * @param input 待解密的字符串
+     * @return byte[]
      */
     public static byte[] decodeToByteArray(String input){
         if (input == null)
@@ -60,20 +60,20 @@ public class HexUtil {
     }
      
     /**
-     * short -> hexString
+     * short -&gt; hexString
      * 
-     * @param input
-     * @return
+     * @param input 待加密的内容
+     * @return string 返回解密结果
      */
     public static String encode(byte input){
         return encode(new byte[]{input});
     }
      
     /**
-     * hexString -> short
+     * hexString -&gt; short
      * 
-     * @param input
-     * @return
+     * @param input 入参
+     * @return byte 返回解密结果
      */
     public static byte decodeToByte(String input){
         if (input == null)
@@ -87,10 +87,10 @@ public class HexUtil {
     }
      
     /**
-     * short -> hexString
+     * short -&gt; hexString
      * 
-     * @param input
-     * @return
+     * @param input 加密内容
+     * @return string 返回加密结果
      */
     public static String encode(short input){
         return encode(new byte[]{
@@ -99,10 +99,10 @@ public class HexUtil {
     }
      
     /**
-     * hexString -> short
+     * hexString -&gt; short
      * 
-     * @param input
-     * @return
+     * @param input 解密内容
+     * @return int 解密结果
      */
     public static int decodeToShort(String input){
         if (input == null)
@@ -118,10 +118,10 @@ public class HexUtil {
     }
      
     /**
-     * integer -> hexString
+     * integer -&gt; hexString
      * 
-     * @param input
-     * @return
+     * @param input 加密内容
+     * @return string 加密结果
      */
     public static String encode(int input){
         return encode(new byte[]{
@@ -132,10 +132,10 @@ public class HexUtil {
     }
      
     /**
-     * hexString -> integer
+     * hexString -&gt; integer
      * 
-     * @param input
-     * @return
+     * @param input 解密内容
+     * @return int 解密结果
      */
     public static int decodeToInt(String input){
         if (input == null)
@@ -153,10 +153,10 @@ public class HexUtil {
     }
      
     /**
-     * long -> hexString
+     * long -&gt; hexString
      * 
-     * @param input
-     * @return
+     * @param input 加密内容
+     * @return string 加密结果
      */
     public static String encode(long input){
         return encode(new byte[]{
@@ -171,10 +171,10 @@ public class HexUtil {
     }
      
     /**
-     * hexString -> long
+     * hexString -&gt; long
      * 
-     * @param input
-     * @return
+     * @param input 解密内容
+     * @return long 解密结果
      */
     public static long decodeToLong(String input){
         if (input == null)
@@ -195,6 +195,7 @@ public class HexUtil {
                 (long)(temp[7] & 0xff);
     }
      
+    
     public static void main(String[] args) {
          
         System.out.println(encode(new byte[]{0x19, 0x1a, 0x1b}));

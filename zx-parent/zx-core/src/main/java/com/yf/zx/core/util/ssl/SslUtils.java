@@ -38,7 +38,7 @@ public class SslUtils {
  /**
      * 忽略HTTPS请求的SSL证书，必须在openConnection之前调用
      *
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static void ignoreSsl() throws Exception {
         HostnameVerifier hv = new HostnameVerifier() {

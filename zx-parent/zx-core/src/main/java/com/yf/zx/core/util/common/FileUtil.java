@@ -123,8 +123,9 @@ public class FileUtil {
 	
 	/**
 	 * 写文件
-	 * @param fileName
-	 * @param content
+	 * @param fileName 文件名
+	 * @param content 内容
+	 * @return true/false
 	 */
 	public static synchronized boolean appentContent2File(String fileName, String content) {
 		return appentContent2File(fileName, Constants.FILESIZE_THRESHOLD, content);
@@ -136,8 +137,10 @@ public class FileUtil {
 	 * TODO 文件锁
 	 * http://www.blogjava.net/Tomshi-Xu/archive/2012/10/26/390291.html
 	 * 
-	 * @param fileName
-	 * @param content
+	 * @param fileName 文件名
+	 * @param size 文件大小上限
+	 * @param content 内容
+	 * @return true/false
 	 */
 	public static synchronized boolean appentContent2File(String fileName, long size, String content) {
 		//文件对应目录不存在就创建
@@ -150,7 +153,7 @@ public class FileUtil {
 			// 文件长度，字节数
 			long fileLength = randomFile.length();
 			//文件大小超出限制
-			if (fileLength + content.getBytes().length + 2 >= Constants.FILESIZE_THRESHOLD) {
+			if (fileLength + content.getBytes().length + 2 >= size) {
 				System.out.println("文件大小到达上限！！");
 				if (randomFile != null) {
 					try {

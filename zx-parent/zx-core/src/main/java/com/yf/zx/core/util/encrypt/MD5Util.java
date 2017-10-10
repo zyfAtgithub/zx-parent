@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
  * MD5Util 
  *  
  * @author zhang.yifeng
- * @CreateDate 2017年7月17日
+ *  2017年7月17日
  * @version 1.0.0
  * @since  1.0.0 
  * @see com.yf.zx.core.util.encrypt 
@@ -23,7 +23,7 @@ public final class MD5Util {
      * MD5 16bit Encrypt Methods. 
      * @param readyEncryptStr ready encrypt string 
      * @return String encrypt result string 
-     * @throws NoSuchAlgorithmException  
+     * @throws NoSuchAlgorithmException 加密异常 
      * */  
     public static final String MD5_16bit(String readyEncryptStr) throws NoSuchAlgorithmException{  
         if(readyEncryptStr != null){  
@@ -37,7 +37,7 @@ public final class MD5Util {
      * MD5 32bit Encrypt Methods. 
      * @param readyEncryptStr ready encrypt string 
      * @return String encrypt result string 
-     * @throws NoSuchAlgorithmException  
+     * @throws NoSuchAlgorithmException  加密异常
      * */  
     public static final String MD5_32bit(String readyEncryptStr) throws NoSuchAlgorithmException{  
         if(readyEncryptStr != null){  
@@ -67,7 +67,7 @@ public final class MD5Util {
      * MD5 32bit Encrypt Methods. 
      * @param readyEncryptStr ready encrypt string 
      * @return String encrypt result string 
-     * @throws NoSuchAlgorithmException  
+     * @throws NoSuchAlgorithmException  加密异常
      * */  
     public static final String MD5_32bit1(String readyEncryptStr) throws NoSuchAlgorithmException{  
         if(readyEncryptStr != null){  
@@ -97,7 +97,7 @@ public final class MD5Util {
      * MD5 32bit Encrypt Methods. 
      * @param readyEncryptStr ready encrypt string 
      * @return String encrypt result string 
-     * @throws NoSuchAlgorithmException  
+     * @throws NoSuchAlgorithmException  加密异常
      * */  
     public static final String MD5_32bit2(String readyEncryptStr) throws NoSuchAlgorithmException{  
         if(readyEncryptStr != null){  

@@ -24,10 +24,10 @@ import com.yf.zx.core.util.common.StringUtils;
  * FTPUtils [FTP工具类，支持FTP协议]
  * 
  * @author zhang.yifeng
- * @CreateDate 2017年6月20日
+ * 2017年6月20日
  * @version 1.0.0
  * @since 1.0.0
- * @see com.yf.core.util.ftp
+ * @see com.yf.zx.core.util.ftp
  *
  */
 public class FtpUtils {
@@ -141,7 +141,8 @@ public class FtpUtils {
 	 * 下载FTP文件
 	 * 
 	 * @author zhang.yifeng
-	 * @param ftpInfo
+	 * @param ftpInfo ftp信息
+	 * @return true/false
 	 */
 	public static boolean downLoadFile(FtpInfo ftpInfo) {
 		boolean downflag = false;
@@ -235,8 +236,9 @@ public class FtpUtils {
 	/**
 	 * FTP文件上传
 	 * 
-	 * @param ftpInfo
+	 * @param ftpInfo ftp信息
 	 * @author zhang.yifeng
+	 * @return boolean
 	 */
 	public static boolean uploadFile(FtpInfo ftpInfo) {
 		boolean flag = false;

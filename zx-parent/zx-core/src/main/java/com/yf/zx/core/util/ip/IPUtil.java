@@ -15,7 +15,7 @@ import net.sf.json.JSONObject;
  * IPUtil [IP工具类]
  *  
  * @author zhang.yifeng
- * @CreateDate 2017年7月19日
+ *  2017年7月19日
  * @version 1.0.0
  * @since  1.0.0 
  * @see com.yf.zx.core.util.ip 
@@ -31,8 +31,8 @@ public class IPUtil {
 	 * 校验IP地址合法性
 	 *  
 	 * @author zhang.yifeng 
-	 * @param ipStr
-	 * @return
+	 * @param ipStr 待校验ip
+	 * @return true/false
 	 */
 	public static boolean validateIp(String ipStr) {
 		return IP_PATTERN.matcher(ipStr).matches();
@@ -42,7 +42,7 @@ public class IPUtil {
 	 * 获取本机IP
 	 *  
 	 * @author zhang.yifeng 
-	 * @return
+	 * @return string
 	 */
 	public static String getLocalIP() {
 		String localIp = "unknown";
@@ -60,7 +60,7 @@ public class IPUtil {
 	 * 获取主机名
 	 * 
 	 * @author zhang.yifeng 
-	 * @return
+	 * @return string
 	 */
 	public static String getLocalHostName() {
 		String hostName = "unknown";
@@ -79,8 +79,8 @@ public class IPUtil {
 	 * 获取客户端Ip地址
 	 * 从Request对象中获得客户端IP，处理了HTTP代理服务器和Nginx的反向代理截取了ip
 	 * @author zhang.yifeng 
-	 * @param request
-	 * @return ip
+	 * @param request httprequest
+	 * @return ip 客户端ip地址
 	 */
 	public static String getClientIp(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");

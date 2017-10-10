@@ -9,11 +9,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class SendMail {
-
-	  /**
-     * @param args
-     * @throws Exception 
-     */
     public static void main(String[] args) throws Exception {
         
         Properties prop = new Properties();
@@ -37,13 +32,11 @@ public class SendMail {
     }
     
     /**
-    * @Method: createSimpleMail
-    * @Description: 创建一封只包含文本的邮件
-    * @Anthor:孤傲苍狼
-    *
-    * @param session
-    * @return
-    * @throws Exception
+    * createSimpleMail  创建一封只包含文本的邮件
+    * 孤傲苍狼
+    * @param session 邮件会话
+    * @return MimeMessage 邮件
+    * @throws Exception 异常
     */ 
     public static MimeMessage createSimpleMail(Session session)
             throws Exception {

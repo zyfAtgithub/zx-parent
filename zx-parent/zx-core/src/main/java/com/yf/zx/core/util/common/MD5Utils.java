@@ -5,10 +5,10 @@ import java.security.MessageDigest;
 
 public class MD5Utils {
 	/** 
-	   * @param str 
-	   * @return  
-	   * @Description: 32位小写MD5 
-	   */
+	  * 32位小写MD5 
+	  * @param str 待转换的str
+	  * @return  str
+	  */
 	  public static String parseStrToMd5L32(String str){ 
 	    String reStr = null; 
 	    try { 
@@ -31,8 +31,8 @@ public class MD5Utils {
 	  
 	  /**
 	   *  32位小写的md5[入参为 byte数组] 方法重载
-	   * @param input
-	   * @return
+	   * @param input byte数组
+	   * @return string
 	   */
 	  public static String parseStrToMd5L32(byte[] input){ 
 		  String reStr = null; 
@@ -56,8 +56,8 @@ public class MD5Utils {
 	  
 	  /**
 	   * 工信部算法
-	   * @param input
-	   * @return
+	   * @param input byte数组
+	   * @return string
 	   */
 	  public static String getMd5(byte[] input) {
 		MessageDigest md = null;
@@ -86,9 +86,9 @@ public class MD5Utils {
 	}
 	  
 	  /** 
-	   * @param str 
-	   * @return  
-	   * @Description: 32位大写MD5 
+	   * 32位大写MD5 
+	   * @param str 待加密的字符串
+	   * @return  str
 	   */
 	  public static String parseStrToMd5U32(String str){ 
 	    String reStr = parseStrToMd5L32(str); 
@@ -99,9 +99,9 @@ public class MD5Utils {
 	  } 
 	    
 	  /** 
-	   * @param str 
-	   * @return 
-	   * @Description: 16位小写MD5 
+	   * 16位小写MD5 
+	   * @param str 待加密的字符串 
+	   * @return string
 	   */
 	  public static String parseStrToMd5U16(String str){ 
 	    String reStr = parseStrToMd5L32(str); 
@@ -112,9 +112,9 @@ public class MD5Utils {
 	  } 
 	    
 	  /** 
-	   * @param str 
-	   * @return 
-	   * @Description: 16位大写MD5 
+	   * 16位大写MD5 
+	   * @param str 待加密的字符串
+	   * @return string
 	   */
 	  public static String parseStrToMd5L16(String str){ 
 	    String reStr = parseStrToMd5L32(str); 

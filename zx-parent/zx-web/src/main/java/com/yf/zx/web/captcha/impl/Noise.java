@@ -11,21 +11,28 @@ import java.util.Random;
 import com.google.code.kaptcha.NoiseProducer;  
 import com.google.code.kaptcha.util.Configurable;  
   
-/** 
- * 图片验证码干扰线实现类 
- */  
-public class Noise extends Configurable implements NoiseProducer  
-{  
+/**
+ *   
+ * Noise 图片验证码干扰线实现类 
+ *  
+ * @author zhang.yifeng
+ *  2017年10月10日
+ * @version 1.0.0
+ * @since  1.0.0 
+ * @see com.yf.zx.web.captcha.impl 
+ *
+ */
+public class Noise extends Configurable implements NoiseProducer {  
     /** 
      * Draws a noise on the image. The noise curve depends on the factor values. 
-     * Noise won't be visible if all factors have the value > 1.0f 
+     * Noise won't be visible if all factors have the value &gt; 1.0f 
      *  
      * @param image 
      *            the image to add the noise to 
-     * @param factorOne 
-     * @param factorTwo 
-     * @param factorThree 
-     * @param factorFour 
+     * @param factorOne 因子1
+     * @param factorTwo 因子2
+     * @param factorThree 因子3
+     * @param factorFour 因子4
      */  
     public void makeNoise(BufferedImage image, float factorOne,  
             float factorTwo, float factorThree, float factorFour)  
@@ -91,12 +98,7 @@ public class Noise extends Configurable implements NoiseProducer
     /** 
      * 干扰线 的颜色随机生成 
     * @Title: getColor  
-    *@author ：彭婷婷 
-    * @Description: TODO 
-    * @param @return    
     * @return Color     
-    * @throws  
-    * @data  2017年3月31日下午1:32:32 
      */  
     private Color getColor(){  
         Random random = new Random();  

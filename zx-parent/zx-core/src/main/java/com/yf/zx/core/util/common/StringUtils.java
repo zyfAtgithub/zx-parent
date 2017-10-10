@@ -6,7 +6,7 @@ public final class StringUtils {
 	 * 空判断
 	 *  
 	 * @author zhang.yifeng 
-	 * @param obj
+	 * @param obj 参数
 	 * @return boolean
 	 */
 	public static boolean isNull(Object obj) {
@@ -17,7 +17,7 @@ public final class StringUtils {
 	 * 空判断
 	 *  
 	 * @author zhang.yifeng 
-	 * @param obj
+	 * @param obj 参数
 	 * @return boolean
 	 */
 	public static boolean isNotNull(Object obj) {
@@ -28,7 +28,7 @@ public final class StringUtils {
 	 * 空判断
 	 *  
 	 * @author zhang.yifeng 
-	 * @param obj
+	 * @param str 参数 
 	 * @return boolean
 	 */
 	public static boolean isEmpty(String str) {
@@ -39,7 +39,7 @@ public final class StringUtils {
 	 * 空判断
 	 *  
 	 * @author zhang.yifeng 
-	 * @param str
+	 * @param str 参数
 	 * @return boolean
 	 */
 	public static boolean isNullOrEmpty(String str) {
@@ -50,7 +50,7 @@ public final class StringUtils {
 	 * 空判断
 	 *  
 	 * @author zhang.yifeng 
-	 * @param str
+	 * @param str 参数
 	 * @return boolean
 	 */
 	public static boolean isNotNullAndEmpty(String str) {
@@ -61,8 +61,8 @@ public final class StringUtils {
 	 * 空判断
 	 *  
 	 * @author zhang.yifeng 
-	 * @param obj
-	 * @return
+	 * @param obj 参数
+	 * @return boolean
 	 */
 	public static boolean isNullOrEmpty(Object obj) {
 		if (isNull(obj)) {
@@ -75,7 +75,7 @@ public final class StringUtils {
 	 * 转String，若是入参为 null，则返回 ""，否则返回 obj.toString()
 	 *  
 	 * @author zhang.yifeng 
-	 * @param obj
+	 * @param obj 参数
 	 * @return boolean
 	 */
 	public static String convert2String(Object obj) {
@@ -110,9 +110,9 @@ public final class StringUtils {
 	 * trim头部
 	 *  
 	 * @author zhang.yifeng 
-	 * @param str
-	 * @param trimStr
-	 * @return
+	 * @param str 待trim的字符串
+	 * @param trimStr 需要trim的字符
+	 * @return trim结果
 	 */
 	private static String trimStart(String str, String trimStr) {
 		if (!str.startsWith(trimStr)) {
@@ -128,9 +128,9 @@ public final class StringUtils {
 	 * trim尾部
 	 *  
 	 * @author zhang.yifeng 
-	 * @param str
-	 * @param trimStr
-	 * @return
+	 * @param str 待trim的字符串
+	 * @param trimStr 需要trim的字符
+	 * @return trim结果
 	 */
 	private static String trimEnd(String str, String trimStr) {
 		if (!str.endsWith(trimStr)) {

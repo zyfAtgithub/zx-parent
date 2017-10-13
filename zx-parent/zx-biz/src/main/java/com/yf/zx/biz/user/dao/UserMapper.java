@@ -1,8 +1,8 @@
-package com.yf.zx.user.dao;
+package com.yf.zx.biz.user.dao;
 
-import com.yf.zx.user.model.User;
-import com.yf.zx.user.model.UserExample;
 import java.util.List;
+
+import com.yf.zx.biz.user.model.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -11,11 +11,11 @@ public interface UserMapper {
 
     int insertSelective(User record);
 
-    List<User> selectByExample(UserExample example);
-
     User selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+    
+    List<User> selectUserByName(String name);
 }

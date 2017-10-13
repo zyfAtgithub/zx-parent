@@ -10,8 +10,8 @@
 	 	<property name="beginningDelimiter" value="${generator.beginningDelimiter}"/>
         <property name="endingDelimiter" value="${generator.endingDelimiter}"/>
         <!-- 分页插件 -->
-   		<plugin type="com.founder.ebd.util.mybatis.MySQLPaginationPlugin" />
-		<commentGenerator>
+<!--    		<plugin type="com.founder.ebd.util.mybatis.MySQLPaginationPlugin" />
+ -->		<commentGenerator>
 			<property name="suppressDate" value="${generator.suppressDate}" />
 			<property name="addRemarkComments" value="${generator.addRemarkComments}" />
 			<property name="suppressAllComments" value="${generator.suppressAllComments}" />

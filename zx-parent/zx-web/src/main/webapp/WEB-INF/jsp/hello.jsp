@@ -6,6 +6,6 @@
 <title>Hello World</title>  
 </head>  
 <body>  
-${message}  
+${msg}  
 </body>  
 </html>  

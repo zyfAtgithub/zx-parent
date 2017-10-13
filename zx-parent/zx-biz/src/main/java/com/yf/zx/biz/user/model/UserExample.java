@@ -1,4 +1,4 @@
-package com.yf.zx.user.model;
+package com.yf.zx.biz.user.model;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,10 +10,6 @@ public class UserExample {
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
-
-    protected int limitStart = -1;
-
-    protected int count = -1;
 
     public UserExample() {
         oredCriteria = new ArrayList<Criteria>();
@@ -66,29 +62,6 @@ public class UserExample {
         oredCriteria.clear();
         orderByClause = null;
         distinct = false;
-    }
-
-    public void setLimitStart(int limitStart) {
-        this.limitStart=limitStart;
-    }
-
-    public int getLimitStart() {
-        return limitStart;
-    }
-
-    public void setCount(int count) {
-        this.count=count;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public Criteria getCriteria() {
-        if (oredCriteria.size() != 0) {return oredCriteria.get(0);}
-        Criteria criteria = createCriteriaInternal();
-        oredCriteria.add(criteria);
-        return criteria;
     }
 
     protected abstract static class GeneratedCriteria {

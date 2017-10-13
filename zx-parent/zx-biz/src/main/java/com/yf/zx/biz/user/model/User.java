@@ -1,15 +1,9 @@
-package com.yf.zx.user.model;
+package com.yf.zx.biz.user.model;
 
 import java.util.Date;
 
 public class User {
-    @Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", password=" + password + ", lastlogintime=" + lastlogintime
-				+ "]";
-	}
-
-	private Integer id;
+    private Integer id;
 
     private String name;
 
@@ -48,4 +42,10 @@ public class User {
     public void setLastlogintime(Date lastlogintime) {
         this.lastlogintime = lastlogintime;
     }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", lastlogintime=" + lastlogintime
+				+ "]";
+	}
 }

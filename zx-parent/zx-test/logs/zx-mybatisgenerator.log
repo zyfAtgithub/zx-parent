@@ -732,3 +732,42 @@
 [2017-10-13 15:42:30]@After
 [2017-10-13 15:42:30]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Fri Oct 13 15:42:28 CST 2017]; root of context hierarchy
 [2017-10-13 15:42:30]{dataSource-1} closed
+[2017-10-13 15:59:16]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-13 15:59:16]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-13 15:59:16]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-13 15:59:16]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-13 15:59:16]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 15:59:16 CST 2017]; root of context hierarchy
+[2017-10-13 15:59:17]{dataSource-1} inited
+[2017-10-13 15:59:17]@Before
+[2017-10-13 15:59:17][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017]]
+[2017-10-13 15:59:17]@After
+[2017-10-13 15:59:17]@Before
+[2017-10-13 15:59:18]@After
+[2017-10-13 15:59:18]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 15:59:16 CST 2017]; root of context hierarchy
+[2017-10-13 15:59:18]{dataSource-1} closed
+[2017-10-13 16:00:46]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-13 16:00:46]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-13 16:00:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-13 16:00:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-13 16:00:46]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 16:00:46 CST 2017]; root of context hierarchy
+[2017-10-13 16:00:47]{dataSource-1} inited
+[2017-10-13 16:00:48]@Before
+[2017-10-13 16:00:48][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017]]
+[2017-10-13 16:00:48]@After
+[2017-10-13 16:00:48]@Before
+[2017-10-13 16:00:48]@After
+[2017-10-13 16:00:48]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 16:00:46 CST 2017]; root of context hierarchy
+[2017-10-13 16:00:48]{dataSource-1} closed
+[2017-10-13 17:13:53]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-13 17:13:53]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-13 17:13:53]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-13 17:13:53]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-13 17:13:53]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 17:13:53 CST 2017]; root of context hierarchy
+[2017-10-13 17:13:54]{dataSource-1} inited
+[2017-10-13 17:13:54]@Before
+[2017-10-13 17:13:54][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017], User [id=81, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:48 CST 2017]]
+[2017-10-13 17:13:54]@After
+[2017-10-13 17:13:54]@Before
+[2017-10-13 17:13:54]@After
+[2017-10-13 17:13:54]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 17:13:53 CST 2017]; root of context hierarchy
+[2017-10-13 17:13:54]{dataSource-1} closed

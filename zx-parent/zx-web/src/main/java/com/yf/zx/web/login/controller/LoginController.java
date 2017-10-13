@@ -2,15 +2,22 @@ package com.yf.zx.web.login.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import com.google.code.kaptcha.Constants; 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.google.code.kaptcha.Constants;
+import com.yf.zx.biz.sys.user.service.UserService;
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 
+	@Autowired
+	UserService userService;
+	
 	@RequestMapping(value="")
 	public String login() {
 		
@@ -33,12 +40,15 @@ public class LoginController {
 			model.addAttribute("msg", "验证码错误！");
 		}
 		else {
-			if ("admin".equals(userName) && "admin".equals(password)) {
-				model.addAttribute("msg", "");
-			}
-			else {
+			if (!userService.existUser(userName)) {
 				model.addAttribute("msg", "用户名或密码错误！");
 			}
+//			if ("admin".equals(userName) && "admin".equals(password)) {
+//				model.addAttribute("msg", "");
+//			}
+//			else {
+//				model.addAttribute("msg", "用户名或密码错误！");
+//			}
 		}
 		return "login/login";
 	}

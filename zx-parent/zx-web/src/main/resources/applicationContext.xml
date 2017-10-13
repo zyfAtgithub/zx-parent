@@ -12,8 +12,8 @@
     <context:annotation-config />
     <!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
     <context:component-scan base-package="com.yf.zx">
-    	<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/> 
-		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/> 
+    	<!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/> 
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/> --> 
     </context:component-scan>
 	
 	<!-- 验证码 -->

@@ -721,3 +721,14 @@
 [2017-10-10 14:21:54]@After
 [2017-10-10 14:21:54]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:21:53 CST 2017]; root of context hierarchy
 [2017-10-10 14:21:54]{dataSource-1} closed
+[2017-10-13 15:42:28]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-13 15:42:28]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-13 15:42:28]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-13 15:42:28]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-13 15:42:28]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Fri Oct 13 15:42:28 CST 2017]; root of context hierarchy
+[2017-10-13 15:42:29]{dataSource-1} inited
+[2017-10-13 15:42:29]@Before
+[2017-10-13 15:42:30][]
+[2017-10-13 15:42:30]@After
+[2017-10-13 15:42:30]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Fri Oct 13 15:42:28 CST 2017]; root of context hierarchy
+[2017-10-13 15:42:30]{dataSource-1} closed

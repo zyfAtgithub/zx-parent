@@ -14,8 +14,8 @@
 <!-- 		<context:annotation-config />
  -->
 		<!-- <mvc:default-servlet-handler /> -->
-		<mvc:resources location="/" mapping="/**"/>
-		<!-- 中配置<mvc:default-servlet-handler />后，
+<!-- 		<mvc:resources location="/" mapping="/**"/>
+ -->		<!-- 中配置<mvc:default-servlet-handler />后，
 			会在Spring MVC上下文中定义一个org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler，
 			它会像一个检查员，对进入DispatcherServlet的URL进行筛查，如果发现是静态资源的请求，
 			就将该请求转由Web应用服务器默认的Servlet处理，如果不是静态资源的请求，才由DispatcherServlet继续处理。

@@ -1,6 +1,5 @@
 package com.github.zhangkaitao.shiro.chapter5.hash;
 
-import junit.framework.Assert;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.codec.CodecSupport;
 import org.apache.shiro.codec.Hex;
@@ -8,15 +7,10 @@ import org.apache.shiro.crypto.*;
 import org.apache.shiro.crypto.hash.*;
 import org.apache.shiro.util.ByteSource;
 import org.apache.shiro.util.SimpleByteSource;
+import org.junit.Assert;
 import org.junit.Test;
 
-import javax.crypto.Cipher;
 import java.security.*;
-import java.security.interfaces.RSAPrivateKey;
-import java.security.spec.EncodedKeySpec;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.RSAPrivateKeySpec;
-import java.security.spec.X509EncodedKeySpec;
 
 /**
  * <p>User: Zhang Kaitao

@@ -6,7 +6,6 @@ import org.apache.shiro.authz.UnauthorizedException;
 import org.junit.Assert;
 import org.junit.Test;
 
-
 /**
  * <p>User: Zhang Kaitao
  * <p>Date: 14-1-26

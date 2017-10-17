@@ -73,4 +73,22 @@
 	    <url-pattern>/kaptcha.jpg</url-pattern> 
 	</servlet-mapping>
 	<!-- 验证码 end -->
+	
+	
+	<!-- 静态资源 begin-->
+	<!-- <servlet-mapping>  
+	      <servlet-name>default</servlet-name>  
+	      <url-pattern>*.jpg</url-pattern>  
+	</servlet-mapping>  
+	
+	<servlet-mapping>  
+	      <servlet-name>default</servlet-name>  
+	      <url-pattern>*.js</url-pattern>  
+	</servlet-mapping>  
+	
+	<servlet-mapping>  
+	      <servlet-name>default</servlet-name>  
+	      <url-pattern>*.css</url-pattern>  
+	</servlet-mapping>   -->
+	<!-- 静态资源 end-->
 </web-app>  

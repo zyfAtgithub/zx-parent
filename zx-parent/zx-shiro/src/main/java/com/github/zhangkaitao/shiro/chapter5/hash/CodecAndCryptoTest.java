@@ -52,7 +52,7 @@ public class CodecAndCryptoTest {
     public void testRandom() {
         //生成随机数
         SecureRandomNumberGenerator randomNumberGenerator = new SecureRandomNumberGenerator();
-        randomNumberGenerator.setSeed("123".getBytes());
+        randomNumberGenerator.setSeed("1234".getBytes());
         System.out.println(randomNumberGenerator.nextBytes().toHex());
     }
 

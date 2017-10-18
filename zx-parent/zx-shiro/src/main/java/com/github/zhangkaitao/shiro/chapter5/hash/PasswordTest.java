@@ -17,12 +17,12 @@ public class PasswordTest extends BaseTest {
 
     @Test
     public void testPasswordServiceWithMyRealm() {
-        login("classpath:shiro-passwordservice.ini", "wu", "123");
+        login("classpath:chapt5/shiro-passwordservice.ini", "wu", "123");
     }
 
     @Test
     public void testPasswordServiceWithJdbcRealm() {
-        login("classpath:shiro-jdbc-passwordservice.ini", "wu", "123");
+        login("classpath:chapt5/shiro-jdbc-passwordservice.ini", "wu", "123");
     }
 
     @Test
@@ -43,7 +43,7 @@ public class PasswordTest extends BaseTest {
     @Test
     public void testHashedCredentialsMatcherWithMyRealm2() {
         //使用testGeneratePassword生成的散列密码
-        login("classpath:shiro-hashedCredentialsMatcher.ini", "liu", "123");
+        login("classpath:chapt5/shiro-hashedCredentialsMatcher.ini", "liu", "123");
     }
 
     @Test
@@ -52,7 +52,7 @@ public class PasswordTest extends BaseTest {
         BeanUtilsBean.getInstance().getConvertUtils().register(new EnumConverter(), JdbcRealm.SaltStyle.class);
 
         //使用testGeneratePassword生成的散列密码
-        login("classpath:shiro-jdbc-hashedCredentialsMatcher.ini", "liu", "123");
+        login("classpath:chapt5/shiro-jdbc-hashedCredentialsMatcher.ini", "liu", "123");
     }
 
 
@@ -79,11 +79,13 @@ public class PasswordTest extends BaseTest {
 
     @Test(expected = ExcessiveAttemptsException.class)
     public void testRetryLimitHashedCredentialsMatcherWithMyRealm() {
-        for(int i = 1; i <= 5; i++) {
+        for(int i = 1; i <= 6; i++) {
             try {
-                login("classpath:shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
-            } catch (Exception e) {/*ignore*/}
+                login("classpath:chapt5/shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "2344");
+            } catch (Exception e) {
+            	System.out.println("第" + i + "登录失败！");
+            }
         }
-        login("classpath:shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
+        login("classpath:chapt5/shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
     }
 }

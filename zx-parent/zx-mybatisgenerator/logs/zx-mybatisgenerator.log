@@ -99,3 +99,39 @@
 [2017-10-13 17:13:38]{dataSource-1} inited
 [2017-10-13 17:13:38]@Before
 [2017-10-13 17:13:38]@After
+[2017-10-18 16:47:18]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ac7a4e4: startup date [Wed Oct 18 16:47:18 CST 2017]; root of context hierarchy
+[2017-10-18 16:47:18]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 16:47:18]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-service.xml]
+[2017-10-18 16:47:19]{dataSource-1} inited
+[2017-10-18 16:47:20]@Before
+[2017-10-18 16:47:20]@After
+[2017-10-18 16:57:50]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ac7a4e4: startup date [Wed Oct 18 16:57:50 CST 2017]; root of context hierarchy
+[2017-10-18 16:57:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 16:57:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-service.xml]
+[2017-10-18 16:57:51]{dataSource-1} inited
+[2017-10-18 16:57:52]@Before
+[2017-10-18 16:57:52]@After
+[2017-10-18 16:59:33]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ac7a4e4: startup date [Wed Oct 18 16:59:33 CST 2017]; root of context hierarchy
+[2017-10-18 16:59:33]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 16:59:33]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-service.xml]
+[2017-10-18 16:59:34]{dataSource-1} inited
+[2017-10-18 16:59:34]@Before
+[2017-10-18 16:59:34]@After
+[2017-10-18 17:00:47]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ac7a4e4: startup date [Wed Oct 18 17:00:47 CST 2017]; root of context hierarchy
+[2017-10-18 17:00:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 17:00:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-service.xml]
+[2017-10-18 17:00:49]{dataSource-1} inited
+[2017-10-18 17:00:49]@Before
+[2017-10-18 17:00:49]@After
+[2017-10-18 17:06:01]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ac7a4e4: startup date [Wed Oct 18 17:06:01 CST 2017]; root of context hierarchy
+[2017-10-18 17:06:01]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 17:06:01]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-service.xml]
+[2017-10-18 17:06:02]{dataSource-1} inited
+[2017-10-18 17:06:03]@Before
+[2017-10-18 17:06:03]@After
+[2017-10-18 17:10:16]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ac7a4e4: startup date [Wed Oct 18 17:10:16 CST 2017]; root of context hierarchy
+[2017-10-18 17:10:16]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 17:10:16]Loading XML bean definitions from file [F:\zx\zx-parent\zx-mybatisgenerator\target\test-classes\conf\spring-service.xml]
+[2017-10-18 17:10:17]{dataSource-1} inited
+[2017-10-18 17:10:17]@Before
+[2017-10-18 17:10:17]@After

@@ -15,7 +15,7 @@ public class RoleTest extends BaseTest {
 
     @Test
     public void testHasRole() {
-        login("classpath:shiro-role.ini", "zhang", "123");
+        login("classpath:chapt3/shiro-role.ini", "zhang", "123");
         //判断拥有角色：role1
         Assert.assertTrue(subject().hasRole("role1"));
         //判断拥有角色：role1 and role2
@@ -29,7 +29,7 @@ public class RoleTest extends BaseTest {
 
     @Test(expected = UnauthorizedException.class)
     public void testCheckRole() {
-        login("classpath:shiro-role.ini", "zhang", "123");
+        login("classpath:chapt3/shiro-role.ini", "zhang", "123");
         //断言拥有角色：role1
         subject().checkRole("role1");
         //断言拥有角色：role1 and role3 失败抛出异常

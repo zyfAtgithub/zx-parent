@@ -1,4 +1,4 @@
-package com.yf.zx.core.util.encrypt;
+package com.yf.zx.core.util.crypt;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;  
   
@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
  *  2017年7月17日
  * @version 1.0.0
  * @since  1.0.0 
- * @see com.yf.zx.core.util.encrypt 
+ * @see com.yf.zx.core.util.crypt 
  *
  */
 public final class MD5Util {  

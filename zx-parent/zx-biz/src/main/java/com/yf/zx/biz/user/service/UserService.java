@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yf.zx.biz.user.dao.UserMapper;
-import com.yf.zx.biz.user.model.User;
+import com.yf.zx.biz.user.entity.User;
 
 /**
  * UserService 用户信息服务类

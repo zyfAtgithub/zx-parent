@@ -1,89 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yf.zx.biz.user.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.yf.zx.biz.user.model.User" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
+  <resultMap id="BaseResultMap" type="com.yf.zx.biz.user.entity.User" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="lastLoginTime" property="lastlogintime" jdbcType="TIMESTAMP" />
+    <result column="password_salt" property="passwordSalt" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, password, lastLoginTime
+    id, username, password, password_salt
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from user
-    where id = #{id,jdbcType=INTEGER}
+    from users
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from user
-    where id = #{id,jdbcType=INTEGER}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from users
+    where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yf.zx.biz.user.model.User" >
-    insert into user (id, name, password, 
-      lastLoginTime)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{lastlogintime,jdbcType=TIMESTAMP})
+  <insert id="insert" parameterType="com.yf.zx.biz.user.entity.User" >
+    insert into users (id, username, password, 
+      password_salt)
+    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{passwordSalt,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.yf.zx.biz.user.model.User" >
-    insert into user
+  <insert id="insertSelective" parameterType="com.yf.zx.biz.user.entity.User" >
+    insert into users
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
-      <if test="name != null" >
-        name,
+      <if test="username != null" >
+        username,
       </if>
       <if test="password != null" >
         password,
       </if>
-      <if test="lastlogintime != null" >
-        lastLoginTime,
+      <if test="passwordSalt != null" >
+        password_salt,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=BIGINT},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="lastlogintime != null" >
-        #{lastlogintime,jdbcType=TIMESTAMP},
+      <if test="passwordSalt != null" >
+        #{passwordSalt,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.user.model.User" >
-    update user
+  <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.user.entity.User" >
+    update users
     <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="lastlogintime != null" >
-        lastLoginTime = #{lastlogintime,jdbcType=TIMESTAMP},
+      <if test="passwordSalt != null" >
+        password_salt = #{passwordSalt,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.user.model.User" >
-    update user
-    set name = #{name,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.user.entity.User" >
+    update users
+    set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      lastLoginTime = #{lastlogintime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+      password_salt = #{passwordSalt,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
   </update>
-  
-  <select id="selectUserByName" parameterType="java.lang.String" resultMap="BaseResultMap">
-	select 
-	<include refid="Base_Column_List" />
-	from user
-	where name = #{name,jdbcType=VARCHAR}
-  </select>
 </mapper>

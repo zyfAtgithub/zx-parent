@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.yf.zx.biz.user.model.User;
+import com.yf.zx.biz.user.entity.User;
 import com.yf.zx.biz.user.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)

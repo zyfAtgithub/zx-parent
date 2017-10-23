@@ -36,7 +36,9 @@ public class UserService {
 	 * @return boolean
 	 */
 	public boolean existUser(String name) {
-        List<User> userList = userDao.selectUserByName(name);
+		User param = new User();
+		param.setUsername(name);
+        List<User> userList = userDao.selectUserByName(param);
         logger.info(userList.toString());
         if (userList.size() > 0)
             return true;
@@ -52,7 +54,9 @@ public class UserService {
 	 * @return user
 	 */
 	public User getUserByName(String name) {
-		List<User> userList = userDao.selectUserByName(name);
+		User param = new User();
+		param.setUsername(name);
+		List<User> userList = userDao.selectUserByName(param);
 		if (!userList.isEmpty()) {
 			return userList.get(0);
 		}

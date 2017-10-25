@@ -26,6 +26,10 @@
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{passwordSalt,jdbcType=VARCHAR})
   </insert>
+  <insert id="insertAutoPrimaryKey" useGeneratedKeys="true" keyProperty="id"  parameterType="com.yf.zx.biz.user.entity.User" >
+    insert into users (username, password, password_salt)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{passwordSalt,jdbcType=VARCHAR})
+  </insert>
   <insert id="insertSelective" parameterType="com.yf.zx.biz.user.entity.User" >
     insert into users
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -85,8 +89,6 @@
 	<include refid="Base_Column_List"/>
 	  from users
   	 where  1=1
-  	  <if test="username != null" >
-        and username = #{username,jdbcType=VARCHAR}
-      </if>
+       and username = #{username,jdbcType=VARCHAR}
   </select>
 </mapper>

@@ -9,6 +9,8 @@ public interface UserMapper {
 
     int insert(User record);
 
+    int insertAutoPrimaryKey(User record);
+
     int insertSelective(User record);
 
     User selectByPrimaryKey(Long id);
@@ -17,7 +19,7 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-	List<User> selectUserByName(User record);
+	List<User> selectUserByName(String userName);
     
     
 }

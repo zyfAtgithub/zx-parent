@@ -28,6 +28,10 @@ public class UserService {
 	@Autowired
 	UserMapper userDao;
 	
+	public void addUser(User user) {
+		userDao.insertAutoPrimaryKey(user);
+	}
+	
 	/**
 	 * 根据用户名判断用户是否存在
 	 *  
@@ -38,7 +42,7 @@ public class UserService {
 	public boolean existUser(String name) {
 		User param = new User();
 		param.setUsername(name);
-        List<User> userList = userDao.selectUserByName(param);
+        List<User> userList = userDao.selectUserByName(name);
         logger.info(userList.toString());
         if (userList.size() > 0)
             return true;
@@ -56,7 +60,7 @@ public class UserService {
 	public User getUserByName(String name) {
 		User param = new User();
 		param.setUsername(name);
-		List<User> userList = userDao.selectUserByName(param);
+		List<User> userList = userDao.selectUserByName(name);
 		if (!userList.isEmpty()) {
 			return userList.get(0);
 		}

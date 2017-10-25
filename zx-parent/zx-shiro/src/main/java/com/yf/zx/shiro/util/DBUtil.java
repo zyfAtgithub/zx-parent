@@ -2,9 +2,13 @@ package com.yf.zx.shiro.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import org.apache.commons.httpclient.UsernamePasswordCredentials;
+import org.apache.shiro.authc.AuthenticationException;
 
 public class DBUtil {
 
@@ -70,10 +74,44 @@ public class DBUtil {
 		}
 	}
 	
-	
+	public static void queryUser() {
+		Connection conn = DBUtil.getConnection();
+		PreparedStatement pst = null;
+		ResultSet rst = null;
+		String sql = "select username, password, password_salt from users where username = ?";
+		
+		String username = "zyf";
+		String password = "123";
+		String pwd = "";
+		String salt = "";
+		
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, username);
+			rst = pst.executeQuery();
+			if (rst.next()) {
+				pwd = rst.getString(2);
+				salt = rst.getString(3);
+			}
+			else {
+				throw new AuthenticationException();
+			}
+			System.out.println("pwd:" + pwd);
+			System.out.println("salt:" + salt);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			closeConnection(conn, pst, rst);
+		}
+	}
 	
 	public static void main(String[] args) {
 		Connection conn = getConnection();
 		closeConnection(conn, null);
+		
+		queryUser();
 	}
 }

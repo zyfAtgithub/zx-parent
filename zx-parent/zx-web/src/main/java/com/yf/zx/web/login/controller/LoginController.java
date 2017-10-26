@@ -4,9 +4,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.code.kaptcha.Constants;
 import com.yf.zx.biz.sys.user.entity.User;
@@ -16,6 +18,9 @@ import com.yf.zx.biz.sys.user.service.UserService;
 @RequestMapping("/login")
 public class LoginController {
 
+	@Value("#{checkCode}")
+	private boolean checkCode;
+	
 	@Autowired
 	UserService userService;
 	
@@ -24,7 +29,7 @@ public class LoginController {
 		return "login/login";
 	}
 
-	@RequestMapping(value="validateLogin")
+	@RequestMapping(value="validateLogin", method=RequestMethod.POST)
 	public String validateLogin(String userName, String password, String vertifyCode,
 			HttpServletRequest request, Model model) {
 		System.out.println("用户名：" + userName);
@@ -35,8 +40,8 @@ public class LoginController {
 		model.addAttribute("password", password);
 		
 		HttpSession session = request.getSession();
-		String sessionCode = (String)session.getAttribute(Constants.KAPTCHA_SESSION_KEY);  
-		if (!sessionCode.equalsIgnoreCase(vertifyCode)) {
+		String sessionCode = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);  
+		if (checkCode && !vertifyCode.equalsIgnoreCase(sessionCode)) {
 			model.addAttribute("msg", "验证码错误！");
 			return "login/login";
 		}
@@ -48,8 +53,7 @@ public class LoginController {
 			}
 		}
 		
-		model.addAttribute("msg", "你好，欢迎回来！！");
-		return "hello";
+		return "redirect:/hello";
 	}
 	
 	

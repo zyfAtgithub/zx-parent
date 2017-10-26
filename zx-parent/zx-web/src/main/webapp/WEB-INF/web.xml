@@ -91,4 +91,21 @@
 	      <url-pattern>*.css</url-pattern>  
 	</servlet-mapping>   -->
 	<!-- 静态资源 end-->
+	
+    <error-page>  
+        <error-code>403</error-code>  
+        <location>/error.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>404</error-code>  
+        <location>/404.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>405</error-code>  
+        <location>/error.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>500</error-code>  
+        <location>/error.jsp</location>  
+    </error-page> 
 </web-app>  

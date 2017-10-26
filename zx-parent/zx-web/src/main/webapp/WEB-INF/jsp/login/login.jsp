@@ -37,7 +37,7 @@
 <div class="container a ">  
     <div class="row center-vertical">  
         <div class="col-sm-3 col-sm-offset-3 page-container"> 
-		<form class="login-form" method="post" role="form" action="${ctx}/login/validateLogin">
+		<form class="login-form" method="post" role="form" onsubmit="return checkLogin(this);" action="${ctx}/login/validateLogin">
 	  		<div class="input-group" style="margin-bottom: 23px">
 				<span class="input-group-addon">  
 			  		<a class="glyphicon glyphicon-user"></a>  
@@ -48,7 +48,7 @@
 				<span class="input-group-addon">  
        	            <a class="glyphicon glyphicon-lock"></a>
                    </span>
-				<input name="password" type="password" class="form-control  input-lg" placeholder="请输入密码" value="${密码}" >
+				<input name="password" type="password" class="form-control  input-lg" placeholder="请输入密码" value="${password}" >
 			</div>
 			<div class="input-group" style="margin-bottom: 23px">
 			    <span class="input-group-addon">  
@@ -59,7 +59,7 @@
 				  	<img src="${ctx}/code/captcha-image" id="kaptchaImage" />
 			  	</span>
 			</div>
-			<p class="text-danger">${msg }</p>
+			<p class="text-danger" id="loginMsg">${msg }</p>
 			<div class="form-group" style="width:100%">
 				<button class="btn  btn-md btn-primary" style="width:100%">登录</button><br>
 			</div>
@@ -68,71 +68,62 @@
 	</div>
 </div>
 </body>
-<script src='<c:url value="/webResources/js/jquery-2.1.1.min.js"></c:url>' type="text/javascript"></script>
-<%-- <script src="${ctx}/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script> --%>
+<%-- <script src='<c:url value="/webResources/js/jquery-2.1.1.min.js"></c:url>' type="text/javascript"></script>
+ --%>
+ <script src="${ctx}/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 
 $(function(){  //生成验证码         
     $('#kaptchaImage, #captcha').click(function () {  
-    $(this).hide().attr('src', '${ctx}/code/captcha-image?' + Math.floor(Math.random()*100) ).fadeIn(); });      
+    $(this).hide().attr('src', '${ctx}/code/captcha-image?' + Math.floor(Math.random()*100) ).fadeIn(); });     
+	$("#submitBtn").click(function(){
+		alert("提交表单");
+		var name=$("input[name='userName']").val();
+		 var pass=$("input[name='password']").val();
+		 var code=$("input[name='vertifyCode']").val();
+		 if (!name) {
+			 $("#loginMsg").text("请输入用户名！");
+		 	return false;
+		 }
+		 
+		 if (!pass) {
+			 $("#loginMsg").text("请输入密码！");
+		 	return false;
+		 }
+		 
+		 if (!code) {
+			 $("#loginMsg").text("请输入验证码！");
+		 	return false;
+		 }
+	});
 });   
 
-window.onbeforeunload = function(){  
-    //关闭窗口时自动退出  
-    if(event.clientX>360&&event.clientY<0||event.altKey){     
-        alert(parent.document.location);  
-    }  
-};  
   		  
 function changeCode() {  //刷新
     $('#kaptchaImage').hide().attr('src', '${ctx}/code/captcha-image?' + Math.floor(Math.random()*100) ).fadeIn();  
     event.cancelBubble=true;  
 }  
 
-function check_login()
-{
- var name=$("#user_name").val();
- var pass=$("#password").val();
- if(name=="1" && pass=="1")
- {
-  alert("登录成功！");
-  $("#user_name").val("");
-  $("#password").val("");
-
- }
- else
- {
-  $("#login_form").removeClass('shake_effect');  
-  setTimeout(function()
-  {
-   $("#login_form").addClass('shake_effect')
-  },1);  
- }
-}
-function check_register(){
-	var name = $("#r_user_name").val();
-	var pass = $("#r_password").val();
-	var email = $("r_email").val();
-	if(name!="" && pass=="" && email != "")
-	 {
-	  alert("注册成功！");
-	  $("#user_name").val("");
-	  $("#password").val("");
+function checkLogin() {
+	 var name=$("input[name='userName']").val();
+	 var pass=$("input[name='password']").val();
+	 var code=$("input[name='vertifyCode']").val();
+	 if (!name) {
+		 $("#loginMsg").text("请输入用户名！");
+	 	return false;
 	 }
-	 else
-	 {
-	  $("#login_form").removeClass('shake_effect');  
-	  setTimeout(function()
-	  {
-	   $("#login_form").addClass('shake_effect')
-	  },1);  
+	 
+	 if (!pass) {
+		 $("#loginMsg").text("请输入密码！");
+	 	return false;
 	 }
+	 
+	 if (!code) {
+		 $("#loginMsg").text("请输入验证码！");
+	 	return false;
+	 }
+	 
+	 return true;
 }
-$(function(){
-	$("#login").click(function(){
-		check_login();
-		return false;
-	})
-})
 </script>
 </html>

@@ -17,8 +17,6 @@
     <!-- 默认的注解映射的支持 -->  
     <context:annotation-config />  
 
-    <!-- 引入jdbc.properties属性文件 -->
-    <context:property-placeholder location="classpath:jdbc.properties" />
     <!-- ========================================配置数据源========================================= -->
      <!--  数据源配置 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"

@@ -18,8 +18,8 @@ import com.yf.zx.biz.sys.user.service.UserService;
 @RequestMapping("/login")
 public class LoginController {
 
-	@Value("#{checkCode}")
-	private boolean checkCode;
+	@Value("${checkCode}")
+	private String checkCode;
 	
 	@Autowired
 	UserService userService;
@@ -41,7 +41,7 @@ public class LoginController {
 		
 		HttpSession session = request.getSession();
 		String sessionCode = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);  
-		if (checkCode && !vertifyCode.equalsIgnoreCase(sessionCode)) {
+		if ("true".equals(checkCode) && !vertifyCode.equalsIgnoreCase(sessionCode)) {
 			model.addAttribute("msg", "验证码错误！");
 			return "login/login";
 		}

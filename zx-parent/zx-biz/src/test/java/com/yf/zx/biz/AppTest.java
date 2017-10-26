@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -26,7 +27,9 @@ public class AppTest {
 	@Autowired
 	UserService userService;
 
-    
+	@Value("${jdbc.password}")
+    private String pwd;
+	
     @Before
     public void before() {
         logger.info("@Before");
@@ -44,6 +47,7 @@ public class AppTest {
 
     @Test
     public void selectTest() {
+    	System.out.println(pwd);
     	User user = userService.getUserByName("lyf");
     	logger.info(user.toString());
     }

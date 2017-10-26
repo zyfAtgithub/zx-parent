@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.yf.zx.biz.user.entity.User;
-import com.yf.zx.biz.user.service.UserService;
+import com.yf.zx.biz.sys.user.entity.User;
+import com.yf.zx.biz.sys.user.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
@@ -39,21 +39,22 @@ public class AppTest {
 
     @Test
     public void exitTest() {
-        assertEquals(userService.existUser("mahuan2"), true);
+        assertEquals(userService.existUser("admin"), true);
     }
 
     @Test
     public void selectTest() {
-    	User user = userService.getUserByName("mahuan2");
+    	User user = userService.getUserByName("lyf");
     	logger.info(user.toString());
     }
     
     @Test
     public void addUsertest() {
     	User user = new User();
-    	user.setUsername("zyf");
+    	user.setUsername("lyf");
     	user.setPassword("6168db58405a9eab7828e6a47ff73383");//123456
-    	user.setPasswordSalt("28495018162ad6328783c3bde7364346");
+    	user.setSalt("28495018162ad6328783c3bde7364346");
     	userService.addUser(user);
+    	System.out.println(user.getId());
     }
 }

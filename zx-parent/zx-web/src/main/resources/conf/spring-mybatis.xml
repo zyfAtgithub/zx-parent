@@ -65,8 +65,8 @@
     <!-- 自动扫描目录下所有SQL映射的xml文件, -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="mapperLocations" value="classpath:com/yf/zx/biz/user/mapper/*.xml" />
-        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <property name="mapperLocations" value="classpath:com/yf/zx/biz/sys/user/mapper/*.xml" />
+        <property name="configLocation" value="classpath:conf/mybatis-config.xml"></property>
     </bean>
     <!-- 扫描指定包以及子包下的所有映射接口类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

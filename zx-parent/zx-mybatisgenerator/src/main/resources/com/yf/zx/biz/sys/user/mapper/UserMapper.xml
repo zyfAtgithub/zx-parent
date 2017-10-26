@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yf.zx.biz.user.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.yf.zx.biz.user.entity.User" >
+<mapper namespace="com.yf.zx.biz.sys.user.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.yf.zx.biz.sys.user.entity.User" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="password_salt" property="passwordSalt" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="locked" property="locked" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, username, password, password_salt
+    id, username, password, salt, locked
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from users
+    from sys_users
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from users
+    delete from sys_users
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yf.zx.biz.user.entity.User" >
-    insert into users (id, username, password, 
-      password_salt)
+  <insert id="insert" parameterType="com.yf.zx.biz.sys.user.entity.User" >
+    insert into sys_users (id, username, password, 
+      salt, locked)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{passwordSalt,jdbcType=VARCHAR})
+      #{salt,jdbcType=VARCHAR}, #{locked,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.yf.zx.biz.user.entity.User" >
-    insert into users
+  <insert id="insertSelective" parameterType="com.yf.zx.biz.sys.user.entity.User" >
+    insert into sys_users
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -38,8 +39,11 @@
       <if test="password != null" >
         password,
       </if>
-      <if test="passwordSalt != null" >
-        password_salt,
+      <if test="salt != null" >
+        salt,
+      </if>
+      <if test="locked != null" >
+        locked,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -52,13 +56,16 @@
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="passwordSalt != null" >
-        #{passwordSalt,jdbcType=VARCHAR},
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null" >
+        #{locked,jdbcType=BIT},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.user.entity.User" >
-    update users
+  <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.sys.user.entity.User" >
+    update sys_users
     <set >
       <if test="username != null" >
         username = #{username,jdbcType=VARCHAR},
@@ -66,17 +73,28 @@
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="passwordSalt != null" >
-        password_salt = #{passwordSalt,jdbcType=VARCHAR},
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null" >
+        locked = #{locked,jdbcType=BIT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.user.entity.User" >
-    update users
+  <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.sys.user.entity.User" >
+    update sys_users
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      password_salt = #{passwordSalt,jdbcType=VARCHAR}
+      salt = #{salt,jdbcType=VARCHAR},
+      locked = #{locked,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from sys_users
+  	where username = #{username, jdbcType=VARCHAR}
+  </select>
 </mapper>

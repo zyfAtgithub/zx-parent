@@ -1,4 +1,4 @@
-package com.yf.zx.biz.user.entity;
+package com.yf.zx.biz.sys.user.entity;
 
 public class User {
     private Long id;
@@ -7,7 +7,9 @@ public class User {
 
     private String password;
 
-    private String passwordSalt;
+    private String salt;
+
+    private Boolean locked;
 
     public Long getId() {
         return id;
@@ -33,11 +35,19 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getPasswordSalt() {
-        return passwordSalt;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setPasswordSalt(String passwordSalt) {
-        this.passwordSalt = passwordSalt == null ? null : passwordSalt.trim();
+    public void setSalt(String salt) {
+        this.salt = salt == null ? null : salt.trim();
+    }
+
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
     }
 }

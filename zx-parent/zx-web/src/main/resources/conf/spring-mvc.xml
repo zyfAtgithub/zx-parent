@@ -15,7 +15,7 @@
 		<mvc:annotation-driven/>  
 
 		<mvc:default-servlet-handler/>
-		<mvc:resources mapping="/webResources/**" location="/webResources"/>  
+		<!-- <mvc:resources mapping="/webResources/**" location="/webResources"/>   -->
 <!-- 		<mvc:resources location="/webResources/" mapping="/webResources/"/> -->
 
 		<!-- 扫描controller -->

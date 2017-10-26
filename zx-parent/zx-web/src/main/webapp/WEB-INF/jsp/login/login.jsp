@@ -6,109 +6,74 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <%@include file="../common/include.jsp" %>
-<title>登录</title>
+<title>请登录</title>
 
 <style type="text/css">
-	.login-page {
-	  width: 350px;
-	  padding: 10% 0 0;
-	  margin: auto;
-	}
-	.form {
-	  position: relative;
-	  z-index: 1;
-	  background: #FFFFFF;
-	  max-width: 360px;
-	  margin: 0 auto 100px;
-	  padding: 45px;
-	  text-align: center;
-	  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-	}
 	body {
-	  background: #76b852; /* fallback for old browsers */
-	  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-	  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-	  background: -o-linear-gradient(right, #76b852, #8DC26F);
-	  background: linear-gradient(to left, #76b852, #8DC26F);
-	  font-family: "Roboto", sans-serif;
-	  -webkit-font-smoothing: antialiased;
-	  -moz-osx-font-smoothing: grayscale;      
+	    width:100%;  
+	    height:100%;
+	    margin: 0 auto;
+	    background-color: #6b9a3d;
+	    background: url(${ctx}/webResources/images/bg2.jpg);
 	}
-	.shake_effect{
-		-webkit-animation-name: shake;
-		animation-name: shake;
-		-webkit-animation-duration: 1s;
-		animation-duration: 1s;
+	.input-group-addon a {
+		text-decoration: none;
 	}
-	@-webkit-keyframes shake {
-	  from, to {
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-	  }
-
-	  10%, 30%, 50%, 70%, 90% {
-		-webkit-transform: translate3d(-10px, 0, 0);
-		transform: translate3d(-10px, 0, 0);
-	  }
-
-	  20%, 40%, 60%, 80% {
-		-webkit-transform: translate3d(10px, 0, 0);
-		transform: translate3d(10px, 0, 0);
-	  }
+	.input-lg {
+		font-size: 14px;
 	}
-
-	@keyframes shake {
-	  from, to {
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-	  }
-
-	  10%, 30%, 50%, 70%, 90% {
-		-webkit-transform: translate3d(-10px, 0, 0);
-		transform: translate3d(-10px, 0, 0);
-	  }
-
-	  20%, 40%, 60%, 80% {
-		-webkit-transform: translate3d(10px, 0, 0);
-		transform: translate3d(10px, 0, 0);
-	  }
-	}
-	p.center{
-		color: #fff;font-family: "Microsoft YaHei";
+	.page-container {
+	    height: auto;
+	    margin-top: 15%;
+	    margin-bottom: auto;
+	    margin-left: 70%;
 	}
 </style>
 
 </head>
 <body>
-<div class="htmleaf-container">
-	<div class="login-page">
-	  <div id="login_form" class="form">
+<div class="container a ">  
+    <div class="row center-vertical">  
+        <div class="col-sm-3 col-sm-offset-3 page-container"> 
 		<form class="login-form" method="post" role="form" action="${ctx}/login/validateLogin">
-			<div class="form-group" style="margin-bottom: 13px">
-		  		<input type="text"  class="form-control" placeholder="用户名" name="userName" value="${userName}">
+	  		<div class="input-group" style="margin-bottom: 23px">
+				<span class="input-group-addon">  
+			  		<a class="glyphicon glyphicon-user"></a>  
+		       </span> 
+				<input name="userName" type="text" class="form-control  input-lg" placeholder="请输入用户名" value="${userName}" >
 			</div>
-			<div class="form-group" style="margin-bottom: 13px">
-			  <input type="password" class="form-control" placeholder="密码" name="password" value="${password}">
+			<div class="input-group" style="margin-bottom: 23px">
+				<span class="input-group-addon">  
+       	            <a class="glyphicon glyphicon-lock"></a>
+                   </span>
+				<input name="password" type="password" class="form-control  input-lg" placeholder="请输入密码" value="${密码}" >
 			</div>
-			<div class="form-group" style="margin-bottom: 13px">
-			  <input name="vertifyCode" class="form-control" placeholder="验证码" type="text" value="${vertifyCode}" id="kaptcha" maxlength="4" style="width:170px;display: inline" />
-			  	<img src="${ctx}/code/captcha-image" id="kaptchaImage" style="margin-left:5px;" />
+			<div class="input-group" style="margin-bottom: 23px">
+			    <span class="input-group-addon">  
+					<a class="glyphicon glyphicon-check"></a>  
+                </span>
+			  	<input name="vertifyCode" class="form-control input-lg" placeholder="验证码" type="text" value="${vertifyCode}" id="kaptcha" maxlength="4"/>
+			  	<span class="input-group-addon">
+				  	<img src="${ctx}/code/captcha-image" id="kaptchaImage" />
+			  	</span>
 			</div>
-			<p class="text-error">${msg }</p>
+			<p class="text-danger">${msg }</p>
 			<div class="form-group" style="width:100%">
-				<button class="btn btn-success" style="width:50%">登　录</button><br>
+				<button class="btn  btn-md btn-primary" style="width:100%">登录</button><br>
 			</div>
 		</form>
 	  </div>
 	</div>
 </div>
 </body>
-<script src="${ctx}/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src='<c:url value="/webResources/js/jquery-2.1.1.min.js"></c:url>' type="text/javascript"></script>
+<%-- <script src="${ctx}/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script> --%>
 <script type="text/javascript">
 
 $(function(){  //生成验证码         
-    $('#kaptchaImage').click(function () {  
+    $('#kaptchaImage, #captcha').click(function () {  
     $(this).hide().attr('src', '${ctx}/code/captcha-image?' + Math.floor(Math.random()*100) ).fadeIn(); });      
 });   
 

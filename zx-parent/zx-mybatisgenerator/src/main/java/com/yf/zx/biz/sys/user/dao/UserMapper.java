@@ -1,15 +1,13 @@
-package com.yf.zx.biz.user.dao;
+package com.yf.zx.biz.sys.user.dao;
 
 import java.util.List;
 
-import com.yf.zx.biz.user.entity.User;
+import com.yf.zx.biz.sys.user.entity.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Long id);
 
     int insert(User record);
-
-    int insertAutoPrimaryKey(User record);
 
     int insertSelective(User record);
 
@@ -18,8 +16,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
-
-	List<User> selectUserByName(String userName);
     
-    
+    List<User> selectByName(String username);
 }

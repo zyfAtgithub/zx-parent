@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.code.kaptcha.Constants;
-import com.yf.zx.biz.user.model.User;
-import com.yf.zx.biz.user.service.UserService;
+import com.yf.zx.biz.sys.user.entity.User;
+import com.yf.zx.biz.sys.user.service.UserService;
 
 @Controller
 @RequestMapping("/login")
@@ -21,7 +21,6 @@ public class LoginController {
 	
 	@RequestMapping(value="")
 	public String login() {
-		
 		return "login/login";
 	}
 

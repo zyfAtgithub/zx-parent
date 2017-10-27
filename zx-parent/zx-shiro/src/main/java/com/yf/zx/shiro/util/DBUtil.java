@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.apache.commons.httpclient.UsernamePasswordCredentials;
 import org.apache.shiro.authc.AuthenticationException;
 
 public class DBUtil {
@@ -81,7 +80,6 @@ public class DBUtil {
 		String sql = "select username, password, password_salt from users where username = ?";
 		
 		String username = "zyf";
-		String password = "123";
 		String pwd = "";
 		String salt = "";
 		

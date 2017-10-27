@@ -9,13 +9,11 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.service.UserService;
-import com.yf.zx.core.util.conf.SysPropertyConf;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
@@ -28,9 +26,6 @@ public class AppTest {
 	@Autowired
 	UserService userService;
 
-	@Value("${jdbc.password}")
-    private String pwd;
-	
     @Before
     public void before() {
         logger.info("Before");
@@ -60,6 +55,5 @@ public class AppTest {
     	user.setSalt("28495018162ad6328783c3bde7364346");
     	userService.addUser(user);
     	System.out.println(user.getId());
-    	SysPropertyConf conf;
     }
 }

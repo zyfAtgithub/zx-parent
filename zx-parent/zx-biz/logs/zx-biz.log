@@ -4061,3 +4061,116 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 2017-10-27 10:35:38,830  INFO AppTest[40] - @After
 2017-10-27 10:35:38,835  INFO GenericApplicationContext[984] - Closing org.springframework.context.support.GenericApplicationContext@5ce81285: startup date [Fri Oct 27 10:35:37 CST 2017]; root of context hierarchy
 2017-10-27 10:35:38,839  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-10-27 16:07:37,846  INFO DefaultTestContextBootstrapper[260] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-10-27 16:07:37,865  INFO DefaultTestContextBootstrapper[187] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4b9e13df, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b98378d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d057a39, org.springframework.test.context.transaction.TransactionalTestExecutionListener@26be92ad, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4c70fda8]
+2017-10-27 16:07:37,974  INFO XmlBeanDefinitionReader[317] - Loading XML bean definitions from file [F:\zx\zx-parent\zx-biz\target\test-classes\conf\spring-mybatis.xml]
+2017-10-27 16:07:38,194  INFO XmlBeanDefinitionReader[317] - Loading XML bean definitions from file [F:\zx\zx-parent\zx-biz\target\test-classes\conf\spring-service.xml]
+2017-10-27 16:07:38,275  INFO GenericApplicationContext[583] - Refreshing org.springframework.context.support.GenericApplicationContext@5ce81285: startup date [Fri Oct 27 16:07:38 CST 2017]; root of context hierarchy
+2017-10-27 16:07:39,241  INFO DruidDataSource[669] - {dataSource-1} inited
+2017-10-27 16:07:39,634  INFO AppTest[35] - @Before
+2017-10-27 16:07:39,706  INFO AppTest[40] - @After
+2017-10-27 16:07:39,715  INFO GenericApplicationContext[984] - Closing org.springframework.context.support.GenericApplicationContext@5ce81285: startup date [Fri Oct 27 16:07:38 CST 2017]; root of context hierarchy
+2017-10-27 16:07:39,718  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-10-27 17:28:52,878  INFO DefaultTestContextBootstrapper[260] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-10-27 17:28:52,894  INFO DefaultTestContextBootstrapper[187] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4b9e13df, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b98378d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d057a39, org.springframework.test.context.transaction.TransactionalTestExecutionListener@26be92ad, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4c70fda8]
+2017-10-27 17:28:52,986  INFO XmlBeanDefinitionReader[317] - Loading XML bean definitions from file [F:\zx\zx-parent\zx-biz\target\test-classes\conf\spring-mybatis.xml]
+2017-10-27 17:28:53,181  INFO XmlBeanDefinitionReader[317] - Loading XML bean definitions from file [F:\zx\zx-parent\zx-biz\target\test-classes\conf\spring-service.xml]
+2017-10-27 17:28:53,258  INFO GenericApplicationContext[583] - Refreshing org.springframework.context.support.GenericApplicationContext@5ce81285: startup date [Fri Oct 27 17:28:53 CST 2017]; root of context hierarchy
+2017-10-27 17:28:54,056  INFO DruidDataSource[669] - {dataSource-1} inited
+2017-10-27 17:28:54,417  INFO AppTest[36] - @Before
+2017-10-27 17:28:54,477  INFO AppTest[41] - @After
+2017-10-27 17:28:54,485  INFO GenericApplicationContext[984] - Closing org.springframework.context.support.GenericApplicationContext@5ce81285: startup date [Fri Oct 27 17:28:53 CST 2017]; root of context hierarchy
+2017-10-27 17:28:54,487  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-10-27 17:29:22,073  INFO DefaultTestContextBootstrapper[260] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-10-27 17:29:22,097  INFO DefaultTestContextBootstrapper[187] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4c70fda8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@224edc67, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@14acaea5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@46d56d67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@d8355a8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@59fa1d9b]
+2017-10-27 17:29:22,193  INFO XmlBeanDefinitionReader[317] - Loading XML bean definitions from file [F:\zx\zx-parent\zx-biz\target\test-classes\conf\spring-mybatis.xml]
+2017-10-27 17:29:22,381  INFO XmlBeanDefinitionReader[317] - Loading XML bean definitions from file [F:\zx\zx-parent\zx-biz\target\test-classes\conf\spring-service.xml]
+2017-10-27 17:29:22,730  INFO GenericApplicationContext[583] - Refreshing org.springframework.context.support.GenericApplicationContext@2ac273d3: startup date [Fri Oct 27 17:29:22 CST 2017]; root of context hierarchy
+2017-10-27 17:29:23,605  INFO DruidDataSource[669] - {dataSource-1} inited
+2017-10-27 17:29:24,057  INFO AppTest[36] - @Before
+2017-10-27 17:29:24,126  INFO AppTest[41] - @After
+2017-10-27 17:29:24,133  INFO GenericApplicationContext[984] - Closing org.springframework.context.support.GenericApplicationContext@2ac273d3: startup date [Fri Oct 27 17:29:22 CST 2017]; root of context hierarchy
+2017-10-27 17:29:24,135  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-10-27 17:29:49,505  INFO DefaultTestContextBootstrapper[260] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-10-27 17:29:49,530  INFO DefaultTestContextBootstrapper[187] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4c70fda8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@224edc67, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@14acaea5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@46d56d67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@d8355a8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@59fa1d9b]
+2017-10-27 17:29:49,616  INFO XmlBeanDefinitionReader[317] - Loading XML bean definitions from file [F:\zx\zx-parent\zx-biz\target\test-classes\conf\spring-mybatis.xml]
+2017-10-27 17:29:49,824  INFO XmlBeanDefinitionReader[317] - Loading XML bean definitions from file [F:\zx\zx-parent\zx-biz\target\test-classes\conf\spring-service.xml]
+2017-10-27 17:29:49,930  INFO GenericApplicationContext[583] - Refreshing org.springframework.context.support.GenericApplicationContext@2ac273d3: startup date [Fri Oct 27 17:29:49 CST 2017]; root of context hierarchy
+2017-10-27 17:29:50,914  INFO DruidDataSource[669] - {dataSource-1} inited
+2017-10-27 17:29:51,302  INFO AppTest[36] - @Before
+2017-10-27 17:29:51,374  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:29:51,375  INFO AppTest[41] - @After
+2017-10-27 17:29:51,380  INFO GenericApplicationContext[984] - Closing org.springframework.context.support.GenericApplicationContext@2ac273d3: startup date [Fri Oct 27 17:29:49 CST 2017]; root of context hierarchy
+2017-10-27 17:29:51,384  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-10-27 17:31:02,964  INFO DruidDataSource[669] - {dataSource-1} inited
+2017-10-27 17:31:03,291  INFO AppTest[36] - @Before
+2017-10-27 17:31:03,374  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:31:03,375  INFO AppTest[41] - @After
+2017-10-27 17:31:03,381  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-10-27 17:31:31,541  INFO DruidDataSource[669] - {dataSource-1} inited
+2017-10-27 17:31:31,877  INFO AppTest[36] - @Before
+2017-10-27 17:31:31,940  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:31:31,940  INFO AppTest[41] - @After
+2017-10-27 17:31:31,947  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-10-27 17:32:02,453  INFO DruidDataSource[669] - {dataSource-1} inited
+2017-10-27 17:32:02,806  INFO AppTest[36] - @Before
+2017-10-27 17:32:02,869  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:32:02,870  INFO AppTest[41] - @After
+2017-10-27 17:32:02,877  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-10-27 17:32:20,921  INFO AppTest[36] - @Before
+2017-10-27 17:32:20,984  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:32:20,985  INFO AppTest[41] - @After
+2017-10-27 17:33:04,038  INFO AppTest[36] - @Before
+2017-10-27 17:33:04,108  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:33:04,108  INFO AppTest[41] - @After
+2017-10-27 17:33:20,587  INFO AppTest[36] - @Before
+2017-10-27 17:33:20,656  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:33:20,656  INFO AppTest[41] - @After
+2017-10-27 17:33:40,581  INFO AppTest[36] - @Before
+2017-10-27 17:33:40,644  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:33:40,645  INFO AppTest[41] - @After
+2017-10-27 17:33:57,076  INFO AppTest[36] - @Before
+2017-10-27 17:33:57,141  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:33:57,141  INFO AppTest[41] - @After
+2017-10-27 17:34:22,782  INFO AppTest[36] - @Before
+2017-10-27 17:34:22,848  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:34:22,848  INFO AppTest[41] - @After
+2017-10-27 17:34:35,725  INFO AppTest[36] - @Before
+2017-10-27 17:34:35,793  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:34:35,794  INFO AppTest[41] - @After
+2017-10-27 17:35:12,251  INFO AppTest[36] - Before
+2017-10-27 17:35:12,320  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:35:12,321  INFO AppTest[41] - After
+2017-10-27 17:36:05,235  INFO AppTest[36] - Before
+2017-10-27 17:36:05,303  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:36:05,303  INFO AppTest[41] - After
+2017-10-27 17:36:36,684  INFO AppTest[36] - Before
+2017-10-27 17:36:36,777  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:36:36,777  INFO AppTest[41] - After
+2017-10-27 17:36:52,258  INFO AppTest[36] - Before
+2017-10-27 17:36:52,326  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:36:52,327  INFO AppTest[41] - After
+2017-10-27 17:37:09,491  INFO AppTest[36] - Before
+2017-10-27 17:37:09,560  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:37:09,561  INFO AppTest[41] - After
+2017-10-27 17:37:27,119  INFO AppTest[36] - Before
+2017-10-27 17:37:27,184  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:37:27,184  INFO AppTest[41] - After
+2017-10-27 17:37:39,220  INFO AppTest[36] - Before
+2017-10-27 17:37:39,288  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:37:39,288  INFO AppTest[41] - After
+2017-10-27 17:38:12,772  INFO AppTest[36] - Before
+2017-10-27 17:38:12,836  INFO AppTest[53] - User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:38:12,836  INFO AppTest[41] - After
+2017-10-27 17:38:43,100  INFO AppTest[36] Before
+2017-10-27 17:38:43,175  INFO AppTest[53] User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:38:43,175  INFO AppTest[41] After
+2017-10-27 17:38:55,243  INFO AppTest[36] Before
+2017-10-27 17:38:55,332  INFO AppTest[52] User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:38:55,333  INFO AppTest[41] After
+2017-10-27 17:39:34,122  INFO AppTest[36] Before
+2017-10-27 17:39:34,189  INFO AppTest[52] User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:39:34,189  INFO AppTest[41] After
+2017-10-27 17:39:46,691  INFO AppTest[36] Before
+2017-10-27 17:39:46,758  INFO AppTest[52] User [id=1, username=admin, password=25c366affbcf987a50c82ce927f78b67, salt=d41d72f848bb69696dc176f8ea16d694, locked=false]
+2017-10-27 17:39:46,759  INFO AppTest[41] After

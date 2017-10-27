@@ -10,7 +10,6 @@ import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 
 import com.yf.zx.web.shiro.exception.CaptchaException;
 import com.yf.zx.web.shiro.token.UsernamePasswordCaptchaToken;
@@ -18,8 +17,7 @@ import com.yf.zx.web.shiro.token.UsernamePasswordCaptchaToken;
 public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
     private static final Logger logger = LoggerFactory.getLogger(FormAuthenticationCaptchaFilter.class);  
 
-    @Value("${checkCode}")
-    private String checkCode;
+    private boolean vertifyCodeEnabled;
     
     @Override  
     /** 
@@ -29,7 +27,7 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
             ServletResponse response) throws Exception {  
     	UsernamePasswordCaptchaToken token = createToken(request, response);  
         try {
-        	if ("true".equals(checkCode)) {
+        	if (vertifyCodeEnabled) {
         		/*图形验证码验证*/  
         		doCaptchaValidate((HttpServletRequest) request, token);  
         	}
@@ -59,6 +57,14 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
 	 
 	private String captchaParam = DEFAULT_CAPTCHA_PARAM;
  
+	public boolean isVertifyCodeEnabled() {
+		return vertifyCodeEnabled;
+	}
+
+	public void setVertifyCodeEnabled(boolean vertifyCodeEnabled) {
+		this.vertifyCodeEnabled = vertifyCodeEnabled;
+	}
+
 	public String getCaptchaParam() {
 		return captchaParam;
 	}

@@ -34,11 +34,11 @@
                 <constructor-arg>  
                     <props>  
                         <!-- 验证码宽度 -->  
-                        <prop key="kaptcha.image.width">80</prop>  
+                        <prop key="kaptcha.image.width">100</prop>  
                         <!-- 验证码高度 -->  
-                        <prop key="kaptcha.image.height">32</prop>  
+                        <prop key="kaptcha.image.height">33</prop>  
                         <!-- 生成验证码内容范围 -->  
-                        <prop key="kaptcha.textproducer.char.string">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</prop>  
+                        <prop key="kaptcha.textproducer.char.string">23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ</prop>  
                         <!-- 验证码个数 -->  
                         <prop key="kaptcha.textproducer.char.length">4</prop>  
                         <!-- 是否有边框 -->  
@@ -52,12 +52,13 @@
                         <!-- 验证码字体大小 -->  
                         <prop key="kaptcha.textproducer.font.size">30</prop>  
                         <!-- 验证码所属字体样式 -->  
-                        <prop key="kaptcha.textproducer.font.names">>Arial,Arial Narrow,Serif,Helvetica,Tahoma,Times New Roman,Verdana</prop>  
+                        <prop key="kaptcha.textproducer.font.names">微软雅黑</prop>  
 
                         <!-- 干扰线样式 -->  
-                        <prop key="kaptcha.noise.impl">com.yf.zx.web.captcha.impl.Noise</prop>
+                        <prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.NoNoise</prop>
+                        <!-- <prop key="kaptcha.noise.impl">com.yf.zx.web.captcha.impl.Noise</prop> -->
                         <!-- 干扰线颜色 -->  
-                        <prop key="kaptcha.noise.color">red</prop>  
+                        <prop key="kaptcha.noise.color">black</prop>  
                         <!-- 验证码文本字符间距 -->  
                         <prop key="kaptcha.textproducer.char.space">3</prop>  
                         <!-- 图片样式 :阴影-->  
@@ -65,6 +66,17 @@
                     </props>  
                 </constructor-arg>  
             </bean>  
-        </property>  
+        </property> 
     </bean>	
+        
+    <!-- 系统配置 -->
+	<bean id="SysProperties" class="com.yf.zx.core.util.conf.SysPropertyConf">
+	   <property name="ignoreUnresolvablePlaceholders" value="true"/>
+	   <property name="ignoreResourceNotFound" value="true"/>
+	   <property name="locations">
+	       <list>
+	          <value>classpath:config.properties</value>
+	       </list>
+	   </property>
+	</bean>
 </beans>

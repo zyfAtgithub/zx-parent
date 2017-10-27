@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.service.UserService;
+import com.yf.zx.core.util.conf.SysPropertyConf;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
@@ -32,12 +33,12 @@ public class AppTest {
 	
     @Before
     public void before() {
-        logger.info("@Before");
+        logger.info("Before");
     }
 
     @After
     public void after() {
-        logger.info("@After");
+        logger.info("After");
     }
 
     @Test
@@ -47,8 +48,7 @@ public class AppTest {
 
     @Test
     public void selectTest() {
-    	System.out.println(pwd);
-    	User user = userService.getUserByName("lyf");
+    	User user = userService.getUserByName("admin");
     	logger.info(user.toString());
     }
     
@@ -60,5 +60,6 @@ public class AppTest {
     	user.setSalt("28495018162ad6328783c3bde7364346");
     	userService.addUser(user);
     	System.out.println(user.getId());
+    	SysPropertyConf conf;
     }
 }

@@ -1,1 +1,2 @@
-<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+<link href="${ctx}/webResources/plugins/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="${ctx}/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script>

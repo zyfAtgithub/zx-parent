@@ -85,7 +85,9 @@
         <property name="usernameParam" value="userName"/>
         <property name="passwordParam" value="password"/>
         <property name="captchaParam" value="vertifyCode"/>
+        <property name="vertifyCodeEnabled" value="${vertifyCode.Enabled}"/>
         <property name="loginUrl" value="/login"/>
+        <property name="successUrl" value="/"/>
 	</bean>
     <!-- Shiro的Web过滤器 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
@@ -99,7 +101,6 @@
         </property>
         <property name="filterChainDefinitions">
             <value>
-                /index.jsp = anon
                 /logout = logout
                 /webResources/** = anon
                 /code/captcha-image = anon

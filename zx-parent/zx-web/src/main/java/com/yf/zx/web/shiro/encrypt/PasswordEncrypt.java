@@ -54,7 +54,7 @@ public class PasswordEncrypt {
     }
     
     public static void main(String[] args) {
-    	User user = new PasswordEncrypt().encrypt("zyf", "123456");
+    	User user = new PasswordEncrypt().encrypt("admin", "qazxsw123.");
 		System.out.println(user);
 	}
     

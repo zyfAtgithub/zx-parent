@@ -7,27 +7,28 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.yf.zx.biz.sys.user.service.UserService;
+import com.yf.zx.core.util.conf.SysPropertyConf;
 import com.yf.zx.web.shiro.exception.CaptchaException;
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 
-	@Value("${checkCode}")
-	private String checkCode;
-	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	SysPropertyConf conf;
 	
 	@RequestMapping(value="")
 	public String login(HttpServletRequest req, Model model) {
         String exceptionClassName = (String) req.getAttribute("shiroLoginFailure");
+        req.setAttribute("vertifyCodeEnabled", conf.getProperty("vertifyCode.Enabled"));  
         String error = null;
         if(CaptchaException.class.getName().equals(exceptionClassName)) {
             error = "验证码错误！";
@@ -46,4 +47,5 @@ public class LoginController {
         
 		return "login/login";
 	}
+
 }

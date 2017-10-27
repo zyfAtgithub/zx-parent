@@ -38,27 +38,33 @@
     <div class="row center-vertical">  
         <div class="col-sm-3 col-sm-offset-3 page-container"> 
 		<form class="login-form" method="post" role="form" onsubmit="return checkLogin(this);" action="${ctx}/login">
-	  		<div class="input-group" style="margin-bottom: 23px">
+	  		<div class="input-group" style="margin-bottom: 15px">
 				<span class="input-group-addon">  
 			  		<a class="glyphicon glyphicon-user"></a>  
 		       </span> 
-				<input name="userName" type="text" class="form-control  input-lg" placeholder="请输入用户名" value="${userName}" >
+				<input name="userName" type="text" class="form-control" placeholder="请输入用户名" value="${userName}" >
 			</div>
-			<div class="input-group" style="margin-bottom: 23px">
+			<div class="input-group" style="margin-bottom: 15px">
 				<span class="input-group-addon">  
        	            <a class="glyphicon glyphicon-lock"></a>
                    </span>
-				<input name="password" type="password" class="form-control  input-lg" placeholder="请输入密码" value="${password}" >
+				<input name="password" type="password" class="form-control" placeholder="请输入密码" value="${password}" >
 			</div>
-			<div class="input-group" style="margin-bottom: 23px">
-			    <span class="input-group-addon">  
-					<a class="glyphicon glyphicon-check"></a>  
-                </span>
-			  	<input name="vertifyCode" class="form-control input-lg" placeholder="验证码" type="text" value="${vertifyCode}" id="kaptcha" maxlength="4"/>
-			  	<span class="input-group-addon">
-				  	<img src="${ctx}/code/captcha-image" id="kaptchaImage" />
-			  	</span>
-			</div>
+			<c:if test="${vertifyCodeEnabled }">
+				<div class="row">
+					<div class="col-lg-7" style="padding-right: 0px;">
+				      <div class="input-group" style="margin-bottom: 15px">
+					    <span class="input-group-addon">  
+							<a class="glyphicon glyphicon-check"></a>  
+		                </span>
+					  	<input name="vertifyCode" class="form-control" placeholder="验证码" type="text" value="${vertifyCode}" id="kaptcha" maxlength="4"/>
+					  </div>
+				    </div>
+				    <div class="col-lg-5" style="padding-left: 5px;">
+						<img src="${ctx}/code/captcha-image" id="kaptchaImage" />
+					</div>
+				</div>
+			</c:if>
 			<p class="text-danger" id="loginMsg">${error }</p>
 			<div class="form-group" style="width:100%">
 				<button class="btn  btn-md btn-primary" style="width:100%">登录</button><br>
@@ -70,32 +76,13 @@
 </body>
 <%-- <script src='<c:url value="/webResources/js/jquery-2.1.1.min.js"></c:url>' type="text/javascript"></script>
  --%>
- <script src="${ctx}/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 
-$(function(){  //生成验证码         
+$(function(){ 
+	//生成验证码         
     $('#kaptchaImage, #captcha').click(function () {  
-    $(this).hide().attr('src', '${ctx}/code/captcha-image?' + Math.floor(Math.random()*100) ).fadeIn(); });     
-	$("#submitBtn").click(function(){
-		alert("提交表单");
-		var name=$("input[name='userName']").val();
-		 var pass=$("input[name='password']").val();
-		 var code=$("input[name='vertifyCode']").val();
-		 if (!name) {
-			 $("#loginMsg").text("请输入用户名！");
-		 	return false;
-		 }
-		 
-		 if (!pass) {
-			 $("#loginMsg").text("请输入密码！");
-		 	return false;
-		 }
-		 
-		 if (!code) {
-			 $("#loginMsg").text("请输入验证码！");
-		 	return false;
-		 }
-	});
+    	$(this).attr('src', '${ctx}/code/captcha-image?' + new Date().getTime() );
+ 	});     
 });   
 
   		  
@@ -117,8 +104,8 @@ function checkLogin() {
 		 $("#loginMsg").text("请输入密码！");
 	 	return false;
 	 }
-	 
-	 if (!code) {
+	
+	 if ( 'true' == '${vertifyCodeEnabled }' && !code) {
 		 $("#loginMsg").text("请输入验证码！");
 	 	return false;
 	 }

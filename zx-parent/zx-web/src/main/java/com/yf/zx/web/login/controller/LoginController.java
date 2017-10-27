@@ -1,18 +1,19 @@
 package com.yf.zx.web.login.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.authc.ExcessiveAttemptsException;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.LockedAccountException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.google.code.kaptcha.Constants;
-import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.service.UserService;
+import com.yf.zx.web.shiro.exception.CaptchaException;
 
 @Controller
 @RequestMapping("/login")
@@ -25,36 +26,24 @@ public class LoginController {
 	UserService userService;
 	
 	@RequestMapping(value="")
-	public String login() {
+	public String login(HttpServletRequest req, Model model) {
+        String exceptionClassName = (String) req.getAttribute("shiroLoginFailure");
+        String error = null;
+        if(CaptchaException.class.getName().equals(exceptionClassName)) {
+            error = "验证码错误！";
+        } else if(UnknownAccountException.class.getName().equals(exceptionClassName)) {
+            error = "用户名/密码错误！";
+        } else if(IncorrectCredentialsException.class.getName().equals(exceptionClassName)) {
+            error = "用户名/密码错误！";
+        } else if (LockedAccountException.class.getName().equals(exceptionClassName)) {
+        	error = "账号已锁定！";
+		} else if (ExcessiveAttemptsException.class.getName().equals(exceptionClassName)) {
+			error = "错误次数达到上限，请稍后再试！";
+		} else if(exceptionClassName != null) {
+            error = "其他错误：" + exceptionClassName;
+        }
+        model.addAttribute("error", error);
+        
 		return "login/login";
 	}
-
-	@RequestMapping(value="validateLogin", method=RequestMethod.POST)
-	public String validateLogin(String userName, String password, String vertifyCode,
-			HttpServletRequest request, Model model) {
-		System.out.println("用户名：" + userName);
-		System.out.println("密码：" + password);
-		System.out.println("验证码：" + vertifyCode);
-		
-		model.addAttribute("userName", userName);
-		model.addAttribute("password", password);
-		
-		HttpSession session = request.getSession();
-		String sessionCode = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);  
-		if ("true".equals(checkCode) && !vertifyCode.equalsIgnoreCase(sessionCode)) {
-			model.addAttribute("msg", "验证码错误！");
-			return "login/login";
-		}
-		else {
-			User user = userService.getUserByName(userName);
-			if (user == null || !password.equals(user.getPassword())) {
-				model.addAttribute("msg", "用户名或密码错误！");
-				return "login/login";
-			}
-		}
-		
-		return "redirect:/hello";
-	}
-	
-	
 }

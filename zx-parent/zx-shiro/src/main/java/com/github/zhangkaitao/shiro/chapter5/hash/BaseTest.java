@@ -36,6 +36,8 @@ public abstract class BaseTest {
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
 
         subject.login(token);
+        boolean succ = subject.isAuthenticated();
+        System.out.println("登录成功？" + succ);
     }
 
     public Subject subject() {

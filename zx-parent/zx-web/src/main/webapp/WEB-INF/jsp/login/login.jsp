@@ -37,7 +37,7 @@
 <div class="container a ">  
     <div class="row center-vertical">  
         <div class="col-sm-3 col-sm-offset-3 page-container"> 
-		<form class="login-form" method="post" role="form" onsubmit="return checkLogin(this);" action="${ctx}/login/validateLogin">
+		<form class="login-form" method="post" role="form" onsubmit="return checkLogin(this);" action="${ctx}/login">
 	  		<div class="input-group" style="margin-bottom: 23px">
 				<span class="input-group-addon">  
 			  		<a class="glyphicon glyphicon-user"></a>  
@@ -59,7 +59,7 @@
 				  	<img src="${ctx}/code/captcha-image" id="kaptchaImage" />
 			  	</span>
 			</div>
-			<p class="text-danger" id="loginMsg">${msg }</p>
+			<p class="text-danger" id="loginMsg">${error }</p>
 			<div class="form-group" style="width:100%">
 				<button class="btn  btn-md btn-primary" style="width:100%">登录</button><br>
 			</div>

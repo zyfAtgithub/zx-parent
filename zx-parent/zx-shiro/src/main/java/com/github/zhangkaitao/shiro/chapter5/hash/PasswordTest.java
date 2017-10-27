@@ -77,15 +77,15 @@ public class PasswordTest extends BaseTest {
 
     }
 
-    @Test(expected = ExcessiveAttemptsException.class)
+    @Test//(expected = ExcessiveAttemptsException.class)
     public void testRetryLimitHashedCredentialsMatcherWithMyRealm() {
-        for(int i = 1; i <= 6; i++) {
-            try {
-                login("classpath:chapt5/shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "2344");
-            } catch (Exception e) {
-            	System.out.println("第" + i + "登录失败！");
-            }
-        }
-        login("classpath:chapt5/shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
+//        for(int i = 1; i <= 6; i++) {
+//            try {
+//                login("classpath:chapt5/shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "123");
+//            } catch (Exception e) {
+//            	System.out.println("第" + i + "登录失败！");
+//            }
+//        }
+        login("classpath:chapt5/shiro-retryLimitHashedCredentialsMatcher.ini", "zyf", "123456");
     }
 }

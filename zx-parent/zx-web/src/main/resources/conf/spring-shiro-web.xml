@@ -76,12 +76,17 @@
     </bean>
 
     <!-- 基于Form表单的身份验证过滤器 -->
-    <bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
+<!--     <bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
         <property name="usernameParam" value="username"/>
         <property name="passwordParam" value="password"/>
         <property name="loginUrl" value="/login"/>
-    </bean>
-
+    </bean> -->
+	<bean id="formAuthenticationCaptchaFilter" class="com.yf.zx.web.shiro.filter.FormAuthenticationCaptchaFilter">
+        <property name="usernameParam" value="userName"/>
+        <property name="passwordParam" value="password"/>
+        <property name="captchaParam" value="vertifyCode"/>
+        <property name="loginUrl" value="/login"/>
+	</bean>
     <!-- Shiro的Web过滤器 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
@@ -89,16 +94,16 @@
         <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
         <property name="filters">
             <util:map>
-                <entry key="authc" value-ref="formAuthenticationFilter"/>
+                <entry key="authc" value-ref="formAuthenticationCaptchaFilter"/>
             </util:map>
         </property>
         <property name="filterChainDefinitions">
             <value>
                 /index.jsp = anon
-                /unauthorized.jsp = anon
-                /login.jsp = authc
                 /logout = logout
-                /** = user
+                /webResources/** = anon
+                /code/captcha-image = anon
+                /** = authc
             </value>
         </property>
     </bean>

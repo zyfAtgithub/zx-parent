@@ -12,9 +12,14 @@ import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.service.UserService;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * UserRealm 
+ *  
+ * @author zhang.yifeng
+ * @CreateDate 2017年10月27日
+ * @version 1.0.0
+ * @since  1.0.0 
+ * @see com.yf.zx.web.shiro.realm 
+ *
  */
 public class UserRealm extends AuthorizingRealm {
 
@@ -51,7 +56,7 @@ public class UserRealm extends AuthorizingRealm {
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 user.getUsername(), //用户名
                 user.getPassword(), //密码
-                ByteSource.Util.bytes(user.getSalt()),//salt=username+salt
+                ByteSource.Util.bytes(user.getUsername() + user.getSalt()),//salt=username+salt
                 getName()  //realm name
         );
         return authenticationInfo;

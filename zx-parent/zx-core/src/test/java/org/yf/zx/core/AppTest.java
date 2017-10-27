@@ -33,7 +33,6 @@ public class AppTest
      */
     public void testApp()
     {
-    	com.yf.zx.core.util.conf.SysPropertyConf conf;
         assertTrue( true );
     }
 }

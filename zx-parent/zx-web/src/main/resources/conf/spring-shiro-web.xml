@@ -99,11 +99,13 @@
                 <entry key="authc" value-ref="formAuthenticationCaptchaFilter"/>
             </util:map>
         </property>
+        <!-- favicon.ico配置匿名访问 -->
         <property name="filterChainDefinitions">
             <value>
                 /logout = logout
                 /webResources/** = anon
                 /code/captcha-image = anon
+                /favicon.ico = anon
                 /** = authc
             </value>
         </property>

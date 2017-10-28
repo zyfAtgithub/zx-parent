@@ -50,7 +50,7 @@ public class AppTest {
     @Test
     public void addUsertest() {
     	User user = new User();
-    	user.setUsername("lyf");
+    	user.setUsername("admin");
     	user.setPassword("6168db58405a9eab7828e6a47ff73383");//123456
     	user.setSalt("28495018162ad6328783c3bde7364346");
     	userService.addUser(user);

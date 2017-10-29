@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Full Layout - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="webResources/plugins/jquery-easyui-1.5.3/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="webResources/plugins/jquery-easyui-1.5.3/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="webResources/plugins/jquery-easyui-1.5.3/demo/demo.css">
+	<script type="text/javascript" src="webResources/plugins/jquery-easyui-1.5.3/jquery.min.js"></script>
+	<script type="text/javascript" src="webResources/plugins/jquery-easyui-1.5.3/jquery.easyui.min.js"></script>
+	<style>
+		.footer {
+		width: 100%;
+		text-align: center;
+		line-height: 35px;
+		}
+		.top-bg {
+			background-color: #d8e4fe;
+			height: 80px;
+		}
+	</style>
+	<script type="text/javascript">
+	</script>
+</head>
+<body class="easyui-layout">
+
+	<!-- 页面北部，页面标题 -->
+	<div data-options="region:'north',border:true,split:false" style="overflow: hidden; height: 80px;border-top:none">
+		<div class="top-bg"></div>
+	</div>
+	
+	<!-- 页面西部，菜单 -->
+	<div data-options="region:'west',title:'菜单栏',border:true,split:false" style="width:200px;">
+		<div id="aa" class="easyui-accordion" style="position: absolute; top: 27px; left: 0px; right: 0px; bottom: 0px;">
+		<div title="博文管理" iconcls="icon-save" style="overflow: auto; padding: 10px;">
+		<ul class="easyui-tree">
+		<li>
+		<span>Folder</span>
+		<ul>
+		<li>
+		<span>Sub Folder 1</span>
+		<ul>
+		<li>
+		<span><a target="mainFrame" href="http://www.baidu.com">审核博客</a></span>
+		</li>
+		<li>
+		<span><a href="#">File 12</a></span>
+		</li>
+		<li>
+		<span>File 13</span>
+		</li>
+		</ul>
+		</li>
+		<li>
+		<span>File 2</span>
+		</li>
+		<li>
+		<span>File 3</span>
+		</li>
+		</ul>
+		</li>
+		<li>
+		<span><a href="#">File21</a></span>
+		</li>
+		</ul>
+		</div>
+		<div title="新闻管理" iconcls="icon-reload" selected="true" style="padding: 10px;">
+		content2 
+		</div>
+		<div title="资源管理">
+		content3 
+		</div>
+		</div>
+	</div>
+	<div data-options="region:'south',border:false,split:false" style="overflow: hidden; height: 40px;">south region</div>
+	<div class="footer">版权所有：<a href="http://www.kwstu.com">益峰工作室</a></div>
+	
+	<!-- 页面中部，主要内容 -->
+	<div id="mainPanle" data-options="region:'center',border:false,split:false"
+	 class="easyui-tabs" style="overflow: hidden;">
+		<div title="欢迎使用" data-options = "iconCls:'icon-mini-refresh',fit:true,border:false,closable: true" id="home">
+		<h1>Welcome to jQuery UI!</h1>
+		</div>
+		</div>
+		<!-- <div title="首页" data-options="closable:true" style="padding:10px">
+			
+		</div>
+		<div title="用户管理" data-options="closable:true" style="padding:10px">
+			<ul class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true">史诗</ul>
+		</div> -->
+	</div>
+</body>
+</html>

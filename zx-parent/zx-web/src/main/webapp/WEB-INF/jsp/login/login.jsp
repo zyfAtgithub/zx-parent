@@ -14,8 +14,8 @@
 	    width:100%;  
 	    height:100%;
 	    margin: 0 auto;
-	    background-color: #6b9a3d;
-	    background: url(${ctx}/webResources/images/bg2.jpg);
+	    /* background-color: #6b9a3d; */
+	   background: url(${ctx}/webResources/images/bg2.jpg);
 	}
 	.input-group-addon a {
 		text-decoration: none;
@@ -29,13 +29,23 @@
 	    margin-bottom: auto;
 	    margin-left: 70%;
 	}
+	
+	#logindev{
+	  position: absolute;
+	  top: 50%;
+	  -webkit-transform: translateY(-50%);
+	  -moz-transform:  translateY(-50%);
+	  -ms-transform:  translateY(-50%);
+	  -o-transform:  translateY(-50%);
+	  transform:  translateY(-50%);
+	}
 </style>
 
 </head>
 <body>
 <div class="container a ">  
     <div class="row center-vertical">  
-        <div class="col-sm-3 col-sm-offset-3 page-container"> 
+        <div class="col-sm-3 col-sm-offset-4 " id="logindev"> 
 		<form class="login-form" method="post" role="form" onsubmit="return checkLogin(this);" action="${ctx}/login">
 	  		<div class="input-group" style="margin-bottom: 15px">
 				<span class="input-group-addon">  

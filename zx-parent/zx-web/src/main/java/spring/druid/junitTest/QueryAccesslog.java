@@ -7,7 +7,6 @@ import java.sql.SQLException;
  * QueryAccesslog 
  *  
  * @author zhang.yifeng
- * @CreateDate 2017年9月25日
  * @version 1.0.0
  * @since  1.0.0 
  * @see spring.druid.junitTest 

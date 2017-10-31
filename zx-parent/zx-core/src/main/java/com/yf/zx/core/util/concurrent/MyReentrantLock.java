@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * MyReentrantLock 可重入的互斥锁定 Lock
  *  
  * @author zhang.yifeng
- * @CreateDate 2017年8月8日
+ *  2017年8月8日
  * @version 1.0.0
  * @since  1.0.0 
  * @see com.yf.zx.core.util.concurrent 

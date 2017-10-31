@@ -1,0 +1,851 @@
+[2017-10-10 11:11:03]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b71769e: startup date [Tue Oct 10 11:11:03 CST 2017]; root of context hierarchy
+[2017-10-10 11:11:03]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:11:04]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:11:05]Loaded JDBC driver: com.mysql.jdbc.Driver
+[2017-10-10 11:11:06]@Before
+[2017-10-10 11:11:07][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-10-10 11:11:07]@After
+[2017-10-10 11:11:48]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b71769e: startup date [Tue Oct 10 11:11:48 CST 2017]; root of context hierarchy
+[2017-10-10 11:11:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:11:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:11:49]Loaded JDBC driver: com.mysql.jdbc.Driver
+[2017-10-10 11:11:49]@Before
+[2017-10-10 11:11:50][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-10-10 11:11:50]@After
+[2017-10-10 11:12:11]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b71769e: startup date [Tue Oct 10 11:12:11 CST 2017]; root of context hierarchy
+[2017-10-10 11:12:11]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:12:11]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:12:12]Loaded JDBC driver: com.mysql.jdbc.Driver
+[2017-10-10 11:12:12]@Before
+[2017-10-10 11:12:12][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-10-10 11:12:12]@After
+[2017-10-10 11:16:13]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7c75222b: startup date [Tue Oct 10 11:16:13 CST 2017]; root of context hierarchy
+[2017-10-10 11:16:13]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:16:13]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:16:14]Loaded JDBC driver: com.mysql.jdbc.Driver
+[2017-10-10 11:16:14]@Before
+[2017-10-10 11:16:14]@After
+[2017-10-10 11:18:32]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7c75222b: startup date [Tue Oct 10 11:18:32 CST 2017]; root of context hierarchy
+[2017-10-10 11:18:32]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:18:33]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:18:34]{dataSource-1} inited
+[2017-10-10 11:18:34]@Before
+[2017-10-10 11:18:34]@After
+[2017-10-10 11:20:00]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b71769e: startup date [Tue Oct 10 11:20:00 CST 2017]; root of context hierarchy
+[2017-10-10 11:20:00]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:20:00]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:20:01]{dataSource-1} inited
+[2017-10-10 11:20:02]@Before
+[2017-10-10 11:20:02][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-10-10 11:20:02]@After
+[2017-10-10 11:20:02]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3eb91815: startup date [Tue Oct 10 11:20:02 CST 2017]; root of context hierarchy
+[2017-10-10 11:20:02]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:20:02]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:20:02]{dataSource-2} inited
+[2017-10-10 11:20:02]@Before
+[2017-10-10 11:20:02]@After
+[2017-10-10 11:26:17]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 11:26:18]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4b9e13df, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b98378d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d057a39, org.springframework.test.context.transaction.TransactionalTestExecutionListener@26be92ad, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4c70fda8]
+[2017-10-10 11:26:18]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:26:18]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:26:18]Refreshing org.springframework.context.support.GenericApplicationContext@78c03f1f: startup date [Tue Oct 10 11:26:18 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:19]{dataSource-1} inited
+[2017-10-10 11:26:19]Began transaction (1) for test context [DefaultTestContext@119cbf96 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@71329995, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13df2a8c testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@768fc0f2]; rollback [true]
+[2017-10-10 11:26:19]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@74a6f9c1: startup date [Tue Oct 10 11:26:19 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:19]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:26:19]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:26:19]{dataSource-2} inited
+[2017-10-10 11:26:19]@Before
+[2017-10-10 11:26:20]@After
+[2017-10-10 11:26:20]Rolled back transaction for test context [DefaultTestContext@119cbf96 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@71329995, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13df2a8c testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 11:26:20]Closing org.springframework.context.support.GenericApplicationContext@78c03f1f: startup date [Tue Oct 10 11:26:18 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:20]{dataSource-1} closed
+[2017-10-10 11:26:41]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 11:26:41]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4b9e13df, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b98378d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d057a39, org.springframework.test.context.transaction.TransactionalTestExecutionListener@26be92ad, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4c70fda8]
+[2017-10-10 11:26:41]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:26:41]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:26:41]Refreshing org.springframework.context.support.GenericApplicationContext@78c03f1f: startup date [Tue Oct 10 11:26:41 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:42]{dataSource-1} inited
+[2017-10-10 11:26:42]Began transaction (1) for test context [DefaultTestContext@119cbf96 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@71329995, testMethod = exitTest@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13df2a8c testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@768fc0f2]; rollback [true]
+[2017-10-10 11:26:42]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@74a6f9c1: startup date [Tue Oct 10 11:26:42 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:42]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:26:43]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:26:43]{dataSource-2} inited
+[2017-10-10 11:26:43]@Before
+[2017-10-10 11:26:43][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-10-10 11:26:43]@After
+[2017-10-10 11:26:43]Rolled back transaction for test context [DefaultTestContext@119cbf96 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@71329995, testMethod = exitTest@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13df2a8c testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 11:26:43]Closing org.springframework.context.support.GenericApplicationContext@78c03f1f: startup date [Tue Oct 10 11:26:41 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:43]{dataSource-1} closed
+[2017-10-10 11:26:55]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 11:26:55]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4b9e13df, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b98378d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d057a39, org.springframework.test.context.transaction.TransactionalTestExecutionListener@26be92ad, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4c70fda8]
+[2017-10-10 11:26:55]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:26:56]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:26:56]Refreshing org.springframework.context.support.GenericApplicationContext@78c03f1f: startup date [Tue Oct 10 11:26:56 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:56]{dataSource-1} inited
+[2017-10-10 11:26:57]Began transaction (1) for test context [DefaultTestContext@119cbf96 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@71329995, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13df2a8c testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@768fc0f2]; rollback [true]
+[2017-10-10 11:26:57]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@74a6f9c1: startup date [Tue Oct 10 11:26:57 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:57]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:26:57]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:26:57]{dataSource-2} inited
+[2017-10-10 11:26:57]@Before
+[2017-10-10 11:26:57]@After
+[2017-10-10 11:26:57]Rolled back transaction for test context [DefaultTestContext@119cbf96 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@71329995, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13df2a8c testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 11:26:57]Closing org.springframework.context.support.GenericApplicationContext@78c03f1f: startup date [Tue Oct 10 11:26:56 CST 2017]; root of context hierarchy
+[2017-10-10 11:26:57]{dataSource-1} closed
+[2017-10-10 11:27:34]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 11:27:34]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@18be83e4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@cb5822, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b9e13df, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b98378d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@475530b9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1d057a39]
+[2017-10-10 11:27:35]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:27:35]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:27:35]Refreshing org.springframework.context.support.GenericApplicationContext@52a86356: startup date [Tue Oct 10 11:27:35 CST 2017]; root of context hierarchy
+[2017-10-10 11:27:36]{dataSource-1} inited
+[2017-10-10 11:27:36]Began transaction (1) for test context [DefaultTestContext@59cba5a testClass = AppTest, testInstance = com.founder.datacenter.AppTest@1bd39d3c, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@4808bc9b testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@6f19ac19]; rollback [true]
+[2017-10-10 11:27:36]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@8e50104: startup date [Tue Oct 10 11:27:36 CST 2017]; root of context hierarchy
+[2017-10-10 11:27:37]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:27:37]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:27:37]{dataSource-2} inited
+[2017-10-10 11:27:37]@Before
+[2017-10-10 11:27:37]@After
+[2017-10-10 11:27:37]Rolled back transaction for test context [DefaultTestContext@59cba5a testClass = AppTest, testInstance = com.founder.datacenter.AppTest@1bd39d3c, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@4808bc9b testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 11:27:37]Closing org.springframework.context.support.GenericApplicationContext@52a86356: startup date [Tue Oct 10 11:27:35 CST 2017]; root of context hierarchy
+[2017-10-10 11:27:37]{dataSource-1} closed
+[2017-10-10 11:28:45]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 11:28:45]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6767c1fc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@29ee9faa, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@c038203, org.springframework.test.context.support.DirtiesContextTestExecutionListener@cc285f4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@55f3ddb1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@8bd1b6a]
+[2017-10-10 11:28:45]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:28:45]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:28:45]Refreshing org.springframework.context.support.GenericApplicationContext@71318ec4: startup date [Tue Oct 10 11:28:45 CST 2017]; root of context hierarchy
+[2017-10-10 11:28:46]{dataSource-1} inited
+[2017-10-10 11:28:46]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@471a9022: startup date [Tue Oct 10 11:28:46 CST 2017]; root of context hierarchy
+[2017-10-10 11:28:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 11:28:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 11:28:47]{dataSource-2} inited
+[2017-10-10 11:28:47]@Before
+[2017-10-10 11:28:47]@After
+[2017-10-10 11:28:47]Closing org.springframework.context.support.GenericApplicationContext@71318ec4: startup date [Tue Oct 10 11:28:45 CST 2017]; root of context hierarchy
+[2017-10-10 11:28:47]{dataSource-1} closed
+[2017-10-10 12:17:18]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:17:18]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c7fa833, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@39aeed2f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@724af044, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4678c730, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6767c1fc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@29ee9faa]
+[2017-10-10 12:17:18]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:17:18]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:17:18]Refreshing org.springframework.context.support.GenericApplicationContext@2038ae61: startup date [Tue Oct 10 12:17:18 CST 2017]; root of context hierarchy
+[2017-10-10 12:17:19]{dataSource-1} inited
+[2017-10-10 12:17:20]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3cfdd820: startup date [Tue Oct 10 12:17:20 CST 2017]; root of context hierarchy
+[2017-10-10 12:17:20]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:17:20]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:17:20]{dataSource-2} inited
+[2017-10-10 12:17:20]@Before
+[2017-10-10 12:17:20]@After
+[2017-10-10 12:17:20]Closing org.springframework.context.support.GenericApplicationContext@2038ae61: startup date [Tue Oct 10 12:17:18 CST 2017]; root of context hierarchy
+[2017-10-10 12:17:20]{dataSource-1} closed
+[2017-10-10 12:17:31]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:17:31]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@482f8f11, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1593948d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1b604f19, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7823a2f9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4cc0edeb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@457e2f02]
+[2017-10-10 12:17:31]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:17:31]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:17:31]Refreshing org.springframework.context.support.GenericApplicationContext@10bdf5e5: startup date [Tue Oct 10 12:17:31 CST 2017]; root of context hierarchy
+[2017-10-10 12:17:32]{dataSource-1} inited
+[2017-10-10 12:17:32]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77659b30: startup date [Tue Oct 10 12:17:32 CST 2017]; root of context hierarchy
+[2017-10-10 12:17:32]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:17:32]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:17:33]{dataSource-2} inited
+[2017-10-10 12:17:33]@Before
+[2017-10-10 12:17:33][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-10-10 12:17:33]@After
+[2017-10-10 12:17:33]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@479ceda0: startup date [Tue Oct 10 12:17:33 CST 2017]; root of context hierarchy
+[2017-10-10 12:17:33]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:17:33]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:17:33]{dataSource-3} inited
+[2017-10-10 12:17:33]@Before
+[2017-10-10 12:17:33]@After
+[2017-10-10 12:17:33]Closing org.springframework.context.support.GenericApplicationContext@10bdf5e5: startup date [Tue Oct 10 12:17:31 CST 2017]; root of context hierarchy
+[2017-10-10 12:17:33]{dataSource-1} closed
+[2017-10-10 12:21:06]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:21:06]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@482f8f11, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1593948d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1b604f19, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7823a2f9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4cc0edeb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@457e2f02]
+[2017-10-10 12:21:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:21:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:21:07]Refreshing org.springframework.context.support.GenericApplicationContext@10bdf5e5: startup date [Tue Oct 10 12:21:07 CST 2017]; root of context hierarchy
+[2017-10-10 12:21:08]{dataSource-1} inited
+[2017-10-10 12:21:08]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ec9bd38: startup date [Tue Oct 10 12:21:08 CST 2017]; root of context hierarchy
+[2017-10-10 12:21:08]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:21:08]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:21:08]{dataSource-2} inited
+[2017-10-10 12:21:09]@Before
+[2017-10-10 12:21:09][User [id=1, name=mahuan2, password=111, lastlogintime=Tue Sep 26 17:31:09 CST 2017]]
+[2017-10-10 12:21:09]@After
+[2017-10-10 12:21:09]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@38ba6ce3: startup date [Tue Oct 10 12:21:09 CST 2017]; root of context hierarchy
+[2017-10-10 12:21:09]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:21:09]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:21:09]{dataSource-3} inited
+[2017-10-10 12:21:09]@Before
+[2017-10-10 12:21:09]@After
+[2017-10-10 12:21:09]Closing org.springframework.context.support.GenericApplicationContext@10bdf5e5: startup date [Tue Oct 10 12:21:07 CST 2017]; root of context hierarchy
+[2017-10-10 12:21:09]{dataSource-1} closed
+[2017-10-10 12:22:25]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:22:25]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c7fa833, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@39aeed2f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@724af044, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4678c730, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6767c1fc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@29ee9faa]
+[2017-10-10 12:22:25]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:22:25]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:22:25]Refreshing org.springframework.context.support.GenericApplicationContext@2038ae61: startup date [Tue Oct 10 12:22:25 CST 2017]; root of context hierarchy
+[2017-10-10 12:22:26]{dataSource-1} inited
+[2017-10-10 12:22:27]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e25951c: startup date [Tue Oct 10 12:22:27 CST 2017]; root of context hierarchy
+[2017-10-10 12:22:27]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:22:27]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:22:27]{dataSource-2} inited
+[2017-10-10 12:22:27]@Before
+[2017-10-10 12:22:27]@After
+[2017-10-10 12:22:27]Closing org.springframework.context.support.GenericApplicationContext@2038ae61: startup date [Tue Oct 10 12:22:25 CST 2017]; root of context hierarchy
+[2017-10-10 12:22:27]{dataSource-1} closed
+[2017-10-10 12:23:20]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:23:20]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c7fa833, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@39aeed2f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@724af044, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4678c730, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6767c1fc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@29ee9faa]
+[2017-10-10 12:23:20]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:23:20]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:23:20]Refreshing org.springframework.context.support.GenericApplicationContext@2038ae61: startup date [Tue Oct 10 12:23:20 CST 2017]; root of context hierarchy
+[2017-10-10 12:23:21]{dataSource-1} inited
+[2017-10-10 12:23:21]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e25951c: startup date [Tue Oct 10 12:23:21 CST 2017]; root of context hierarchy
+[2017-10-10 12:23:21]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:23:21]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:23:22]{dataSource-2} inited
+[2017-10-10 12:23:22]@Before
+[2017-10-10 12:23:22]@After
+[2017-10-10 12:23:22]Closing org.springframework.context.support.GenericApplicationContext@2038ae61: startup date [Tue Oct 10 12:23:20 CST 2017]; root of context hierarchy
+[2017-10-10 12:23:22]{dataSource-1} closed
+[2017-10-10 12:26:35]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:26:35]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 12:26:35]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:26:36]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:26:36]Refreshing org.springframework.context.support.GenericApplicationContext@a67c67e: startup date [Tue Oct 10 12:26:36 CST 2017]; root of context hierarchy
+[2017-10-10 12:26:37]{dataSource-1} inited
+[2017-10-10 12:26:37]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f666ebb: startup date [Tue Oct 10 12:26:37 CST 2017]; root of context hierarchy
+[2017-10-10 12:26:37]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:26:37]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:26:37]{dataSource-2} inited
+[2017-10-10 12:26:37]@Before
+[2017-10-10 12:26:37]@After
+[2017-10-10 12:26:37]Closing org.springframework.context.support.GenericApplicationContext@a67c67e: startup date [Tue Oct 10 12:26:36 CST 2017]; root of context hierarchy
+[2017-10-10 12:26:37]{dataSource-1} closed
+[2017-10-10 12:26:46]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:26:46]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 12:26:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:26:47]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:26:47]Refreshing org.springframework.context.support.GenericApplicationContext@a67c67e: startup date [Tue Oct 10 12:26:47 CST 2017]; root of context hierarchy
+[2017-10-10 12:26:48]{dataSource-1} inited
+[2017-10-10 12:26:48]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f666ebb: startup date [Tue Oct 10 12:26:48 CST 2017]; root of context hierarchy
+[2017-10-10 12:26:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:26:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:26:48]{dataSource-2} inited
+[2017-10-10 12:26:48]@Before
+[2017-10-10 12:26:48]@After
+[2017-10-10 12:26:48]Closing org.springframework.context.support.GenericApplicationContext@a67c67e: startup date [Tue Oct 10 12:26:47 CST 2017]; root of context hierarchy
+[2017-10-10 12:26:49]{dataSource-1} closed
+[2017-10-10 12:27:01]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:27:01]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 12:27:01]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:27:01]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:27:02]Refreshing org.springframework.context.support.GenericApplicationContext@a67c67e: startup date [Tue Oct 10 12:27:02 CST 2017]; root of context hierarchy
+[2017-10-10 12:27:02]{dataSource-1} inited
+[2017-10-10 12:27:03]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f666ebb: startup date [Tue Oct 10 12:27:03 CST 2017]; root of context hierarchy
+[2017-10-10 12:27:03]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:27:03]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:27:03]{dataSource-2} inited
+[2017-10-10 12:27:03]@Before
+[2017-10-10 12:27:03]@After
+[2017-10-10 12:27:03]Closing org.springframework.context.support.GenericApplicationContext@a67c67e: startup date [Tue Oct 10 12:27:02 CST 2017]; root of context hierarchy
+[2017-10-10 12:27:03]{dataSource-1} closed
+[2017-10-10 12:29:43]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:29:43]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1d057a39, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@26be92ad, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4c70fda8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@224edc67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@14acaea5]
+[2017-10-10 12:29:43]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:29:44]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:29:44]Refreshing org.springframework.context.support.GenericApplicationContext@5ec0a365: startup date [Tue Oct 10 12:29:44 CST 2017]; root of context hierarchy
+[2017-10-10 12:29:45]{dataSource-1} inited
+[2017-10-10 12:29:45]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75c56eb9: startup date [Tue Oct 10 12:29:45 CST 2017]; root of context hierarchy
+[2017-10-10 12:29:45]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:29:45]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:29:45]{dataSource-2} inited
+[2017-10-10 12:29:45]@Before
+[2017-10-10 12:29:45]@After
+[2017-10-10 12:29:45]Closing org.springframework.context.support.GenericApplicationContext@5ec0a365: startup date [Tue Oct 10 12:29:44 CST 2017]; root of context hierarchy
+[2017-10-10 12:29:45]{dataSource-1} closed
+[2017-10-10 12:30:27]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:30:27]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1d057a39, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@26be92ad, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4c70fda8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@224edc67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@14acaea5]
+[2017-10-10 12:30:27]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:30:27]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:30:27]Refreshing org.springframework.context.support.GenericApplicationContext@5ec0a365: startup date [Tue Oct 10 12:30:27 CST 2017]; root of context hierarchy
+[2017-10-10 12:30:28]{dataSource-1} inited
+[2017-10-10 12:30:28]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75c56eb9: startup date [Tue Oct 10 12:30:28 CST 2017]; root of context hierarchy
+[2017-10-10 12:30:28]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:30:28]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:30:28]{dataSource-2} inited
+[2017-10-10 12:30:28]@Before
+[2017-10-10 12:30:28]@After
+[2017-10-10 12:30:28]Closing org.springframework.context.support.GenericApplicationContext@5ec0a365: startup date [Tue Oct 10 12:30:27 CST 2017]; root of context hierarchy
+[2017-10-10 12:30:28]{dataSource-1} closed
+[2017-10-10 12:32:46]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:32:46]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5b275dab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@61832929, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@29774679, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3ffc5af1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5e5792a0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@26653222]
+[2017-10-10 12:32:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:32:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:32:46]Refreshing org.springframework.context.support.GenericApplicationContext@6d7b4f4c: startup date [Tue Oct 10 12:32:46 CST 2017]; root of context hierarchy
+[2017-10-10 12:32:47]{dataSource-1} inited
+[2017-10-10 12:32:48]Began transaction (1) for test context [DefaultTestContext@41ab013 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@14bee915, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35a3d49f testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@1115ec15]; rollback [true]
+[2017-10-10 12:32:48]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7d9e8ef7: startup date [Tue Oct 10 12:32:48 CST 2017]; root of context hierarchy
+[2017-10-10 12:32:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:32:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:32:48]{dataSource-2} inited
+[2017-10-10 12:32:48]@Before
+[2017-10-10 12:32:48]@After
+[2017-10-10 12:32:48]Rolled back transaction for test context [DefaultTestContext@41ab013 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@14bee915, testMethod = addUser@AppTest, testException = java.lang.RuntimeException: nnn, mergedContextConfiguration = [MergedContextConfiguration@35a3d49f testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 12:32:48]Closing org.springframework.context.support.GenericApplicationContext@6d7b4f4c: startup date [Tue Oct 10 12:32:46 CST 2017]; root of context hierarchy
+[2017-10-10 12:32:48]{dataSource-1} closed
+[2017-10-10 12:33:02]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:33:02]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5b275dab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@61832929, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@29774679, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3ffc5af1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5e5792a0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@26653222]
+[2017-10-10 12:33:02]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:33:02]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:33:02]Refreshing org.springframework.context.support.GenericApplicationContext@6d7b4f4c: startup date [Tue Oct 10 12:33:02 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:03]{dataSource-1} inited
+[2017-10-10 12:33:04]Began transaction (1) for test context [DefaultTestContext@41ab013 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@14bee915, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35a3d49f testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@1115ec15]; rollback [true]
+[2017-10-10 12:33:04]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7d9e8ef7: startup date [Tue Oct 10 12:33:04 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:04]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:33:04]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:33:04]{dataSource-2} inited
+[2017-10-10 12:33:04]@Before
+[2017-10-10 12:33:04]@After
+[2017-10-10 12:33:04]Rolled back transaction for test context [DefaultTestContext@41ab013 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@14bee915, testMethod = addUser@AppTest, testException = java.lang.RuntimeException: nnn, mergedContextConfiguration = [MergedContextConfiguration@35a3d49f testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 12:33:04]Closing org.springframework.context.support.GenericApplicationContext@6d7b4f4c: startup date [Tue Oct 10 12:33:02 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:04]{dataSource-1} closed
+[2017-10-10 12:33:22]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:33:22]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5b275dab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@61832929, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@29774679, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3ffc5af1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5e5792a0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@26653222]
+[2017-10-10 12:33:23]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:33:23]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:33:23]Refreshing org.springframework.context.support.GenericApplicationContext@6d7b4f4c: startup date [Tue Oct 10 12:33:23 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:24]{dataSource-1} inited
+[2017-10-10 12:33:24]Began transaction (1) for test context [DefaultTestContext@41ab013 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@14bee915, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35a3d49f testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@1115ec15]; rollback [true]
+[2017-10-10 12:33:24]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7d9e8ef7: startup date [Tue Oct 10 12:33:24 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:24]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:33:24]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:33:24]{dataSource-2} inited
+[2017-10-10 12:33:24]@Before
+[2017-10-10 12:33:24]@After
+[2017-10-10 12:33:24]Rolled back transaction for test context [DefaultTestContext@41ab013 testClass = AppTest, testInstance = com.founder.datacenter.AppTest@14bee915, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35a3d49f testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 12:33:24]Closing org.springframework.context.support.GenericApplicationContext@6d7b4f4c: startup date [Tue Oct 10 12:33:23 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:24]{dataSource-1} closed
+[2017-10-10 12:33:44]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:33:44]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1d057a39, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@26be92ad, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4c70fda8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@224edc67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@14acaea5]
+[2017-10-10 12:33:44]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:33:45]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:33:45]Refreshing org.springframework.context.support.GenericApplicationContext@5ec0a365: startup date [Tue Oct 10 12:33:45 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:46]{dataSource-1} inited
+[2017-10-10 12:33:46]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75c56eb9: startup date [Tue Oct 10 12:33:46 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:33:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:33:46]{dataSource-2} inited
+[2017-10-10 12:33:46]@Before
+[2017-10-10 12:33:46]@After
+[2017-10-10 12:33:46]Closing org.springframework.context.support.GenericApplicationContext@5ec0a365: startup date [Tue Oct 10 12:33:45 CST 2017]; root of context hierarchy
+[2017-10-10 12:33:46]{dataSource-1} closed
+[2017-10-10 12:34:05]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 12:34:05]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@475530b9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1d057a39, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@26be92ad, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4c70fda8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@224edc67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@14acaea5]
+[2017-10-10 12:34:06]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:34:06]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:34:06]Refreshing org.springframework.context.support.GenericApplicationContext@5ec0a365: startup date [Tue Oct 10 12:34:06 CST 2017]; root of context hierarchy
+[2017-10-10 12:34:07]{dataSource-1} inited
+[2017-10-10 12:34:07]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75c56eb9: startup date [Tue Oct 10 12:34:07 CST 2017]; root of context hierarchy
+[2017-10-10 12:34:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 12:34:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 12:34:07]{dataSource-2} inited
+[2017-10-10 12:34:07]@Before
+[2017-10-10 12:34:07]@After
+[2017-10-10 12:34:07]Closing org.springframework.context.support.GenericApplicationContext@5ec0a365: startup date [Tue Oct 10 12:34:06 CST 2017]; root of context hierarchy
+[2017-10-10 12:34:07]{dataSource-1} closed
+[2017-10-10 13:52:24]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 13:52:24]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@224edc67, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@14acaea5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@46d56d67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@d8355a8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@59fa1d9b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@28d25987]
+[2017-10-10 13:52:24]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:52:25]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:52:25]Refreshing org.springframework.context.support.GenericApplicationContext@71423665: startup date [Tue Oct 10 13:52:25 CST 2017]; root of context hierarchy
+[2017-10-10 13:52:25]{dataSource-1} inited
+[2017-10-10 13:52:26]Began transaction (1) for test context [DefaultTestContext@20c0a64d testClass = AppTest, testInstance = com.founder.datacenter.AppTest@455b6df1, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@72d6b3ba testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@4ddbbdf8]; rollback [true]
+[2017-10-10 13:52:26]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20ca951f: startup date [Tue Oct 10 13:52:26 CST 2017]; root of context hierarchy
+[2017-10-10 13:52:26]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:52:26]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:52:26]{dataSource-2} inited
+[2017-10-10 13:52:26]@Before
+[2017-10-10 13:52:26]@After
+[2017-10-10 13:52:26]Rolled back transaction for test context [DefaultTestContext@20c0a64d testClass = AppTest, testInstance = com.founder.datacenter.AppTest@455b6df1, testMethod = addUser@AppTest, testException = java.lang.RuntimeException: nnn, mergedContextConfiguration = [MergedContextConfiguration@72d6b3ba testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 13:52:26]Closing org.springframework.context.support.GenericApplicationContext@71423665: startup date [Tue Oct 10 13:52:25 CST 2017]; root of context hierarchy
+[2017-10-10 13:52:26]{dataSource-1} closed
+[2017-10-10 13:52:48]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 13:52:48]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@224edc67, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@14acaea5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@46d56d67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@d8355a8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@59fa1d9b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@28d25987]
+[2017-10-10 13:52:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:52:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:52:48]Refreshing org.springframework.context.support.GenericApplicationContext@71423665: startup date [Tue Oct 10 13:52:48 CST 2017]; root of context hierarchy
+[2017-10-10 13:52:49]{dataSource-1} inited
+[2017-10-10 13:52:50]Began transaction (1) for test context [DefaultTestContext@20c0a64d testClass = AppTest, testInstance = com.founder.datacenter.AppTest@455b6df1, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@72d6b3ba testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@4ddbbdf8]; rollback [true]
+[2017-10-10 13:52:50]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20ca951f: startup date [Tue Oct 10 13:52:50 CST 2017]; root of context hierarchy
+[2017-10-10 13:52:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:52:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:52:50]{dataSource-2} inited
+[2017-10-10 13:52:50]@Before
+[2017-10-10 13:52:50]@After
+[2017-10-10 13:52:50]Rolled back transaction for test context [DefaultTestContext@20c0a64d testClass = AppTest, testInstance = com.founder.datacenter.AppTest@455b6df1, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@72d6b3ba testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 13:52:50]Closing org.springframework.context.support.GenericApplicationContext@71423665: startup date [Tue Oct 10 13:52:48 CST 2017]; root of context hierarchy
+[2017-10-10 13:52:50]{dataSource-1} closed
+[2017-10-10 13:53:05]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 13:53:05]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@224edc67, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@14acaea5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@46d56d67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@d8355a8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@59fa1d9b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@28d25987]
+[2017-10-10 13:53:05]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:53:05]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:53:06]Refreshing org.springframework.context.support.GenericApplicationContext@71423665: startup date [Tue Oct 10 13:53:06 CST 2017]; root of context hierarchy
+[2017-10-10 13:53:06]{dataSource-1} inited
+[2017-10-10 13:53:07]Began transaction (1) for test context [DefaultTestContext@20c0a64d testClass = AppTest, testInstance = com.founder.datacenter.AppTest@455b6df1, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@72d6b3ba testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@4ddbbdf8]; rollback [true]
+[2017-10-10 13:53:07]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20ca951f: startup date [Tue Oct 10 13:53:07 CST 2017]; root of context hierarchy
+[2017-10-10 13:53:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:53:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:53:07]{dataSource-2} inited
+[2017-10-10 13:53:07]@Before
+[2017-10-10 13:53:07]@After
+[2017-10-10 13:53:07]Rolled back transaction for test context [DefaultTestContext@20c0a64d testClass = AppTest, testInstance = com.founder.datacenter.AppTest@455b6df1, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@72d6b3ba testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 13:53:07]Closing org.springframework.context.support.GenericApplicationContext@71423665: startup date [Tue Oct 10 13:53:06 CST 2017]; root of context hierarchy
+[2017-10-10 13:53:07]{dataSource-1} closed
+[2017-10-10 13:56:48]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@91161c7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@604ed9f0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a4f787b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@685cb137, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a41eaa2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7cd62f43]
+[2017-10-10 13:56:48]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:56:49]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:56:49]Refreshing org.springframework.context.support.GenericApplicationContext@1f28c152: startup date [Tue Oct 10 13:56:49 CST 2017]; root of context hierarchy
+[2017-10-10 13:56:50]{dataSource-1} inited
+[2017-10-10 13:56:50]Unable to proxy interface-implementing method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is marked as final: Consider using interface-based JDK proxies instead!
+[2017-10-10 13:56:50]Final method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+[2017-10-10 13:56:50]Began transaction (1) for test context [DefaultTestContext@73d983ea testClass = AppTest, testInstance = com.founder.datacenter.AppTest@36a5cabc, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6b0d80ed testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@432038ec]; rollback [true]
+[2017-10-10 13:56:50]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1583741e: startup date [Tue Oct 10 13:56:50 CST 2017]; root of context hierarchy
+[2017-10-10 13:56:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:56:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:56:50]{dataSource-2} inited
+[2017-10-10 13:56:50]@Before
+[2017-10-10 13:56:50]@After
+[2017-10-10 13:56:50]Rolled back transaction for test context [DefaultTestContext@73d983ea testClass = AppTest, testInstance = com.founder.datacenter.AppTest@36a5cabc, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6b0d80ed testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 13:56:50]Closing org.springframework.context.support.GenericApplicationContext@1f28c152: startup date [Tue Oct 10 13:56:49 CST 2017]; root of context hierarchy
+[2017-10-10 13:56:50]{dataSource-1} closed
+[2017-10-10 13:58:10]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@91161c7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@604ed9f0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a4f787b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@685cb137, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a41eaa2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7cd62f43]
+[2017-10-10 13:58:10]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:58:10]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:58:10]Refreshing org.springframework.context.support.GenericApplicationContext@1f28c152: startup date [Tue Oct 10 13:58:10 CST 2017]; root of context hierarchy
+[2017-10-10 13:58:11]{dataSource-1} inited
+[2017-10-10 13:58:11]Unable to proxy interface-implementing method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is marked as final: Consider using interface-based JDK proxies instead!
+[2017-10-10 13:58:11]Final method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+[2017-10-10 13:58:11]Began transaction (1) for test context [DefaultTestContext@73d983ea testClass = AppTest, testInstance = com.founder.datacenter.AppTest@36a5cabc, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6b0d80ed testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@432038ec]; rollback [true]
+[2017-10-10 13:58:11]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1583741e: startup date [Tue Oct 10 13:58:11 CST 2017]; root of context hierarchy
+[2017-10-10 13:58:11]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:58:11]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:58:11]{dataSource-2} inited
+[2017-10-10 13:58:11]@Before
+[2017-10-10 13:58:11]@After
+[2017-10-10 13:58:12]Rolled back transaction for test context [DefaultTestContext@73d983ea testClass = AppTest, testInstance = com.founder.datacenter.AppTest@36a5cabc, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6b0d80ed testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 13:58:12]Closing org.springframework.context.support.GenericApplicationContext@1f28c152: startup date [Tue Oct 10 13:58:10 CST 2017]; root of context hierarchy
+[2017-10-10 13:58:12]{dataSource-1} closed
+[2017-10-10 13:59:51]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@91161c7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@604ed9f0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a4f787b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@685cb137, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a41eaa2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7cd62f43]
+[2017-10-10 13:59:51]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:59:51]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:59:52]Refreshing org.springframework.context.support.GenericApplicationContext@1f28c152: startup date [Tue Oct 10 13:59:52 CST 2017]; root of context hierarchy
+[2017-10-10 13:59:52]{dataSource-1} inited
+[2017-10-10 13:59:53]Unable to proxy interface-implementing method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is marked as final: Consider using interface-based JDK proxies instead!
+[2017-10-10 13:59:53]Final method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+[2017-10-10 13:59:53]Began transaction (1) for test context [DefaultTestContext@73d983ea testClass = AppTest, testInstance = com.founder.datacenter.AppTest@36a5cabc, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6b0d80ed testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@432038ec]; rollback [false]
+[2017-10-10 13:59:53]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1583741e: startup date [Tue Oct 10 13:59:53 CST 2017]; root of context hierarchy
+[2017-10-10 13:59:53]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 13:59:53]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 13:59:53]{dataSource-2} inited
+[2017-10-10 13:59:53]@Before
+[2017-10-10 13:59:53]@After
+[2017-10-10 13:59:53]Committed transaction for test context [DefaultTestContext@73d983ea testClass = AppTest, testInstance = com.founder.datacenter.AppTest@36a5cabc, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6b0d80ed testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 13:59:53]Closing org.springframework.context.support.GenericApplicationContext@1f28c152: startup date [Tue Oct 10 13:59:52 CST 2017]; root of context hierarchy
+[2017-10-10 13:59:53]{dataSource-1} closed
+[2017-10-10 14:00:03]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@91161c7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@604ed9f0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a4f787b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@685cb137, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a41eaa2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7cd62f43]
+[2017-10-10 14:00:03]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:00:04]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:00:04]Refreshing org.springframework.context.support.GenericApplicationContext@1f28c152: startup date [Tue Oct 10 14:00:04 CST 2017]; root of context hierarchy
+[2017-10-10 14:00:05]{dataSource-1} inited
+[2017-10-10 14:00:05]Unable to proxy interface-implementing method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is marked as final: Consider using interface-based JDK proxies instead!
+[2017-10-10 14:00:05]Final method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+[2017-10-10 14:00:05]Began transaction (1) for test context [DefaultTestContext@73d983ea testClass = AppTest, testInstance = com.founder.datacenter.AppTest@36a5cabc, testMethod = addUser@AppTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6b0d80ed testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@432038ec]; rollback [false]
+[2017-10-10 14:00:05]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1583741e: startup date [Tue Oct 10 14:00:05 CST 2017]; root of context hierarchy
+[2017-10-10 14:00:05]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:00:05]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:00:05]{dataSource-2} inited
+[2017-10-10 14:00:06]@Before
+[2017-10-10 14:00:06]@After
+[2017-10-10 14:00:06]Committed transaction for test context [DefaultTestContext@73d983ea testClass = AppTest, testInstance = com.founder.datacenter.AppTest@36a5cabc, testMethod = addUser@AppTest, testException = java.lang.RuntimeException: nnn, mergedContextConfiguration = [MergedContextConfiguration@6b0d80ed testClass = AppTest, locations = '{classpath:conf/spring-*.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[2017-10-10 14:00:06]Closing org.springframework.context.support.GenericApplicationContext@1f28c152: startup date [Tue Oct 10 14:00:04 CST 2017]; root of context hierarchy
+[2017-10-10 14:00:06]{dataSource-1} closed
+[2017-10-10 14:01:03]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:01:03]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:01:03]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:01:03]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:01:03]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:01:03 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:04]{dataSource-1} inited
+[2017-10-10 14:01:05]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a1f72f5: startup date [Tue Oct 10 14:01:05 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:05]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:01:05]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:01:05]{dataSource-2} inited
+[2017-10-10 14:01:05]@Before
+[2017-10-10 14:01:05]@After
+[2017-10-10 14:01:05]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:01:03 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:05]{dataSource-1} closed
+[2017-10-10 14:01:23]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:01:23]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:01:23]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:01:23]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:01:23]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:01:23 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:24]{dataSource-1} inited
+[2017-10-10 14:01:25]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7aaca91a: startup date [Tue Oct 10 14:01:25 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:25]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:01:25]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:01:25]{dataSource-2} inited
+[2017-10-10 14:01:25]@Before
+[2017-10-10 14:01:25]@After
+[2017-10-10 14:01:25]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:01:23 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:25]{dataSource-1} closed
+[2017-10-10 14:01:45]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:01:45]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:01:45]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:01:45]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:01:46]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:01:46 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:46]{dataSource-1} inited
+[2017-10-10 14:01:47]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7aaca91a: startup date [Tue Oct 10 14:01:47 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:47]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:01:47]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:01:47]{dataSource-2} inited
+[2017-10-10 14:01:47]@Before
+[2017-10-10 14:01:47]@After
+[2017-10-10 14:01:47]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:01:46 CST 2017]; root of context hierarchy
+[2017-10-10 14:01:47]{dataSource-1} closed
+[2017-10-10 14:02:00]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:02:00]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:02:00]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:02:00]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:02:00]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:02:00 CST 2017]; root of context hierarchy
+[2017-10-10 14:02:01]{dataSource-1} inited
+[2017-10-10 14:02:01]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a1f72f5: startup date [Tue Oct 10 14:02:01 CST 2017]; root of context hierarchy
+[2017-10-10 14:02:01]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:02:01]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:02:01]{dataSource-2} inited
+[2017-10-10 14:02:01]@Before
+[2017-10-10 14:02:01]@After
+[2017-10-10 14:02:01]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:02:00 CST 2017]; root of context hierarchy
+[2017-10-10 14:02:01]{dataSource-1} closed
+[2017-10-10 14:02:50]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:02:50]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:02:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:02:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:02:51]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:02:50 CST 2017]; root of context hierarchy
+[2017-10-10 14:02:51]{dataSource-1} inited
+[2017-10-10 14:02:52]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7aaca91a: startup date [Tue Oct 10 14:02:52 CST 2017]; root of context hierarchy
+[2017-10-10 14:02:52]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:02:52]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:02:52]{dataSource-2} inited
+[2017-10-10 14:02:52]@Before
+[2017-10-10 14:02:52]@After
+[2017-10-10 14:02:52]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:02:50 CST 2017]; root of context hierarchy
+[2017-10-10 14:02:52]{dataSource-1} closed
+[2017-10-10 14:03:21]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:03:21]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:03:21]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:03:21]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:03:22]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:03:22 CST 2017]; root of context hierarchy
+[2017-10-10 14:03:22]{dataSource-1} inited
+[2017-10-10 14:03:23]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7aaca91a: startup date [Tue Oct 10 14:03:23 CST 2017]; root of context hierarchy
+[2017-10-10 14:03:23]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:03:23]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:03:23]{dataSource-2} inited
+[2017-10-10 14:03:23]@Before
+[2017-10-10 14:03:23]@After
+[2017-10-10 14:03:23]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:03:22 CST 2017]; root of context hierarchy
+[2017-10-10 14:03:23]{dataSource-1} closed
+[2017-10-10 14:03:41]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:03:41]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:03:41]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:03:41]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:03:41]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:03:41 CST 2017]; root of context hierarchy
+[2017-10-10 14:03:42]{dataSource-1} inited
+[2017-10-10 14:03:42]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7aaca91a: startup date [Tue Oct 10 14:03:42 CST 2017]; root of context hierarchy
+[2017-10-10 14:03:42]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:03:42]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:03:42]{dataSource-2} inited
+[2017-10-10 14:03:43]@Before
+[2017-10-10 14:03:43]@After
+[2017-10-10 14:03:43]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:03:41 CST 2017]; root of context hierarchy
+[2017-10-10 14:03:43]{dataSource-1} closed
+[2017-10-10 14:04:00]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:04:00]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:04:00]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:04:00]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:04:00]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:04:00 CST 2017]; root of context hierarchy
+[2017-10-10 14:04:01]{dataSource-1} inited
+[2017-10-10 14:04:01]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcf2fc1: startup date [Tue Oct 10 14:04:01 CST 2017]; root of context hierarchy
+[2017-10-10 14:04:01]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:04:02]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:04:02]{dataSource-2} inited
+[2017-10-10 14:04:02]@Before
+[2017-10-10 14:04:02]@After
+[2017-10-10 14:04:02]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:04:00 CST 2017]; root of context hierarchy
+[2017-10-10 14:04:02]{dataSource-1} closed
+[2017-10-10 14:04:28]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:04:28]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:04:29]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:04:29]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:04:29]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:04:29 CST 2017]; root of context hierarchy
+[2017-10-10 14:04:30]{dataSource-1} inited
+[2017-10-10 14:04:30]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcf2fc1: startup date [Tue Oct 10 14:04:30 CST 2017]; root of context hierarchy
+[2017-10-10 14:04:30]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:04:30]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:04:30]{dataSource-2} inited
+[2017-10-10 14:04:30]@Before
+[2017-10-10 14:04:31]@After
+[2017-10-10 14:04:31]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:04:29 CST 2017]; root of context hierarchy
+[2017-10-10 14:04:31]{dataSource-1} closed
+[2017-10-10 14:06:41]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:06:41]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:06:41]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:06:41]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:06:41]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:06:41 CST 2017]; root of context hierarchy
+[2017-10-10 14:06:42]{dataSource-1} inited
+[2017-10-10 14:06:43]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcf2fc1: startup date [Tue Oct 10 14:06:43 CST 2017]; root of context hierarchy
+[2017-10-10 14:06:43]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:06:43]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:06:43]{dataSource-2} inited
+[2017-10-10 14:06:43]@Before
+[2017-10-10 14:06:43]@After
+[2017-10-10 14:06:43]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:06:41 CST 2017]; root of context hierarchy
+[2017-10-10 14:06:43]{dataSource-1} closed
+[2017-10-10 14:09:46]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:09:46]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:09:47]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:09:47]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:09:47]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:09:47 CST 2017]; root of context hierarchy
+[2017-10-10 14:09:48]{dataSource-1} inited
+[2017-10-10 14:09:49]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcf2fc1: startup date [Tue Oct 10 14:09:49 CST 2017]; root of context hierarchy
+[2017-10-10 14:09:49]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:09:49]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:09:49]{dataSource-2} inited
+[2017-10-10 14:09:49]@Before
+[2017-10-10 14:09:49]@After
+[2017-10-10 14:09:49]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:09:47 CST 2017]; root of context hierarchy
+[2017-10-10 14:09:49]{dataSource-1} closed
+[2017-10-10 14:10:10]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:10:10]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:10:10]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:10:10]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:10:10]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:10:10 CST 2017]; root of context hierarchy
+[2017-10-10 14:10:11]{dataSource-1} inited
+[2017-10-10 14:10:12]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcf2fc1: startup date [Tue Oct 10 14:10:12 CST 2017]; root of context hierarchy
+[2017-10-10 14:10:12]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:10:12]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:10:12]{dataSource-2} inited
+[2017-10-10 14:10:12]@Before
+[2017-10-10 14:10:12]@After
+[2017-10-10 14:10:12]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:10:10 CST 2017]; root of context hierarchy
+[2017-10-10 14:10:12]{dataSource-1} closed
+[2017-10-10 14:18:42]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:18:42]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:18:42]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:18:42]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:18:42]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:18:42 CST 2017]; root of context hierarchy
+[2017-10-10 14:18:43]{dataSource-1} inited
+[2017-10-10 14:18:44]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcf2fc1: startup date [Tue Oct 10 14:18:44 CST 2017]; root of context hierarchy
+[2017-10-10 14:18:44]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:18:44]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:18:44]{dataSource-2} inited
+[2017-10-10 14:18:44]@Before
+[2017-10-10 14:18:44][]
+[2017-10-10 14:18:44]@After
+[2017-10-10 14:18:44]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:18:42 CST 2017]; root of context hierarchy
+[2017-10-10 14:18:44]{dataSource-1} closed
+[2017-10-10 14:19:03]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:19:03]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:19:03]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:19:03]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:19:03]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:19:03 CST 2017]; root of context hierarchy
+[2017-10-10 14:19:04]{dataSource-1} inited
+[2017-10-10 14:19:05]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcf2fc1: startup date [Tue Oct 10 14:19:05 CST 2017]; root of context hierarchy
+[2017-10-10 14:19:05]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:19:05]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:19:05]{dataSource-2} inited
+[2017-10-10 14:19:05]@Before
+[2017-10-10 14:19:05][User [id=60, name=AppTest娣诲姞鐢ㄦ埛, password=123, lastlogintime=Tue Oct 10 14:06:43 CST 2017]]
+[2017-10-10 14:19:05]@After
+[2017-10-10 14:19:05]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:19:03 CST 2017]; root of context hierarchy
+[2017-10-10 14:19:05]{dataSource-1} closed
+[2017-10-10 14:19:40]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:19:40]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:19:40]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:19:40]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:19:40]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:19:40 CST 2017]; root of context hierarchy
+[2017-10-10 14:19:41]{dataSource-1} inited
+[2017-10-10 14:19:42]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcf2fc1: startup date [Tue Oct 10 14:19:42 CST 2017]; root of context hierarchy
+[2017-10-10 14:19:42]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:19:42]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:19:42]{dataSource-2} inited
+[2017-10-10 14:19:42]@Before
+[2017-10-10 14:19:42]@After
+[2017-10-10 14:19:42]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:19:40 CST 2017]; root of context hierarchy
+[2017-10-10 14:19:42]{dataSource-1} closed
+[2017-10-10 14:20:22]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:20:23]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:20:23]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:20:23]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:20:23]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:20:23 CST 2017]; root of context hierarchy
+[2017-10-10 14:20:24]{dataSource-1} inited
+[2017-10-10 14:20:24]@Before
+[2017-10-10 14:20:25]@After
+[2017-10-10 14:20:25]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:20:23 CST 2017]; root of context hierarchy
+[2017-10-10 14:20:25]{dataSource-1} closed
+[2017-10-10 14:20:50]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:20:50]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:20:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:20:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:20:50]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:20:50 CST 2017]; root of context hierarchy
+[2017-10-10 14:20:51]{dataSource-1} inited
+[2017-10-10 14:20:52]@Before
+[2017-10-10 14:20:52]@After
+[2017-10-10 14:20:52]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:20:50 CST 2017]; root of context hierarchy
+[2017-10-10 14:20:52]{dataSource-1} closed
+[2017-10-10 14:21:43]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:21:43]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:21:43]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:21:43]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:21:44]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:21:44 CST 2017]; root of context hierarchy
+[2017-10-10 14:21:44]{dataSource-1} inited
+[2017-10-10 14:21:45]@Before
+[2017-10-10 14:21:45]@After
+[2017-10-10 14:21:45]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:21:44 CST 2017]; root of context hierarchy
+[2017-10-10 14:21:45]{dataSource-1} closed
+[2017-10-10 14:21:53]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-10 14:21:53]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-10 14:21:53]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-10 14:21:53]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-10 14:21:53]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:21:53 CST 2017]; root of context hierarchy
+[2017-10-10 14:21:54]{dataSource-1} inited
+[2017-10-10 14:21:54]@Before
+[2017-10-10 14:21:54]@After
+[2017-10-10 14:21:54]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Tue Oct 10 14:21:53 CST 2017]; root of context hierarchy
+[2017-10-10 14:21:54]{dataSource-1} closed
+[2017-10-13 15:42:28]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-13 15:42:28]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc285f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55f3ddb1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@8bd1b6a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@18be83e4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@cb5822, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b9e13df]
+[2017-10-13 15:42:28]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-13 15:42:28]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-13 15:42:28]Refreshing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Fri Oct 13 15:42:28 CST 2017]; root of context hierarchy
+[2017-10-13 15:42:29]{dataSource-1} inited
+[2017-10-13 15:42:29]@Before
+[2017-10-13 15:42:30][]
+[2017-10-13 15:42:30]@After
+[2017-10-13 15:42:30]Closing org.springframework.context.support.GenericApplicationContext@3327bd23: startup date [Fri Oct 13 15:42:28 CST 2017]; root of context hierarchy
+[2017-10-13 15:42:30]{dataSource-1} closed
+[2017-10-13 15:59:16]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-13 15:59:16]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-13 15:59:16]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-13 15:59:16]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-13 15:59:16]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 15:59:16 CST 2017]; root of context hierarchy
+[2017-10-13 15:59:17]{dataSource-1} inited
+[2017-10-13 15:59:17]@Before
+[2017-10-13 15:59:17][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017]]
+[2017-10-13 15:59:17]@After
+[2017-10-13 15:59:17]@Before
+[2017-10-13 15:59:18]@After
+[2017-10-13 15:59:18]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 15:59:16 CST 2017]; root of context hierarchy
+[2017-10-13 15:59:18]{dataSource-1} closed
+[2017-10-13 16:00:46]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-13 16:00:46]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-13 16:00:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-13 16:00:46]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-13 16:00:46]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 16:00:46 CST 2017]; root of context hierarchy
+[2017-10-13 16:00:47]{dataSource-1} inited
+[2017-10-13 16:00:48]@Before
+[2017-10-13 16:00:48][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017]]
+[2017-10-13 16:00:48]@After
+[2017-10-13 16:00:48]@Before
+[2017-10-13 16:00:48]@After
+[2017-10-13 16:00:48]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 16:00:46 CST 2017]; root of context hierarchy
+[2017-10-13 16:00:48]{dataSource-1} closed
+[2017-10-13 17:13:53]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-13 17:13:53]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-13 17:13:53]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-13 17:13:53]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-13 17:13:53]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 17:13:53 CST 2017]; root of context hierarchy
+[2017-10-13 17:13:54]{dataSource-1} inited
+[2017-10-13 17:13:54]@Before
+[2017-10-13 17:13:54][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017], User [id=81, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:48 CST 2017]]
+[2017-10-13 17:13:54]@After
+[2017-10-13 17:13:54]@Before
+[2017-10-13 17:13:54]@After
+[2017-10-13 17:13:54]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Fri Oct 13 17:13:53 CST 2017]; root of context hierarchy
+[2017-10-13 17:13:54]{dataSource-1} closed
+[2017-10-18 16:48:36]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-18 16:48:36]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-18 16:48:37]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 16:48:37]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-18 16:48:37]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 16:48:37 CST 2017]; root of context hierarchy
+[2017-10-18 16:48:38]{dataSource-1} inited
+[2017-10-18 16:48:38]@Before
+[2017-10-18 16:48:38][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017], User [id=81, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:48 CST 2017], User [id=82, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 17:13:54 CST 2017]]
+[2017-10-18 16:48:38]@After
+[2017-10-18 16:48:38]@Before
+[2017-10-18 16:48:38]@After
+[2017-10-18 16:48:38]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 16:48:37 CST 2017]; root of context hierarchy
+[2017-10-18 16:48:38]{dataSource-1} closed
+[2017-10-18 16:58:08]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-18 16:58:08]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-18 16:58:08]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 16:58:08]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-18 16:58:08]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 16:58:08 CST 2017]; root of context hierarchy
+[2017-10-18 16:58:09]{dataSource-1} inited
+[2017-10-18 16:58:09]@Before
+[2017-10-18 16:58:10][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017], User [id=81, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:48 CST 2017], User [id=82, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 17:13:54 CST 2017], User [id=83, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:48:38 CST 2017]]
+[2017-10-18 16:58:10]@After
+[2017-10-18 16:58:10]@Before
+[2017-10-18 16:58:10]@After
+[2017-10-18 16:58:10]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 16:58:08 CST 2017]; root of context hierarchy
+[2017-10-18 16:58:10]{dataSource-1} closed
+[2017-10-18 16:59:49]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-18 16:59:49]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-18 16:59:49]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 16:59:50]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-18 16:59:50]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 16:59:50 CST 2017]; root of context hierarchy
+[2017-10-18 16:59:51]{dataSource-1} inited
+[2017-10-18 16:59:51]@Before
+[2017-10-18 16:59:51][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017], User [id=81, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:48 CST 2017], User [id=82, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 17:13:54 CST 2017], User [id=83, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:48:38 CST 2017], User [id=84, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:58:10 CST 2017]]
+[2017-10-18 16:59:51]@After
+[2017-10-18 16:59:51]@Before
+[2017-10-18 16:59:51]@After
+[2017-10-18 16:59:51]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 16:59:50 CST 2017]; root of context hierarchy
+[2017-10-18 16:59:51]{dataSource-1} closed
+[2017-10-18 17:01:07]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-18 17:01:07]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-18 17:01:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 17:01:07]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-18 17:01:07]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 17:01:07 CST 2017]; root of context hierarchy
+[2017-10-18 17:01:08]{dataSource-1} inited
+[2017-10-18 17:01:08]@Before
+[2017-10-18 17:01:08][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017], User [id=81, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:48 CST 2017], User [id=82, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 17:13:54 CST 2017], User [id=83, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:48:38 CST 2017], User [id=84, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:58:10 CST 2017], User [id=85, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:59:51 CST 2017]]
+[2017-10-18 17:01:08]@After
+[2017-10-18 17:01:08]@Before
+[2017-10-18 17:01:09]@After
+[2017-10-18 17:01:09]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 17:01:07 CST 2017]; root of context hierarchy
+[2017-10-18 17:01:09]{dataSource-1} closed
+[2017-10-18 17:06:16]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-18 17:06:16]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-18 17:06:16]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 17:06:17]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-18 17:06:17]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 17:06:17 CST 2017]; root of context hierarchy
+[2017-10-18 17:06:17]{dataSource-1} inited
+[2017-10-18 17:06:18]@Before
+[2017-10-18 17:06:18][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017], User [id=81, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:48 CST 2017], User [id=82, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 17:13:54 CST 2017], User [id=83, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:48:38 CST 2017], User [id=84, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:58:10 CST 2017], User [id=85, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:59:51 CST 2017], User [id=86, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 17:01:08 CST 2017]]
+[2017-10-18 17:06:18]@After
+[2017-10-18 17:06:18]@Before
+[2017-10-18 17:06:18]@After
+[2017-10-18 17:06:18]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 17:06:17 CST 2017]; root of context hierarchy
+[2017-10-18 17:06:18]{dataSource-1} closed
+[2017-10-18 17:10:31]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2017-10-18 17:10:31]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b0143d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8e6209, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b4523f8]
+[2017-10-18 17:10:31]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-mybatis.xml]
+[2017-10-18 17:10:31]Loading XML bean definitions from file [F:\zx\zx-parent\zx-test\target\test-classes\conf\spring-service.xml]
+[2017-10-18 17:10:32]Refreshing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 17:10:32 CST 2017]; root of context hierarchy
+[2017-10-18 17:10:32]{dataSource-1} inited
+[2017-10-18 17:10:33]@Before
+[2017-10-18 17:10:33][User [id=73, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:52:00 CST 2017], User [id=74, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:53:21 CST 2017], User [id=75, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:55:08 CST 2017], User [id=76, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:30 CST 2017], User [id=77, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:56:56 CST 2017], User [id=78, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:58:52 CST 2017], User [id=79, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 15:59:17 CST 2017], User [id=80, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:22 CST 2017], User [id=81, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 16:00:48 CST 2017], User [id=82, name=AppTest添加用户, password=123, lastlogintime=Fri Oct 13 17:13:54 CST 2017], User [id=83, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:48:38 CST 2017], User [id=84, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:58:10 CST 2017], User [id=85, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 16:59:51 CST 2017], User [id=86, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 17:01:08 CST 2017], User [id=87, name=AppTest添加用户, password=123, lastlogintime=Wed Oct 18 17:06:18 CST 2017]]
+[2017-10-18 17:10:33]@After
+[2017-10-18 17:10:33]@Before
+[2017-10-18 17:10:33]@After
+[2017-10-18 17:10:33]Closing org.springframework.context.support.GenericApplicationContext@1f57539: startup date [Wed Oct 18 17:10:32 CST 2017]; root of context hierarchy
+[2017-10-18 17:10:33]{dataSource-1} closed

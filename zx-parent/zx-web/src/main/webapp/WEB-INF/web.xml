@@ -8,9 +8,11 @@
 	<context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:applicationContext-*.xml
+            classpath:conf/applicationContext.xml,classpath:conf/spring-mybatis.xml,
+            classpath:conf/spring-shiro-web.xml
         </param-value>
     </context-param>
+  
 
     <listener>
         <listener-class>
@@ -20,7 +22,7 @@
     <!-- Spring配置文件结束 -->
 
 	<!-- CXF配置 -->
-	<servlet>
+<!-- 	<servlet>
 		<servlet-name>CXFServlet</servlet-name>
 		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
@@ -28,19 +30,103 @@
 	<servlet-mapping>
 		<servlet-name>CXFServlet</servlet-name>
 		<url-pattern>/service/*</url-pattern>
-	</servlet-mapping>  
+	</servlet-mapping>   -->
 
-	
 	<!-- SpringMvc配置开始 -->
 	<servlet>  
 	    <servlet-name>dispatcherServlet</servlet-name>  
 	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
-	    <load-on-startup>1</load-on-startup>  
+		<init-param>
+    		<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:conf/spring-mvc.xml</param-value>
+		</init-param>
+	    <load-on-startup>1</load-on-startup>
 	</servlet>  
 	<servlet-mapping>  
 	    <servlet-name>dispatcherServlet</servlet-name>  
 	    <url-pattern>/</url-pattern>  
 	</servlet-mapping>  
+	
 	<!-- SpringMvc配置结束 -->
 
+	<!-- encoding begin-->
+	<filter>  
+	    <filter-name>CharacterEncodingFilter</filter-name>  
+	    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
+	    <init-param>  
+	        <param-name>encoding</param-name>  
+	        <param-value>utf-8</param-value>  
+	    </init-param>  
+	</filter>  
+	<filter-mapping>  
+	    <filter-name>CharacterEncodingFilter</filter-name>  
+	    <url-pattern>/*</url-pattern>  
+	</filter-mapping>  
+	<!-- encoding end-->
+	
+	    <!-- shiro 安全过滤器 -->
+    <!-- The filter-name matches name of a 'shiroFilter' bean inside applicationContext.xml -->
+    <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <!-- Make sure any request you want accessible to Shiro is filtered. /* catches all -->
+    <!-- requests.  Usually this filter mapping is defined first (before all others) to -->
+    <!-- ensure that Shiro works in subsequent filters in the filter chain:             -->
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	
+	<!-- 验证码 begin -->
+	<servlet>  
+	    <servlet-name>Kaptcha</servlet-name>  
+	    <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>  
+	</servlet>  
+	<servlet-mapping>  
+	    <servlet-name>Kaptcha</servlet-name>  
+	    <url-pattern>/kaptcha.jpg</url-pattern> 
+	</servlet-mapping>
+	<!-- 验证码 end -->
+	
+	
+	<!-- 静态资源 begin-->
+	<!-- <servlet-mapping>  
+	      <servlet-name>default</servlet-name>  
+	      <url-pattern>*.jpg</url-pattern>  
+	</servlet-mapping>  
+	
+	<servlet-mapping>  
+	      <servlet-name>default</servlet-name>  
+	      <url-pattern>*.js</url-pattern>  
+	</servlet-mapping>  
+	
+	<servlet-mapping>  
+	      <servlet-name>default</servlet-name>  
+	      <url-pattern>*.css</url-pattern>  
+	</servlet-mapping>   -->
+	<!-- 静态资源 end-->
+	
+    <error-page>  
+        <error-code>403</error-code>  
+        <location>/WEB-INF/jsp/error.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>404</error-code>  
+        <location>/WEB-INF/jsp/404.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>405</error-code>  
+        <location>/WEB-INF/jsp/error.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>500</error-code>  
+        <location>/WEB-INF/jsp/error.jsp</location>  
+    </error-page> 
 </web-app>  

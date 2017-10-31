@@ -6,10 +6,10 @@ import java.io.File;
  * FtpInfo [Ftp信息]
  * 
  * @author zhang.yifeng
- * @CreateDate 2017年6月20日
+ * 2017年6月20日
  * @version 1.0.0
  * @since  1.0.0 
- * @see com.yf.core.util.ftp 
+ * @see com.yf.zx.core.util.ftp 
  *
  */
 public class FtpInfo {
@@ -72,8 +72,8 @@ public class FtpInfo {
 	 * @param loginPwd 登录密码
 	 * @param fileEncoding 文件系统编码
 	 * @param ftpPath 要切换的FTP目录
-	 * @param uploadFile
-	 * @param ftpFileName
+	 * @param localFile 本地文件
+	 * @param ftpFileName ftp文件名
 	 */
 	public FtpInfo(String ftpIp, Integer ftpPort, String loginName, String loginPwd, String fileEncoding,
 			String ftpPath, File localFile, String ftpFileName) {

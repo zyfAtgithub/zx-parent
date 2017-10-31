@@ -51,8 +51,8 @@ public class DateUtils {
 	 * 日期转String[默认个格式：yyyy-MM-dd HH:mm:ss]
 	 *  
 	 * @author zhang.yifeng 
-	 * @param date
-	 * @return
+	 * @param date 待转换的日期
+	 * @return string 日期字符串
 	 */
 	public static String date2String(Date date) {
 		return date2String(date, DATETIME_FORMAT1);
@@ -62,8 +62,9 @@ public class DateUtils {
 	 * 日期转String[默认个格式：yyyy-MM-dd HH:mm:ss]
 	 *  
 	 * @author zhang.yifeng 
-	 * @param date
-	 * @return
+	 * @param date 待转换的日期
+	 * @param dateFormat 日期格式
+	 * @return 日期字符串
 	 */
 	public static String date2String(Date date, String dateFormat) {
 		if (date == null || StringUtils.isNullOrEmpty(dateFormat)) {
@@ -84,9 +85,9 @@ public class DateUtils {
 	 * str转日期
 	 *  
 	 * @author zhang.yifeng 
-	 * @param dateStr
-	 * @param dateFormat
-	 * @return
+	 * @param dateStr 日期字符串
+	 * @param dateFormat 日期格式
+	 * @return 日期 (java.util.Date)
 	 */
 	public static Date str2Date(String dateStr, String dateFormat) {
 		if (StringUtils.isNullOrEmpty(dateStr) || StringUtils.isNullOrEmpty(dateFormat)) {
@@ -107,9 +108,9 @@ public class DateUtils {
 	 * str转java.sql.Date
 	 *  
 	 * @author zhang.yifeng 
-	 * @param dateStr
-	 * @param dateFormat
-	 * @return
+	 * @param dateStr 日期字符串
+	 * @param dateFormat 日期格式
+	 * @return 日期 (java.sql.Date)
 	 */
 	public static java.sql.Date str2SQLDate(String dateStr, String dateFormat) {
 		if (StringUtils.isNullOrEmpty(dateStr) || StringUtils.isNullOrEmpty(dateFormat)) {
@@ -131,7 +132,7 @@ public class DateUtils {
 	 * 获取当前时间
 	 *  
 	 * @author zhang.yifeng 
-	 * @return Date
+	 * @return Date 当前日期
 	 */
 	public static Date getNowTime() {
 		long now = System.currentTimeMillis();
@@ -142,8 +143,8 @@ public class DateUtils {
 	 * 获取当前时间
 	 *  
 	 * @author zhang.yifeng 
-	 * @param dateFormat
-	 * @return String
+	 * @param dateFormat 日期格式
+	 * @return String 当前日期字符串
 	 */
 	public static String getNowTimeStr(String dateFormat) {
 		if (StringUtils.isNullOrEmpty(dateFormat)) {
@@ -158,7 +159,7 @@ public class DateUtils {
 	 * 返回当前时间毫秒数[距离1970-01-01]
 	 *  
 	 * @author zhang.yifeng 
-	 * @return String
+	 * @return String 毫秒数
 	 */
 	public static String getNowTimeMillSec() {
 		long now = System.currentTimeMillis();

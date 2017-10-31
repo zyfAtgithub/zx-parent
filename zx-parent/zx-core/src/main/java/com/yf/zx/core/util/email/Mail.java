@@ -50,7 +50,7 @@ public class Mail {
     /**
      * 创建MIME邮件对象
      * 
-     * @return
+     * @return boolean
      */
     public boolean createMimeMessage() {
         try {
@@ -74,7 +74,7 @@ public class Mail {
     /**
      * 设置SMTP是否需要验证
      * 
-     * @param need
+     * @param need 是否需要进行身份校验
      */
     public void setNeedAuth(boolean need) {
         if (props == null)
@@ -89,8 +89,8 @@ public class Mail {
     /**
      * 设置用户名和密码
      * 
-     * @param name
-     * @param pass
+     * @param name 用户名
+     * @param pass 密码
      */
     public void setNamePass(String name, String pass) {
         username = name;
@@ -100,8 +100,8 @@ public class Mail {
     /**
      * 设置邮件主题
      * 
-     * @param mailSubject
-     * @return
+     * @param mailSubject 主题
+     * @return boolean
      */
     public boolean setSubject(String mailSubject) {
         try {
@@ -116,8 +116,9 @@ public class Mail {
     /**
      * 设置邮件正文
      * 
-     * @param mailBody
+     * @param mailBody 正文
      *            String
+     * @return boolean
      */
     public boolean setBody(String mailBody) {
         try {
@@ -135,8 +136,8 @@ public class Mail {
     /**
      * 添加附件
      * 
-     * @param filename
-     *            String
+     * @param filename 附件路径 String
+     * @return boolean
      */
     public boolean addFileAffix(String filename) {
  
@@ -158,8 +159,9 @@ public class Mail {
     /**
      * 设置发信人
      * 
-     * @param from
+     * @param from 发信人
      *            String
+     * @return boolean
      */
     public boolean setFrom(String from) {
         try {
@@ -173,8 +175,8 @@ public class Mail {
     /**
      * 设置收信人
      * 
-     * @param to
-     *            String
+     * @param to 收信人 String
+     * @return boolean
      */
     public boolean setTo(String to) {
         if (to == null)
@@ -191,8 +193,8 @@ public class Mail {
     /**
      * 设置抄送人
      * 
-     * @param copyto
-     *            String
+     * @param copyto 抄送人 String
+     * @return boolean
      */
     public boolean setCopyTo(String copyto) {
         if (copyto == null)
@@ -208,6 +210,7 @@ public class Mail {
  
     /**
      * 发送邮件
+     * @return boolean
      */
     public boolean sendOut() {
         try {
@@ -240,13 +243,13 @@ public class Mail {
     /**
      * 调用sendOut方法完成邮件发送
      * 
-     * @param smtp
-     * @param from
-     * @param to
-     * @param subject
-     * @param content
-     * @param username
-     * @param password
+     * @param smtp smtp邮件服务器
+     * @param from 发件人
+     * @param to 收件人
+     * @param subject 主题
+     * @param content 内容
+     * @param username 用户名
+     * @param password 密码
      * @return boolean
      */
     public static boolean send(String smtp, String from, String to,
@@ -272,14 +275,14 @@ public class Mail {
     /**
      * 调用sendOut方法完成邮件发送,带抄送
      * 
-     * @param smtp
-     * @param from
-     * @param to
-     * @param copyto
-     * @param subject
-     * @param content
-     * @param username
-     * @param password
+     * @param smtp smtp邮件服务器
+     * @param from 发件人
+     * @param to 收件人
+     * @param copyto 抄送
+     * @param subject 主题
+     * @param content 内容
+     * @param username 用户名
+     * @param password 密码
      * @return boolean
      */
     public static boolean sendAndCc(String smtp, String from, String to,
@@ -307,17 +310,15 @@ public class Mail {
  
     /**
      * 调用sendOut方法完成邮件发送,带附件
-     * 
-     * @param smtp
-     * @param from
-     * @param to
-     * @param subject
-     * @param content
-     * @param username
-     * @param password
-     * @param filename
-     *            附件路径
-     * @return
+     * @param smtp smtp邮件服务器
+     * @param from 发件人
+     * @param to 收件人
+     * @param subject 主题
+     * @param content 内容
+     * @param username 用户名
+     * @param password 密码
+     * @param filename 附件路径
+     * @return boolean
      */
     public static boolean send(String smtp, String from, String to,
             String subject, String content, String username, String password,
@@ -344,17 +345,16 @@ public class Mail {
  
     /**
      * 调用sendOut方法完成邮件发送,带附件和抄送
-     * 
-     * @param smtp
-     * @param from
-     * @param to
-     * @param copyto
-     * @param subject
-     * @param content
-     * @param username
-     * @param password
-     * @param filename
-     * @return
+     * @param smtp smtp邮件服务器
+     * @param from 发件人
+     * @param to 收件人
+     * @param copyto 抄送
+     * @param subject 主题
+     * @param content 内容
+     * @param username 用户名
+     * @param password 密码
+     * @param filename 附件路径
+     * @return boolean
      */
     public static boolean sendAndCc(String smtp, String from, String to,
             String copyto, String subject, String content, String username,

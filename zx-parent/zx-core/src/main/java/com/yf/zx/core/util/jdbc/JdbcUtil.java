@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * JdbcUtil [Jdbc工具类]
  * 需在spring配置文件中配置jdbcTemplate 
  * @author zhang.yifeng
- * @CreateDate 2017年8月13日
+ *  2017年8月13日
  * @version 1.0.0
  * @since  1.0.0 
  * @see com.yf.zx.core.util.jdbc 

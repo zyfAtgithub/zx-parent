@@ -22,10 +22,10 @@ import com.yf.zx.core.util.common.FileUtils;
  * SftpUtils
  * 
  * @author zhang.yifeng
- * @CreateDate 2017年6月21日
+ *  2017年6月21日
  * @version 1.0.0
  * @since 1.0.0
- * @see com.yf.core.util.ftp
+ * @see com.yf.zx.core.util.ftp
  *
  */
 public class SftpUtils {
@@ -116,9 +116,6 @@ public class SftpUtils {
 	 * @param uploadFile
 	 *            要上传的文件
 	 * @return boolean [上传结果]
-	 * @throws FileNotFoundException
-	 * @throws SftpException
-	 * @throws JSchException
 	 */
 	public boolean sftpUploadFile(String directory, String uploadFile) {
 		try {
@@ -154,6 +151,11 @@ public class SftpUtils {
 
 	/**
 	 * 创建一个文件目录
+	 *  
+	 * @author zhang.yifeng 
+	 * @param createpath 创建路径
+	 * @param sftp ChannelSftp
+	 * @return true/false
 	 */
 	public boolean createDir(String createpath, ChannelSftp sftp) {
 		boolean succ = false;
@@ -188,6 +190,11 @@ public class SftpUtils {
 
 	/**
 	 * 判断目录是否存在
+	 *  
+	 * @author zhang.yifeng 
+	 * @param directory 目录
+	 * @param sftp ChannelSftp
+	 * @return true/false
 	 */
 	public boolean isDirExist(String directory, ChannelSftp sftp) {
 		boolean isDirExistFlag = false;
@@ -212,7 +219,7 @@ public class SftpUtils {
 	 *            下载的文件名
 	 * @param saveFile
 	 *            存在本地的路径[文件全路径]
-	 * @param sftp
+	 * @return true/false
 	 */
 	public boolean download(String directory, String downloadFile, String saveFile) {
 		boolean downloadflag = false;

@@ -1,37 +1,29 @@
 package com.founder.datacenter;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.After;
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.yf.zx.user.service.UserService;
+import com.yf.zx.biz.sys.user.service.UserService;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration({
+    "classpath:conf/spring-*.xml"
+})
 public class AppTest {
 	
 	Logger logger = LoggerFactory.getLogger(AppTest.class);
 	
-    BeanFactory factory;
-
-    @Before
-    public void before() {
-        factory = new ClassPathXmlApplicationContext("conf/spring-*.xml");
-        logger.info("@Before");
-    }
-
-    @After
-    public void after() {
-        logger.info("@After");
-    }
+    @Autowired
+    UserService service;
 
     @Test
     public void exitTest() {
-        UserService service = factory.getBean("userService", UserService.class);
-        assertEquals(service.existUser("mahuan2"), true);
+        Assert.assertEquals(service.existUser("zyf"), false);
     }
 }

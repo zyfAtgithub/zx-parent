@@ -16,10 +16,10 @@ import com.yf.zx.core.util.constants.Constants;
  * FileUtils [文件工具类]
  *  
  * @author zhang.yifeng
- * @CreateDate 2017年6月25日
+ *  2017年6月25日
  * @version 1.0.0
  * @since  1.0.0 
- * @see com.yf.core.util.common 
+ * @see com.yf.zx.core.util.common 
  *
  */
 public class FileUtils {
@@ -31,8 +31,8 @@ public class FileUtils {
 	
 	/**
 	 * 根据所给路径判断文件[目录]的存在性
-	 * @param fileAbsPath
-	 * @return
+	 * @param fileAbsPath 文件绝对路径
+	 * @return true/false
 	 */
 	public static boolean judgeFileExist(String fileAbsPath) {
 		if (StringUtils.isNullOrEmpty(fileAbsPath)) {
@@ -44,7 +44,6 @@ public class FileUtils {
 	/**
 	 * 生成文件
 	 * @param fileAbsPath
-	 * @return
 	 */
 	private static void generateFile(String fileAbsPath) {
 		
@@ -71,7 +70,13 @@ public class FileUtils {
 		}
 	}
 	
-	
+	/**
+	 * 获取文件大小
+	 *  
+	 * @author zhang.yifeng 
+	 * @param fileAbsPath 文件绝对路径
+	 * @return long 文件大小
+	 */
 	public static long getFileSize(String fileAbsPath) {
 		RandomAccessFile randomFile = null;
 			// 打开一个随机访问文件流，按读写方式
@@ -97,8 +102,8 @@ public class FileUtils {
 	
 	/**
 	 * 文件重命名
-	 * @param fileAbsPath
-	 * @return
+	 * @param fileAbsPath 文件绝对路径
+	 * @return true/false
 	 */
 	private static boolean renameFile(String fileAbsPath) {
 		if (!judgeFileExist(fileAbsPath)) {
@@ -125,6 +130,12 @@ public class FileUtils {
 		return f.renameTo(newF);
 	}
 	
+	/**
+	 *  
+	 * @author zhang.yifeng 
+	 * @param fileAbsPath 文件绝对路径
+	 * @return true/false
+	 */
 	public static boolean deleteFile(String fileAbsPath) {
 		if (!judgeFileExist(fileAbsPath)) {
 			//文件不存在
@@ -136,8 +147,9 @@ public class FileUtils {
 	
 	/**
 	 * 写文件
-	 * @param fileName
-	 * @param content
+	 * @param fileName 文件路径
+	 * @param content 内容
+	 * @return true/false
 	 */
 	public static synchronized boolean appentContent2File(String fileName, String content) {
 		return appentContent2File(fileName, Constants.FILESIZE_THRESHOLD, content);
@@ -145,9 +157,12 @@ public class FileUtils {
 	}
 
 	/**
-	 * 写文件
-	 * @param fileName
-	 * @param content
+	 *  写文件
+	 * @author zhang.yifeng 
+	 * @param fileName 文件名
+	 * @param size 文件上限
+	 * @param content 内容
+	 * @return true/false
 	 */
 	public static synchronized boolean appentContent2File(String fileName, long size, String content) {
 		//文件对应目录不存在就创建
@@ -198,8 +213,8 @@ public class FileUtils {
 	 * 创建多级目录[目录不存在就创建，不在直接返回true]
 	 *  
 	 * @author zhang.yifeng 
-	 * @param file
-	 * @return
+	 * @param file 文件
+	 * @return true/false
 	 */
 	public static boolean mkdirs(File file) {
 		if (StringUtils.isNull(file)) {
@@ -213,8 +228,8 @@ public class FileUtils {
 	 * 判断文件的存在性
 	 *  
 	 * @author zhang.yifeng 
-	 * @param file
-	 * @return
+	 * @param file 文件
+	 * @return boolean true/false
 	 */
 	public static boolean fileExists(File file) {
 		if (StringUtils.isNull(file)) {

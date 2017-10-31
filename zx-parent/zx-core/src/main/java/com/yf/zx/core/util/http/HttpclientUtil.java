@@ -184,31 +184,25 @@ public class HttpclientUtil {
 	/**
 	 * Get方式提交,URL中不包含查询参数
 	 * 
-	 * @param url
-	 * 提交地址
-	 * @param params
-	 * 查询参数集, 键/值对
-	 * @param charset
-	 * 参数提交编码集
+	 * @param url 提交地址
+	 * @param contimeout 连接超时
+	 * @param sotimeout  回话超时
 	 * @return 响应消息
-	 * @throws NetServiceException 
 	 */
 	public static JSONObject get(String url, int contimeout, int sotimeout) {
 		return get(url, null, contimeout, sotimeout);
 	}
 	
 	/**
-	* Get方式提交,URL中不包含查询参数
-	* 
-	* @param url
-	* 提交地址
-	* @param params
-	* 查询参数集, 键/值对
-	* @param charset
-	* 参数提交编码集
-	* @return 响应消息
-	 * @throws NetServiceException 
-	*/
+	 * Get方式提交,URL中不包含查询参数
+	 *  
+	 * @author zhang.yifeng 
+	 * @param url 提交url
+	 * @param proxy 代理服务器
+	 * @param contimeout 连接超时
+	 * @param sotimeout 回话超时
+	 * @return 调用返回
+	 */
 	public static JSONObject get(String url, HttpHost proxy,int contimeout, int sotimeout) {
 		if (url == null || StringUtils.isEmpty(url)) {
 			return null;
@@ -249,6 +243,13 @@ public class HttpclientUtil {
 		return jsonResult;
 	}
 	
+	/**
+	 *  获取 DefaultHttpClient
+	 * @author zhang.yifeng 
+	 * @param contimeout 连接超时
+	 * @param sotimeout 回话超时
+	 * @return HttpClient
+	 */
 	public static HttpClient getDefaultHttpClient(int contimeout, int sotimeout) {
 		DefaultHttpClient httpclient = new DefaultHttpClient();
 		httpclient.getParams().setParameter(CoreProtocolPNames.PROTOCOL_VERSION, HttpVersion.HTTP_1_1);

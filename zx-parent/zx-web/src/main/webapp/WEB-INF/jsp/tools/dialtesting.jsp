@@ -11,13 +11,13 @@
 </head>
 <body>
 	<div class="main-content">
-		<marquee  align="left" height="36" width="auto" behavior="scroll"  direction="left"  hspace="10" vspace="0"
-		        loop="-1" scrollamount="10" scrolldelay="200"
-		        onMouseOut="this.start()" onMouseOver="this.stop()">
-			<a href="http://www.baidu.com">拨测，呼叫中心 统一通信 融合通信专业资讯网系统测试功能。</a>
-		</marquee>
 		<!-- 查询面板 -->
 		<div class="easyui-panel query-panel" data-options="fit:true">
+				<marquee  data-options="align:left,loop:-1,direction:'left',vspace:0,behavior:'scroll'"
+				 height="36" width="300px" behavior="scroll" hspace="10" vspace="0" scrollamount="10" 
+				 scrolldelay="400" onMouseOut="this.start()" onMouseOver="this.stop()">
+					<a href="javascript:void()">拨测：呼叫中心 统一通信 融合通信专业资讯网系统测试功能。</a>
+				</marquee>
                 <form id="ff" method="post">  
                     <table>  
                         <tr>  

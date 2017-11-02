@@ -3,8 +3,13 @@
 	}
 	.query-panel {
 		margin-bottom: 10px;
-		height:145px;
+		height:185px;
+		/* border:1px solid blue; */
 		padding: 4px;
+	}
+	.query-panel marquee a {
+		text-decoration: none;
+		color: #3f88bf;
 	}
 	.query-panel table {
 		width:100%;

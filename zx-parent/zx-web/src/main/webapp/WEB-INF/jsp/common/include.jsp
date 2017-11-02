@@ -8,3 +8,4 @@
 <!-- jquery 2.1.1 -->
 <script type="text/javascript" src="${ctx }/webResources/plugins/jquery-easyui-1.5.3/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="${ctx }/webResources/plugins/jquery-easyui-1.5.3/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="${ctx }/webResources/js/extend/jquery-easyui-ext.js"></script>

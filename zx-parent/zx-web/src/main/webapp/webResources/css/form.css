@@ -1,0 +1,38 @@
+.main-content {
+		padding-bottom: 5px;
+	}
+	.query-panel {
+		margin-bottom: 10px;
+		height:145px;
+		padding: 4px;
+	}
+	.query-panel table {
+		width:100%;
+		border:1px solid #D9D9D9;
+		border-collapse: collapse;
+	}
+	.query-panel table tr .td-btn {
+		padding: 4px 0;
+		text-align:center;
+	} 
+	.query-panel table td {
+		padding: 0 0 0 8px;
+ 	    height: 32px;
+		border:1px solid #D9D9D9;
+	    line-height: 32px;
+	} 
+	.query-panel table th {
+	    height: 32px;
+	    line-height: 32px;
+	    background: #f5f5f5;
+	    color: #000;
+	    text-align: right;
+	    padding: 0 8px 0 0;
+		font-size: 12px;
+		font-family: '微软雅黑';
+	}
+	.tb-datagrid {
+		margin-top: 10px;
+		border:1px solid red;
+		height:300px;
+	}

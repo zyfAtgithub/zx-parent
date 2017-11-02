@@ -14,7 +14,7 @@ $(function(){
 	tabCloseEven();
 	$('#tabs').tabs('add',{
 		title:'欢迎使用',
-		content:createFrame('http://www.sina.com.cn'),
+		content:createFrame('welcome'),
 		closable:true,
 		tools:[{
 				iconCls:'icon-mini-refresh',
@@ -25,10 +25,9 @@ $(function(){
 					$('#tabs').tabs('update', {
 					    tab: currentTab,
 					    options: {
-					        href: url  // the new content URL
+					        href: url
 					    }
 					});
-//					$('.panel:visible > .panel-body > iframe').get(0).contentDocument.location.reload(true);
 		        }
 			}
 		]
@@ -49,7 +48,6 @@ $(function(){
 //初始化左侧
 function InitLeftMenu() {
 	$("#nav").accordion({animate:false});
-
     $.each(_menus.menus, function(i, n) {
 		var menulist ='';
 		menulist +='<ul>';
@@ -71,7 +69,7 @@ function InitLeftMenu() {
 
 		var url = $(this).attr("rel");
 		var menuid = $(this).attr("ref");
-		var icon = getIcon(menuid,icon);
+		var icon = getIcon(menuid, icon);
 
 		addTab(tabTitle,url,icon);
 		$('.easyui-accordion li div').removeClass("selected");
@@ -82,10 +80,12 @@ function InitLeftMenu() {
 		$(this).parent().removeClass("hover");
 	});
 
+	
 	//选中第一个
-	var panels = $('#nav').accordion('panels');
-	var t = panels[0].panel('options').title;
-    $('#nav').accordion('select', t);
+//	var panels = $('#nav').accordion('panels');
+//	var t = panels[0].panel('options').title;
+//    $('#nav').accordion('select', t);
+	$("#nav").accordion('getSelected').panel('collapse')
 }
 //获取左侧导航的图标
 function getIcon(menuid){
@@ -107,8 +107,23 @@ function addTab(subtitle,url,icon){
 			title:subtitle,
 			content:createFrame(url),
 			closable:true,
-			icon:icon
-		});
+			icon:icon,
+			tools:[{
+					iconCls:'icon-mini-refresh',
+					handler:function(){
+						// 刷新当前的tab
+						var currentTab = $('#tabs').tabs('getSelected');
+						var url = $(currentTab.panel('options')).attr('href');
+						$('#tabs').tabs('update', {
+						    tab: currentTab,
+						    options: {
+						        href: url
+						    }
+						});
+			        }
+				}
+			]
+		})
 	}else{
 		$('#tabs').tabs('select',subtitle);
 		$('#mm-tabupdate').click();
@@ -210,5 +225,23 @@ function tabCloseEven()
 
 //弹出信息窗口 title:标题 msgString:提示信息 msgType:信息类型 [error,info,question,warning]
 function msgShow(title, msgString, msgType) {
-	$.messager.alert(title, msgString, msgType);
+	$.messager.show({  
+        title:title,  
+        msg:msgString,  
+        showType:msgType,  
+        style:{  
+        	 left:'',  
+             right:0,  
+             top:document.body.scrollTop+document.documentElement.scrollTop,  
+             bottom:''  
+        }  
+    });  
+	//	 $.messager.alert({
+//         title:title,
+//         msg:msgString,
+//         icon: 'info',
+//         width: 400,
+//         top:300
+//     }); 
+//	$.messager.alert(title, msgString, msgType);
 }

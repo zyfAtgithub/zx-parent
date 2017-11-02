@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%@include file="../common/include.jsp" %>
-<link href="webResources/plugins/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="${ctx }/webResources/plugins/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
 <title>请登录</title>
 

@@ -10,7 +10,7 @@ a:hover{ color:Red; text-decoration:underline;}
 
 .head a{color:White;text-decoration:underline;}
 
-.easyui-accordion ul{list-style-type:none;margin:0px; padding:10px;}
+.easyui-accordion ul{list-style-type:none;margin:0px; padding:3px;}
 .easyui-accordion ul li{ padding:0px;}
 .easyui-accordion ul li a{line-height:24px;}
 .easyui-accordion ul li div{margin:2px 0px;padding-left:10px;padding-top:2px;}
@@ -23,6 +23,9 @@ a:hover{ color:Red; text-decoration:underline;}
 
 .icon{ background:url(../images/tabicons.png) no-repeat;width:18px; line-height:18px; display:inline-block;}
 .icon-sys{ background-position:0px -200px;}
+.icon-welcome{ background-position:-100px -100px;}
+.icon-cmd{ background-position:-380px 0px;}
+.icon-dial{ background-position:-300px -420px ;}
 .icon-set{ background-position:-380px -200px;}
 .icon-add{background-position: -20px 0px;}
 .icon-add1{background:url('icon/edit_add.png') no-repeat;}

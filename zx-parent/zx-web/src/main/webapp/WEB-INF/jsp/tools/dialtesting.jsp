@@ -15,6 +15,7 @@
 	.query-panel {
 		margin-bottom: 10px;
 		height:105px;
+		padding: 30px 60px;
 	}
 </style>
 

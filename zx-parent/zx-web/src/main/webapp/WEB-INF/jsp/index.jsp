@@ -44,7 +44,7 @@
 		<div id="nav" class="easyui-accordion" data-options="fit:true,border:false">
 		</div>
 	</div>
-	<div id="mainPanle" data-options="region:'center'" style="background: #eee; overflow:hidden;padding:5px">
+	<div id="mainPanle" data-options="region:'center'" style="background: #eee; overflow:hidden;">
     	<div id="tabs" class="easyui-tabs"  data-options="fit:true,border:true" >
 		</div>
 	</div>
@@ -95,6 +95,7 @@
 						},{"menuid":"2","icon":"icon-cmd","menuname":"实用工具",
 							"menus":[
 								{"menuid":"21","menuname":"拨测工具","icon":"icon-dial","url":"tools/dialtesting"},
+								{"menuid":"22","menuname":"新增拨测任务","icon":"icon-dial","url":"tools/dialtesting_add"},
 								]
 						}
 				]};

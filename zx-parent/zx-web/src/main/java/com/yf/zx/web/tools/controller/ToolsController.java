@@ -22,4 +22,9 @@ public class ToolsController {
 	public String toDialTestingView() {
 		return "tools/dialtesting";
 	}
+
+	@RequestMapping("/dialtesting_add")
+	public String toDialTestingAddView() {
+		return "tools/dialtesting_add";
+	}
 }

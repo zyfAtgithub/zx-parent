@@ -20,11 +20,6 @@
 	border-collapse: collapse;
 }
 
-.query-panel table tr .td-btn {
-	padding: 4px 0;
-	text-align: center;
-}
-
 .query-panel table td {
 	padding: 0 0 0 8px;
 	height: 32px;
@@ -47,4 +42,65 @@
 	margin-top: 10px;
 	border: 1px solid red;
 	height: 300px;
+}
+
+.self-btn-group{
+	padding:5px 8px !important;
+	text-align: center;
+}
+/* .self-btn{
+    display: inline-block;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    padding: 6px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    border-radius: 4px;
+} */
+
+.self-btn {
+    border-radius: 10px;
+    padding: 6px 12px;
+    text-align:center;
+    line-height:100%;
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    text-decoration:none;
+    vertical-align:text-bottom;
+    display:inline-block;
+    cursor:pointer;
+    zoom:1;
+    font-stretch:normal;
+  	border-width: 1px;
+    border-top-style:solid;
+    border-right-style:solid;
+    border-bottom-style:solid;
+    border-left-style:solid;
+    background-image:none;
+    background-attachment:scroll;
+    background-repeat:repeat;
+    background-size:auto;
+    color: rgb(51, 51, 51);
+    background-color: #EFEFEF;
+    border-color: rgb(204, 204, 204);
+}
+
+.self-btn:hover{
+    background: #DAF5FD;
+    border-color:#A4E0F0;
+    font-weight: bold;
 }

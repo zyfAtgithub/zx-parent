@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%@include file="../common/include.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx }/webResources/css/form.css">
-<script type="text/javascript" src="${ctx }/webResources/js/tools/dialtesting.js"></script>
+<link rel="stylesheet" type="text/css" href="${ctx }/webResources/plugins/layui/css/layui.css">
 </head>
 <body>
 	<div class="main-content">
@@ -37,9 +37,13 @@
                             </td>  
                         </tr>  
                         <tr> 
-                        	<td colspan="6" class="td-btn">
-                        		<a href="javascript:void(0)" class="easyui-linkbutton">查询</a>
-                        		<a href="javascript:void(0)" class="easyui-linkbutton">重置</a>
+                        	<td colspan="6" class="self-btn-group">
+	                        	<a id="submitBtn" class="layui-btn layui-btn-radius layui-btn-small">
+								  <i class="layui-icon">&#xe615;</i> 查询
+								</a>
+	                        	<a id="resetBtn" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-small">
+								  <i class="layui-icon">&#xe603;</i> 重置
+								</a>
                         	</td> 
                         </tr>  
                     </table>  
@@ -50,8 +54,10 @@
 		<div id="datagridDial" style="width:100%">
 		</div>
 	</div>
+
+	<script type="text/javascript" src="${ctx }/webResources/plugins/layui/layui.all.js"></script>
+	<script type="text/javascript" src="${ctx }/webResources/js/tools/dialtesting.js"></script>
 	<script type="text/javascript">
-		
 	</script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%@include file="common/include.jsp"%>
 <link rel="stylesheet" type="text/css" href="webResources/css/index.css">
-	<script type="text/javascript" src='webResources/js/index.js'> </script>
+<script type="text/javascript" src='webResources/js/index.js'> </script>
 <title>文件管理系统</title>
 
 <style type="text/css">
@@ -92,10 +92,17 @@
 							"menus":[
 								{"menuid":"11","menuname":"欢迎使用","icon":"icon-welcome","url":"welcome"},
 							]
-						},{"menuid":"2","icon":"icon-cmd","menuname":"实用工具",
+						},
+						{"menuid":"2","icon":"icon-sys","menuname":"系统管理",
 							"menus":[
-								{"menuid":"21","menuname":"拨测工具","icon":"icon-dial","url":"tools/dialtesting"},
-								{"menuid":"22","menuname":"新增拨测任务","icon":"icon-dial","url":"tools/dialtesting_add"},
+								{"menuid":"21","menuname":"用户管理","icon":"icon-users","url":"tools/dialtesting"},
+								{"menuid":"22","menuname":"权限管理","icon":"icon-role","url":"tools/dialtesting_add"},
+								]
+						},
+						{"menuid":"3","icon":"icon-cmd","menuname":"实用工具",
+							"menus":[
+								{"menuid":"31","menuname":"拨测工具","icon":"icon-dial","url":"tools/dialtesting"},
+								{"menuid":"32","menuname":"新增拨测任务","icon":"icon-dial","url":"tools/dialtesting_add"},
 								]
 						}
 				]};

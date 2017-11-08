@@ -66,11 +66,12 @@ $(function() {
 
 	// 提交事件
 	$("#submitBtn").click(function() {
-		$("#ff")[0].submit();
+		//$("#ff")[0].submit();
+		layer.msg("提交",{anim: 0});
 	});
 
 	// 重置事件
 	$("#resetBtn").click(function() {
-		$("#ff")[0].reset();
+		layer.msg("重置",{anim: 1});
 	});
 });

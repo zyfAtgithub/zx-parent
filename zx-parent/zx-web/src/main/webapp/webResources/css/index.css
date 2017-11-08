@@ -24,6 +24,7 @@ a:hover{ color:Red; text-decoration:underline;}
 .icon{ background:url(../images/tabicons.png) no-repeat;width:18px; line-height:18px; display:inline-block;}
 .icon-sys{ background-position:0px -200px;}
 .icon-welcome{ background-position:-100px -100px;}
+.icon-tool{ background-position:-380px 0px;}
 .icon-cmd{ background-position:-380px 0px;}
 .icon-dial{ background-position:-300px -420px ;}
 .icon-set{ background-position:-380px -200px;}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>开始使用layui</title>
+<link rel="stylesheet" href="webResources/plugins/layui/css/layui.css">
+
+<style type="text/css">
+	.header-demo {
+		height: 60px;
+		border-bottom: none;
+	}
+	
+	.header {
+		height: 59px;
+		border-bottom: 1px solid #404553;
+		background-color: #393D49;
+	}
+	
+	.logo img {
+		width: 82px;
+		height: 31px;
+	}
+	
+	.header-demo .logo {
+		left: 40px;
+	}
+	
+	.logo {
+		position: absolute;
+		left: 0;
+		top: 16px;
+	}
+	
+	.right-content {
+		margin-left: 200px;
+	}
+	.layui-nav-item {
+	    line-height: 40px;
+	}
+	
+	.layui-nav-item a{
+		font-size:15px;
+	}
+
+	.layui-nav-item a i.layui-icon{
+		margin-right:12px;
+		font-size: 25px;
+	}
+	.layui-nav-item a:hover{
+		color: #1E9FFF !important;
+	}
+	
+	.right-content .right-breadcrumb{
+		padding:6px 14px;
+	    border-bottom: 1px solid #eee;
+	}
+	.right-content .right-main {
+		
+	}
+	.tree-view {
+		padding:10px 8px;
+		border:2px solid cyan;
+		/* background:cyan; */
+		height:calc(100% - 95px);
+		position:absolute;
+	}
+</style>
+</head>
+<body>
+
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header header header-demo">
+			<div class="layui-main">
+				<a class="logo" href="/"> <img
+					src="http://res.layui.com/images/layui/logo.png" alt="layui">
+				</a>
+			</div>
+		</div>
+
+		<!-- sidebar -->
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<ul class="layui-nav layui-nav-tree layui-bg-cyan layui-inline">
+				  <li class="layui-nav-item layui-nav-itemed">
+				    <a href="javascript:;"><i class="layui-icon">&#xe68e;</i>欢迎</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href="javascript:;">选项一</a></dd>
+				      <dd><a href="javascript:;">选项二</a></dd>
+				      <dd><a href="javascript:;">选项三</a></dd>
+				      <dd><a href="">跳转项</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href="">用户管理</a></dd>
+				      <dd><a href="">角色管理</a></dd>
+				      <dd><a href="">权限管理</a></dd>
+				    </dl>
+				  </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right-content">
+		<div class="right-breadcrumb">
+			<span class="layui-breadcrumb">
+			  <a href="">首页</a>
+			  <a><cite>系统管理</cite></a>
+			  <a><cite>用户管理</cite></a>
+			</span>
+		</div>
+		<div class="right-main layui-row">
+			<div class="layui-col-md3 tree-view">
+				<ul id="demo"></ul>
+			</div>
+		    <div class="layui-col-md9">
+		    </div>
+		</div>
+	</div>
+	
+	<script src="webResources/plugins/layui/layui.all.js"></script>
+	<script type="text/javascript">
+	layui.tree({
+		  elem: '#demo', //传入元素选择器
+		  nodes: [ //节点
+			  {
+				    name: '常用文件夹'
+				    ,id: 1
+				    ,alias: 'changyong'
+				    ,children: [
+				      {
+				        name: '所有未读'
+				        ,id: 11
+				        ,href: 'http://www.layui.com/'
+				        ,alias: 'weidu'
+				      }, {
+				        name: '置顶邮件'
+				        ,id: 12
+				      }, {
+				        name: '标签邮件'
+				        ,id: 13
+				      }
+				    ]
+				  }, {
+				    name: '我的邮箱'
+				    ,id: 2
+				    ,spread: true
+				    ,children: [
+				      {
+				        name: 'QQ邮箱'
+				        ,id: 21
+				        ,spread: true
+				        ,children: [
+				          {
+				            name: '收件箱'
+				            ,id: 211
+				            ,children: [
+				              {
+				                name: '所有未读'
+				                ,id: 2111
+				              }, {
+				                name: '置顶邮件'
+				                ,id: 2112
+				              }, {
+				                name: '标签邮件'
+				                ,id: 2113
+				              }
+				            ]
+				          }, {
+				            name: '已发出的邮件'
+				            ,id: 212
+				          }, {
+				            name: '垃圾邮件'
+				            ,id: 213
+				          }
+				        ]
+				      }, {
+				        name: '阿里云邮'
+				        ,id: 22
+				        ,children: [
+				          {
+				            name: '收件箱'
+				            ,id: 221
+				          }, {
+				            name: '已发出的邮件'
+				            ,id: 222
+				          }, {
+				            name: '垃圾邮件'
+				            ,id: 223
+				          }
+				        ]
+				      }
+				    ]
+				  }
+				]
+		});
+	</script>
+</body>
+</html>

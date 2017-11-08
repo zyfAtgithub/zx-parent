@@ -47,7 +47,10 @@ $(function(){
 
 //初始化左侧
 function InitLeftMenu() {
-	$("#nav").accordion({animate:false});
+	$("#nav").accordion({
+		animate:false,
+		collapsible:false,
+	});
     $.each(_menus.menus, function(i, n) {
 		var menulist ='';
 		menulist +='<ul>';

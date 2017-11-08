@@ -482,7 +482,7 @@
 		animate: true,
 		multiple: false,
 		selected: 0,
-		halign: 'top',	// the header alignment: 'top','left','right'
+		halign: 'left',	// the header alignment: 'top','left','right'
 		
 		onSelect: function(title, index){},
 		onUnselect: function(title, index){},

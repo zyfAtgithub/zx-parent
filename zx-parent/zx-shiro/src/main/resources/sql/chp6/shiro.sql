@@ -9,6 +9,8 @@ create table sys_users (
   username varchar(100),
   password varchar(100),
   salt varchar(100),
+  phone varchar(100),
+  email varchar(100),
   locked bool default false,
   lastlogin_time datetime,
   constraint pk_sys_users primary key(id)

@@ -20,4 +20,6 @@ public interface UserMapper {
     List<User> selectByName(String username);
 
     int insertAutoId(User record);
+
+	List<User> selectByLoginName(String loginName);
 }

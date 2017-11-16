@@ -15,7 +15,7 @@ public class UserService {
 	UserMapper userDao;
 	
 	public boolean existUser(String userName) {
-		List<User> userList = userDao.selectByName(userName);
+		List<User> userList = userDao.selectByLoginName(userName);
 		return !userList.isEmpty();
 	}
 }

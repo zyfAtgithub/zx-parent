@@ -3,6 +3,7 @@
 <mapper namespace="com.yf.zx.biz.sys.user.dao.UserMapper" >
   <resultMap id="BaseResultMap" type="com.yf.zx.biz.sys.user.entity.User" >
     <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="loginname" jdbcType="VARCHAR" property="loginname" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="salt" property="salt" jdbcType="VARCHAR" />
@@ -12,7 +13,7 @@
     <result column="lastlogin_time" property="lastloginTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, username, password, salt, phone, email, locked, lastlogin_time
+    id, loginname, username, password, salt, phone, email, locked, lastlogin_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -25,10 +26,10 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.yf.zx.biz.sys.user.entity.User" >
-    insert into sys_users (id, username, password, 
+    insert into sys_users (id, loginname, username, password, 
       salt, phone, email, 
       locked, lastlogin_time)
-    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{loginname,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{salt,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{locked,jdbcType=BIT}, #{lastloginTime,jdbcType=TIMESTAMP})
   </insert>
@@ -37,6 +38,9 @@
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
+      </if>
+      <if test="loginname != null" >
+        loginname,
       </if>
       <if test="username != null" >
         username,
@@ -64,6 +68,9 @@
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
+      <if test="loginname != null" >
+        #{loginname,jdbcType=VARCHAR},
+      </if>
       <if test="username != null" >
         #{username,jdbcType=VARCHAR},
       </if>
@@ -90,6 +97,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.sys.user.entity.User" >
     update sys_users
     <set >
+      <if test="loginname != null" >
+        loginname = #{loginname,jdbcType=VARCHAR},
+      </if>
       <if test="username != null" >
         username = #{username,jdbcType=VARCHAR},
       </if>
@@ -116,7 +126,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.sys.user.entity.User" >
     update sys_users
-    set username = #{username,jdbcType=VARCHAR},
+    set loginname = #{loginname,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       salt = #{salt,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
@@ -131,7 +142,14 @@
   	select 
   	<include refid="Base_Column_List"/>
   	from sys_users
-  	where username = #{username, jdbcType=VARCHAR}
+  	where username like #{username, jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByLoginName" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from sys_users
+  	where loginname = #{loginname, jdbcType=VARCHAR}
   </select>
   
   <!-- 主键自增 -->

@@ -5,6 +5,8 @@ import java.util.Date;
 public class User {
     private Long id;
 
+    private String loginname;
+
     private String username;
 
     private String password;
@@ -25,6 +27,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getLoginname() {
+        return loginname;
+    }
+
+    public void setLoginname(String loginname) {
+        this.loginname = loginname == null ? null : loginname.trim();
     }
 
     public String getUsername() {

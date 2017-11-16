@@ -1,7 +1,11 @@
 package com.yf.zx.biz.sys.user.entity;
 
+import java.util.Date;
+
 public class User {
     private Long id;
+
+    private String loginname;
 
     private String username;
 
@@ -9,7 +13,13 @@ public class User {
 
     private String salt;
 
-    private Boolean locked = false;
+    private String phone;
+
+    private String email;
+
+    private Boolean locked;
+
+    private Date lastloginTime;
 
     public Long getId() {
         return id;
@@ -17,6 +27,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getLoginname() {
+        return loginname;
+    }
+
+    public void setLoginname(String loginname) {
+        this.loginname = loginname == null ? null : loginname.trim();
     }
 
     public String getUsername() {
@@ -43,6 +61,22 @@ public class User {
         this.salt = salt == null ? null : salt.trim();
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
     public Boolean getLocked() {
         return locked;
     }
@@ -51,9 +85,11 @@ public class User {
         this.locked = locked;
     }
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", salt=" + salt + ", locked="
-				+ locked + "]";
-	}
+    public Date getLastloginTime() {
+        return lastloginTime;
+    }
+
+    public void setLastloginTime(Date lastloginTime) {
+        this.lastloginTime = lastloginTime;
+    }
 }

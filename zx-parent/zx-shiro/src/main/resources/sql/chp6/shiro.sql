@@ -6,6 +6,7 @@ drop table if exists sys_roles_permissions;
 
 create table sys_users (
   id bigint auto_increment,
+  loginname varchar(100),
   username varchar(100),
   password varchar(100),
   salt varchar(100),

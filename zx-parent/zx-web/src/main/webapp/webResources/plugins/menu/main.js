@@ -35,11 +35,18 @@ function loadMenu(){
 					var dataUrl = $(this).attr('data-url');
 					var title = $(this).attr('data-title');
 					var level = $(this).attr('data-level');
+					var $breadcrumb = $('.layui-body .right-topnav .layui-breadcrumb');
 					if ('1' == level) {
-						$('.layui-body .right-topnav .layui-breadcrumb').html('<a href="">'+ title +'</a>');
+						$breadcrumb.html('<a href="">'+ title +'</a>');
 					}
 					else {
-						$('.layui-body .right-topnav .layui-breadcrumb').append($('<a href="">'+ title +'</a>'));
+						var $parentMenu = $('.layui-body .right-topnav .layui-breadcrumb a:first');
+						if ($parentMenu.children('.layui-box').length == 0) {
+							$parentMenu.append($('<span class="layui-box">&gt;</span>'));
+						}
+						$breadcrumb.html('');
+						$breadcrumb.append($parentMenu);
+						$breadcrumb.append($('<a><cite>'+ title +'</cite></a>'));
 					}
 					layer.msg(dataUrl + "&&" + title + "&&" + level);
 					if (dataUrl && "#" != dataUrl) {

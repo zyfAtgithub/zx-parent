@@ -15,7 +15,7 @@
 		"children":[{
 			"id":21,
 			"iconCls":"fa fa-user",
-			"url":"http://www.sina.com",
+			"url":"http://127.0.0.1:8080/zx-web/webResources/plugins/menu/user.html",
 			"title":"用户管理",
 			"active":false
 			},

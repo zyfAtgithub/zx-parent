@@ -27,6 +27,13 @@
 			<artifactId>zx-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper</artifactId>
+		    <version>5.1.2</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

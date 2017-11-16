@@ -162,4 +162,26 @@
       #{locked,jdbcType=BIT}, #{lastloginTime,jdbcType=TIMESTAMP}))
   </insert>
   
+  <select id="selectUser" parameterType="com.yf.zx.biz.sys.user.entity.User" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List"/>
+  	from sys_users
+  	<where>
+      <if test="loginname != null and loginname != ''" >
+        and loginname like #{loginname,jdbcType=VARCHAR}
+      </if>
+      <if test="username != null" >
+        and username like #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="phone != null" >
+        and phone = #{phone,jdbcType=VARCHAR}
+      </if>
+      <if test="email != null" >
+        and email = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="locked != null" >
+        and locked = #{locked,jdbcType=BIT}
+      </if>
+  	</where>
+  </select>
+  
 </mapper>

@@ -4206,3 +4206,59 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 2017-10-27 21:04:23,120  INFO AppTest[36] - After
 2017-10-27 21:04:23,138  INFO GenericApplicationContext[984] - Closing org.springframework.context.support.GenericApplicationContext@31610302: startup date [Fri Oct 27 21:04:19 CST 2017]; root of context hierarchy
 2017-10-27 21:04:23,145  INFO DruidDataSource[1385] - {dataSource-1} closed
+2017-11-16 17:17:49,765  INFO AppTest[33] - Before
+2017-11-16 17:17:49,879  INFO AppTest[38] - After
+2017-11-16 17:18:47,714  INFO AppTest[33] - Before
+2017-11-16 17:18:47,804  INFO AppTest[38] - After
+2017-11-16 17:19:16,464  INFO AppTest[33] - Before
+2017-11-16 17:19:16,558  INFO AppTest[38] - After
+2017-11-16 17:20:08,604  INFO AppTest[33] - Before
+2017-11-16 17:20:08,730  INFO AppTest[38] - After
+2017-11-16 17:20:16,856  INFO AppTest[33] - Before
+2017-11-16 17:20:16,965  INFO AppTest[38] - After
+2017-11-16 17:20:46,176  INFO AppTest[33] - Before
+2017-11-16 17:20:46,282  INFO AppTest[38] - After
+2017-11-16 17:21:49,215  INFO AppTest[33] - Before
+2017-11-16 17:21:49,279 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users 
+2017-11-16 17:21:49,312 DEBUG selectUser[159] - ==> Parameters: 
+2017-11-16 17:21:49,344 DEBUG selectUser[159] - <==      Total: 2
+2017-11-16 17:21:49,351  INFO AppTest[38] - After
+2017-11-16 17:23:25,314  INFO AppTest[33] - Before
+2017-11-16 17:23:25,369  INFO AppTest[38] - After
+2017-11-16 17:24:17,636  INFO AppTest[33] - Before
+2017-11-16 17:24:17,684  INFO AppTest[38] - After
+2017-11-16 17:24:53,648  INFO AppTest[33] - Before
+2017-11-16 17:24:53,704 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE username = ? 
+2017-11-16 17:24:53,737 DEBUG selectUser[159] - ==> Parameters: 张益峰(String)
+2017-11-16 17:24:53,766 DEBUG selectUser[159] - <==      Total: 1
+2017-11-16 17:24:53,772  INFO AppTest[38] - After
+2017-11-16 17:25:12,843  INFO AppTest[33] - Before
+2017-11-16 17:25:12,907 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users 
+2017-11-16 17:25:12,941 DEBUG selectUser[159] - ==> Parameters: 
+2017-11-16 17:25:12,965 DEBUG selectUser[159] - <==      Total: 2
+2017-11-16 17:25:12,971  INFO AppTest[38] - After
+2017-11-16 17:25:34,230  INFO AppTest[33] - Before
+2017-11-16 17:25:34,306 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname = ? 
+2017-11-16 17:25:34,344 DEBUG selectUser[159] - ==> Parameters: zyf(String)
+2017-11-16 17:25:34,374 DEBUG selectUser[159] - <==      Total: 1
+2017-11-16 17:25:34,380  INFO AppTest[38] - After
+2017-11-16 17:26:21,134  INFO AppTest[33] - Before
+2017-11-16 17:26:21,203 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname like ? 
+2017-11-16 17:26:21,244 DEBUG selectUser[159] - ==> Parameters: zyf(String)
+2017-11-16 17:26:21,289 DEBUG selectUser[159] - <==      Total: 1
+2017-11-16 17:26:21,295  INFO AppTest[38] - After
+2017-11-16 17:26:33,354  INFO AppTest[33] - Before
+2017-11-16 17:26:33,423 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname like ? 
+2017-11-16 17:26:33,455 DEBUG selectUser[159] - ==> Parameters: admin(String)
+2017-11-16 17:26:33,480 DEBUG selectUser[159] - <==      Total: 1
+2017-11-16 17:26:33,483  INFO AppTest[38] - After
+2017-11-16 17:26:43,584  INFO AppTest[33] - Before
+2017-11-16 17:26:43,655 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname like ? 
+2017-11-16 17:26:43,693 DEBUG selectUser[159] - ==> Parameters: a(String)
+2017-11-16 17:26:43,723 DEBUG selectUser[159] - <==      Total: 0
+2017-11-16 17:26:43,727  INFO AppTest[38] - After
+2017-11-16 17:26:55,678  INFO AppTest[33] - Before
+2017-11-16 17:26:55,776 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname like ? 
+2017-11-16 17:26:55,822 DEBUG selectUser[159] - ==> Parameters: %a%(String)
+2017-11-16 17:26:55,851 DEBUG selectUser[159] - <==      Total: 1
+2017-11-16 17:26:55,855  INFO AppTest[38] - After

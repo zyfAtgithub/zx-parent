@@ -3,6 +3,7 @@ package com.yf.zx.biz.sys.user.dao;
 import java.util.List;
 
 import com.yf.zx.biz.sys.user.entity.User;
+import com.yf.zx.biz.sys.user.entity.UserVo;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Long id);
@@ -19,5 +20,8 @@ public interface UserMapper {
     
     List<User> selectByName(String username);
 
+    List<User> selectUser(UserVo userVo);
+    
+    
     int insertAutoId(User record);
 }

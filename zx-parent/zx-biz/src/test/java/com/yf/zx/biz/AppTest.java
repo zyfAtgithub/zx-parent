@@ -12,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.github.pagehelper.PageInfo;
 import com.yf.zx.biz.sys.user.entity.User;
+import com.yf.zx.biz.sys.user.entity.UserVo;
 import com.yf.zx.biz.sys.user.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -55,5 +57,17 @@ public class AppTest {
     	user.setSalt("28495018162ad6328783c3bde7364346");
     	userService.addUser(user);
     	System.out.println(user.getId());
+    }
+    
+    @Test
+    public void findUserByPage() {
+    	UserVo userVo = new UserVo();
+//    	userVo.setUsername("张益峰");
+    	userVo.setLoginname("%a%");
+    	userVo.setOrderBy("lastloginTime dec");
+    	
+    	PageInfo<User> pageInfo = userService.findByPage(userVo);
+    	
+    	System.out.println(pageInfo);
     }
 }

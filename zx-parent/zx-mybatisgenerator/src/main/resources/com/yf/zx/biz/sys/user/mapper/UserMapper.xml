@@ -6,10 +6,13 @@
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="locked" property="locked" jdbcType="BIT" />
+    <result column="lastlogin_time" property="lastloginTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, username, password, salt, locked
+    id, username, password, salt, phone, email, locked, lastlogin_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -23,9 +26,11 @@
   </delete>
   <insert id="insert" parameterType="com.yf.zx.biz.sys.user.entity.User" >
     insert into sys_users (id, username, password, 
-      salt, locked)
+      salt, phone, email, 
+      locked, lastlogin_time)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{salt,jdbcType=VARCHAR}, #{locked,jdbcType=BIT})
+      #{salt,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{locked,jdbcType=BIT}, #{lastloginTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.yf.zx.biz.sys.user.entity.User" >
     insert into sys_users
@@ -42,8 +47,17 @@
       <if test="salt != null" >
         salt,
       </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
       <if test="locked != null" >
         locked,
+      </if>
+      <if test="lastloginTime != null" >
+        lastlogin_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -59,8 +73,17 @@
       <if test="salt != null" >
         #{salt,jdbcType=VARCHAR},
       </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
       <if test="locked != null" >
         #{locked,jdbcType=BIT},
+      </if>
+      <if test="lastloginTime != null" >
+        #{lastloginTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -76,8 +99,17 @@
       <if test="salt != null" >
         salt = #{salt,jdbcType=VARCHAR},
       </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
       <if test="locked != null" >
         locked = #{locked,jdbcType=BIT},
+      </if>
+      <if test="lastloginTime != null" >
+        lastlogin_time = #{lastloginTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -87,9 +119,13 @@
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       salt = #{salt,jdbcType=VARCHAR},
-      locked = #{locked,jdbcType=BIT}
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      locked = #{locked,jdbcType=BIT},
+      lastlogin_time = #{lastloginTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  
   
   <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
   	select 
@@ -97,4 +133,15 @@
   	from sys_users
   	where username = #{username, jdbcType=VARCHAR}
   </select>
+  
+  <!-- 主键自增 -->
+  <insert id="insertAutoId" useGeneratedKeys="true" keyProperty="id" parameterType="com.yf.zx.biz.sys.user.entity.User" >
+    insert into sys_users (username, password, 
+      salt, phone, email, 
+      locked, lastlogin_time)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{locked,jdbcType=BIT}, #{lastloginTime,jdbcType=TIMESTAMP}))
+  </insert>
+  
 </mapper>

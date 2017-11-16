@@ -1,5 +1,7 @@
 package com.yf.zx.biz.sys.user.entity;
 
+import java.util.Date;
+
 public class User {
     private Long id;
 
@@ -9,7 +11,13 @@ public class User {
 
     private String salt;
 
+    private String phone;
+
+    private String email;
+
     private Boolean locked;
+
+    private Date lastloginTime;
 
     public Long getId() {
         return id;
@@ -43,11 +51,35 @@ public class User {
         this.salt = salt == null ? null : salt.trim();
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
     public Boolean getLocked() {
         return locked;
     }
 
     public void setLocked(Boolean locked) {
         this.locked = locked;
+    }
+
+    public Date getLastloginTime() {
+        return lastloginTime;
+    }
+
+    public void setLastloginTime(Date lastloginTime) {
+        this.lastloginTime = lastloginTime;
     }
 }

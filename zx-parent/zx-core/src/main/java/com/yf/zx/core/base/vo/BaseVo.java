@@ -2,9 +2,9 @@ package com.yf.zx.core.base.vo;
 
 public class BaseVo {
 
-	private int pageNumber;
+	private int page;
 	
-	private int pageSize;
+	private int rows;
 	
 	/**
 	 * 排序
@@ -13,20 +13,21 @@ public class BaseVo {
 	 */
 	private String orderBy;
 
-	public int getPageNumber() {
-		return pageNumber;
+
+	public int getPage() {
+		return page;
 	}
 
-	public void setPageNumber(int pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setPage(int page) {
+		this.page = page;
 	}
 
-	public int getPageSize() {
-		return pageSize;
+	public int getRows() {
+		return rows;
 	}
 
-	public void setPageSize(int pageSize) {
-		this.pageSize = pageSize;
+	public void setRows(int rows) {
+		this.rows = rows;
 	}
 
 	public String getOrderBy() {
@@ -39,6 +40,6 @@ public class BaseVo {
 
 	@Override
 	public String toString() {
-		return "BaseVo [pageNumber=" + pageNumber + ", pageSize=" + pageSize + ", orderBy=" + orderBy + "]";
+		return "BaseVo [page=" + page + ", rows=" + rows + ", orderBy=" + orderBy + "]";
 	}
 }

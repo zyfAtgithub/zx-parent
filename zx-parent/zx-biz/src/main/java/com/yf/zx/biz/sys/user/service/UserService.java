@@ -20,7 +20,7 @@ public class UserService {
 	UserMapper userDao;
 	
 	public PageReturn<User> findByPage(UserVo userVo) {
-		PageHelper.startPage(userVo.getPageNumber(), userVo.getPageSize());
+		PageHelper.startPage(userVo.getPage(), userVo.getRows());
 		
 		//排序
 		if (StringUtils.isNotNull(userVo.getOrderBy())) {

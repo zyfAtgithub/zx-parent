@@ -63,8 +63,8 @@ public class AppTest {
     @Test
     public void findUserByPage() {
     	UserVo userVo = new UserVo();
-    	userVo.setPageNumber(0);
-    	userVo.setPageSize(1);
+    	userVo.setPage(0);
+    	userVo.setRows(1);
 //    	userVo.setUsername("张益峰");
 //    	userVo.setLoginname("%a%");
     	userVo.setOrderBy("lastlogin_time desc");

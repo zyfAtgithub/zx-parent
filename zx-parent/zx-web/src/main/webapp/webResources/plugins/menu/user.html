@@ -73,16 +73,13 @@
 	}  
 	
 	
-		//
-		var dgPageNumber=1;//初始默认值
-		var dgPageSize=10;//初始默认值
 		$("#dataTb").datagrid({
 			width: 'auto',  
             height:300,               
             striped: true,  
             singleSelect : true,  
             url:'/zx-web/sys/user/list',  
-            queryParams:{loginname:''},  
+            queryParams:{loginname:'', pageNumber:4, pageSize:3},  
             loadMsg:'数据加载中请稍后哈……',  
             pagination: true,  
             rownumbers: true,     
@@ -115,41 +112,6 @@
                 	layer.alert('remove');  
                 }  
             }],
-            pageNumber:dgPageNumber,
-            pageSize:dgPageSize,
-            onLoadSuccess:function(data){
-                $("#dataTb").datagrid('getPager').pagination({
-                    onRefresh:function(pageNumber,pageSize){
-                        dgPageNumber=pageNumber;
-                        dgPageSize=pageSize;
-                        $("#dataTb").datagrid({
-                            pageNumber:pageNumber,
-                            pageSize:pageSize
-                        });
-                        //页码刷新后，数据要刷新，重新根据新页码查询数据
-                        //loadData()
-                    },
-                    onChangePageSize:function(pageSize){
-                        dgPageSize=pageSize;
-                        $("#dataTb").datagrid({
-                            pageNumber:dgPageNumber,
-                            pageSize:pageSize
-                        });
-                        //页面承载条数改变，数据也要刷新
-                        //loadData()
-                    },
-                    onSelectPage:function(pageNumber,pageSize){
-                        dgPageNumber=pageNumber;
-                        dgPageSize=pageSize;
-                        $("#dataTb").datagrid({
-                            pageNumber:pageNumber,
-                            pageSize:pageSize
-                        });
-                        //页码改变，数据也要刷新
-                        //loadData()
-                    }
-                })
-            }
 		});
 	</script>
 </body>

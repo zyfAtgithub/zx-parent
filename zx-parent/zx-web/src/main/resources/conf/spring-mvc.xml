@@ -12,8 +12,21 @@
 				http://www.springframework.org/schema/context/spring-context.xsd">
 		<!-- 启用spring mvc 注解 -->
 		<!-- <context:annotation-config /> -->
-		<mvc:annotation-driven/>  
+		<!-- <mvc:annotation-driven/>   -->
 
+		<!-- 处理请求返回json字符串的中文乱码问题 -->
+	    <mvc:annotation-driven>
+	        <mvc:message-converters>
+	            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+	                <property name="supportedMediaTypes">
+	                    <list>
+	                        <value>application/json;charset=UTF-8</value>
+	                    </list>
+	                </property>
+	            </bean>
+	        </mvc:message-converters>
+	    </mvc:annotation-driven>
+	    
 		<mvc:default-servlet-handler/>
 		<!-- <mvc:resources mapping="/webResources/**" location="/webResources"/>   -->
 <!-- 		<mvc:resources location="/webResources/" mapping="/webResources/"/> -->

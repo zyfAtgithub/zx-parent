@@ -1,143 +1,20 @@
 {
-	"code": 0,
-	"msg": "哈哈哈",
-	"count": 1000,
-	"data": [
+	"code": 200,
+	"msg": "查询成功",
+	"total": 2,
+	"list": [
 		{
-			"id": 10001,
+			"id": 1,
+			"locked": false,
 			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": true
+			"username": "aa"
 		},
 		{
-			"id": 10002,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10003,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10004,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10005,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10006,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10007,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10008,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10009,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10010,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10011,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10012,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10013,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10014,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10015,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10016,
-			"loginname": "admin",
-			"username": "王晓明",
-			"phone": "13798676712",
-			"email": "13798676712@163.com",
-			"lock": false
-		},
-		{
-			"id": 10017,
+			"id": 2,
+			"lastloginTime": 1510823994000,
+			"locked": false,
 			"loginname": "zyf",
-			"username": "张益峰",
-			"phone": "15295778261",
-			"email": "15295778261@163.com",
-			"lock": false
+			"username": "bb"
 		}
 	]
 }

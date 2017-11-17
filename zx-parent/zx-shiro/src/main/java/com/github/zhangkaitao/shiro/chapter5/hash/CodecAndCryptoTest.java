@@ -26,7 +26,7 @@ public class CodecAndCryptoTest {
         String str = "hello";
         String base64Encoded = Base64.encodeToString(str.getBytes());
         String str2 = Base64.decodeToString(base64Encoded);
-        Assert.assertEquals(str, str2);
+        Assert.assertEquals(str, str2); 
 
     }
 

@@ -142,6 +142,18 @@ public final class StringUtils {
 		return trimEnd(str, trimStr);
 	}
 	
+	/**
+	 * 判断字符串是否包含
+	 *  
+	 * @author zhang.yifeng 
+	 * @param str
+	 * @param searchStr
+	 * @return
+	 */
+	public static boolean contains(String str, String searchStr) {
+		return (str.indexOf(searchStr) != -1);
+	}
+	
 	public static void main(String[] args) {
 		System.out.print(trim("xxsxajkl  xasxxx", "x"));
 	}

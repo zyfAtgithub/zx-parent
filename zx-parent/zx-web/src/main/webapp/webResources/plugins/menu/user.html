@@ -8,7 +8,7 @@
 
 <link rel="stylesheet"
 	href="../font-awesome-4.7.0/css/font-awesome.min.css">
-<!-- <link rel="stylesheet" href="../layui-v2.2.1/layui/css/layui.css"> -->
+<link rel="stylesheet" href="../jquery-easyui-1.5.3/themes/default/easyui.css">
 <link rel="stylesheet" href="../layui/css/layui.css">
 <link rel="stylesheet" href="dist/right-content.css">
 
@@ -46,104 +46,28 @@
 			</div>
 		</div>
 		<div class="layui-row">
-			<div class="layui-btn-group demoTable">
-			  <button class="layui-btn" data-type="getCheckData">获取选中行数据</button>
-			  <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
-			  <button class="layui-btn" data-type="isAll">验证是否全选</button>
-			</div>
-			<table id="dbTable" lay-filter="tbFilter"></table>		
+			<table class="easyui-datagrid" title="用户列表" style="width:700px;height:250px"
+					data-options="singleSelect:true,collapsible:false,url:'/zx-web/sys/user/list',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'id',width:80"></th>
+						<th data-options="field:'loginname',width:100">登录名</th>
+						<th data-options="field:'username',width:80,align:'right'">用户名</th>
+						<th data-options="field:'phone',width:80,align:'right'">手机号</th>
+						<th data-options="field:'email',width:100">邮箱</th>
+						<th data-options="field:'lastloginTime',width:150">上次成功登录时间</th>
+						<th data-options="field:'locked',width:60,align:'center'">是否锁定</th>
+					</tr>
+				</thead>
+			</table>
 		</div>
 	</div>
 
-	<script type="text/html" id="toolBar">
-		  <a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>
-		  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
-		  <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
-		  <!-- 这里同样支持 laytpl 语法，如： -->
-		  {{#  if(d.auth > 2){ }}
-		    <a class="layui-btn layui-btn-mini" lay-event="check">审核</a>
-		  {{#  } }}
-	</script>
-	<script type="text/html" id="checkboxTpl">
-		  <!-- 这里的 checked 的状态只是演示 -->
-		  <input type="checkbox" name="lock" value="{{d.lock}}" title="锁定" lay-filter="lockDemo" {{ d.lock ? 'checked' : '' }}>
-	</script>
 	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script src="../jquery-easyui-1.5.3/jquery.easyui.min.js" type="text/javascript"></script>
 	<script src="../layui/layui.all.js" type="text/javascript"></script>
 	<script>
-		layui.use(['form', 'table'], function(){
-			  var table = layui.table;
-			  //第一个实例
-			  table.render({
-			    elem: '#dbTable',
-			    height: 'full-315',
-			    url: 'user.json', //数据接口
-			    page: true, //开启分页
-			    id:'id',
-			    cols: [[ //表头
-			      {checkbox: true, fixed: true},
-			      {field: 'id', title: 'ID', width:100},
-			      {field: 'loginname', title: '用户登录名',width:100},
-			      {field: 'username', title: '用户名', width:100},
-			      {field: 'phone', title: '手机号', width:120},	 
-				  {field: 'email', title: '邮箱', width: 180},
-				  {field:'lock', title:'是否锁定', width:120, templet: '#checkboxTpl', unresize: true},
-   		    	  {fixed: 'right', width:150, align:'center', toolbar: '#toolBar'}
-				  //这里的toolbar值是模板元素的选择器
-			    ]],
-			    done: function(res, curr, count){
-			        //如果是异步请求数据方式，res即为你接口返回的信息。
-			        //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
-			        console.log(res);
-			        //得到当前页码
-			        console.log(curr); 
-			        //得到数据总量
-			        console.log(count);
-			      }
-			  });
-			  
-			  //监听表格复选框选择
-			  table.on('checkbox(tbFilter)', function(obj){
-			    console.log(obj)
-			  });
-			  //监听工具条
-			  table.on('tool(tbFilter)', function(obj){
-			    var data = obj.data;
-			    if(obj.event === 'detail'){
-			      layer.msg('ID：'+ data.id + ' 的查看操作');
-			    } else if(obj.event === 'del'){
-			      layer.msg(JSON.stringify(data));
-			      layer.confirm('真的删除行么', function(index){
-			        obj.del();
-			        layer.close(index);
-			      });
-			    } else if(obj.event === 'edit'){
-			      layer.alert('编辑行：<br>'+ JSON.stringify(data))
-			    }
-			  });
-			  
-			  var $ = layui.$, active = {
-			    getCheckData: function(){ //获取选中数据
-			      var checkStatus = table.checkStatus('id')
-			      ,data = checkStatus.data;
-			      layer.alert(JSON.stringify(data));
-			    }
-			    ,getCheckLength: function(){ //获取选中数目
-			      var checkStatus = table.checkStatus('id')
-			      ,data = checkStatus.data;
-			      layer.msg('选中了：'+ data.length + ' 个');
-			    }
-			    ,isAll: function(){ //验证是否全选
-			      var checkStatus = table.checkStatus('id');
-			      layer.msg(checkStatus.isAll ? '全选': '未全选')
-			    }
-			  };
-			  
-			  $('.demoTable .layui-btn').on('click', function(){
-			    var type = $(this).data('type');
-			    active[type] ? active[type].call(this) : '';
-			  });
-			  
+		layui.use(['form', 'table', 'laypage'], function(){
 			var form = layui.form;
 			//监听提交
 			form.on('submit(formDemo)', function(data) {
@@ -154,8 +78,7 @@
 				});
 				return false;
 			});
-			  
-			});
+		});
 	</script>
 </body>
 </html>

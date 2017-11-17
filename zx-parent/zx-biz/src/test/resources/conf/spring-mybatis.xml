@@ -67,6 +67,19 @@
         <property name="dataSource" ref="dataSource" />
         <property name="mapperLocations" value="classpath:com/yf/zx/biz/sys/user/mapper/*.xml" />
         <property name="configLocation" value="classpath:conf/mybatis-config.xml"></property>
+    	
+    	 <!-- 配置mybatis分页插件PageHelper -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <!-- 什么都不配，使用默认的配置 -->
+                        <value></value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    
     </bean>
     <!-- 扫描指定包以及子包下的所有映射接口类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

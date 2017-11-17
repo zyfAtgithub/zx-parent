@@ -3,6 +3,7 @@ package com.yf.zx.web.shiro.filter;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.subject.Subject;
@@ -11,6 +12,7 @@ import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.yf.zx.core.util.http.HttpUtil;
 import com.yf.zx.web.shiro.exception.CaptchaException;
 import com.yf.zx.web.shiro.token.UsernamePasswordCaptchaToken;
 
@@ -87,4 +89,21 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
 		return new UsernamePasswordCaptchaToken(username,
 				password.toCharArray(), rememberMe, host, captcha);
 	}
+
+	@Override
+	protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
+		
+		HttpServletRequest httpReq = (HttpServletRequest)request;
+		HttpServletResponse httpRsp = (HttpServletResponse)response;
+		if (HttpUtil.isAjax(httpReq)) {
+			//ajax请求
+			String nologin = "{\"noLogin\":true}";
+			httpRsp.setCharacterEncoding("UTF-8");
+			httpRsp.setContentType("application/json");
+			httpRsp.getWriter().write(nologin);
+			return false;
+		}
+		return super.onAccessDenied(request, response);
+	}
+	
 }

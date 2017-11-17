@@ -56,4 +56,25 @@ function loadMenu(){
 				
 		   }
 		});
+	
+//	$.ajax({
+//		url:"/zx-web/sys/user/list",
+//		type:"GET",
+//		//dataType: "json", //返回数据格式为json
+//		success:function(data){
+//			if (data.noLogin) {
+//				console.log('未登录！');
+//				layer.alert("亲，请登录先！");
+//			}
+//			console.log(data);
+//		},
+//		error:function(XMLHttpRequest, textStatus, errorThrown) {
+//			  // 状态码
+//            console.log(XMLHttpRequest.status);
+//            // 状态
+//            console.log(XMLHttpRequest.readyState);
+//            // 错误信息   
+//            console.log(textStatus);
+//		}
+//	});
 }

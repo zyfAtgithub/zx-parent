@@ -1,6 +1,8 @@
 package com.yf.zx.biz.sys.user.entity;
 
-public class UserVo {
+import com.yf.zx.core.base.vo.BaseVo;
+
+public class UserVo extends BaseVo {
 
 	private Long id;
 	
@@ -13,17 +15,6 @@ public class UserVo {
 	private String email;
 	
 	private Boolean locked;
-
-	private int pageNumber;
-	
-	private int pageSize;
-	
-	/**
-	 * 排序
-	 * 样例：
-	 * id asc, lastloginTime dec
-	 */
-	private String orderBy;
 	
 	public Long getId() {
 		return id;
@@ -73,27 +64,10 @@ public class UserVo {
 		this.locked = locked;
 	}
 
-	public int getPageNumber() {
-		return pageNumber;
+	@Override
+	public String toString() {
+		return "UserVo [id=" + id + ", loginname=" + loginname + ", username=" + username + ", phone=" + phone
+				+ ", email=" + email + ", locked=" + locked + ", toString()=" + super.toString() + "]";
 	}
-
-	public void setPageNumber(int pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public int getPageSize() {
-		return pageSize;
-	}
-
-	public void setPageSize(int pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public String getOrderBy() {
-		return orderBy;
-	}
-
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-	}
+	
 }

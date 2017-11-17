@@ -27,16 +27,16 @@ public class PasswordTest extends BaseTest {
     @Test
     public void testGeneratePassword() {
         String algorithmName = "md5";
-        String username = "liu";
-        String password = "123";
+        String username = "zyf";
+        String password = "qazxsw123.";
         String salt1 = username;
         String salt2 = new SecureRandomNumberGenerator().nextBytes().toHex();
         int hashIterations = 2;
 
         SimpleHash hash = new SimpleHash(algorithmName, password, salt1 + salt2, hashIterations);
         String encodedPassword = hash.toHex();
-        System.out.println(salt2);
-        System.out.println(encodedPassword);
+        System.out.println("私盐：" + salt2);
+        System.out.println("加密密码：" + encodedPassword);
     }
 
     @Test
@@ -85,6 +85,6 @@ public class PasswordTest extends BaseTest {
 //            	System.out.println("第" + i + "登录失败！");
 //            }
 //        }
-        login("classpath:chapt5/shiro-retryLimitHashedCredentialsMatcher.ini", "zyf", "123456");
+        login("classpath:chapt5/shiro-retryLimitHashedCredentialsMatcher.ini", "zyf", "qazxsw123.");
     }
 }

@@ -4262,3 +4262,85 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 2017-11-16 17:26:55,822 DEBUG selectUser[159] - ==> Parameters: %a%(String)
 2017-11-16 17:26:55,851 DEBUG selectUser[159] - <==      Total: 1
 2017-11-16 17:26:55,855  INFO AppTest[38] - After
+2017-11-17 08:57:56,271  INFO AppTest[33] - Before
+2017-11-17 08:57:56,353 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname like ? 
+2017-11-17 08:57:56,391 DEBUG selectUser[159] - ==> Parameters: %a%(String)
+2017-11-17 08:57:56,416 DEBUG selectUser[159] - <==      Total: 1
+2017-11-17 08:57:56,420  INFO AppTest[38] - After
+2017-11-17 09:01:56,243  INFO AppTest[33] - Before
+2017-11-17 09:01:56,246  INFO AppTest[38] - After
+2017-11-17 09:08:08,533 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname like ? 
+2017-11-17 09:08:08,574 DEBUG selectUser[159] - ==> Parameters: %a%(String)
+2017-11-17 09:08:08,602 DEBUG selectUser[159] - <==      Total: 1
+2017-11-17 09:08:53,448 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users 
+2017-11-17 09:08:53,491 DEBUG selectUser[159] - ==> Parameters: 
+2017-11-17 09:08:53,524 DEBUG selectUser[159] - <==      Total: 2
+2017-11-17 09:09:12,552 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname like ? and username like ? 
+2017-11-17 09:09:12,589 DEBUG selectUser[159] - ==> Parameters: %a%(String), 张益峰(String)
+2017-11-17 09:09:12,615 DEBUG selectUser[159] - <==      Total: 0
+2017-11-17 09:41:44,990 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users WHERE loginname like ? and username like ? 
+2017-11-17 09:41:45,036 DEBUG selectUser[159] - ==> Parameters: %a%(String), 张益峰(String)
+2017-11-17 09:41:45,064 DEBUG selectUser[159] - <==      Total: 0
+2017-11-17 09:42:02,320 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users 
+2017-11-17 09:42:02,359 DEBUG selectUser[159] - ==> Parameters: 
+2017-11-17 09:42:02,389 DEBUG selectUser[159] - <==      Total: 2
+2017-11-17 09:42:14,600 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users 
+2017-11-17 09:42:14,632 DEBUG selectUser[159] - ==> Parameters: 
+2017-11-17 09:42:14,659 DEBUG selectUser[159] - <==      Total: 2
+2017-11-17 12:50:24,560 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users 
+2017-11-17 12:50:24,601 DEBUG selectUser[159] - ==> Parameters: 
+2017-11-17 12:50:24,645 DEBUG selectUser[159] - <==      Total: 2
+2017-11-17 12:52:26,224 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users 
+2017-11-17 12:52:26,273 DEBUG selectUser[159] - ==> Parameters: 
+2017-11-17 12:52:26,313 DEBUG selectUser[159] - <==      Total: 2
+2017-11-17 12:53:26,821 DEBUG selectUser[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users 
+2017-11-17 12:53:26,860 DEBUG selectUser[159] - ==> Parameters: 
+2017-11-17 12:53:26,914 DEBUG selectUser[159] - <==      Total: 2
+2017-11-17 12:54:51,208 DEBUG SQL_CACHE[62] - Cache Hit Ratio [SQL_CACHE]: 0.0
+2017-11-17 12:54:51,273 DEBUG selectUser_COUNT[159] - ==>  Preparing: SELECT count(0) FROM sys_users 
+2017-11-17 12:54:51,321 DEBUG selectUser_COUNT[159] - ==> Parameters: 
+2017-11-17 12:54:51,354 DEBUG selectUser_COUNT[159] - <==      Total: 1
+2017-11-17 12:54:51,359 DEBUG selectUser[159] - ==>  Preparing: SELECT id, loginname, username, password, salt, phone, email, locked, lastlogin_time FROM sys_users order by lastloginTime dec LIMIT ? 
+2017-11-17 12:54:51,362 DEBUG selectUser[159] - ==> Parameters: 1(Integer)
+2017-11-17 12:56:09,291 DEBUG SQL_CACHE[62] - Cache Hit Ratio [SQL_CACHE]: 0.0
+2017-11-17 12:56:09,364 DEBUG selectUser_COUNT[159] - ==>  Preparing: SELECT count(0) FROM sys_users 
+2017-11-17 12:56:09,411 DEBUG selectUser_COUNT[159] - ==> Parameters: 
+2017-11-17 12:56:09,501 DEBUG selectUser_COUNT[159] - <==      Total: 1
+2017-11-17 12:56:09,505 DEBUG selectUser[159] - ==>  Preparing: SELECT id, loginname, username, password, salt, phone, email, locked, lastlogin_time FROM sys_users order by lastlogin_time desc LIMIT ? 
+2017-11-17 12:56:09,507 DEBUG selectUser[159] - ==> Parameters: 1(Integer)
+2017-11-17 12:56:09,532 DEBUG selectUser[159] - <==      Total: 1
+2017-11-17 12:56:55,368 DEBUG SQL_CACHE[62] - Cache Hit Ratio [SQL_CACHE]: 0.0
+2017-11-17 12:56:55,434 DEBUG selectUser_COUNT[159] - ==>  Preparing: SELECT count(0) FROM sys_users 
+2017-11-17 12:56:55,479 DEBUG selectUser_COUNT[159] - ==> Parameters: 
+2017-11-17 12:56:55,510 DEBUG selectUser_COUNT[159] - <==      Total: 1
+2017-11-17 12:56:55,515 DEBUG selectUser[159] - ==>  Preparing: SELECT id, loginname, username, password, salt, phone, email, locked, lastlogin_time FROM sys_users order by lastlogin_time desc LIMIT ? 
+2017-11-17 12:56:55,517 DEBUG selectUser[159] - ==> Parameters: 1(Integer)
+2017-11-17 12:56:55,523 DEBUG selectUser[159] - <==      Total: 1
+2017-11-17 14:00:00,639 DEBUG SQL_CACHE[62] - Cache Hit Ratio [SQL_CACHE]: 0.0
+2017-11-17 14:00:00,716 DEBUG selectUser_COUNT[159] - ==>  Preparing: SELECT count(0) FROM sys_users 
+2017-11-17 14:00:00,770 DEBUG selectUser_COUNT[159] - ==> Parameters: 
+2017-11-17 14:00:00,809 DEBUG selectUser_COUNT[159] - <==      Total: 1
+2017-11-17 14:00:00,815 DEBUG selectUser[159] - ==>  Preparing: SELECT id, loginname, username, password, salt, phone, email, locked, lastlogin_time FROM sys_users order by lastlogin_time desc LIMIT ? 
+2017-11-17 14:00:00,817 DEBUG selectUser[159] - ==> Parameters: 1(Integer)
+2017-11-17 14:00:00,822 DEBUG selectUser[159] - <==      Total: 1
+2017-11-17 14:01:32,641 DEBUG SQL_CACHE[62] - Cache Hit Ratio [SQL_CACHE]: 0.0
+2017-11-17 14:01:32,716 DEBUG selectUser_COUNT[159] - ==>  Preparing: SELECT count(0) FROM sys_users 
+2017-11-17 14:01:32,762 DEBUG selectUser_COUNT[159] - ==> Parameters: 
+2017-11-17 14:01:32,792 DEBUG selectUser_COUNT[159] - <==      Total: 1
+2017-11-17 14:01:32,797 DEBUG selectUser[159] - ==>  Preparing: SELECT id, loginname, username, password, salt, phone, email, locked, lastlogin_time FROM sys_users order by lastlogin_time desc LIMIT ? 
+2017-11-17 14:01:32,799 DEBUG selectUser[159] - ==> Parameters: 1(Integer)
+2017-11-17 14:01:32,805 DEBUG selectUser[159] - <==      Total: 1
+2017-11-17 14:35:28,286 DEBUG SQL_CACHE[62] - Cache Hit Ratio [SQL_CACHE]: 0.0
+2017-11-17 14:35:28,340 DEBUG selectUser_COUNT[159] - ==>  Preparing: SELECT count(0) FROM sys_users 
+2017-11-17 14:35:28,379 DEBUG selectUser_COUNT[159] - ==> Parameters: 
+2017-11-17 14:35:28,405 DEBUG selectUser_COUNT[159] - <==      Total: 1
+2017-11-17 14:35:28,411 DEBUG selectUser[159] - ==>  Preparing: SELECT id, loginname, username, password, salt, phone, email, locked, lastlogin_time FROM sys_users order by lastlogin_time desc LIMIT ? 
+2017-11-17 14:35:28,413 DEBUG selectUser[159] - ==> Parameters: 1(Integer)
+2017-11-17 14:35:28,418 DEBUG selectUser[159] - <==      Total: 1
+2017-11-17 14:37:42,682 DEBUG SQL_CACHE[62] - Cache Hit Ratio [SQL_CACHE]: 0.0
+2017-11-17 14:37:42,730 DEBUG selectUser_COUNT[159] - ==>  Preparing: SELECT count(0) FROM sys_users 
+2017-11-17 14:37:42,760 DEBUG selectUser_COUNT[159] - ==> Parameters: 
+2017-11-17 14:37:42,783 DEBUG selectUser_COUNT[159] - <==      Total: 1
+2017-11-17 14:37:42,787 DEBUG selectUser[159] - ==>  Preparing: SELECT id, loginname, username, password, salt, phone, email, locked, lastlogin_time FROM sys_users order by lastlogin_time desc LIMIT ? 
+2017-11-17 14:37:42,789 DEBUG selectUser[159] - ==> Parameters: 1(Integer)
+2017-11-17 14:37:42,794 DEBUG selectUser[159] - <==      Total: 1

@@ -12,10 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.github.pagehelper.PageInfo;
+import com.alibaba.fastjson.JSONObject;
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.entity.UserVo;
 import com.yf.zx.biz.sys.user.service.UserService;
+import com.yf.zx.core.base.web.PageReturn;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
@@ -30,12 +31,12 @@ public class AppTest {
 
     @Before
     public void before() {
-        logger.info("Before");
+//        logger.info("Before");
     }
 
     @After
     public void after() {
-        logger.info("After");
+//        logger.info("After");
     }
 
     @Test
@@ -62,12 +63,21 @@ public class AppTest {
     @Test
     public void findUserByPage() {
     	UserVo userVo = new UserVo();
+    	userVo.setPageNumber(0);
+    	userVo.setPageSize(1);
 //    	userVo.setUsername("张益峰");
-    	userVo.setLoginname("%a%");
-    	userVo.setOrderBy("lastloginTime dec");
+//    	userVo.setLoginname("%a%");
+    	userVo.setOrderBy("lastlogin_time desc");
     	
-    	PageInfo<User> pageInfo = userService.findByPage(userVo);
+    	PageReturn<User> page = userService.findByPage(userVo);
+    	String json = JSONObject.toJSONString(page);
     	
-    	System.out.println(pageInfo);
+    	JSONObject jsonObject = new JSONObject();
+    	jsonObject.put("code",0);
+    	jsonObject.put("count",100);
+    	jsonObject.put("msg","");
+    	System.out.println( jsonObject.toString());
+    	System.out.println( jsonObject.toJSONString());
+//    	System.out.println(json);
     }
 }

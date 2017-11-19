@@ -63,6 +63,11 @@
 	<script type="text/html" id="timeTpl">
 		{{ formatDatebox(d.lastloginTime) }}
 	</script>
+
+	<!-- 是否锁定 -->
+	<script type="text/html" id="lockedTpl">
+		{{ d.locked? '是' : '否' }}
+	</script>
 	
 	<script type="text/html" id="toolBar">
 		  <a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>
@@ -94,7 +99,7 @@
 		      {field:'phone', width:180, title: '手机号'},
 		      {field:'email', width:180, title: '邮箱'},
 		      {field:'lastloginTime', align:'center', width:180, title: '上次成功登录时间', templet:'#timeTpl'},
-		      {field:'locked', width:100, title: '是否锁定'},
+		      {field:'locked', width:100, title: '是否锁定',templet:'#lockedTpl'},
 		      {fixed: 'right', width:152, align:'center', toolbar: '#toolBar'}
 		    ]],
 		    limit:10,
@@ -116,6 +121,26 @@
 		  
 		  $('#btn-add').click(function(){
 			  layer.msg('您点击了新增按钮');
+
+			//多窗口模式，层叠置顶
+		      layer.open({
+		        type: 2, //此处以iframe举例
+		        title: '新增用户',
+		        area: ['480px', '440px'],
+		        //shade: 0,
+		        //maxmin: true,
+		        content: 'userAdd.html',
+		        yes: function(){
+		          $(that).click(); 
+		        },
+		        btn2: function(){
+		          layer.closeAll();
+		        },
+		        zIndex: layer.zIndex, //重点1
+		        success: function(layero){
+		          layer.setTop(layero); //重点2
+		        }
+		      });
 		  });
 		  
 		  $('#btn-batch-del').click(function(){

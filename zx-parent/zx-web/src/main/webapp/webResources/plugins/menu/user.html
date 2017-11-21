@@ -56,6 +56,10 @@
 				<table id="dataTb" lay-filter="userTbFilter"></table>
 			</div>
 		</div>
+		
+		
+		<input type="hidden" name="addUserRes" id="addUserRes"/>
+		
 	</div>
 
 
@@ -120,7 +124,7 @@
 		  });
 		  
 		  $('#btn-add').click(function(){
-			  layer.msg('您点击了新增按钮');
+			  //layer.msg('您点击了新增按钮');
 
 			//多窗口模式，层叠置顶
 		      layer.open({
@@ -141,23 +145,50 @@
 		          layer.setTop(layero); //重点2
 		        },
 		        end : function() {
-		        	layer.msg('新增用户成功，刷新用户列表。。。', function(){
-			        	location.reload();
-		        	});
+		        	console.log($("#addUserRes").val());
+		        	if ("200" == $("#addUserRes").val()) {
+		        		$("#addUserRes").val('');
+		        		layer.alert('新增用户成功', function(){
+				        	location.reload();
+			        	});
+		       		 }
 		        }
 		      });
 		  });
 		  
 		  $('#btn-batch-del').click(function(){
 			  var checkStatus = table.checkStatus('dataTableUser');
-		      var data = checkStatus.data;
-		      layer.msg('删除了：'+ data.length + ' 个');
-		      //layer.alert(JSON.stringify(data));
-		      tbIns.reload({});
+		      var delUsers = checkStatus.data;
+		      if (!delUsers.length) {
+		    	  layer.alert('请选择要删除的用户！');
+		    	  return;
+		      }
+		      
+		      layer.confirm('确定要删除吗？', {
+		        btn: ['是','否'] //按钮
+		      }, function(){
+		        var ids = "";
+			      $.each(delUsers, function(index, item){
+			    	  console.log(item.id);
+			    	  ids += item.id + "|";
+			      });
+			      $.ajax({
+			    	  url:"/zx-web/sys/user/del",
+			    	  type:"POST",
+			    	  dataType:"json",
+			    	  data:{delIds:ids},
+			    	  success:function(resultRet){
+			    		  if (resultRet) {
+							  layer.msg(resultRet.resultMsg, {icon: 6, time: 2000}, function(){
+					 		      tbIns.reload({});
+							  });
+			    		  }
+			    	  }
+			      });
+		      });
 		  });
 
 		  $('#btn-refresh').click(function(){
-			  //layer.msg('您点击了刷新按钮');
 			  tbIns.reload({});
 		  });
 		  
@@ -167,11 +198,29 @@
 		    var data = obj.data;
 		    if(obj.event === 'detail'){
 		      layer.msg('ID：'+ data.id + ' 的查看操作');
-		    } else if(obj.event === 'del'){
-		      layer.confirm('真的要删除么', {icon: 3, title:'删除提示', btn:['是','否']}, function(index){
-		        obj.del();
-		        layer.close(index);
-		      });
+		    } 
+		    else if(obj.event === 'del'){
+   		 		layer.confirm('确定要删除吗？', {
+			        btn: ['是','否'] //按钮
+			      }, function(){
+			        layer.msg('删除', {icon: 1});
+			        /////////
+			        var ids = data.id;
+				      $.ajax({
+				    	  url:"/zx-web/sys/user/del",
+				    	  type:"POST",
+				    	  dataType:"json",
+				    	  data:{delIds:ids},
+				    	  success:function(resultRet){
+				    		  if (resultRet) {
+								  layer.msg(resultRet.resultMsg, {icon: 6, time: 2000}, function(){
+						 		      tbIns.reload({});
+								  });
+				    		  }
+				    	  }
+				      });
+			        
+			      });
 		    } else if(obj.event === 'edit'){
 		      layer.alert('编辑行：<br>'+ JSON.stringify(data))
 		    }

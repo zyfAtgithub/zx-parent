@@ -6,6 +6,7 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 
 import com.yf.zx.biz.sys.user.entity.User;
+import com.yf.zx.core.util.common.StringUtils;
 
 /**
  * 
@@ -24,15 +25,15 @@ public class PasswordEncrypt {
     private static RandomNumberGenerator randomNumberGenerator = new SecureRandomNumberGenerator();
 
     /** 默认散列算法 md5 */
-    private String DEFAULT_ALGORITHM = "MD5";
+    private static String DEFAULT_ALGORITHM = "MD5";
 
     /** 默认散列迭代次数 */
-    private int DEFAULT_HASH_ITERATIONS = 2;
+    private static int DEFAULT_HASH_ITERATIONS = 2;
     
     //指定散列算法为md5
-    private String algorithmName = DEFAULT_ALGORITHM;
+    private static String algorithmName = DEFAULT_ALGORITHM;
     //散列迭代次数
-    private int hashIterations = DEFAULT_HASH_ITERATIONS;
+    private static int hashIterations = DEFAULT_HASH_ITERATIONS;
     
 	/**
      * 生成随机盐值对密码进行加密
@@ -42,19 +43,22 @@ public class PasswordEncrypt {
      * @param password[用户 明文密码]
      * @return
      */
-    public User encrypt(String username, String passwordPlain) {
-    	User user = new User();
-    	user.setUsername(username);
-    	user.setPassword(passwordPlain);
+    public static void encrypt(User user) {
+    	if (user == null || StringUtils.isNullOrEmpty(user.getLoginname()) 
+    			|| StringUtils.isNullOrEmpty(user.getPassword())) {
+    		return;
+    	}
     	user.setSalt(randomNumberGenerator.nextBytes().toHex());
         String newPassword =  new SimpleHash(algorithmName, user.getPassword(),
         ByteSource.Util.bytes(user.getUsername() + user.getSalt()), hashIterations).toHex();
         user.setPassword(newPassword);
-        return user;
     }
     
     public static void main(String[] args) {
-    	User user = new PasswordEncrypt().encrypt("admin", "qazxsw123.");
+    	User user = new User();
+    	user.setLoginname("zyf");
+    	user.setPassword("qazxsw123.");
+    	encrypt(user);
 		System.out.println(user);
 	}
     
@@ -63,15 +67,7 @@ public class PasswordEncrypt {
 		return algorithmName;
 	}
 
-	public void setAlgorithmName(String algorithmName) {
-		this.algorithmName = algorithmName;
-	}
-
 	public int getHashIterations() {
 		return hashIterations;
-	}
-
-	public void setHashIterations(int hashIterations) {
-		this.hashIterations = hashIterations;
 	}
 }

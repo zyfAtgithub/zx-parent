@@ -61,11 +61,40 @@
 		</form>
 	</div>
 	
+	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
 	<script src="../layui/layui.all.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		
 		function addUser() {
-			closeWin();
+			var loginName = $("input[name='loginname']").val();
+			var userName = $("input[name='username']").val();
+			var password = $("input[name='password']").val();
+			var phone = $("input[name='phone']").val();
+			var email = $("input[name='email']").val();
+			var data = {};
+			data.loginname = loginName;
+			data.username = userName;
+			data.password = password;
+			data.phone = phone;
+			data.email = email;
+			$.ajax({
+				url:"/zx-web/sys/user/add",
+				type:"POST",
+				dataType:"json",
+				data:data,
+				success:function(resultRet) {
+					console.log(parent.document.getElementById('addUserRes').value);
+					if (resultRet.resultCode == '200') {
+						parent.document.getElementById('addUserRes').value = "200";
+						console.log(parent.document.getElementById('addUserRes').value);
+						closeWin();
+					}
+					else {
+						layer.alert(resultRet.resultMsg);
+					}
+				}
+			});
+			
 			return false;
 		}
 	

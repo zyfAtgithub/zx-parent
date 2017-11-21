@@ -154,12 +154,12 @@
   
   <!-- 主键自增 -->
   <insert id="insertAutoId" useGeneratedKeys="true" keyProperty="id" parameterType="com.yf.zx.biz.sys.user.entity.User" >
-    insert into sys_users (username, password, 
+    insert into sys_users (loginname, username, password, 
       salt, phone, email, 
       locked, lastlogin_time)
-    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{loginname,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{salt,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{locked,jdbcType=BIT}, #{lastloginTime,jdbcType=TIMESTAMP}))
+      #{locked,jdbcType=BIT}, #{lastloginTime,jdbcType=TIMESTAMP})
   </insert>
   
   <select id="selectUser" parameterType="com.yf.zx.biz.sys.user.entity.User" resultMap="BaseResultMap">
@@ -184,4 +184,9 @@
   	</where>
   </select>
   
+  <!-- 根据id列表删除多个，物理删除 -->
+  <delete id="delByIds" parameterType="java.lang.String">
+  	delete from sys_users
+  	 where id in #(ids, jdbcType=VARCHAR)
+  </delete>
 </mapper>

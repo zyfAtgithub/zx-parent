@@ -2,6 +2,8 @@ package com.yf.zx.biz.sys.user.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.entity.UserVo;
 
@@ -24,4 +26,6 @@ public interface UserMapper {
     
     
     int insertAutoId(User record);
+
+    int delByIds(@Param("ids") String ids);
 }

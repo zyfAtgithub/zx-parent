@@ -1,8 +1,11 @@
 package com.yf.zx.web.sys.user.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
@@ -11,11 +14,16 @@ import com.yf.zx.biz.sys.user.entity.UserVo;
 import com.yf.zx.biz.sys.user.service.UserService;
 import com.yf.zx.core.base.web.BaseController;
 import com.yf.zx.core.base.web.PageReturn;
+import com.yf.zx.core.base.web.ResultReturn;
+import com.yf.zx.web.shiro.encrypt.PasswordEncrypt;
 
 @Controller
 @RequestMapping("sys/user")
 public class UserController extends BaseController {
 
+	
+	Logger logger = LoggerFactory.getLogger(UserController.class);
+	
 	@Autowired
 	UserService userService;
 	
@@ -26,4 +34,23 @@ public class UserController extends BaseController {
     	System.out.println(JSONObject.toJSONString(page));
 		return JSONObject.toJSONString(page);
 	}
+	
+	
+	
+	@RequestMapping(value = "add", method=RequestMethod.POST)
+	@ResponseBody
+	public String add(User user) {
+		PasswordEncrypt.encrypt(user);
+		ResultReturn ret = userService.addUser(user);
+		return JSONObject.toJSONString(ret);
+	}
+
+	@RequestMapping(value = "del", method=RequestMethod.POST)
+	@ResponseBody
+	public String del(String delIds) {
+		ResultReturn ret = userService.deleteUserByIds(delIds);
+		return JSONObject.toJSONString(ret);
+	}
+	
+
 }

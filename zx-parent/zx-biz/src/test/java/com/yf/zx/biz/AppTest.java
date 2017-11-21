@@ -17,6 +17,7 @@ import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.entity.UserVo;
 import com.yf.zx.biz.sys.user.service.UserService;
 import com.yf.zx.core.base.web.PageReturn;
+import com.yf.zx.core.base.web.ResultReturn;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
@@ -53,11 +54,12 @@ public class AppTest {
     @Test
     public void addUsertest() {
     	User user = new User();
-    	user.setUsername("admin");
+    	user.setLoginname("刘明");
+    	user.setUsername("lm");
     	user.setPassword("6168db58405a9eab7828e6a47ff73383");//123456
     	user.setSalt("28495018162ad6328783c3bde7364346");
-    	userService.addUser(user);
-    	System.out.println(user.getId());
+    	ResultReturn ret = userService.addUser(user);
+    	System.out.println(ret);
     }
     
     @Test
@@ -80,4 +82,6 @@ public class AppTest {
     	System.out.println( jsonObject.toJSONString());
 //    	System.out.println(json);
     }
+    
+    
 }

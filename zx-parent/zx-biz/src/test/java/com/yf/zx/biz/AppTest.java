@@ -54,8 +54,8 @@ public class AppTest {
     @Test
     public void addUsertest() {
     	User user = new User();
-    	user.setLoginname("刘明");
-    	user.setUsername("lm");
+    	user.setLoginname("lm2");
+    	user.setUsername("刘明2");
     	user.setPassword("6168db58405a9eab7828e6a47ff73383");//123456
     	user.setSalt("28495018162ad6328783c3bde7364346");
     	ResultReturn ret = userService.addUser(user);

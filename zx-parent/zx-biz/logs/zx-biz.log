@@ -5121,3 +5121,25 @@ java.lang.StringIndexOutOfBoundsException: String index out of range: -1
 2017-11-21 21:37:27,293 DEBUG delByIds[159] - ==>  Preparing: delete from sys_users where id in ( ? , ? ) 
 2017-11-21 21:37:27,381 DEBUG delByIds[159] - ==> Parameters: 16(String), 18(String)
 2017-11-21 21:37:27,389 DEBUG delByIds[159] - <==    Updates: 2
+2017-11-21 21:56:58,664 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2017-11-21 21:56:58,764 DEBUG selectByLoginName[159] - ==> Parameters: 刘明(String)
+2017-11-21 21:56:58,813 DEBUG selectByLoginName[159] - <==      Total: 0
+2017-11-21 21:56:58,818 DEBUG insertAutoId[159] - ==>  Preparing: insert into sys_users (loginname, username, password, salt, phone, email, locked, lastlogin_time) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-21 21:56:58,824 DEBUG insertAutoId[159] - ==> Parameters: 刘明(String), lm(String), 6168db58405a9eab7828e6a47ff73383(String), 28495018162ad6328783c3bde7364346(String), null, null, null, null
+2017-11-21 21:56:58,827 DEBUG insertAutoId[159] - <==    Updates: 1
+2017-11-21 21:57:27,350 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2017-11-21 21:57:27,443 DEBUG selectByLoginName[159] - ==> Parameters: lm(String)
+2017-11-21 21:57:27,502 DEBUG selectByLoginName[159] - <==      Total: 0
+2017-11-21 21:57:27,508 DEBUG insertAutoId[159] - ==>  Preparing: insert into sys_users (loginname, username, password, salt, phone, email, locked, lastlogin_time) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-21 21:57:27,514 DEBUG insertAutoId[159] - ==> Parameters: lm(String), 刘明(String), 6168db58405a9eab7828e6a47ff73383(String), 28495018162ad6328783c3bde7364346(String), null, null, null, null
+2017-11-21 21:57:27,517 DEBUG insertAutoId[159] - <==    Updates: 1
+2017-11-21 21:58:05,315 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2017-11-21 21:58:05,430 DEBUG selectByLoginName[159] - ==> Parameters: lm(String)
+2017-11-21 21:58:05,498 DEBUG selectByLoginName[159] - <==      Total: 1
+2017-11-21 21:58:05,504 ERROR UserService[74] - 用户名重复！
+2017-11-21 21:58:19,363 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2017-11-21 21:58:19,469 DEBUG selectByLoginName[159] - ==> Parameters: lm2(String)
+2017-11-21 21:58:19,516 DEBUG selectByLoginName[159] - <==      Total: 0
+2017-11-21 21:58:19,522 DEBUG insertAutoId[159] - ==>  Preparing: insert into sys_users (loginname, username, password, salt, phone, email, locked, lastlogin_time) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-21 21:58:19,528 DEBUG insertAutoId[159] - ==> Parameters: lm2(String), 刘明2(String), 6168db58405a9eab7828e6a47ff73383(String), 28495018162ad6328783c3bde7364346(String), null, null, null, null
+2017-11-21 21:58:19,531 DEBUG insertAutoId[159] - <==    Updates: 1

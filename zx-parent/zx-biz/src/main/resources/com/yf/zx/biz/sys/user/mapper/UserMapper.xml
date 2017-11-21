@@ -185,8 +185,11 @@
   </select>
   
   <!-- 根据id列表删除多个，物理删除 -->
-  <delete id="delByIds" parameterType="java.lang.String">
+  <delete id="delByIds">
   	delete from sys_users
-  	 where id in #(ids, jdbcType=VARCHAR)
+  	 where id in
+  	 <foreach item="id" index="index" collection="array" open="(" separator="," close=")"> 
+	    #{id} 
+	</foreach>
   </delete>
 </mapper>

@@ -103,13 +103,8 @@ public class UserService {
 		}
 		
 		try {
-			StringBuffer strBuf = new StringBuffer("");
 			String[] idArr = ids.split("\\|");
-			for (String id : idArr) {
-				strBuf.append(id).append(",");
-			}
-			strBuf.deleteCharAt(strBuf.length() - 1);
-			userDao.delByIds(strBuf.toString());
+			userDao.delByIds(idArr);
 			ret.setResultCode("200");
 			ret.setResultMsg("删除用户成功！");
 		} catch (Exception e) {

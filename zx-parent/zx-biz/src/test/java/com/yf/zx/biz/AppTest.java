@@ -63,6 +63,13 @@ public class AppTest {
     }
     
     @Test
+    public void delUser() {
+    	ResultReturn ret = userService.deleteUserByIds("16|18");
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
+    
+    
+    @Test
     public void findUserByPage() {
     	UserVo userVo = new UserVo();
     	userVo.setPage(0);
@@ -80,7 +87,7 @@ public class AppTest {
     	jsonObject.put("msg","");
     	System.out.println( jsonObject.toString());
     	System.out.println( jsonObject.toJSONString());
-//    	System.out.println(json);
+    	System.out.println(json);
     }
     
     

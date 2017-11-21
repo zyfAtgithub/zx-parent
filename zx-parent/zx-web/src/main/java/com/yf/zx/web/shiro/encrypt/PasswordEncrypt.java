@@ -25,10 +25,10 @@ public class PasswordEncrypt {
     private static RandomNumberGenerator randomNumberGenerator = new SecureRandomNumberGenerator();
 
     /** 默认散列算法 md5 */
-    private static String DEFAULT_ALGORITHM = "MD5";
+    private static final String DEFAULT_ALGORITHM = "MD5";
 
     /** 默认散列迭代次数 */
-    private static int DEFAULT_HASH_ITERATIONS = 2;
+    private static final int DEFAULT_HASH_ITERATIONS = 2;
     
     //指定散列算法为md5
     private static String algorithmName = DEFAULT_ALGORITHM;
@@ -50,7 +50,7 @@ public class PasswordEncrypt {
     	}
     	user.setSalt(randomNumberGenerator.nextBytes().toHex());
         String newPassword =  new SimpleHash(algorithmName, user.getPassword(),
-        ByteSource.Util.bytes(user.getUsername() + user.getSalt()), hashIterations).toHex();
+        ByteSource.Util.bytes(user.getLoginname() + user.getSalt()), hashIterations).toHex();
         user.setPassword(newPassword);
     }
     

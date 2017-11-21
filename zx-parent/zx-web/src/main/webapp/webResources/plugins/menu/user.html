@@ -139,6 +139,11 @@
 		        zIndex: layer.zIndex, //重点1
 		        success: function(layero){
 		          layer.setTop(layero); //重点2
+		        },
+		        end : function() {
+		        	layer.msg('新增用户成功，刷新用户列表。。。', function(){
+			        	location.reload();
+		        	});
 		        }
 		      });
 		  });

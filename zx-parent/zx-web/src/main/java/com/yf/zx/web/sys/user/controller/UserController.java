@@ -4,8 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
@@ -38,12 +40,16 @@ public class UserController extends BaseController {
 	}
 
 	@RequestMapping("toedit")
-	public String toEdit() {
+	public String toEdit(@RequestParam(value="id", required=true) Long id, Model model) {
+		User user = userService.findById(id);
+		model.addAttribute("user", user);
 		return "user/user_addOrEdit";
 	}
 
 	@RequestMapping("toview")
-	public String toView() {
+	public String toView(@RequestParam(value="id", required=true) Long id, Model model) {
+		User user = userService.findById(id);
+		model.addAttribute("user", user);
 		return "user/user_view";
 	}
 	
@@ -51,26 +57,42 @@ public class UserController extends BaseController {
 	@ResponseBody //处理 AJAX请求，返回响应的内容，而不是 View Name
 	public String list(UserVo userVo) {
 		PageReturn<User> page = userService.findByPage(userVo);
-    	System.out.println(JSONObject.toJSONString(page));
 		return JSONObject.toJSONString(page);
 	}
 	
 	
 	
-	@RequestMapping(value = "add", method=RequestMethod.POST)
+	@RequestMapping(value = "save", method=RequestMethod.POST)
 	@ResponseBody
-	public String add(User user) {
-		PasswordEncrypt.encrypt(user);
-		ResultReturn ret = userService.addUser(user);
+	public String save(User user) {
+		ResultReturn ret = null;
+		if (null ==user.getId()) {
+			PasswordEncrypt.initPassword(user);
+			ret = userService.addUser(user);
+		}
+		else {
+			ret = userService.editById(user);
+		}
 		return JSONObject.toJSONString(ret);
 	}
 
+	
+	@RequestMapping(value = "initPassword", method=RequestMethod.POST)
+	@ResponseBody
+	public String initPassword(User user) {
+		ResultReturn ret = null;
+		PasswordEncrypt.initPassword(user);
+		ret = userService.editById(user);
+		return JSONObject.toJSONString(ret);
+	}
+	
+	
+	
 	@RequestMapping(value = "del", method=RequestMethod.POST)
 	@ResponseBody
 	public String del(String delIds) {
 		ResultReturn ret = userService.deleteUserByIds(delIds);
 		return JSONObject.toJSONString(ret);
 	}
-	
 
 }

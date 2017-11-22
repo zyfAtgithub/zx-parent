@@ -61,7 +61,8 @@
 		</div>
 		
 		
-		<input type="hidden" name="addUserRes" id="addUserRes"/>
+		<input type="hidden" id="addUserRes"/>
+		<input type="hidden" id="editUserRes"/>
 		
 	</div>
 
@@ -132,7 +133,7 @@
 		      layer.open({
 		        type: 2, //此处以iframe举例
 		        title: '新增用户',
-		        area: ['480px', '440px'],
+		        area: ['480px', '320px'],
 		        //shade: 0,
 		        //maxmin: true,
 		        content: 'toadd',
@@ -151,7 +152,7 @@
 		        	if ("200" == $("#addUserRes").val()) {
 		        		$("#addUserRes").val('');
 		        		layer.msg('新增用户成功', {icon:1}, function(){
-				        	location.reload();
+		        			tbIns.reload();
 			        	});
 		       		 }
 		        }
@@ -166,8 +167,9 @@
 		    	  return;
 		      }
 		      
-		      layer.confirm('确定要删除吗？', {icon:3}, {
-		        btn: ['是','否'] //按钮
+		      layer.confirm('确定要删除吗？', {
+		    	  icon:3,
+			      btn: ['是','否'] //按钮
 		      }, function(){
 		        var ids = "";
 			      $.each(delUsers, function(index, item){
@@ -181,7 +183,7 @@
 			    	  data:{delIds:ids},
 			    	  success:function(resultRet){
 			    		  if (resultRet) {
-							  layer.msg(resultRet.resultMsg, {icon: 6, time: 2000}, function(){
+							  layer.msg(resultRet.resultMsg, {icon: 6, time: 1000}, function(){
 					 		      tbIns.reload({});
 							  });
 			    		  }
@@ -199,14 +201,25 @@
 		  table.on('tool(userTbFilter)', function(obj){
 		    var data = obj.data;
 		    if(obj.event === 'detail'){
-		      layer.msg('ID：'+ data.id + ' 的查看操作');
+		    	layer.open({
+			        type: 2, //此处以iframe举例
+			        title: '查看用户',
+			        area: ['440px', '280px'],
+			        //shade: 0,
+			        //maxmin: true,
+			        content: 'toview?id=' + data.id,
+			        zIndex: layer.zIndex, //重点1
+			        success: function(layero){
+			          layer.setTop(layero); //重点2
+			        },
+			        end : function() {}
+			      });
 		    } 
 		    else if(obj.event === 'del'){
 		    	layer.confirm('确定要删除吗？', {
 		    		  icon:3,
 		    		  btn: ['是','否'] //按钮
 		    		}, function(){
-		    		  layer.msg('删除吧', {icon: 1});
 		    		  var ids = data.id;
 		    		  $.ajax({
 				    	  url:"del",
@@ -215,7 +228,7 @@
 				    	  data:{delIds:ids},
 				    	  success:function(resultRet){
 				    		  if (resultRet) {
-								  layer.msg(resultRet.resultMsg, {icon: 6, time: 2000}, function(){
+								  layer.msg(resultRet.resultMsg, {icon: 6, time: 1000}, function(){
 						 		      tbIns.reload({});
 								  });
 				    		  }
@@ -224,29 +237,27 @@
 		    		}, function(){
 		    		  //layer.msg('不删除', {icon: 2});
 		    		});
-		    	/* layer.confirm('确定要删除吗？', {icon:3}, {
-			        btn: ['是','否'] //按钮
-			      }, function(){
-			        layer.msg('删除', {icon: 1});
-			        /////////
-			        var ids = data.id;
-				      $.ajax({
-				    	  url:"/zx-web/sys/user/del",
-				    	  type:"POST",
-				    	  dataType:"json",
-				    	  data:{delIds:ids},
-				    	  success:function(resultRet){
-				    		  if (resultRet) {
-								  layer.msg(resultRet.resultMsg, {icon: 6, time: 2000}, function(){
-						 		      tbIns.reload({});
-								  });
-				    		  }
-				    	  }
-				      });
-			        
-			      }); */
 		    } else if(obj.event === 'edit'){
-		      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+		      layer.open({
+			        type: 2, //此处以iframe举例
+			        title: '修改用户',
+			        area: ['480px', '320px'],
+			        //shade: 0,
+			        //maxmin: true,
+			        content: 'toedit?id=' + data.id,
+			        zIndex: layer.zIndex, //重点1
+			        success: function(layero){
+			          layer.setTop(layero); //重点2
+			        },
+			        end : function() {
+			        	if ("200" == $("#editUserRes").val()) {
+			        		$("#editUserRes").val('');
+			        		layer.msg('修改用户成功', {icon:1}, function(){
+			        			tbIns.reload();
+				        	});
+			       		 }
+			        }
+			      });
 		    }
 		  });
 		});

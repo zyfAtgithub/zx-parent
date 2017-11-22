@@ -15,26 +15,78 @@
   <sql id="Base_Column_List" >
     id, loginname, username, password, salt, phone, email, locked, lastlogin_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from sys_users
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from sys_users
+  
+  <!-- 根据主键更新，字段可选 -->
+  <update id="updateById" parameterType="com.yf.zx.biz.sys.user.entity.User" >
+    update sys_users
+    <set >
+      <if test="loginname != null" >
+        loginname = #{loginname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null" >
+        locked = #{locked,jdbcType=BIT},
+      </if>
+      <if test="lastloginTime != null" >
+        lastlogin_time = #{lastloginTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
     where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.yf.zx.biz.sys.user.entity.User" >
-    insert into sys_users (id, loginname, username, password, 
-      salt, phone, email, 
-      locked, lastlogin_time)
-    values (#{id,jdbcType=BIGINT}, #{loginname,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{salt,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{locked,jdbcType=BIT}, #{lastloginTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.yf.zx.biz.sys.user.entity.User" >
-    insert into sys_users
+  </update>
+  
+  <!-- 根据主键更新 -->
+  <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.sys.user.entity.User" >
+    update sys_users
+    set loginname = #{loginname,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      locked = #{locked,jdbcType=BIT},
+      lastlogin_time = #{lastloginTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from sys_users
+  	where username like #{username, jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByLoginName" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from sys_users
+  	where loginname = #{loginname, jdbcType=VARCHAR}
+  </select>
+  
+  <!-- 主键自增，字段可选 -->
+  <insert id="insertAutoId" useGeneratedKeys="true" keyProperty="id" 
+ 		parameterType="com.yf.zx.biz.sys.user.entity.User" >
+	insert into sys_users
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -94,74 +146,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.sys.user.entity.User" >
-    update sys_users
-    <set >
-      <if test="loginname != null" >
-        loginname = #{loginname,jdbcType=VARCHAR},
-      </if>
-      <if test="username != null" >
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null" >
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="salt != null" >
-        salt = #{salt,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null" >
-        phone = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="locked != null" >
-        locked = #{locked,jdbcType=BIT},
-      </if>
-      <if test="lastloginTime != null" >
-        lastlogin_time = #{lastloginTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.sys.user.entity.User" >
-    update sys_users
-    set loginname = #{loginname,jdbcType=VARCHAR},
-      username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      salt = #{salt,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      locked = #{locked,jdbcType=BIT},
-      lastlogin_time = #{lastloginTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
   
-  
-  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
-  	select 
-  	<include refid="Base_Column_List"/>
-  	from sys_users
-  	where username like #{username, jdbcType=VARCHAR}
-  </select>
-  
-  <select id="selectByLoginName" parameterType="java.lang.String" resultMap="BaseResultMap">
-  	select 
-  	<include refid="Base_Column_List"/>
-  	from sys_users
-  	where loginname = #{loginname, jdbcType=VARCHAR}
-  </select>
-  
-  <!-- 主键自增 -->
-  <insert id="insertAutoId" useGeneratedKeys="true" keyProperty="id" parameterType="com.yf.zx.biz.sys.user.entity.User" >
-    insert into sys_users (loginname, username, password, 
-      salt, phone, email, 
-      locked, lastlogin_time)
-    values (#{loginname,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{salt,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{locked,jdbcType=BIT}, #{lastloginTime,jdbcType=TIMESTAMP})
-  </insert>
-  
+  <!-- 条件查询 -->
   <select id="selectUser" parameterType="com.yf.zx.biz.sys.user.entity.User" resultMap="BaseResultMap">
   	select <include refid="Base_Column_List"/>
   	from sys_users

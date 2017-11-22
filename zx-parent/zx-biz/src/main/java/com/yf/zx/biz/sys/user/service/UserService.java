@@ -42,6 +42,39 @@ public class UserService {
 	}
 
 	/**
+	 * 根据Id查询
+	 *  
+	 * @author zhang.yifeng 
+	 * @param id
+	 * @return
+	 */
+	public User findById(Long id) {
+		return userDao.selectById(id);
+	}
+	
+	
+	public ResultReturn editById(User user) {
+		ResultReturn ret = new ResultReturn();
+		if (user == null || user.getId() == null) {
+			ret.setResultCode("0");
+			ret.setResultMsg("用户id不能为空！");
+			return ret;
+		}
+		
+		try {
+			userDao.updateById(user);
+			ret.setResultCode("200");
+			ret.setResultMsg("用户修改成功！");
+		} catch (Exception e) {
+			logger.error("用户修改失败！", e);
+			ret.setResultCode("0");
+			ret.setResultMsg("用户修改失败！");
+		}
+		
+		return ret;
+	}
+	
+	/**
 	 * 根据登录名查询用户[多个时返回第一个]
 	 *  
 	 * @author zhang.yifeng 

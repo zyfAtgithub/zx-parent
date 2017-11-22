@@ -34,8 +34,27 @@ public class PasswordEncrypt {
     private static String algorithmName = DEFAULT_ALGORITHM;
     //散列迭代次数
     private static int hashIterations = DEFAULT_HASH_ITERATIONS;
+
+    /** 系统初始化密码密码 */
+    private static String defaultPassword = "12345678";
     
-	/**
+    /**
+     * 用户密码初始化
+     *  
+     * @author zhang.yifeng 
+     * @param user
+     */
+	public static void initPassword(User user) {
+		if (user == null || StringUtils.isNullOrEmpty(user.getLoginname())) {
+    		return;
+    	}
+    	user.setSalt(randomNumberGenerator.nextBytes().toHex());
+        String newPassword =  new SimpleHash(algorithmName, defaultPassword,
+        ByteSource.Util.bytes(user.getLoginname() + user.getSalt()), hashIterations).toHex();
+        user.setPassword(newPassword);
+	}
+    
+    /**
      * 生成随机盐值对密码进行加密
      *  
      * @author zhang.yifeng 

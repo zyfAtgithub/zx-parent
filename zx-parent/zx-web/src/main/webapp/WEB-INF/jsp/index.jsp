@@ -60,5 +60,10 @@
  		  	</div>
 	  	</div>
 	</div>
+	
+<script  type="text/javascript" src="${ctx }/webResources/js/jquery-2.1.1.min.js"></script>
+<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
+<script src="${ctx }/webResources/js/sidebar-menu.js"></script>
+<script src="${ctx }/webResources/js/main.js"></script>
 </body>
 </html>

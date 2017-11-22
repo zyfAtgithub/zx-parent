@@ -27,6 +27,26 @@ public class UserController extends BaseController {
 	@Autowired
 	UserService userService;
 	
+	@RequestMapping("tolist")
+	public String toList() {
+		return "user/user_list";
+	}
+
+	@RequestMapping("toadd")
+	public String toAdd() {
+		return "user/user_addOrEdit";
+	}
+
+	@RequestMapping("toedit")
+	public String toEdit() {
+		return "user/user_addOrEdit";
+	}
+
+	@RequestMapping("toview")
+	public String toView() {
+		return "user/user_view";
+	}
+	
 	@RequestMapping("list")
 	@ResponseBody //处理 AJAX请求，返回响应的内容，而不是 View Name
 	public String list(UserVo userVo) {

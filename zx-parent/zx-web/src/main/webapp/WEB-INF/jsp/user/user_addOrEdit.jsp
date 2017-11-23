@@ -17,7 +17,7 @@
 <body>
 
 <div class="layui-container">
-		<form class="layui-form layui-form-pane" action="" onsubmit = "return saveUser();" >
+		<form class="layui-form layui-form-pane" action="" onsubmit = "return false;" >
 		  <div class="layui-form-item">
 		    <label class="layui-form-label">登录名</label>
 		    <div class="layui-input-block">
@@ -47,8 +47,9 @@
 		  </div>
 		  <div class="layui-form-item">
 		    <div class="layui-input-block">
-		      <button class="layui-btn layui-btn-normal" lay-submit>提交</button>
-		      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		      <button class="layui-btn layui-btn-normal layui-btn-small" onclick="initPassword();">初始化密码</button>
+		      <button class="layui-btn layui-btn-normal layui-btn-small" onclick="saveUser();">提交</button>
+		      <button type="reset" class="layui-btn layui-btn-primary layui-btn-small">重置</button>
 		    </div>
 		  </div>
 		</form>
@@ -60,25 +61,20 @@
 	<script type="text/javascript">
 		
 		function saveUser() {
-			var id = $("input[name='id']").val();
-			var loginName = $("input[name='loginname']").val();
-			var userName = $("input[name='username']").val();
-			var phone = $("input[name='phone']").val();
-			var email = $("input[name='email']").val();
 			var data = {};
-			data.id = id;
-			data.loginname = loginName;
-			data.username = userName;
-			data.phone = phone;
-			data.email = email;
+			data.id = $("input[name='id']").val();
+			data.loginname = $("input[name='loginname']").val();
+			data.username = $("input[name='username']").val();
+			data.phone = $("input[name='phone']").val();
+			data.email = $("input[name='email']").val();
 			$.ajax({
-				url:"/zx-web/sys/user/save",
+				url:"${ctx}/sys/user/save",
 				type:"POST",
 				dataType:"json",
 				data:data,
 				success:function(resultRet) {
 					if (resultRet.resultCode == '200') {
-						if (id) {
+						if (data.id) {
 							parent.document.getElementById('editUserRes').value = "200";
 						}
 						else {
@@ -91,9 +87,29 @@
 					}
 				}
 			});
-			
-			return false;
 		}
+		
+		function initPassword() {
+			
+			var data = {};
+			data.id = $("input[name='id']").val();
+			data.loginname = $("input[name='loginname']").val();
+			$.ajax({
+				url:"${ctx}/sys/user/initPassword",
+				type:"POST",
+				dataType:"json",
+				data:data,
+				success:function(resultRet) {
+					if (resultRet.resultCode == '200') {
+						layer.alert('密码初始化成功！');
+					}
+					else {
+						layer.alert(resultRet.resultMsg);
+					}
+				}
+			});
+			
+		} 
 	
 		function closeWin() {
 			var index=parent.layer.getFrameIndex(window.name);

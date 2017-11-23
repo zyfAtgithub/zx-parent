@@ -17,6 +17,7 @@ import com.yf.zx.biz.sys.user.service.UserService;
 import com.yf.zx.core.base.web.BaseController;
 import com.yf.zx.core.base.web.PageReturn;
 import com.yf.zx.core.base.web.ResultReturn;
+import com.yf.zx.core.util.common.StringUtils;
 import com.yf.zx.web.shiro.encrypt.PasswordEncrypt;
 
 @Controller
@@ -56,6 +57,23 @@ public class UserController extends BaseController {
 	@RequestMapping("list")
 	@ResponseBody //处理 AJAX请求，返回响应的内容，而不是 View Name
 	public String list(UserVo userVo) {
+		
+		if (StringUtils.isNotNullAndEmpty(userVo.getLoginname())) {
+			userVo.setLoginname("%" + userVo.getLoginname() + "%");
+		}
+
+		if (StringUtils.isNotNullAndEmpty(userVo.getUsername())) {
+			userVo.setUsername("%" + userVo.getUsername() + "%");
+		}
+
+		if (StringUtils.isNotNullAndEmpty(userVo.getPhone())) {
+			userVo.setPhone("%" + userVo.getPhone() + "%");
+		}
+
+		if (StringUtils.isNotNullAndEmpty(userVo.getEmail())) {
+			userVo.setEmail("%" + userVo.getEmail() + "%");
+		}
+		
 		PageReturn<User> page = userService.findByPage(userVo);
 		return JSONObject.toJSONString(page);
 	}

@@ -54,12 +54,13 @@
 						<label class="layui-form-label">用户名</label>
 			    		<div class="layui-input-inline">	
 			    			<input type="text" name="username" value="${username}" autocomplete="off"
-			    			 placeholder="请输入登录名" autocomplete="off" 
+			    			 placeholder="请输入用户名" autocomplete="off" 
 			    			 class="layui-input">
 			    		</div>
 			    	</div>
 		    		<div class="layui-inline">	
 		    			<button class="layui-btn layui-btn-small" lay-submit lay-filter="queryUser">查询</button>
+		    			<button class="layui-btn layui-btn-primary layui-btn-small" type="reset">重置</button>
 		    		</div>
 		    	</div>			
 			</form>
@@ -152,7 +153,7 @@
 
 			//多窗口模式，层叠置顶
 		      layer.open({
-		        type: 2, //此处以iframe举例
+		        type: 2, //iframe
 		        title: '新增用户',
 		        area: ['480px', '320px'],
 		        //shade: 0,
@@ -164,9 +165,9 @@
 		        btn2: function(){
 		          layer.closeAll();
 		        },
-		        zIndex: layer.zIndex, //重点1
+		        zIndex: layer.zIndex,
 		        success: function(layero){
-		          layer.setTop(layero); //重点2
+		          layer.setTop(layero);
 		        },
 		        end : function() {
 		        	console.log($("#addUserRes").val());
@@ -220,15 +221,15 @@
 		  });
 
 		  form.on('submit(queryUser)', function(data){
-			  layer.msg(JSON.stringify(data.field));
 			  tbIns.reload({
 				  url:'/zx-web/sys/user/list',
 				  where:data.field
 				  });
 			  return false;
 		  });
+		  
 		  $('#btn-refresh').click(function(){
-			  tbIns.reload({ url:'/zx-web/sys/user/list', where:{}});
+			  tbIns.reload({ url:'/zx-web/sys/user/list'});
 		  });
 		  
 		  
@@ -237,7 +238,7 @@
 		    var data = obj.data;
 		    if(obj.event === 'detail'){
 		    	layer.open({
-			        type: 2, //此处以iframe举例
+			        type: 2,
 			        title: '查看用户',
 			        area: ['440px', '280px'],
 			        //shade: 0,
@@ -280,7 +281,7 @@
 		    		});
 		    } else if(obj.event === 'edit'){
 		      layer.open({
-			        type: 2, //此处以iframe举例
+			        type: 2,
 			        title: '修改用户',
 			        area: ['480px', '320px'],
 			        //shade: 0,

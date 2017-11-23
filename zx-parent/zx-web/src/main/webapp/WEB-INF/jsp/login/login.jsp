@@ -84,44 +84,44 @@
 	  </div>
 	</div>
 </div>
-</body>
-<%-- <script src='<c:url value="/webResources/js/jquery-2.1.1.min.js"></c:url>' type="text/javascript"></script>
- --%>
-<script type="text/javascript">
-
-$(function(){ 
-	//生成验证码         
-    $('#kaptchaImage, #captcha').click(function () {  
-    	$(this).attr('src', '${ctx}/code/captcha-image?' + new Date().getTime() );
- 	});     
-});   
-
-  		  
-function changeCode() {  //刷新
-    $('#kaptchaImage').hide().attr('src', '${ctx}/code/captcha-image?' + Math.floor(Math.random()*100) ).fadeIn();  
-    event.cancelBubble=true;  
-}  
-
-function checkLogin() {
-	 var name=$("input[name='userName']").val();
-	 var pass=$("input[name='password']").val();
-	 var code=$("input[name='vertifyCode']").val();
-	 if (!name) {
-		 $("#loginMsg").text("请输入用户名！");
-	 	return false;
-	 }
-	 
-	 if (!pass) {
-		 $("#loginMsg").text("请输入密码！");
-	 	return false;
-	 }
+	<script  type="text/javascript" src="${ctx }/webResources/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
 	
-	 if ( 'true' == '${vertifyCodeEnabled }' && !code) {
-		 $("#loginMsg").text("请输入验证码！");
-	 	return false;
-	 }
-	 
-	 return true;
-}
-</script>
+	$(function(){ 
+		//生成验证码         
+	    $('#kaptchaImage, #captcha').click(function () {  
+	    	$(this).attr('src', '${ctx}/code/captcha-image?' + new Date().getTime() );
+	 	});     
+	});   
+	
+	  		  
+	function changeCode() {  //刷新
+	    $('#kaptchaImage').hide().attr('src', '${ctx}/code/captcha-image?' + Math.floor(Math.random()*100) ).fadeIn();  
+	    event.cancelBubble=true;  
+	}  
+	
+	function checkLogin() {
+		 var name=$("input[name='userName']").val();
+		 var pass=$("input[name='password']").val();
+		 var code=$("input[name='vertifyCode']").val();
+		 if (!name) {
+			 $("#loginMsg").text("请输入用户名！");
+		 	return false;
+		 }
+		 
+		 if (!pass) {
+			 $("#loginMsg").text("请输入密码！");
+		 	return false;
+		 }
+		
+		 if ( 'true' == '${vertifyCodeEnabled }' && !code) {
+			 $("#loginMsg").text("请输入验证码！");
+		 	return false;
+		 }
+		 
+		 return true;
+	}
+	</script>
+</body>
+
 </html>

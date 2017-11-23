@@ -16,9 +16,9 @@
     <!-- 凭证匹配器 -->
     <bean id="credentialsMatcher" class="com.yf.zx.web.shiro.credentials.RetryLimitHashedCredentialsMatcher">
         <constructor-arg ref="cacheManager"/>
-        <property name="hashAlgorithmName" value="md5"/>
-        <property name="hashIterations" value="2"/>
-        <property name="storedCredentialsHexEncoded" value="true"/>
+        <property name="hashAlgorithmName" value="${credentialsMatcher.hashAlgorithmName}"/>
+        <property name="hashIterations" value="${credentialsMatcher.hashIterations}"/>
+        <property name="storedCredentialsHexEncoded" value="${credentialsMatcher.storedCredentialsHexEncoded}"/>
     </bean>
 
     <!-- Realm实现 -->
@@ -79,24 +79,19 @@
     </bean>
 
     <!-- 基于Form表单的身份验证过滤器 -->
-<!--     <bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
-        <property name="usernameParam" value="username"/>
-        <property name="passwordParam" value="password"/>
-        <property name="loginUrl" value="/login"/>
-    </bean> -->
 	<bean id="formAuthenticationCaptchaFilter" class="com.yf.zx.web.shiro.filter.FormAuthenticationCaptchaFilter">
         <property name="usernameParam" value="userName"/>
         <property name="passwordParam" value="password"/>
         <property name="captchaParam" value="vertifyCode"/>
         <property name="vertifyCodeEnabled" value="${vertifyCode.Enabled}"/>
-        <property name="loginUrl" value="/login"/>
-        <property name="successUrl" value="/"/>
+        <property name="loginUrl" value="${loginUrl}"/>
+        <property name="successUrl" value="${successUrl}"/>
 	</bean>
     <!-- Shiro的Web过滤器 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/login"/>
-        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+        <property name="loginUrl" value="${loginUrl}"/>
+        <property name="unauthorizedUrl" value="${unauthorizedUrl}"/>
         <property name="filters">
             <util:map>
                 <entry key="authc" value-ref="formAuthenticationCaptchaFilter"/>

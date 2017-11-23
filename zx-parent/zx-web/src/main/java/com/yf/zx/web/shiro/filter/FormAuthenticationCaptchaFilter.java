@@ -11,7 +11,11 @@ import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.yf.zx.biz.sys.user.entity.User;
+import com.yf.zx.biz.sys.user.service.UserService;
+import com.yf.zx.core.util.common.DateUtils;
 import com.yf.zx.core.util.http.HttpUtil;
 import com.yf.zx.web.shiro.exception.CaptchaException;
 import com.yf.zx.web.shiro.token.UsernamePasswordCaptchaToken;
@@ -21,6 +25,9 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
 
     private boolean vertifyCodeEnabled;
     
+	@Autowired
+    private UserService userService;
+	
     @Override  
     /** 
      * 登录验证 
@@ -36,6 +43,10 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
             Subject subject = getSubject(request, response);  
             subject.login(token);//正常验证  
             logger.info(token.getUsername()+"登录成功");  
+            
+            User user = userService.getUserByName(token.getUsername());
+            user.setLastloginTime(DateUtils.getNowTime());
+            userService.editById(user);
             return onLoginSuccess(token, subject, request, response);  
         }catch (AuthenticationException e) {  
         	logger.info(token.getUsername()+"登录失败--"+e);  

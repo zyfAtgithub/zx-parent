@@ -40,6 +40,29 @@
 <body>
 	<div class="container">
 		<div class="layui-row query-panel">
+			<form class="layui-form layui-form-pane" action="" >
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">登录名</label>
+			    		<div class="layui-input-inline">	
+			    			<input type="text" name="loginname" value="${loginname}" autocomplete="off"
+			    			 placeholder="请输入登录名" autocomplete="off" 
+			    			 class="layui-input">
+			    		</div>
+			    	</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">用户名</label>
+			    		<div class="layui-input-inline">	
+			    			<input type="text" name="username" value="${username}" autocomplete="off"
+			    			 placeholder="请输入登录名" autocomplete="off" 
+			    			 class="layui-input">
+			    		</div>
+			    	</div>
+		    		<div class="layui-inline">	
+		    			<button class="layui-btn layui-btn-small" lay-submit lay-filter="queryUser">查询</button>
+		    		</div>
+		    	</div>			
+			</form>
 		</div>
 		<div class="layui-row">
 			<div class="batch-operation">
@@ -59,8 +82,6 @@
 				<table id="dataTb" lay-filter="userTbFilter"></table>
 			</div>
 		</div>
-		
-		
 		<input type="hidden" id="addUserRes"/>
 		<input type="hidden" id="editUserRes"/>
 		
@@ -91,13 +112,13 @@
 	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script>
 	
-	layui.use('table', function(){
-		  var table = layui.table, $ = layui.jquery;
+	layui.use(['form','table'], function(){
+		  var table = layui.table, form = layui.form, $ = layui.jquery;
 		  var tbIns = table.render({
 			id:'dataTableUser',
 		    elem: '#dataTb',
 		    url:'/zx-web/sys/user/list',
-		    height: 'full-80',
+		    height: 'full-220',
 		    size:'sm',
 		    cols: [[
 		      {checkbox: true, fixed:'left'},
@@ -187,13 +208,27 @@
 					 		      tbIns.reload({});
 							  });
 			    		  }
-			    	  }
+			    	  },
+						error:function(e) {
+							layer.open({
+								title:"请求出错！",
+								content:e.responseText
+							});
+						}
 			      });
 		      });
 		  });
 
+		  form.on('submit(queryUser)', function(data){
+			  layer.msg(JSON.stringify(data.field));
+			  tbIns.reload({
+				  url:'/zx-web/sys/user/list',
+				  where:data.field
+				  });
+			  return false;
+		  });
 		  $('#btn-refresh').click(function(){
-			  tbIns.reload({});
+			  tbIns.reload({ url:'/zx-web/sys/user/list', where:{}});
 		  });
 		  
 		  
@@ -232,7 +267,13 @@
 						 		      tbIns.reload({});
 								  });
 				    		  }
-				    	  }
+				    	  },
+							error:function(e) {
+								layer.open({
+									title:"请求出错！",
+									content:e.responseText
+								});
+							}
 				      });
 		    		}, function(){
 		    		  //layer.msg('不删除', {icon: 2});
@@ -270,8 +311,7 @@
 	        "m+": this.getMinutes(), // minute  
 	        "s+": this.getSeconds(), // second  
 	        "q+": Math.floor((this.getMonth() + 3) / 3), // quarter  
-	        "S": this.getMilliseconds()  
-	        // millisecond  
+	        "S": this.getMilliseconds()  //millisecond  
 	    }  
 	    if (/(y+)/.test(format))  
 	        format = format.replace(RegExp.$1, (this.getFullYear() + "")  

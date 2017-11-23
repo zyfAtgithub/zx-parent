@@ -8,37 +8,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%@include file="common/include.jsp"%>
 </head>
-<body>
+<body >
 	<!-- 顶部导航栏 -->
 	<div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-    <div class="layui-logo">layui 后台布局</div>
-    <!-- 头部区域（可配合layui已有的水平导航） -->
-    <ul class="layui-nav layui-layout-left">
-      <li class="layui-nav-item"><a href="">控制台</a></li>
-      <li class="layui-nav-item"><a href="">商品管理</a></li>
-      <li class="layui-nav-item"><a href="">用户</a></li>
-      <li class="layui-nav-item">
-        <a href="javascript:;">其它系统</a>
-        <dl class="layui-nav-child">
-          <dd><a href="">邮件管理</a></dd>
-          <dd><a href="">消息管理</a></dd>
-          <dd><a href="">授权管理</a></dd>
-        </dl>
-      </li>
-    </ul>
+    <div class="layui-logo">汽车品牌发展追踪系统</div>
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
         <a href="javascript:;">
           <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-          贤心
+         	<shiro:principal/>
         </a>
         <dl class="layui-nav-child">
-          <dd><a href="">基本资料</a></dd>
-          <dd><a href="">安全设置</a></dd>
+          <dd><a href="javascript:;" onclick="modifyPassword('<shiro:principal/>');">修改密码</a>
+	          <input type="hidden" id="pwdmodifyRes"/>
+          </dd>
         </dl>
       </li>
-      <li class="layui-nav-item"><a href="/zx-web/logout">退了</a></li>
+      <li class="layui-nav-item"><a href="${ctx }/logout">退了</a></li>
     </ul>
   </div>
 		

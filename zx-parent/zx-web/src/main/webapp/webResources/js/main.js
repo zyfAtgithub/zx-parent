@@ -9,7 +9,6 @@ function loadMenu(){
 		   type: "GET",//请求方式为get
 		   dataType: "json", //返回数据格式为json
 		   success: function(menulist) {//请求成功完成后要执行的方法 
-			   console.log(menulist);
 				$(menulist).each(function(index, menu){
 					if (!menu.children) {
 						var $menuItem = $('<li><a href="javascript:;" data-url="'+ menu.url +'" data-title="'+ menu.title +'" data-level="1"><i class="'+ menu.iconCls +'"></i>'
@@ -54,28 +53,65 @@ function loadMenu(){
 						$(".right-content").html('<iframe src="'+dataUrl+'"></iframe>');
 					}
 				});
-				
-		   }
+		   },
+			error:function(e) {
+				layer.open({
+					title:"请求出错！",
+					content:e.responseText
+				});
+			}
 		});
-	
-//	$.ajax({
-//		url:"/zx-web/sys/user/list",
-//		type:"GET",
-//		//dataType: "json", //返回数据格式为json
-//		success:function(data){
-//			if (data.noLogin) {
-//				console.log('未登录！');
-//				layer.alert("亲，请登录先！");
-//			}
-//			console.log(data);
-//		},
-//		error:function(XMLHttpRequest, textStatus, errorThrown) {
-//			  // 状态码
-//            console.log(XMLHttpRequest.status);
-//            // 状态
-//            console.log(XMLHttpRequest.readyState);
-//            // 错误信息   
-//            console.log(textStatus);
-//		}
-//	});
+}
+
+function startTime() {
+    var today=new Date()
+	var years=today.getFullYear();
+	var months=today.getMonth();
+	var d=today.getDate()
+	var h=today.getHours()
+	var m=today.getMinutes()
+	var s=today.getSeconds()
+	// add a zero in front of numbers<10
+	months=months+1
+	months=checkTime(months)
+	d=checkTime(d)
+	m=checkTime(m)
+	s=checkTime(s)
+	var weekday=new Array(7)
+	weekday[0]="星期日"
+	weekday[1]="星期一"
+	weekday[2]="星期二"
+	weekday[3]="星期三"
+	weekday[4]="星期四"
+	weekday[5]="星期五"
+	weekday[6]="星期六"
+	var w=weekday[today.getDay()]
+	document.getElementById('showNowTime').innerHTML=years+"年"+months+"月"+d+"日 "+"<br>"+w+" "+h+":"+m+":"+s;
+	t=setTimeout('startTime()',500)
+}
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i
+    }
+    return i
+}
+
+/**
+ * 修改密码
+ * @param curUser
+ * @returns
+ */
+function modifyPassword(curUser) {
+	layer.open({
+		type:2,
+		title:'修改密码',
+		area: ['410px', '270px'],
+		content:"sys/user/toModifypasswordView?loginname=" + curUser,
+		end: function(){
+			if ("200" == $("#pwdmodifyRes").val()) {
+				$("#pwdmodifyRes").val('');
+				layer.msg('密码修改成功！',{icon:1});
+			}
+		}
+	});
 }

@@ -60,8 +60,6 @@ public class UserController extends BaseController {
 		return JSONObject.toJSONString(page);
 	}
 	
-	
-	
 	@RequestMapping(value = "save", method=RequestMethod.POST)
 	@ResponseBody
 	public String save(User user) {
@@ -86,12 +84,35 @@ public class UserController extends BaseController {
 		return JSONObject.toJSONString(ret);
 	}
 	
-	
-	
 	@RequestMapping(value = "del", method=RequestMethod.POST)
 	@ResponseBody
 	public String del(String delIds) {
 		ResultReturn ret = userService.deleteUserByIds(delIds);
+		return JSONObject.toJSONString(ret);
+	}
+	
+	
+	@RequestMapping("toModifypasswordView")
+	public String toModifypasswordView(@RequestParam(value="loginname", required=true) String loginname, Model model) {
+		model.addAttribute("loginname", loginname);
+		return "modifyPassword";
+	}
+	
+	@RequestMapping(value = "modifyPassword", method=RequestMethod.POST)
+	@ResponseBody
+	public String modifyPassword(@RequestParam(value="loginname", required=true) String loginname, @RequestParam(value="pwdOrigin", required=true) String pwdOrigin, 
+			@RequestParam(value="pwdNew", required=true) String pwdNew) {
+		ResultReturn ret = new ResultReturn();
+		User user = userService.getUserByName(loginname);
+		if (!PasswordEncrypt.checkPassword(user, pwdOrigin)) {
+			ret.setResultCode("0");
+			ret.setResultMsg("原始密码不正确！");
+		}
+		else {
+			user.setPassword(pwdNew);
+			PasswordEncrypt.encrypt(user);
+			ret = userService.editById(user);
+		}
 		return JSONObject.toJSONString(ret);
 	}
 

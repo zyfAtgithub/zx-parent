@@ -68,9 +68,10 @@
             </bean>  
         </property> 
     </bean>	
-        
+      
+    <bean class="com.yf.zx.core.util.spring.ApplicationContextUtil" lazy-init="false"/>  
     <!-- 系统配置 -->
-	<bean id="SysProperties" class="com.yf.zx.core.util.conf.SysPropertyConf">
+	<bean id="sysPropertyConf" class="com.yf.zx.core.util.conf.SysPropertyConf" lazy-init="false">
 	   <property name="ignoreUnresolvablePlaceholders" value="true"/>
 	   <property name="ignoreResourceNotFound" value="true"/>
 	   <property name="locations">

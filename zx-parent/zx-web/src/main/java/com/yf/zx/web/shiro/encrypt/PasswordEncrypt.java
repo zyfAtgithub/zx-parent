@@ -1,5 +1,8 @@
 package com.yf.zx.web.shiro.encrypt;
 
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
@@ -7,6 +10,8 @@ import org.apache.shiro.util.ByteSource;
 
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.core.util.common.StringUtils;
+import com.yf.zx.core.util.conf.SysPropertyConf;
+import com.yf.zx.core.util.spring.ApplicationContextUtil;
 
 /**
  * 
@@ -37,6 +42,13 @@ public class PasswordEncrypt {
 
     /** 系统初始化密码密码 */
     private static String defaultPassword = "12345678";
+    
+    static {
+    	SysPropertyConf conf = ApplicationContextUtil.getBean("sysPropertyConf");
+    	algorithmName = conf.getProperty("credentialsMatcher.hashAlgorithmName");
+    	hashIterations = conf.getIntValue("credentialsMatcher.hashIterations");
+    	defaultPassword = conf.getProperty("defaultPassword");
+    }
     
     /**
      * 用户密码初始化
@@ -73,13 +85,44 @@ public class PasswordEncrypt {
         user.setPassword(newPassword);
     }
     
+    /**
+     * 原始密码正确性校验
+     * token-输入
+     * info-实际
+     *  
+     * @author zhang.yifeng 
+     * @return
+     */
+    public static boolean checkPassword(User user, String pwdCheck) {
+    	if (user == null || StringUtils.isNullOrEmpty(user.getLoginname()) 
+    			|| StringUtils.isNullOrEmpty(user.getPassword())
+    			|| StringUtils.isNullOrEmpty(pwdCheck)) {
+    		return false;
+    	}
+        
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getLoginname(), pwdCheck);
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(
+                user.getLoginname(), //用户名
+                user.getPassword(), //密码
+                ByteSource.Util.bytes(user.getLoginname() + user.getSalt()),//salt=username+salt
+                "checkpwd"
+        );
+        
+        //密码认证器，同登录认证
+        HashedCredentialsMatcher macher = new HashedCredentialsMatcher(algorithmName);
+        macher.setHashIterations(hashIterations);
+        return macher.doCredentialsMatch(token, info);
+    }
+    
     public static void main(String[] args) {
     	User user = new User();
     	user.setLoginname("zyf");
     	user.setPassword("qazxsw123.");
     	encrypt(user);
 		System.out.println(user);
-	}
+		boolean isCorrect = checkPassword(user, "qazxsw123.");
+		System.out.println("密码正确否？" + isCorrect);
+    }
     
     
     public String getAlgorithmName() {

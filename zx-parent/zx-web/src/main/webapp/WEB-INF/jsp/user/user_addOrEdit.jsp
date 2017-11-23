@@ -36,20 +36,20 @@
 		  <div class="layui-form-item">
 		    <label class="layui-form-label">手机号</label>
 		    <div class="layui-input-block">
-		      <input type="text" name="phone" required value="${user.phone }" autocomplete="off"  lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+		      <input type="text" name="phone" required value="${user.phone }" autocomplete="off"  lay-verify="required|phone" placeholder="请输入手机号" autocomplete="off" class="layui-input">
 		    </div>
 		  </div>
 		  <div class="layui-form-item">
 		    <label class="layui-form-label">邮箱</label>
 		    <div class="layui-input-block">
-		      <input type="email" name="email" required value="${user.email }" autocomplete="off"  lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+		      <input type="email" name="email" required value="${user.email }" autocomplete="off"  lay-verify="required|email" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
 		    </div>
 		  </div>
 		  <div class="layui-form-item">
 		    <div class="layui-input-block">
-		      <button class="layui-btn layui-btn-normal layui-btn-small" onclick="initPassword();">初始化密码</button>
-		      <button class="layui-btn layui-btn-normal layui-btn-small" onclick="saveUser();">提交</button>
+		      <button class="layui-btn layui-btn-normal layui-btn-small" lay-submit lay-filter="saveUser">提交</button>
 		      <button type="reset" class="layui-btn layui-btn-primary layui-btn-small">重置</button>
+		      <button class="layui-btn layui-btn-normal layui-btn-small" onclick="initPassword();">初始化密码</button>
 		    </div>
 		  </div>
 		</form>
@@ -60,37 +60,41 @@
 
 	<script type="text/javascript">
 		
-		function saveUser() {
-			var data = {};
-			data.id = $("input[name='id']").val();
-			data.loginname = $("input[name='loginname']").val();
-			data.username = $("input[name='username']").val();
-			data.phone = $("input[name='phone']").val();
-			data.email = $("input[name='email']").val();
-			$.ajax({
-				url:"${ctx}/sys/user/save",
-				type:"POST",
-				dataType:"json",
-				data:data,
-				success:function(resultRet) {
-					if (resultRet.resultCode == '200') {
-						if (data.id) {
-							parent.document.getElementById('editUserRes').value = "200";
+		layui.use('form', function(){
+			var form = layui.form;
+			form.on('submit(saveUser)', function(data){
+				$.ajax({
+					url:"${ctx}/sys/user/save",
+					type:"POST",
+					dataType:"json",
+					data:data.field,
+					success:function(resultRet) {
+						console.log(resultRet);
+						if (resultRet.resultCode == '200') {
+							if (data.field.id) {
+								parent.document.getElementById('editUserRes').value = "200";
+							}
+							else {
+								parent.document.getElementById('addUserRes').value = "200";
+							}
+							closeWin();
 						}
 						else {
-							parent.document.getElementById('addUserRes').value = "200";
+							layer.alert(resultRet.resultMsg);
 						}
-						closeWin();
+					},
+					error:function(e) {
+						layer.open({
+							title:"请求出错！",
+							content:e.responseText
+						});
 					}
-					else {
-						layer.alert(resultRet.resultMsg);
-					}
-				}
+				});
+				return false;
 			});
-		}
+		});
 		
 		function initPassword() {
-			
 			var data = {};
 			data.id = $("input[name='id']").val();
 			data.loginname = $("input[name='loginname']").val();
@@ -106,9 +110,14 @@
 					else {
 						layer.alert(resultRet.resultMsg);
 					}
+				},
+				error:function(e) {
+					layer.open({
+						title:"请求出错！",
+						content:e.responseText
+					});
 				}
 			});
-			
 		} 
 	
 		function closeWin() {

@@ -2,6 +2,8 @@ package com.yf.zx.biz;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +15,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSONObject;
+import com.yf.zx.biz.sys.menu.entity.Menu;
+import com.yf.zx.biz.sys.menu.service.MenuService;
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.entity.UserVo;
 import com.yf.zx.biz.sys.user.service.UserService;
@@ -29,6 +33,9 @@ public class AppTest {
 	
 	@Autowired
 	UserService userService;
+
+	@Autowired
+	MenuService menuService;
 
     @Before
     public void before() {
@@ -88,6 +95,25 @@ public class AppTest {
     	System.out.println( jsonObject.toString());
     	System.out.println( jsonObject.toJSONString());
     	System.out.println(json);
+    }
+    
+    @Test
+    public void addMenu() {
+    	Menu menu = new Menu();
+    	menu.setId(1l);
+    	menu.setMenuname("首页");
+    	menu.setMenuurl("#");
+    	menu.setMenuicon("fa fa-home");
+    	menu.setMenuorder(1);
+    	menu.setIsshow(false);
+    	menu.setParentid(0l);
+    	menuService.addMenu(menu);
+    }
+
+    @Test
+    public void getMenu() {
+    	List<Menu> list = menuService.getMenuList();
+    	System.out.println(list);
     }
     
     

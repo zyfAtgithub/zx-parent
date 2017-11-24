@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.service.UserService;
 import com.yf.zx.core.util.common.DateUtils;
+import com.yf.zx.core.util.constants.Constants;
 import com.yf.zx.core.util.http.HttpUtil;
 import com.yf.zx.web.shiro.exception.CaptchaException;
 import com.yf.zx.web.shiro.token.UsernamePasswordCaptchaToken;
@@ -47,6 +49,8 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
             User user = userService.getUserByName(token.getUsername());
             user.setLastloginTime(DateUtils.getNowTime());
             userService.editById(user);
+            Session session = subject.getSession();
+            session.setAttribute(Constants.CUR_LOGIN_USER, user);
             return onLoginSuccess(token, subject, request, response);  
         }catch (AuthenticationException e) {  
         	logger.info(token.getUsername()+"登录失败--"+e);  

@@ -224,6 +224,36 @@
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
+	
+	<repositories>
+	    <repository>
+	      <id>people.apache.snapshots</id>
+	      <url>
+	        http://repository.apache.org/content/groups/snapshots-group/
+	      </url>
+	      <releases>
+	        <enabled>false</enabled>
+	      </releases>
+	      <snapshots>
+	        <enabled>true</enabled>
+	      </snapshots>
+	    </repository>
+	  </repositories>
+	
+	  <pluginRepositories>
+	    <pluginRepository>
+	      <id>apache.snapshots</id>
+	      <name>Apache Snapshots</name>
+	      <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+	      <releases>
+	        <enabled>false</enabled>
+	      </releases>
+	      <snapshots>
+	        <enabled>true</enabled>
+	      </snapshots>
+    	</pluginRepository>
+	</pluginRepositories>
+	
 	<build>
 		<plugins>
 			<plugin>

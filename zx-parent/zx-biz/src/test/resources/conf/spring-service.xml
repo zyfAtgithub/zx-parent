@@ -15,6 +15,6 @@
            http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
     <!--其实component-scan 就有了annotation-config的功能即把需要的类注册到了spring容器中 -->
-    <context:component-scan base-package="com.yf.zx.biz.sys.user.service" />
+    <context:component-scan base-package="com.yf.zx.biz.sys.**.service" />
     <!-- 可以使用@Service注解，完成service的bean声明，不必在spring文件中添加bean -->
 </beans>

@@ -4,6 +4,10 @@ import com.yf.zx.core.util.system.OperSystem;
 import com.yf.zx.core.util.system.OperSystemType;
 
 public final class Constants {
+	
+	/** 当前系统登录用户 */
+	public static final String CUR_LOGIN_USER = "CurLoginUser";
+	
 	/**
 	 * 日志文件大小阀值（G）
 	 */

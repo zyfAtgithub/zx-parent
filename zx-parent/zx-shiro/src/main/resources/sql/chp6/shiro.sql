@@ -3,6 +3,7 @@ drop table if exists sys_roles;
 drop table if exists sys_permissions;
 drop table if exists sys_users_roles;
 drop table if exists sys_roles_permissions;
+drop table if exists sys_menus;
 
 create table sys_users (
   id bigint auto_increment,
@@ -16,7 +17,7 @@ create table sys_users (
   lastlogin_time datetime,
   constraint pk_sys_users primary key(id)
 ) charset=utf8 ENGINE=InnoDB;
-create unique index idx_sys_users_username on sys_users(username);
+create unique index idx_sys_users_loginname on sys_users(loginname);
 
 create table sys_roles (
   id bigint auto_increment,
@@ -46,4 +47,15 @@ create table sys_roles_permissions (
   role_id bigint,
   permission_id bigint,
   constraint pk_sys_roles_permissions primary key(role_id, permission_id)
+) charset=utf8 ENGINE=InnoDB;
+
+create table sys_menus (
+  id bigint auto_increment,
+  menuname varchar(100),
+  menuurl varchar(100),
+  parentid bigint,
+  menuicon varchar(100),
+  menuorder int(3),
+  isshow bool default true,
+  constraint pk_sys_menus primary key(id)
 ) charset=utf8 ENGINE=InnoDB;

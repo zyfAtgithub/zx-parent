@@ -24,7 +24,7 @@ table.layui-table tr th{
 <body>
 	<div class="layui-container">
 		<div class="layui-row">
-			<table class="layui-table" lay-even>
+			<table class="layui-table">
 				<tr><th>登录名</th><td>${user.loginname }</td></tr>
 				<tr><th>用户名</th><td>${user.username }</td></tr>
 				<tr><th>手机</th><td>${user.phone }</td></tr>

@@ -9,13 +9,11 @@ public interface MenuMapper {
 
     int insert(Menu record);
 
-    int insertSelective(Menu record);
-
     Menu selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(Menu record);
 
     int updateByPrimaryKey(Menu record);
     
-    List<Menu> selectMenu();
+    List<Menu> selectMenu(Menu record);
 }

@@ -5342,3 +5342,232 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2017-11-24 11:31:36,763 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus 
 2017-11-24 11:31:36,798 DEBUG selectMenu[159] - ==> Parameters: 
 2017-11-24 11:31:36,820 DEBUG selectMenu[159] - <==      Total: 1
+2017-11-24 11:34:16,434 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, isshow) values (?, ?, ?, ?, ?, ?, ?) 
+2017-11-24 11:34:16,472 DEBUG insert[159] - ==> Parameters: 2(Long), 系统管理(String), (String), 0(Long), fa fa-cog(String), 2(Integer), false(Boolean)
+2017-11-24 11:34:16,486 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 09:56:51,808 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, isshow) values (?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 09:56:51,861 DEBUG insert[159] - ==> Parameters: 3(Long), 用户管理(String), sys/user/tolist(String), 2(Long), fa fa-user(String), 2(Integer), false(Boolean)
+2017-11-27 09:56:51,990 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 09:57:58,907 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, isshow) values (?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 09:57:58,961 DEBUG insert[159] - ==> Parameters: 4(Long), 角色管理(String), sys/role/tolist(String), 2(Long), fa fa-users(String), 4(Integer), false(Boolean)
+2017-11-27 09:57:59,018 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 09:58:34,911 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, isshow) values (?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 09:58:34,961 DEBUG insert[159] - ==> Parameters: 5(Long), 权限管理(String), sys/perm/tolist(String), 2(Long), fa fa-user-plus(String), 5(Integer), false(Boolean)
+2017-11-27 09:58:34,990 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 10:01:27,857 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus 
+2017-11-27 10:01:27,894 DEBUG selectMenu[159] - ==> Parameters: 
+2017-11-27 10:01:27,924 DEBUG selectMenu[159] - <==      Total: 5
+2017-11-27 10:08:16,822 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:08:16,861 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 10:08:16,902 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 10:09:22,355 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:09:22,395 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 10:09:22,446 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 10:18:15,661 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:18:15,695 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 10:18:15,716 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 10:18:15,721 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:18:15,721 DEBUG selectMenu[159] - ==> Parameters: 1(Long)
+2017-11-27 10:18:15,723 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 10:18:15,725 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:18:15,726 DEBUG selectMenu[159] - ==> Parameters: 2(Long)
+2017-11-27 10:18:15,729 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 10:18:41,023 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:18:41,063 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 10:18:41,093 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 10:18:41,096 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:18:41,096 DEBUG selectMenu[159] - ==> Parameters: 1(Long)
+2017-11-27 10:18:41,097 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 10:18:41,099 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:18:41,099 DEBUG selectMenu[159] - ==> Parameters: 2(Long)
+2017-11-27 10:18:41,101 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 10:52:02,911 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:52:02,950 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 10:52:03,003 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 10:52:03,007 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:52:03,007 DEBUG selectMenu[159] - ==> Parameters: 1(Long)
+2017-11-27 10:52:03,009 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 10:52:03,010 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:52:03,011 DEBUG selectMenu[159] - ==> Parameters: 2(Long)
+2017-11-27 10:52:03,014 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 10:53:51,486 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:53:51,530 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 10:53:51,554 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 10:53:51,557 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:53:51,558 DEBUG selectMenu[159] - ==> Parameters: 1(Long)
+2017-11-27 10:53:51,559 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 10:53:51,560 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 10:53:51,561 DEBUG selectMenu[159] - ==> Parameters: 2(Long)
+2017-11-27 10:53:51,563 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 11:27:16,224 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, isshow) values (?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 11:27:16,267 DEBUG insert[159] - ==> Parameters: 6(Long), 菜单管理(String), sys/menu/tolist(String), 2(Long), fa fa-user-sitemap(String), 6(Integer), false(Boolean)
+2017-11-27 11:27:16,368 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 17:19:20,001 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:19:20,045 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 17:19:20,072 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 17:20:32,090 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 17:20:32,142 DEBUG insert[159] - ==> Parameters: 1(Long), 首页(String), #(String), 0(Long), fa fa-home faa-flash(String), 1(Integer), 1(Integer), null, true(Boolean)
+2017-11-27 17:20:32,238 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 17:20:42,366 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:20:42,402 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 17:20:42,424 DEBUG selectMenu[159] - <==      Total: 1
+2017-11-27 17:20:42,427 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:20:42,427 DEBUG selectMenu[159] - ==> Parameters: 1(Long)
+2017-11-27 17:20:42,428 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 17:22:58,157 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 17:22:58,201 DEBUG insert[159] - ==> Parameters: 1(Long), 系统管理(String), (String), 0(Long), fa fa-cog faa-flash(String), 2(Integer), 1(Integer), null, true(Boolean)
+2017-11-27 17:23:30,644 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 17:23:30,690 DEBUG insert[159] - ==> Parameters: 2(Long), 系统管理(String), (String), 0(Long), fa fa-cog faa-flash(String), 2(Integer), 1(Integer), null, true(Boolean)
+2017-11-27 17:23:30,720 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 17:25:20,225 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 17:25:20,272 DEBUG insert[159] - ==> Parameters: 3(Long), 用户管理(String), sys/user/tolist(String), 1(Long), fa fa-user faa-flash(String), 1(Integer), 2(Integer), false(Boolean), true(Boolean)
+2017-11-27 17:25:20,302 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 17:26:14,122 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 17:26:14,165 DEBUG insert[159] - ==> Parameters: 4(Long), 角色管理(String), sys/role/tolist(String), 2(Long), fa fa-users faa-flash(String), 2(Integer), 2(Integer), false(Boolean), true(Boolean)
+2017-11-27 17:26:14,169 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 17:26:54,621 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 17:26:54,665 DEBUG insert[159] - ==> Parameters: 5(Long), 权限管理(String), sys/perm/tolist(String), 2(Long), fa fa-user-plus faa-flash(String), 3(Integer), 2(Integer), false(Boolean), true(Boolean)
+2017-11-27 17:26:54,695 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 17:27:37,958 DEBUG insert[159] - ==>  Preparing: insert into sys_menus (id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2017-11-27 17:27:38,008 DEBUG insert[159] - ==> Parameters: 6(Long), 菜单管理(String), sys/menu/tolist(String), 2(Long), fa fa-sitemap faa-flash(String), 4(Integer), 2(Integer), false(Boolean), true(Boolean)
+2017-11-27 17:27:38,039 DEBUG insert[159] - <==    Updates: 1
+2017-11-27 17:27:53,043 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:27:53,084 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 17:27:53,108 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 17:27:53,111 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:27:53,111 DEBUG selectMenu[159] - ==> Parameters: 1(Long)
+2017-11-27 17:27:53,113 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 17:27:53,114 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:27:53,114 DEBUG selectMenu[159] - ==> Parameters: 2(Long)
+2017-11-27 17:27:53,117 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 17:40:29,928 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:40:29,963 DEBUG selectMenu[159] - ==> Parameters: 0(Long)
+2017-11-27 17:40:29,986 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 17:40:29,988 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:40:29,989 DEBUG selectMenu[159] - ==> Parameters: 1(Long)
+2017-11-27 17:40:29,990 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 17:40:29,992 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? 
+2017-11-27 17:40:29,992 DEBUG selectMenu[159] - ==> Parameters: 2(Long)
+2017-11-27 17:40:29,994 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 17:42:19,379 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? level = ? order by order asc 
+2017-11-27 17:42:19,416 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 17:42:51,477 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? level = ? order by menuorder asc 
+2017-11-27 17:42:51,510 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:04:28,472 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? level = ? ORDER BY menuorder asc 
+2017-11-27 18:04:28,512 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:05:04,465 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? level = ? 
+2017-11-27 18:05:04,499 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:07:29,273 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? 
+2017-11-27 18:07:29,319 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:07:29,350 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 18:07:29,354 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? 
+2017-11-27 18:07:29,356 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), true(Boolean)
+2017-11-27 18:07:29,358 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:07:29,367 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? 
+2017-11-27 18:07:29,367 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), true(Boolean)
+2017-11-27 18:07:29,370 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 18:07:51,306 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-11-27 18:07:51,345 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:07:51,389 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 18:07:51,393 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:07:51,396 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), true(Boolean)
+2017-11-27 18:07:51,398 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:07:51,400 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:07:51,401 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), true(Boolean)
+2017-11-27 18:07:51,411 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 18:13:01,215 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-11-27 18:13:01,254 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:13:01,283 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 18:13:01,288 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:13:01,314 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), true(Boolean)
+2017-11-27 18:13:01,322 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:13:01,325 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:13:01,326 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), true(Boolean)
+2017-11-27 18:13:01,329 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 18:13:01,331 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:13:01,333 DEBUG selectMenu[159] - ==> Parameters: 3(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:13:01,337 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 18:13:01,339 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:13:01,340 DEBUG selectMenu[159] - ==> Parameters: 4(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:13:01,342 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:13:01,345 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:13:01,347 DEBUG selectMenu[159] - ==> Parameters: 5(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:13:01,349 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:13:01,351 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:13:01,352 DEBUG selectMenu[159] - ==> Parameters: 6(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:13:01,354 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:14:38,476 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-11-27 18:14:38,515 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:14:38,545 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 18:14:38,548 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:14:38,549 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), true(Boolean)
+2017-11-27 18:14:38,551 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:14:38,553 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:14:38,554 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), true(Boolean)
+2017-11-27 18:14:38,557 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 18:14:38,559 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:14:38,560 DEBUG selectMenu[159] - ==> Parameters: 3(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:14:38,564 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 18:15:04,157 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:15:04,159 DEBUG selectMenu[159] - ==> Parameters: 4(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:15:04,163 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:15:04,168 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:15:04,181 DEBUG selectMenu[159] - ==> Parameters: 5(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:15:04,186 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:15:04,189 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:15:04,190 DEBUG selectMenu[159] - ==> Parameters: 6(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:15:04,193 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:16:03,421 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-11-27 18:16:03,459 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:16:03,493 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 18:16:03,496 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:16:03,498 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), true(Boolean)
+2017-11-27 18:16:03,499 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:16:10,393 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:16:10,395 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), true(Boolean)
+2017-11-27 18:16:10,401 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 18:16:10,404 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:16:10,405 DEBUG selectMenu[159] - ==> Parameters: 3(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:16:10,411 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 18:16:10,414 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:16:10,415 DEBUG selectMenu[159] - ==> Parameters: 4(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:16:10,418 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:16:10,423 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:16:10,426 DEBUG selectMenu[159] - ==> Parameters: 5(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:16:10,429 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:16:10,430 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:16:10,431 DEBUG selectMenu[159] - ==> Parameters: 6(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:16:10,435 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:16:56,557 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-11-27 18:16:56,595 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:16:56,620 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 18:16:56,624 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:16:56,626 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), true(Boolean)
+2017-11-27 18:16:56,627 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:17:01,699 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:17:01,704 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), true(Boolean)
+2017-11-27 18:17:01,730 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 18:17:01,733 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:17:01,735 DEBUG selectMenu[159] - ==> Parameters: 3(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:17:01,741 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 18:17:58,815 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-11-27 18:17:58,859 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-11-27 18:17:58,888 DEBUG selectMenu[159] - <==      Total: 2
+2017-11-27 18:17:58,892 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:17:58,894 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), true(Boolean)
+2017-11-27 18:17:58,897 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:17:58,900 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:17:58,901 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), true(Boolean)
+2017-11-27 18:17:58,904 DEBUG selectMenu[159] - <==      Total: 4
+2017-11-27 18:17:58,906 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:17:58,907 DEBUG selectMenu[159] - ==> Parameters: 3(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:17:58,910 DEBUG selectMenu[159] - <==      Total: 3
+2017-11-27 18:17:58,912 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:17:58,913 DEBUG selectMenu[159] - ==> Parameters: 4(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:17:58,916 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:17:58,919 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:17:58,921 DEBUG selectMenu[159] - ==> Parameters: 5(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:17:58,923 DEBUG selectMenu[159] - <==      Total: 0
+2017-11-27 18:17:58,924 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-11-27 18:17:58,926 DEBUG selectMenu[159] - ==> Parameters: 6(Long), 3(Integer), true(Boolean), false(Boolean)
+2017-11-27 18:17:58,928 DEBUG selectMenu[159] - <==      Total: 0

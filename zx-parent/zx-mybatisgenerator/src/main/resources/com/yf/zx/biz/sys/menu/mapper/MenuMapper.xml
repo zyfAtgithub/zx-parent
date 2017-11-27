@@ -8,10 +8,14 @@
     <result column="parentid" property="parentid" jdbcType="BIGINT" />
     <result column="menuicon" property="menuicon" jdbcType="VARCHAR" />
     <result column="menuorder" property="menuorder" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="isbtn" property="isbtn" jdbcType="BIT" />
+    <result column="treeIconSkin" property="treeiconskin" jdbcType="VARCHAR" />
     <result column="isshow" property="isshow" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, menuname, menuurl, parentid, menuicon, menuorder, isshow
+    id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, treeIconSkin, 
+    isshow
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -26,9 +30,11 @@
   <insert id="insert" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
     insert into sys_menus (id, menuname, menuurl, 
       parentid, menuicon, menuorder, 
+      level, isbtn, treeIconSkin, 
       isshow)
     values (#{id,jdbcType=BIGINT}, #{menuname,jdbcType=VARCHAR}, #{menuurl,jdbcType=VARCHAR}, 
       #{parentid,jdbcType=BIGINT}, #{menuicon,jdbcType=VARCHAR}, #{menuorder,jdbcType=INTEGER}, 
+      #{level,jdbcType=INTEGER}, #{isbtn,jdbcType=BIT}, #{treeiconskin,jdbcType=VARCHAR}, 
       #{isshow,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
@@ -51,6 +57,15 @@
       </if>
       <if test="menuorder != null" >
         menuorder,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="isbtn != null" >
+        isbtn,
+      </if>
+      <if test="treeiconskin != null" >
+        treeIconSkin,
       </if>
       <if test="isshow != null" >
         isshow,
@@ -75,6 +90,15 @@
       <if test="menuorder != null" >
         #{menuorder,jdbcType=INTEGER},
       </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="isbtn != null" >
+        #{isbtn,jdbcType=BIT},
+      </if>
+      <if test="treeiconskin != null" >
+        #{treeiconskin,jdbcType=VARCHAR},
+      </if>
       <if test="isshow != null" >
         #{isshow,jdbcType=BIT},
       </if>
@@ -98,6 +122,15 @@
       <if test="menuorder != null" >
         menuorder = #{menuorder,jdbcType=INTEGER},
       </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="isbtn != null" >
+        isbtn = #{isbtn,jdbcType=BIT},
+      </if>
+      <if test="treeiconskin != null" >
+        treeIconSkin = #{treeiconskin,jdbcType=VARCHAR},
+      </if>
       <if test="isshow != null" >
         isshow = #{isshow,jdbcType=BIT},
       </if>
@@ -111,6 +144,9 @@
       parentid = #{parentid,jdbcType=BIGINT},
       menuicon = #{menuicon,jdbcType=VARCHAR},
       menuorder = #{menuorder,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER},
+      isbtn = #{isbtn,jdbcType=BIT},
+      treeIconSkin = #{treeiconskin,jdbcType=VARCHAR},
       isshow = #{isshow,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>

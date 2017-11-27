@@ -8,10 +8,12 @@
     <result column="parentid" property="parentid" jdbcType="BIGINT" />
     <result column="menuicon" property="menuicon" jdbcType="VARCHAR" />
     <result column="menuorder" property="menuorder" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="isbtn" property="isbtn" jdbcType="BIT" />
     <result column="isshow" property="isshow" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, menuname, menuurl, parentid, menuicon, menuorder, isshow
+    id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -26,10 +28,10 @@
   <insert id="insert" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
     insert into sys_menus (id, menuname, menuurl, 
       parentid, menuicon, menuorder, 
-      isshow)
+      level, isbtn, isshow)
     values (#{id,jdbcType=BIGINT}, #{menuname,jdbcType=VARCHAR}, #{menuurl,jdbcType=VARCHAR}, 
       #{parentid,jdbcType=BIGINT}, #{menuicon,jdbcType=VARCHAR}, #{menuorder,jdbcType=INTEGER}, 
-      #{isshow,jdbcType=BIT})
+      #{level,jdbcType=INTEGER}, #{isbtn,jdbcType=BIT}, #{isshow,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
     insert into sys_menus
@@ -51,6 +53,12 @@
       </if>
       <if test="menuorder != null" >
         menuorder,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="isbtn != null" >
+        isbtn,
       </if>
       <if test="isshow != null" >
         isshow,
@@ -75,15 +83,21 @@
       <if test="menuorder != null" >
         #{menuorder,jdbcType=INTEGER},
       </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="isbtn != null" >
+        #{isbtn,jdbcType=BIT},
+      </if>
       <if test="isshow != null" >
         #{isshow,jdbcType=BIT},
       </if>
     </trim>
   </insert>
-  <update id="updateById" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
     update sys_menus
     <set >
-      <if test="menuname != null and menuname != ''" >
+      <if test="menuname != null" >
         menuname = #{menuname,jdbcType=VARCHAR},
       </if>
       <if test="menuurl != null" >
@@ -98,6 +112,12 @@
       <if test="menuorder != null" >
         menuorder = #{menuorder,jdbcType=INTEGER},
       </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="isbtn != null" >
+        isbtn = #{isbtn,jdbcType=BIT},
+      </if>
       <if test="isshow != null" >
         isshow = #{isshow,jdbcType=BIT},
       </if>
@@ -111,14 +131,46 @@
       parentid = #{parentid,jdbcType=BIGINT},
       menuicon = #{menuicon,jdbcType=VARCHAR},
       menuorder = #{menuorder,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER},
+      isbtn = #{isbtn,jdbcType=BIT},
       isshow = #{isshow,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
   
-  <!-- 查询menulist -->
-  <select id="selectMenu" resultMap="BaseResultMap">
+    <!-- 查询menulist -->
+  <select id="selectMenu" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" resultMap="BaseResultMap">
   	select 
   	<include refid="Base_Column_List" />
     from sys_menus
+    <where>
+    	<if test="id != null">
+    		parentid = #{id, jdbcType=BIGINT}
+    	</if>
+    	<if test="menuname != null and menuname != ''">
+    		and menuname = #{menuname, jdbcType=VARCHAR}
+    	</if>
+    	<if test="menuurl != null and menuurl != ''">
+    		and menuurl = #{menuurl, jdbcType=VARCHAR}
+    	</if>
+    	<if test="parentid != null">
+    		and parentid = #{parentid, jdbcType=BIGINT}
+    	</if>
+    	<if test="menuicon != null and menuicon != ''">
+    		and menuicon = #{menuicon, jdbcType=VARCHAR}
+    	</if>
+    	<if test="level != null">
+    		and level = #{level, jdbcType=INTEGER}
+    	</if>
+    	<if test="isbtn != null">
+    		and isbtn = #{isbtn, jdbcType=BIT}
+    	</if>
+    	<if test="menuorder != null">
+    		and menuorder = #{menuorder, jdbcType=INTEGER}
+    	</if>
+    	<if test="isshow != null">
+    		and isshow = #{isshow, jdbcType=BIT}
+    	</if>
+    </where>
+    ORDER BY menuorder asc
   </select>
 </mapper>

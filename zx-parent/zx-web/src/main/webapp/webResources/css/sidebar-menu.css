@@ -38,9 +38,9 @@
 	color: #b8c7ce;
 }
 
-.sidebar-menu>li>a>.fa {
+/* .sidebar-menu>li>a>.fa {
 	width: 20px;
-}
+} */
 
 .sidebar-menu>li:hover>a, .sidebar-menu>li.active>a {
 	color: #fff;

@@ -10,43 +10,43 @@ function loadMenu() {
 			dataType : "json", // 返回数据格式为json
 			success : function(menulist) {// 请求成功完成后要执行的方法
 				$(menulist).each(function(index, menu) {
-					if (!menu.children) {
+					if (!menu.children || !menu.children.length) {
 						var $menuItem = $('<li><a href="javascript:;" data-url="'
-								+ menu.url
+								+ menu.menuurl
 								+ '" data-title="'
-								+ menu.title
+								+ menu.menuname
 								+ '" data-level="1"><i class="'
-								+ menu.iconCls
+								+ menu.menuicon
 								+ '"></i>'
 								+ '<span>'
-								+ menu.title
+								+ menu.menuname
 								+ '</span></a></li>');
 						$(".sidebar-menu").append($menuItem);
 					} else {
 						var $treeViewElem = $('<li class="treeview">'
 								+ '<a href="'
-								+ menu.url
+								+ menu.menuurl
 								+ '" data-url="#" data-title="'
-								+ menu.title
+								+ menu.menuname
 								+ '" data-level="1"><i class="'
-								+ menu.iconCls
+								+ menu.menuicon
 								+ '"></i>'
 								+ '<span>'
-								+ menu.title
+								+ menu.menuname
 								+ '</span><span class="layui-badge layui-bg-cyan pull-right">'
 								+ menu.children.length
 								+ '</span></a></li>');
 						var $treeViewmenuElem = $('<ul class="treeview-menu"></ul>')
 						$.each(menu.children, function(index, subMenu) {
-							var $subMenuItem = $('<li><a href="javascript:;" data-url="'
-									+ subMenu.url
+							var $subMenuItem = $('<li><a href="javascript:;" class="faa-parent animated-hover" data-url="'
+									+ subMenu.menuurl
 									+ '"  data-title="'
-									+ subMenu.title
+									+ subMenu.menuname
 									+ '" data-level="2"><i class="'
-									+ subMenu.iconCls
+									+ subMenu.menuicon
 									+ '"></i>'
 									+ '<span>'
-									+ subMenu.title
+									+ subMenu.menuname
 									+ '</span></a></li>');
 							$treeViewmenuElem.append($subMenuItem);
 						});
@@ -63,7 +63,7 @@ function loadMenu() {
 					var level = $(this).attr('data-level');
 					var $breadcrumb = $('.layui-body .right-topnav .layui-breadcrumb');
 					if ('1' == level) {
-						$breadcrumb.html('<a href="">'
+						$breadcrumb.html('<a href="javascript:;">'
 								+ title + '</a>');
 					} else {
 						var $parentMenu = $('.layui-body .right-topnav .layui-breadcrumb a:first');
@@ -77,8 +77,8 @@ function loadMenu() {
 						$breadcrumb.append($('<a><cite>'
 								+ title + '</cite></a>'));
 					}
-					layer.msg(dataUrl + "&&" + title + "&&"
-							+ level);
+					
+					//layer.msg(dataUrl + "&&" + title + "&&" + level);
 					if (dataUrl && "#" != dataUrl) {
 						$(".right-content").html(
 								'<iframe src="' + dataUrl

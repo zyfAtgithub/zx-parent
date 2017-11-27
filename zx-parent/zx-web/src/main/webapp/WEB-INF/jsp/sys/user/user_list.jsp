@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@include file="../common/taglib.jsp"%>
+<%@include file="../../common/taglib.jsp"%>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -80,7 +80,7 @@
 				</div>
 			</div>
 			<div class="table-container">
-				<table id="dataTb" lay-filter="userTbFilter"></table>
+				<table id="userTb" lay-filter="userTbFilter"></table>
 			</div>
 		</div>
 		<input type="hidden" id="addUserRes"/>

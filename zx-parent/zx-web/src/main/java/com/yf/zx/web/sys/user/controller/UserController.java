@@ -32,26 +32,26 @@ public class UserController extends BaseController {
 	
 	@RequestMapping("tolist")
 	public String toList() {
-		return "user/user_list";
+		return "sys/user/user_list";
 	}
 
 	@RequestMapping("toadd")
 	public String toAdd() {
-		return "user/user_addOrEdit";
+		return "sys/user/user_addOrEdit";
 	}
 
 	@RequestMapping("toedit")
 	public String toEdit(@RequestParam(value="id", required=true) Long id, Model model) {
 		User user = userService.findById(id);
 		model.addAttribute("user", user);
-		return "user/user_addOrEdit";
+		return "sys/user/user_addOrEdit";
 	}
 
 	@RequestMapping("toview")
 	public String toView(@RequestParam(value="id", required=true) Long id, Model model) {
 		User user = userService.findById(id);
 		model.addAttribute("user", user);
-		return "user/user_view";
+		return "sys/user/user_view";
 	}
 	
 	@RequestMapping("list")

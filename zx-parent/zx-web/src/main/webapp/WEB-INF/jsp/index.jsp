@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<%@include file="common/include.jsp"%>
 </head>
-<body>
+<body >
 	<!-- 顶部导航栏 -->
   	<div class="layui-layout layui-layout-admin">
 	  	<div class="layui-header">
@@ -16,7 +16,7 @@
 			<ul class="layui-nav layui-layout-right">
 	     			<li class="layui-nav-item">
 	       			<a href="javascript:;">
-	        				<img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+	        				<img src="${ctx }/webResources/images/user.jpg" class="layui-nav-img">
 	        				${CurLoginUser.username }
 	       			</a>
 	        		<dl class="layui-nav-child">
@@ -28,7 +28,7 @@
 	     			<li class="layui-nav-item"><a href="${ctx }/logout">退了</a></li>
 	   		</ul>
 		</div>
-
+		
 		<!-- 左侧菜单栏 -->
 		<div class="sidebar-outer">
 			<div  class="sidebar-inner">

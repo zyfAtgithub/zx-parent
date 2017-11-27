@@ -17,7 +17,7 @@
 		    <div class="layui-col-md8 layui-col-md-offset2" style="text-align: center;margin-top: 10%;">
 				<div class="layui-anim layui-anim-up">
 					<i class="layui-icon" style="font-size: 150px; color: #1E9FFF;">&#xe61c;</i>
-					<i style="font-size: 30px; color: #1E9FFF;">请求页面未找到！</i>   
+					<i style="font-size: 30px; color: #1E9FFF;">不好意思，请求页面未找到！</i>   
 				</div>
 		    </div>
 		</div>

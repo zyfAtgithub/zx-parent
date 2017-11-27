@@ -8,8 +8,8 @@
 	<context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:conf/applicationContext.xml,classpath:conf/spring-mybatis.xml,
-            classpath:conf/spring-shiro-web.xml
+            classpath:conf/applicationContext.xml,
+            classpath:conf/spring*.xml
         </param-value>
     </context-param>
   

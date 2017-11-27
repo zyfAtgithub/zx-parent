@@ -1,5 +1,7 @@
 package com.yf.zx.biz.sys.menu.entity;
 
+import java.util.Arrays;
+
 public class Menu {
     private Long id;
 
@@ -11,10 +13,18 @@ public class Menu {
 
     private String menuicon;
 
+    private Integer level;
+
+    private Boolean isbtn;
+    
+    private String treeiconskin;
+    
     private Integer menuorder;
 
     private Boolean isshow;
 
+    private Menu[] children;
+    
     public Long getId() {
         return id;
     }
@@ -63,7 +73,31 @@ public class Menu {
         this.menuorder = menuorder;
     }
 
-    public Boolean getIsshow() {
+    public Integer getLevel() {
+		return level;
+	}
+
+	public void setLevel(Integer level) {
+		this.level = level;
+	}
+
+	public Boolean getIsbtn() {
+		return isbtn;
+	}
+
+	public void setIsbtn(Boolean isbtn) {
+		this.isbtn = isbtn;
+	}
+
+	public String getTreeiconskin() {
+		return treeiconskin;
+	}
+
+	public void setTreeiconskin(String treeiconskin) {
+		this.treeiconskin = treeiconskin;
+	}
+
+	public Boolean getIsshow() {
         return isshow;
     }
 
@@ -71,9 +105,18 @@ public class Menu {
         this.isshow = isshow;
     }
 
+	public Menu[] getChildren() {
+		return children;
+	}
+
+	public void setChildren(Menu[] children) {
+		this.children = children;
+	}
+
 	@Override
 	public String toString() {
 		return "Menu [id=" + id + ", menuname=" + menuname + ", menuurl=" + menuurl + ", parentid=" + parentid
-				+ ", menuicon=" + menuicon + ", menuorder=" + menuorder + ", isshow=" + isshow + "]";
+				+ ", menuicon=" + menuicon + ", level=" + level + ", isbtn=" + isbtn + ", treeiconskin=" + treeiconskin
+				+ ", menuorder=" + menuorder + ", isshow=" + isshow + ", children=" + Arrays.toString(children) + "]";
 	}
 }

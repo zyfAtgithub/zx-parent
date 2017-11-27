@@ -13,6 +13,12 @@ public class Menu {
 
     private Integer menuorder;
 
+    private Integer level;
+
+    private Boolean isbtn;
+
+    private String treeiconskin;
+
     private Boolean isshow;
 
     public Long getId() {
@@ -61,6 +67,30 @@ public class Menu {
 
     public void setMenuorder(Integer menuorder) {
         this.menuorder = menuorder;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public Boolean getIsbtn() {
+        return isbtn;
+    }
+
+    public void setIsbtn(Boolean isbtn) {
+        this.isbtn = isbtn;
+    }
+
+    public String getTreeiconskin() {
+        return treeiconskin;
+    }
+
+    public void setTreeiconskin(String treeiconskin) {
+        this.treeiconskin = treeiconskin == null ? null : treeiconskin.trim();
     }
 
     public Boolean getIsshow() {

@@ -100,20 +100,28 @@ public class AppTest {
     @Test
     public void addMenu() {
     	Menu menu = new Menu();
-    	menu.setId(1l);
-    	menu.setMenuname("首页");
-    	menu.setMenuurl("#");
-    	menu.setMenuicon("fa fa-home");
-    	menu.setMenuorder(1);
-    	menu.setIsshow(false);
-    	menu.setParentid(0l);
+    	menu.setId(6l);
+    	menu.setMenuname("菜单管理");
+    	menu.setMenuurl("sys/menu/tolist");
+    	menu.setMenuicon("fa fa-sitemap faa-flash");
+    	menu.setMenuorder(4);
+    	menu.setIsshow(true);
+    	menu.setParentid(2l);
+    	menu.setLevel(2);
+    	menu.setIsbtn(false);
     	menuService.addMenu(menu);
     }
 
     @Test
     public void getMenu() {
-    	List<Menu> list = menuService.getMenuList();
-    	System.out.println(list);
+    	List<Menu> list = menuService.loadMenuList();
+    	System.out.println(JSONObject.toJSONString(list));
+    }
+
+    @Test
+    public void getMenuWithBtn() {
+    	List<Menu> list = menuService.loadMenuWithBtn();
+    	System.out.println(JSONObject.toJSONString(list));
     }
     
     

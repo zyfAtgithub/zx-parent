@@ -56,6 +56,28 @@ create table sys_menus (
   parentid bigint,
   menuicon varchar(100),
   menuorder int(3),
+  level int(3),
+  isbtn bool default false,
+  treeIconSkin varchar(100),
   isshow bool default true,
   constraint pk_sys_menus primary key(id)
 ) charset=utf8 ENGINE=InnoDB;
+
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin)
+ VALUES ('1', '首页', '#', '0', 'fa fa-home faa-flash', '1', '1', '0', '1', 'pIcon01');
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin) 
+VALUES ('2', '系统管理', '', '0', 'fa fa-cog faa-flash', '2', '1', '0', '1', '');
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin) 
+VALUES ('3', '用户管理', 'sys/user/tolist', '2', 'fa fa-user faa-flash', '1', '2', '0', '1', '');
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin)
+ VALUES ('4', '角色管理', 'sys/role/tolist', '2', 'fa fa-users faa-flash', '2', '2', '0', '1', '');
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin) 
+VALUES ('5', '权限管理', 'sys/perm/tolist', '2', 'fa fa-user-plus faa-flash', '3', '2', '0', '1', '');
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin)
+ VALUES ('6', '菜单管理', 'sys/menu/tolist', '2', 'fa fa-sitemap faa-flash', '4', '2', '0', '1', '');
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin)
+ VALUES ('7', '新增', '', '3', '', '1', '3', '1', '0', 'pIconadd');
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin)
+ VALUES ('8', '修改', '', '3', '', '2', '3', '1', '0', 'pIconedit');
+INSERT INTO `sys_menus`(id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow, treeIconSkin)
+ VALUES ('9', '删除', '', '3', '', '3', '3', '1', '0', 'pIcondel');

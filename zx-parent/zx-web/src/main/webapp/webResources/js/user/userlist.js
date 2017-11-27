@@ -2,9 +2,9 @@ layui.use([ 'form', 'table' ], function() {
 	var table = layui.table, form = layui.form, $ = layui.jquery;
 	var tbIns = table.render({
 		id : 'dataTableUser',
-		elem : '#dataTb',
+		elem : '#userTb',
 		url : '/zx-web/sys/user/list',
-		height : 'full-220',
+		height : 'full-120',
 		size : 'sm',
 		cols : [ [ {
 			checkbox : true,

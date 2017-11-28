@@ -85,7 +85,6 @@
 		</div>
 		<input type="hidden" id="addUserRes"/>
 		<input type="hidden" id="editUserRes"/>
-		
 	</div>
 
 

@@ -8,83 +8,88 @@ function loadMenu() {
 			url : "menu",// json文件位置
 			type : "GET",// 请求方式为get
 			dataType : "json", // 返回数据格式为json
-			success : function(menulist) {// 请求成功完成后要执行的方法
-				$(menulist).each(function(index, menu) {
-					if (!menu.children || !menu.children.length) {
-						var $menuItem = $('<li><a href="javascript:;" data-url="'
-								+ menu.menuurl
-								+ '" data-title="'
-								+ menu.menuname
-								+ '" data-level="1"><i class="'
-								+ menu.menuicon
-								+ '"></i>'
-								+ '<span>'
-								+ menu.menuname
-								+ '</span></a></li>');
-						$(".sidebar-menu").append($menuItem);
-					} else {
-						var $treeViewElem = $('<li class="treeview">'
-								+ '<a href="'
-								+ menu.menuurl
-								+ '" data-url="#" data-title="'
-								+ menu.menuname
-								+ '" data-level="1"><i class="'
-								+ menu.menuicon
-								+ '"></i>'
-								+ '<span>'
-								+ menu.menuname
-								+ '</span><span class="layui-badge layui-bg-cyan pull-right">'
-								+ menu.children.length
-								+ '</span></a></li>');
-						var $treeViewmenuElem = $('<ul class="treeview-menu"></ul>')
-						$.each(menu.children, function(index, subMenu) {
-							var $subMenuItem = $('<li><a href="javascript:;" class="faa-parent animated-hover" data-url="'
-									+ subMenu.menuurl
-									+ '"  data-title="'
-									+ subMenu.menuname
-									+ '" data-level="2"><i class="'
-									+ subMenu.menuicon
+			success : function(ret) {// 请求成功完成后要执行的方法
+				if (ret.resultCode == '200') {
+					$(ret.data).each(function(index, menu) {
+						if (!menu.children || !menu.children.length) {
+							var $menuItem = $('<li><a href="javascript:;" data-url="'
+									+ menu.menuurl
+									+ '" data-title="'
+									+ menu.menuname
+									+ '" data-level="1"><i class="'
+									+ menu.menuicon
 									+ '"></i>'
 									+ '<span>'
-									+ subMenu.menuname
+									+ menu.menuname
 									+ '</span></a></li>');
-							$treeViewmenuElem.append($subMenuItem);
-						});
-						$treeViewElem.append($treeViewmenuElem);
-						$(".sidebar-menu").append($treeViewElem);
-					}
-				});
-
-				$.sidebarMenu($('.sidebar-menu'));
-
-				$('.sidebar-menu li>a').click(function() {
-					var dataUrl = $(this).attr('data-url');
-					var title = $(this).attr('data-title');
-					var level = $(this).attr('data-level');
-					var $breadcrumb = $('.layui-body .right-topnav .layui-breadcrumb');
-					if ('1' == level) {
-						$breadcrumb.html('<a href="javascript:;">'
-								+ title + '</a>');
-					} else {
-						var $parentMenu = $('.layui-body .right-topnav .layui-breadcrumb a:first');
-						if ($parentMenu
-								.children('.layui-box').length == 0) {
-							$parentMenu
-									.append($('<span class="layui-box">&gt;</span>'));
+							$(".sidebar-menu").append($menuItem);
+						} else {
+							var $treeViewElem = $('<li class="treeview">'
+									+ '<a href="'
+									+ menu.menuurl
+									+ '" data-url="#" data-title="'
+									+ menu.menuname
+									+ '" data-level="1"><i class="'
+									+ menu.menuicon
+									+ '"></i>'
+									+ '<span>'
+									+ menu.menuname
+									+ '</span><span class="layui-badge layui-bg-cyan pull-right">'
+									+ menu.children.length
+									+ '</span></a></li>');
+							var $treeViewmenuElem = $('<ul class="treeview-menu"></ul>')
+							$.each(menu.children, function(index, subMenu) {
+								var $subMenuItem = $('<li><a href="javascript:;" class="faa-parent animated-hover" data-url="'
+										+ subMenu.menuurl
+										+ '"  data-title="'
+										+ subMenu.menuname
+										+ '" data-level="2"><i class="'
+										+ subMenu.menuicon
+										+ '"></i>'
+										+ '<span>'
+										+ subMenu.menuname
+										+ '</span></a></li>');
+								$treeViewmenuElem.append($subMenuItem);
+							});
+							$treeViewElem.append($treeViewmenuElem);
+							$(".sidebar-menu").append($treeViewElem);
 						}
-						$breadcrumb.html('');
-						$breadcrumb.append($parentMenu);
-						$breadcrumb.append($('<a><cite>'
-								+ title + '</cite></a>'));
-					}
+					});
 					
-					//layer.msg(dataUrl + "&&" + title + "&&" + level);
-					if (dataUrl && "#" != dataUrl) {
-						$(".right-content").html(
-								'<iframe src="' + dataUrl
-										+ '"></iframe>');
-					}
-				});
+					$.sidebarMenu($('.sidebar-menu'));
+					
+					$('.sidebar-menu li>a').click(function() {
+						var dataUrl = $(this).attr('data-url');
+						var title = $(this).attr('data-title');
+						var level = $(this).attr('data-level');
+						var $breadcrumb = $('.layui-body .right-topnav .layui-breadcrumb');
+						if ('1' == level) {
+							$breadcrumb.html('<a href="javascript:;">'
+									+ title + '</a>');
+						} else {
+							var $parentMenu = $('.layui-body .right-topnav .layui-breadcrumb a:first');
+							if ($parentMenu
+									.children('.layui-box').length == 0) {
+								$parentMenu
+								.append($('<span class="layui-box">&gt;</span>'));
+							}
+							$breadcrumb.html('');
+							$breadcrumb.append($parentMenu);
+							$breadcrumb.append($('<a><cite>'
+									+ title + '</cite></a>'));
+						}
+						
+						if (dataUrl && "#" != dataUrl) {
+							$(".right-content").html(
+									'<iframe src="' + dataUrl
+									+ '"></iframe>');
+						}
+					});
+					$('.sidebar-menu li>a:first').trigger('click');
+				}
+				else {
+					layer.alert(ret.resultMsg);
+				}
 			},
 			error : function(e) {
 				layer.open({

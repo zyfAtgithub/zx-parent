@@ -2,8 +2,6 @@ package com.yf.zx.biz;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSONObject;
 import com.yf.zx.biz.sys.menu.entity.Menu;
+import com.yf.zx.biz.sys.menu.entity.MenuVo;
 import com.yf.zx.biz.sys.menu.service.MenuService;
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.entity.UserVo;
@@ -100,7 +99,6 @@ public class AppTest {
     @Test
     public void addMenu() {
     	Menu menu = new Menu();
-    	menu.setId(6l);
     	menu.setMenuname("菜单管理");
     	menu.setMenuurl("sys/menu/tolist");
     	menu.setMenuicon("fa fa-sitemap faa-flash");
@@ -109,20 +107,62 @@ public class AppTest {
     	menu.setParentid(2l);
     	menu.setLevel(2);
     	menu.setIsbtn(false);
-    	menuService.addMenu(menu);
+    	ResultReturn ret = menuService.addMenu(menu);
+    	System.out.println(JSONObject.toJSONString(ret));
     }
 
     @Test
     public void getMenu() {
-    	List<Menu> list = menuService.loadMenuList();
-    	System.out.println(JSONObject.toJSONString(list));
+    	ResultReturn ret = menuService.loadMenuList();
+    	System.out.println(JSONObject.toJSONString(ret));
     }
 
     @Test
-    public void getMenuWithBtn() {
-    	List<Menu> list = menuService.loadMenuWithBtn();
-    	System.out.println(JSONObject.toJSONString(list));
+    public void loadMenuTree() {
+    	ResultReturn ret = menuService.loadMenuTree();
+    	System.out.println(JSONObject.toJSONString(ret));
     }
     
+    @Test
+    public void getSubMenu() {
+    	Long parentId = 2l;
+    	MenuVo menuVo = new MenuVo();
+    	menuVo.setParentid(parentId);
+    	menuVo.setLevel(2);
+    	PageReturn<Menu> page = menuService.findMenuByPage(menuVo);
+    	System.out.println(JSONObject.toJSONString(page));
+    }
+
+    @Test
+    public void getOperationBtn() {
+    	Long parentId = 3l;
+    	MenuVo menuVo = new MenuVo();
+    	menuVo.setParentid(parentId);
+    	menuVo.setLevel(3);
+    	menuVo.setIsbtn(true);
+    	PageReturn<Menu> page = menuService.findMenuByPage(menuVo);
+    	System.out.println(JSONObject.toJSONString(page));
+    }
     
+    @Test
+    public void findMenuById() {
+    	Menu menu= menuService.findById(2l);
+    	System.out.println(JSONObject.toJSONString(menu));
+    }
+    
+    @Test
+    public void updateMenu() {
+    	Menu menu = new Menu();
+    	menu.setId(11l);
+    	menu.setMenuname("菜单管理");
+    	ResultReturn ret = menuService.editById(menu);
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
+    
+    @Test
+    public void delMenu() {
+    	String ids = "11|13|14";
+    	ResultReturn ret = menuService.deleteMenuByIds(ids);
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
 }

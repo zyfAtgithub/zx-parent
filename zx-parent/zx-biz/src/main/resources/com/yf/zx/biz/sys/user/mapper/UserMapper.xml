@@ -88,9 +88,6 @@
  		parameterType="com.yf.zx.biz.sys.user.entity.User" >
 	insert into sys_users
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
       <if test="loginname != null" >
         loginname,
       </if>
@@ -117,9 +114,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="loginname != null" >
         #{loginname,jdbcType=VARCHAR},
       </if>

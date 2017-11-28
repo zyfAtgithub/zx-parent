@@ -10,12 +10,13 @@
     <result column="menuorder" property="menuorder" jdbcType="INTEGER" />
     <result column="level" property="level" jdbcType="INTEGER" />
     <result column="isbtn" property="isbtn" jdbcType="BIT" />
+    <result column="treeIconSkin" property="treeiconskin" jdbcType="VARCHAR" />
     <result column="isshow" property="isshow" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, isshow
+    id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, treeIconSkin, isshow
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from sys_menus
@@ -25,20 +26,10 @@
     delete from sys_menus
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
-    insert into sys_menus (id, menuname, menuurl, 
-      parentid, menuicon, menuorder, 
-      level, isbtn, isshow)
-    values (#{id,jdbcType=BIGINT}, #{menuname,jdbcType=VARCHAR}, #{menuurl,jdbcType=VARCHAR}, 
-      #{parentid,jdbcType=BIGINT}, #{menuicon,jdbcType=VARCHAR}, #{menuorder,jdbcType=INTEGER}, 
-      #{level,jdbcType=INTEGER}, #{isbtn,jdbcType=BIT}, #{isshow,jdbcType=BIT})
-  </insert>
-  <insert id="insertSelective" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
+  <insert id="insertAutoId" useGeneratedKeys="true" keyProperty="id" 
+  parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
     insert into sys_menus
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
       <if test="menuname != null" >
         menuname,
       </if>
@@ -60,14 +51,14 @@
       <if test="isbtn != null" >
         isbtn,
       </if>
+      <if test="treeiconskin != null" >
+        treeIconSkin,
+      </if>
       <if test="isshow != null" >
         isshow,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="menuname != null" >
         #{menuname,jdbcType=VARCHAR},
       </if>
@@ -89,12 +80,16 @@
       <if test="isbtn != null" >
         #{isbtn,jdbcType=BIT},
       </if>
+      <if test="treeiconskin != null" >
+        #{treeiconskin,jdbcType=BIT},
+      </if>
       <if test="isshow != null" >
         #{isshow,jdbcType=BIT},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
+   <!-- 根据主键更新，字段可选 -->
+  <update id="updateById" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" >
     update sys_menus
     <set >
       <if test="menuname != null" >
@@ -138,7 +133,7 @@
   </update>
   
     <!-- 查询menulist -->
-  <select id="selectMenu" parameterType="com.yf.zx.biz.sys.menu.entity.Menu" resultMap="BaseResultMap">
+  <select id="selectMenu" parameterType="com.yf.zx.biz.sys.menu.entity.MenuVo" resultMap="BaseResultMap">
   	select 
   	<include refid="Base_Column_List" />
     from sys_menus
@@ -167,10 +162,22 @@
     	<if test="menuorder != null">
     		and menuorder = #{menuorder, jdbcType=INTEGER}
     	</if>
+    	<if test="treeiconskin != null">
+    		and treeIconSkin = #{treeiconskin, jdbcType=BIT}
+    	</if>
     	<if test="isshow != null">
     		and isshow = #{isshow, jdbcType=BIT}
     	</if>
     </where>
     ORDER BY menuorder asc
   </select>
+  
+    <!-- 根据id列表删除多个，物理删除 -->
+  <delete id="delByIds">
+  	delete from sys_menus
+  	 where id in
+  	 <foreach item="id" index="index" collection="array" open="(" separator="," close=")"> 
+	    #{id} 
+	</foreach>
+  </delete>
 </mapper>

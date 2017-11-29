@@ -12,7 +12,7 @@
 	<!-- 顶部导航栏 -->
   	<div class="layui-layout layui-layout-admin">
 	  	<div class="layui-header">
-	    	<div class="layui-logo">汽车品牌发展追踪系统</div>
+	    	<div class="layui-logo">数据分析系统</div>
 			<ul class="layui-nav layui-layout-right">
 	     			<li class="layui-nav-item">
 	       			<a href="javascript:;">

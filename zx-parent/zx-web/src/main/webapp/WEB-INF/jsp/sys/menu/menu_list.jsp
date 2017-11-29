@@ -27,10 +27,10 @@
 					<form class="layui-form layui-form-pane" action="" >
 						<div class="layui-form-item">
 							<div class="layui-inline">
-								<label class="layui-form-label">菜单名称</label>
+								<label class="layui-form-label">资源名称</label>
 					    		<div class="layui-input-inline">	
 					    			<input type="text" name="menuname" value="${menuname}" autocomplete="off"
-					    			 placeholder="请输入菜单名称" autocomplete="off" 
+					    			 placeholder="请输入资源名称" autocomplete="off" 
 					    			 class="layui-input">
 					    		</div>
 					    	</div>
@@ -73,7 +73,12 @@
 	<script type="text/html" id="iconTpl">
 		<i class="{{d.menuicon}}"></i>
 	</script>
-
+	
+	<!-- 是否为按钮-->
+	<script type="text/html" id="isbtnTpl">
+		{{ d.isbtn? '是' : '否' }}
+	</script>
+	
 	<script type="text/html" id="toolBar">
 		  <a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>
 		  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
@@ -100,30 +105,31 @@
 				}, {
 					field : 'menuname',
 					width : 120,
-					title : '菜单名称'
+					title : '资源名称'
 				}, {
 					field : 'menuurl',
 					width : 120,
-					title : '菜单url'
+					title : '资源url'
 				}, {
 					field : 'level',
 					width : 100,
-					title : '菜单层级'
-				}, {
-					field : 'menuorder',
-					width : 100,
-					title : '排序'
+					title : '资源层级'
 				}, {
 					field : 'menuicon',
 					align : 'center',
-					width : 180,
-					title : '菜单显示图标',
+					width : 110,
+					title : '资源显示图标',
 					templet : '#iconTpl'
 				}, {
 					field : 'isbtn',
 					align : 'center',
 					width : 150,
-					title : '是否是按钮'
+					title : '是否是按钮',
+					templet : '#isbtnTpl'
+				}, {
+					field : 'menuorder',
+					width : 100,
+					title : '排序'
 				},{
 					fixed : 'right',
 					width : 152,
@@ -164,16 +170,14 @@
 					return;
 				}
 				
-				console.log(curquery);
-				
 				// 多窗口模式，层叠置顶
 				layer.open({
 					type : 2, // iframe
 					title : '新增菜单',
-					area : [ '550px', '500px' ],
+					area : [ '780px', '320px' ],
 					// shade: 0,
 					// maxmin: true,
-					content : 'toadd',
+					content : 'toadd?level='+curquery.level,
 					yes : function() {
 						$(that).click();
 					},
@@ -188,11 +192,11 @@
 						console.log($("#addMenuRes").val());
 						if ("200" == $("#addMenuRes").val()) {
 							$("#addMenuRes").val('');
-							layer.msg('新增用户成功', {
+							layer.msg('新增菜单成功', {
 								icon : 1,
 								time : 1000
 							}, function() {
-								tbIns.reload();
+								refreshPage();
 							});
 						}
 					}
@@ -200,9 +204,50 @@
 				
 			});
 
-			//新增菜单
+			//删除菜单
 			$('#btn-batch-del').click(function() {
-				layer.msg('删除菜单啦！');
+				var checkStatus = table.checkStatus('dataTableMenu');
+				var delMenus = checkStatus.data;
+				if (!delMenus.length) {
+					layer.alert('请选择要删除的菜单！');
+					return;
+				}
+				
+				layer.confirm('确定要删除吗？', {
+					icon : 3,
+					btn : [ '是', '否' ]
+				// 按钮
+				}, function() {
+					var ids = "";
+					$.each(delMenus, function(index, item) {
+						console.log(item.id);
+						ids += item.id + "|";
+					});
+					$.ajax({
+						url : "del",
+						type : "POST",
+						dataType : "json",
+						data : {
+							delIds : ids
+						},
+						success : function(resultRet) {
+							if (resultRet) {
+								layer.msg(resultRet.resultMsg, {
+									icon : 6,
+									time : 1000
+								}, function() {
+									refreshPage();
+								});
+							}
+						},
+						error : function(e) {
+							layer.open({
+								title : "请求出错！",
+								content : e.responseText
+							});
+						}
+					});
+				});
 			});
 			
 			$('#btn-refresh').click(function() {
@@ -216,10 +261,72 @@
 					layer.msg(JSON.stringify(data), {icon: 1});
 				}
 				else if (obj.event === 'del') {
-					layer.msg(JSON.stringify(data), {icon: 2});
+					layer.confirm('确定要删除吗？', {
+						icon : 3,
+						btn : [ '是', '否' ]
+					// 按钮
+					}, function() {
+						var ids = data.id;
+						$.ajax({
+							url : "del",
+							type : "POST",
+							dataType : "json",
+							data : {
+								delIds : ids
+							},
+							success : function(resultRet) {
+								if (resultRet) {
+									layer.msg(resultRet.resultMsg, {
+										icon : 6,
+										time : 1000
+									}, function() {
+										refreshPage();
+									});
+								}
+							},
+							error : function(e) {
+								layer.open({
+									title : "请求出错！",
+									content : e.responseText
+								});
+							}
+						});
+					}, function() {
+						// layer.msg('不删除', {icon: 2});
+					});
 				}
 				else if (obj.event === 'edit') {
-					layer.msg(JSON.stringify(data), {icon: 3});
+					// 多窗口模式，层叠置顶
+					layer.open({
+						type : 2, // iframe
+						title : '修改菜单',
+						area : [ '780px', '320px' ],
+						// shade: 0,
+						// maxmin: true,
+						content : 'toedit?id='+data.id,
+						yes : function() {
+							$(that).click();
+						},
+						btn2 : function() {
+							layer.closeAll();
+						},
+						zIndex : layer.zIndex,
+						success : function(layero) {
+							layer.setTop(layero);
+						},
+						end : function() {
+							console.log($("#editMenuRes").val());
+							if ("200" == $("#editMenuRes").val()) {
+								$("#editMenuRes").val('');
+								layer.msg('修改菜单成功', {
+									icon : 1,
+									time : 1000
+								}, function() {
+									refreshPage();
+								});
+							}
+						}
+					});
 				}
 			});
 			
@@ -235,12 +342,24 @@
 				};
 				
 				function zTreeOnClick(event, treeId, treeNode) {
-				    curquery.parentid = treeNode.id;
-				    curquery.level = treeNode._level + 1;
-				    tbIns.reload({url:'menuPage',where:curquery});
+					if (treeNode._level <= 2) {
+					    curquery.parentid = treeNode.id;
+					    curquery.level = treeNode._level + 1;
+					    tbIns.reload({url:'menuPage',where:curquery});
+					}
 				};
 				
 				$(function(){
+					loadLeftMenuTree();
+				});
+				
+				function refreshPage() {
+					loadLeftMenuTree();
+					tbIns.reload({});
+				}
+				
+				//加载左侧菜单树
+				function loadLeftMenuTree() {
 					$.ajax({
 						url:'menuTree',
 						type:'GET',
@@ -296,7 +415,7 @@
 							});
 						}
 					});
-				});
+				}
 			
 		});
 			

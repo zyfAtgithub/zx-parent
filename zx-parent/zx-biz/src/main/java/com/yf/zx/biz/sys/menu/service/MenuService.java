@@ -105,6 +105,7 @@ public class MenuService {
 		MenuVo menuVo = new MenuVo();
 		menuVo.setParentid(parentId);
 		menuVo.setLevel(2);
+		menuVo.setIsbtn(false);
 		menuVo.setIsshow(true);
 		List<Menu> menuList = menuDao.selectMenu(menuVo);
 		return menuList;
@@ -122,7 +123,7 @@ public class MenuService {
 		menuVo.setParentid(parentId);
 		menuVo.setLevel(3);
 		menuVo.setIsbtn(true);
-		menuVo.setIsshow(false);
+//		menuVo.setIsshow(false);
 		List<Menu> menuList = menuDao.selectMenu(menuVo);
 		return menuList;
 	}

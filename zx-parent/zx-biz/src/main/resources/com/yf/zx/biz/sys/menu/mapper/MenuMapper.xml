@@ -113,6 +113,9 @@
       <if test="isbtn != null" >
         isbtn = #{isbtn,jdbcType=BIT},
       </if>
+       <if test="treeiconskin != null" >
+        treeiconskin = #{treeiconskin,jdbcType=VARCHAR},
+       </if>
       <if test="isshow != null" >
         isshow = #{isshow,jdbcType=BIT},
       </if>

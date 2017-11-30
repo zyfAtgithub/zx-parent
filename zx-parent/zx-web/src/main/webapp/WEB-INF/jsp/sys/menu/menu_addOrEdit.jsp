@@ -224,6 +224,12 @@
 						var pid = '${menu.parentid }';
 						if (result.resultCode == '200') {
 							var zNodeArr = [];
+							var zNode = {};
+							zNode.id = 0;
+							zNode.pId = -1;
+							zNode.name = '所有菜单';
+							zNode._level = '';
+							zNodeArr.push(zNode);
 							$.each(result.data, function(index, topMenu){
 								//第一级
 								var zNode = {};
@@ -255,16 +261,30 @@
 							var treeObj = $.fn.zTree.getZTreeObj("menuTreeSel");
 							var nodes = treeObj.getNodes();
 							if (nodes.length>0) {
+								//选择一级菜单
 								$.each(nodes, function(idx, node){
 									if (pid && (pid == node.id)) {
 										treeObj.selectNode(node);
 										return false;
 									}
 									if (node.children && node.children.length) {
+										
+										//选择二级菜单
 										$.each(node.children, function(idx, subNode){
 											if (pid && (pid == subNode.id)) {
 												treeObj.selectNode(subNode);
 												return false;
+											}
+											
+											if (subNode.children && subNode.children.length) {
+												
+												//选择三级菜单
+												$.each(subNode.children, function(idx, btn){
+													if (pid && (pid == btn.id)) {
+														treeObj.selectNode(btn);
+														return false;
+													}
+												});
 											}
 										});
 									}

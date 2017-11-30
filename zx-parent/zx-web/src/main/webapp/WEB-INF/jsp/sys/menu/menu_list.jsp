@@ -174,6 +174,7 @@
 				layer.open({
 					type : 2, // iframe
 					title : '新增菜单',
+					anim: 1,
 					area : [ '780px', '320px' ],
 					// shade: 0,
 					// maxmin: true,
@@ -299,6 +300,7 @@
 					// 多窗口模式，层叠置顶
 					layer.open({
 						type : 2, // iframe
+						anim: 1,
 						title : '修改菜单',
 						area : [ '780px', '320px' ],
 						// shade: 0,
@@ -368,6 +370,12 @@
 						success:function(result){
 							if (result.resultCode == '200') {
 								var zNodeArr = [];
+								var zNode = {};
+								zNode.id = 0;
+								zNode.pId = -1;
+								zNode.name = '所有菜单';
+								zNode._level = '';
+								zNodeArr.push(zNode);
 								$.each(result.data, function(index, topMenu){
 									//第一级
 									var zNode = {};

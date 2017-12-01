@@ -8,34 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>用户管理</title>
-
 <link rel="stylesheet" href="${ctx }/webResources/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="${ctx }/webResources/plugins/layui/css/layui.css">
-<link rel="stylesheet" href="${ctx }/webResources/css/right-content.css">
-
-<style type="text/css">
-	.container{
-		width:90%;
-		margin: auto;
-	}
-	.query-panel{
-		border: 1px solid #D9D9D9;
-		padding:8px 12px 0px;
-		background: #FCFCFC;
-	}
-	.batch-operation{
-		border-top: 1px solid #D9D9D9;
-		border-left: 1px solid #D9D9D9;
-		border-right: 1px solid #D9D9D9;
-		border-top-left-radius:4px;
-		border-top-right-radius:4px;
-		margin-top: 3px;
-		margin-bottom: -11px; 
-	}
-	
-	.table-container{
-	}
-</style>
+<link rel="stylesheet" href="${ctx }/webResources/css/sys/user/user.css">
 </head>
 <body>
 	<div class="container">

@@ -11,7 +11,6 @@
 
 <link rel="stylesheet" href="${ctx }/webResources/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="${ctx }/webResources/plugins/layui/css/layui.css">
-<link rel="stylesheet" href="${ctx }/webResources/css/right-content.css">
 <link rel="stylesheet" href="${ctx }/webResources/css/sys/menu/menu.css">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${ctx }/webResources/plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
@@ -92,7 +91,7 @@
 	
 	<script type="text/javascript">
 		layui.use([ 'form', 'table' ], function() {
-			var table = layui.table, form = layui.form, $ = layui.jquery, curquery = {level:1,partentid:0};
+			var table = layui.table, form = layui.form, $ = layui.jquery, curquery = {level:1,parentid:0};
 			var tbIns = table.render({
 				id : 'dataTableMenu',
 				elem : '#menuTb',
@@ -174,11 +173,11 @@
 				layer.open({
 					type : 2, // iframe
 					title : '新增菜单',
-					anim: 1,
+					//anim: 1,
 					area : [ '780px', '320px' ],
 					// shade: 0,
 					// maxmin: true,
-					content : 'toadd?level='+curquery.level,
+					content : 'toadd?level='+curquery.level+"&parentid="+curquery.parentid,
 					yes : function() {
 						$(that).click();
 					},
@@ -190,7 +189,6 @@
 						layer.setTop(layero);
 					},
 					end : function() {
-						console.log($("#addMenuRes").val());
 						if ("200" == $("#addMenuRes").val()) {
 							$("#addMenuRes").val('');
 							layer.msg('新增菜单成功', {
@@ -300,7 +298,7 @@
 					// 多窗口模式，层叠置顶
 					layer.open({
 						type : 2, // iframe
-						anim: 1,
+						//anim: 1,
 						title : '修改菜单',
 						area : [ '780px', '320px' ],
 						// shade: 0,
@@ -317,7 +315,6 @@
 							layer.setTop(layero);
 						},
 						end : function() {
-							console.log($("#editMenuRes").val());
 							if ("200" == $("#editMenuRes").val()) {
 								$("#editMenuRes").val('');
 								layer.msg('修改菜单成功', {
@@ -410,6 +407,9 @@
 										});
 									}
 									$.fn.zTree.init($("#treeMenu"), setting, zNodeArr);
+									var treeObj = $.fn.zTree.getZTreeObj("treeMenu");
+									var nodes = treeObj.getNodesByParam("id", curquery.parentid, null);
+									treeObj.expandNode(nodes[0]);
 								});
 							}
 							else {

@@ -39,9 +39,11 @@ public class MenuController {
 	}
 
 	@RequestMapping("toadd")
-	public String toadd(@RequestParam(value="level", required=true) Integer level, Model model){
+	public String toadd(@RequestParam(value="level", required=true) Integer level,
+			@RequestParam(value="parentid", required=true) Long parentid, Model model){
 		Menu menu = new Menu();
 		menu.setLevel(level);
+		menu.setParentid(parentid);
 		model.addAttribute("menu", menu);
 		return "sys/menu/menu_addOrEdit";
 	}

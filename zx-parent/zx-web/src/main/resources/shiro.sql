@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2017-11-29 18:52:05
+Date: 2017-12-01 17:35:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,33 +20,63 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_menus`;
 CREATE TABLE `sys_menus` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `menuname` varchar(100) DEFAULT NULL,
-  `menuurl` varchar(100) DEFAULT NULL,
-  `parentid` bigint(20) DEFAULT NULL,
-  `menuicon` varchar(100) DEFAULT NULL,
-  `menuorder` int(3) DEFAULT NULL,
-  `level` int(3) DEFAULT NULL,
-  `isbtn` tinyint(1) DEFAULT '0',
-  `treeIconSkin` varchar(100) DEFAULT NULL,
-  `isshow` tinyint(1) DEFAULT '1',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `menuname` varchar(100) NOT NULL COMMENT '资源名',
+  `menuurl` varchar(100) NOT NULL COMMENT '资源路径',
+  `parentid` bigint(20) NOT NULL COMMENT '父级id',
+  `menuicon` varchar(100) DEFAULT NULL COMMENT '资源显示图标',
+  `menuorder` int(3) NOT NULL COMMENT '排序',
+  `level` int(3) NOT NULL COMMENT '层级',
+  `isbtn` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否为按钮',
+  `treeIconSkin` varchar(100) DEFAULT NULL COMMENT '树形图标',
+  `isshow` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示',
+  `permissions` varchar(255) DEFAULT NULL COMMENT '权限字符串',
+  `createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `updatetime` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_menus
 -- ----------------------------
-INSERT INTO `sys_menus` VALUES ('1', '首页', 'welcome', '0', 'fa fa-home faa-flash', '1', '1', '0', '', '1');
-INSERT INTO `sys_menus` VALUES ('2', '系统管理', '', '0', 'fa fa-cog faa-flash', '2', '1', '0', '', '1');
-INSERT INTO `sys_menus` VALUES ('3', '用户管理', 'sys/user/tolist', '2', 'fa fa-user faa-flash', '1', '2', '0', '', '1');
-INSERT INTO `sys_menus` VALUES ('4', '角色管理', 'sys/role/tolist', '2', 'fa fa-users faa-flash', '2', '2', '0', '', '1');
-INSERT INTO `sys_menus` VALUES ('5', '权限管理', 'sys/perm/tolist', '2', 'fa fa-key faa-flash', '3', '2', '0', '', '1');
-INSERT INTO `sys_menus` VALUES ('6', '菜单管理', 'sys/menu/tolist', '2', 'fa fa-tasks faa-flash', '4', '2', '0', '', '1');
-INSERT INTO `sys_menus` VALUES ('7', '新增', 'btn-add', '3', '', '1', '3', '1', 'pIconadd', '1');
-INSERT INTO `sys_menus` VALUES ('8', '修改', 'btn-edit', '3', '', '2', '3', '1', 'pIconedit', '0');
-INSERT INTO `sys_menus` VALUES ('9', '删除', 'btn-batch-del', '3', '', '3', '3', '1', 'pIcondel', '0');
-INSERT INTO `sys_menus` VALUES ('23', '查看', 'btn-view', '3', '', '4', '3', '1', 'pIconview', '0');
-INSERT INTO `sys_menus` VALUES ('24', '查询', 'btn-query', '3', '', '5', '3', '1', 'pIconquery', '0');
+INSERT INTO `sys_menus` VALUES ('1', '首页', 'welcome', '0', 'fa fa-home faa-flash', '1', '1', '0', '', '1', null, '2017-12-01 15:15:49', null);
+INSERT INTO `sys_menus` VALUES ('2', '系统管理', '', '0', 'fa fa-cog faa-flash', '2', '1', '0', '', '1', null, null, null);
+INSERT INTO `sys_menus` VALUES ('3', '用户管理', 'sys/user/tolist', '2', 'fa fa-user faa-flash', '1', '2', '0', '', '1', null, null, null);
+INSERT INTO `sys_menus` VALUES ('4', '角色管理', 'sys/role/tolist', '2', 'fa fa-users faa-flash', '2', '2', '0', '', '1', null, null, null);
+INSERT INTO `sys_menus` VALUES ('5', '权限管理', 'sys/perm/tolist', '2', 'fa fa-key faa-flash', '3', '2', '0', '', '1', null, null, null);
+INSERT INTO `sys_menus` VALUES ('6', '菜单管理', 'sys/menu/tolist', '2', 'fa fa-tasks faa-flash', '4', '2', '0', '', '1', null, null, null);
+INSERT INTO `sys_menus` VALUES ('7', '新增', 'btn-add', '3', '', '1', '3', '1', 'pIconadd', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('8', '修改', 'btn-edit', '3', '', '2', '3', '1', 'pIconedit', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('9', '删除', 'btn-del', '3', '', '3', '3', '1', 'pIcondel', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('23', '查看', 'btn-view', '3', '', '4', '3', '1', 'pIconview', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('24', '查询', 'btn-query', '3', '', '5', '3', '1', 'pIconquery', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('25', '批量删除', 'btn-batch-del', '3', '', '6', '3', '1', 'pIcontrash', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('26', '重置', 'btn-reset', '3', '', '7', '3', '1', 'pIconreset', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('27', '刷新', 'btn-refresh', '3', '', '8', '3', '1', 'pIconrefresh', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('28', '新增', 'btn-add', '6', '', '1', '3', '1', 'pIconadd', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('29', '修改', 'btn-edit', '6', '', '2', '3', '1', 'pIconedit', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('30', '删除', 'btn-del', '6', '', '3', '3', '1', 'pIcondel', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('31', '查看', 'btn-view', '6', '', '4', '3', '1', 'pIconview', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('32', '查询', 'btn-query', '6', '', '5', '3', '1', 'pIconquery', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('33', '批量删除', 'btn-batch-del', '6', '', '6', '3', '1', 'pIcontrash', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('34', '重置', 'btn-reset', '6', '', '7', '3', '1', 'pIconreset', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('35', '刷新', 'btn-refresh', '6', '', '8', '3', '1', 'pIconrefresh', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('36', '新增', 'btn-add', '4', '', '1', '3', '1', 'pIconadd', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('37', '新增', 'btn-add', '5', '', '1', '3', '1', 'pIconadd', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('38', '修改', 'btn-edit', '4', '', '2', '3', '1', 'pIconedit', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('39', '删除', 'btn-del', '4', '', '3', '3', '1', 'pIcondel', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('40', '查看', 'btn-view', '4', '', '4', '3', '1', 'pIconview', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('41', '查询', 'btn-query', '4', '', '5', '3', '1', 'pIconquery', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('42', '批量删除', 'btn-batch-del', '4', '', '6', '3', '1', 'pIcontrash', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('43', '重置', 'btn-reset', '4', '', '7', '3', '1', 'pIconreset', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('44', '刷新', 'btn-refresh', '4', '', '8', '3', '1', 'pIconrefresh', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('45', '修改', 'btn-edit', '5', '', '2', '3', '1', 'pIconedit', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('46', '删除', 'btn-del', '5', '', '3', '3', '1', 'pIcondel', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('47', '查看', 'btn-view', '5', '', '4', '3', '1', 'pIconview', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('48', '查询', 'btn-query', '5', '', '5', '3', '1', 'pIconquery', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('49', '批量删除', 'btn-batch-del', '5', '', '6', '3', '1', 'pIcontrash', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('50', '重置', 'btn-reset', '5', '', '7', '3', '1', 'pIconreset', '0', null, null, null);
+INSERT INTO `sys_menus` VALUES ('51', '刷新', 'btn-refresh', '5', '', '8', '3', '1', 'pIconrefresh', '0', null, null, null);
 
 -- ----------------------------
 -- Table structure for sys_permissions
@@ -118,7 +148,7 @@ CREATE TABLE `sys_users` (
 -- Records of sys_users
 -- ----------------------------
 INSERT INTO `sys_users` VALUES ('1', 'admin', '管理员', 'f9983992ee2aeec3f25cfcbc7200ed64', 'fa66d9e193d2505e219df169e617b176', '17798502761', '17798502762@189.cn', '1', '2017-11-29 18:31:24');
-INSERT INTO `sys_users` VALUES ('2', 'zhangyifeng', '张益峰', '4196e30b70f49c948a3d3787162f5fba', '96e6be2b15b33fc138f43c0b9a746d70', '15295778261', '15295778261@163.com', '0', '2017-11-29 18:38:31');
+INSERT INTO `sys_users` VALUES ('2', 'zhangyifeng', '张益峰', '4196e30b70f49c948a3d3787162f5fba', '96e6be2b15b33fc138f43c0b9a746d70', '15295778261', '15295778261@163.com', '0', '2017-12-01 15:16:08');
 
 -- ----------------------------
 -- Table structure for sys_users_roles

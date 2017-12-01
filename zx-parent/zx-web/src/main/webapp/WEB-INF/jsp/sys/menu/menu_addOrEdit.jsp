@@ -220,7 +220,6 @@
 					type : "GET",// 请求方式为get
 					dataType : "json", // 返回数据格式为json
 					success : function(result) {// 请求成功完成后要执行的方法
-						console.log(result);
 						var pid = '${menu.parentid }';
 						if (result.resultCode == '200') {
 							var zNodeArr = [];

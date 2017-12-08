@@ -62,6 +62,10 @@
       <property name="defaultAutoCommit" value="false" /> 
   </bean>
     
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
     <!-- 自动扫描目录下所有SQL映射的xml文件, -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />

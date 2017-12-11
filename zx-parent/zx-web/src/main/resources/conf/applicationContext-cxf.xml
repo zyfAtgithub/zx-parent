@@ -11,5 +11,4 @@
 	<jaxws:endpoint id="helloService" address="/helloService"
 		implementor="com.yf.zx.web.webservice.test.HelloImp" />
 
-
 </beans>

@@ -15,6 +15,8 @@ public class Menu {
 
     private Integer level;
 
+    private String permexp;
+    
     private Boolean isbtn;
     
     private String treeiconskin;
@@ -81,6 +83,14 @@ public class Menu {
 		this.level = level;
 	}
 
+	public String getPermexp() {
+		return permexp;
+	}
+
+	public void setPermexp(String permexp) {
+		this.permexp = permexp;
+	}
+
 	public Boolean getIsbtn() {
 		return isbtn;
 	}
@@ -116,7 +126,8 @@ public class Menu {
 	@Override
 	public String toString() {
 		return "Menu [id=" + id + ", menuname=" + menuname + ", menuurl=" + menuurl + ", parentid=" + parentid
-				+ ", menuicon=" + menuicon + ", level=" + level + ", isbtn=" + isbtn + ", treeiconskin=" + treeiconskin
-				+ ", menuorder=" + menuorder + ", isshow=" + isshow + ", children=" + Arrays.toString(children) + "]";
+				+ ", menuicon=" + menuicon + ", level=" + level + ", permexp=" + permexp + ", isbtn=" + isbtn
+				+ ", treeiconskin=" + treeiconskin + ", menuorder=" + menuorder + ", isshow=" + isshow + ", children="
+				+ Arrays.toString(children) + "]";
 	}
 }

@@ -9,12 +9,13 @@
     <result column="menuicon" property="menuicon" jdbcType="VARCHAR" />
     <result column="menuorder" property="menuorder" jdbcType="INTEGER" />
     <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="permexp" property="permexp" jdbcType="VARCHAR" />
     <result column="isbtn" property="isbtn" jdbcType="BIT" />
     <result column="treeIconSkin" property="treeiconskin" jdbcType="VARCHAR" />
     <result column="isshow" property="isshow" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, treeIconSkin, isshow
+    id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow
   </sql>
   <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -48,6 +49,9 @@
       <if test="level != null" >
         level,
       </if>
+      <if test="permexp != null" >
+        permexp,
+      </if>
       <if test="isbtn != null" >
         isbtn,
       </if>
@@ -76,6 +80,9 @@
       </if>
       <if test="level != null" >
         #{level,jdbcType=INTEGER},
+      </if>
+      <if test="permexp != null" >
+        #{permexp,jdbcType=VARCHAR},
       </if>
       <if test="isbtn != null" >
         #{isbtn,jdbcType=BIT},
@@ -110,6 +117,9 @@
       <if test="level != null" >
         level = #{level,jdbcType=INTEGER},
       </if>
+      <if test="permexp != null" >
+        permexp = #{permexp,jdbcType=VARCHAR},
+      </if>
       <if test="isbtn != null" >
         isbtn = #{isbtn,jdbcType=BIT},
       </if>
@@ -130,6 +140,7 @@
       menuicon = #{menuicon,jdbcType=VARCHAR},
       menuorder = #{menuorder,jdbcType=INTEGER},
       level = #{level,jdbcType=INTEGER},
+      permexp = #{permexp,jdbcType=VARCHAR},
       isbtn = #{isbtn,jdbcType=BIT},
       isshow = #{isshow,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}

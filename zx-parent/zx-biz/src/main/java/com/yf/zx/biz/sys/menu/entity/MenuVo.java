@@ -16,6 +16,8 @@ public class MenuVo extends BaseVo {
 
     private Integer level;
 
+    private String permexp;
+    
     private Boolean isbtn;
     
     private String treeiconskin;
@@ -72,6 +74,14 @@ public class MenuVo extends BaseVo {
 		this.level = level;
 	}
 
+	public String getPermexp() {
+		return permexp;
+	}
+
+	public void setPermexp(String permexp) {
+		this.permexp = permexp;
+	}
+
 	public Boolean getIsbtn() {
 		return isbtn;
 	}
@@ -107,8 +117,8 @@ public class MenuVo extends BaseVo {
 	@Override
 	public String toString() {
 		return "MenuVo [id=" + id + ", menuname=" + menuname + ", menuurl=" + menuurl + ", parentid=" + parentid
-				+ ", menuicon=" + menuicon + ", level=" + level + ", isbtn=" + isbtn + ", treeiconskin=" + treeiconskin
-				+ ", menuorder=" + menuorder + ", isshow=" + isshow + "]";
+				+ ", menuicon=" + menuicon + ", level=" + level + ", permexp=" + permexp + ", isbtn=" + isbtn
+				+ ", treeiconskin=" + treeiconskin + ", menuorder=" + menuorder + ", isshow=" + isshow + "]";
 	}
     
 }

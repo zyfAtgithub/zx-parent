@@ -6043,3 +6043,30 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have a
 2017-11-28 18:34:12,492 DEBUG selectById[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, isbtn, treeIconSkin, isshow from sys_menus where id = ? 
 2017-11-28 18:34:12,545 DEBUG selectById[159] - ==> Parameters: 2(Long)
 2017-11-28 18:34:12,595 DEBUG selectById[159] - <==      Total: 1
+2017-12-11 19:49:27,819 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-12-11 19:49:27,993 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-12-11 19:49:28,073 DEBUG selectMenu[159] - <==      Total: 2
+2017-12-11 19:49:28,106 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-12-11 19:49:28,109 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), false(Boolean), true(Boolean)
+2017-12-11 19:49:28,116 DEBUG selectMenu[159] - <==      Total: 0
+2017-12-11 19:49:28,120 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-12-11 19:49:28,121 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), false(Boolean), true(Boolean)
+2017-12-11 19:49:28,138 DEBUG selectMenu[159] - <==      Total: 4
+2017-12-11 19:51:29,241 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-12-11 19:51:29,353 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-12-11 19:51:29,418 DEBUG selectMenu[159] - <==      Total: 2
+2017-12-11 19:51:29,428 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-12-11 19:51:29,431 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), false(Boolean), true(Boolean)
+2017-12-11 19:51:29,438 DEBUG selectMenu[159] - <==      Total: 0
+2017-12-11 19:51:29,443 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-12-11 19:51:29,444 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), false(Boolean), true(Boolean)
+2017-12-11 19:51:29,455 DEBUG selectMenu[159] - <==      Total: 4
+2017-12-11 19:52:41,137 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? ORDER BY menuorder asc 
+2017-12-11 19:52:41,226 DEBUG selectMenu[159] - ==> Parameters: 0(Long), 1(Integer)
+2017-12-11 19:52:41,294 DEBUG selectMenu[159] - <==      Total: 2
+2017-12-11 19:52:41,305 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-12-11 19:52:41,309 DEBUG selectMenu[159] - ==> Parameters: 1(Long), 2(Integer), false(Boolean), true(Boolean)
+2017-12-11 19:52:41,316 DEBUG selectMenu[159] - <==      Total: 0
+2017-12-11 19:52:41,322 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
+2017-12-11 19:52:41,324 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), false(Boolean), true(Boolean)
+2017-12-11 19:52:41,331 DEBUG selectMenu[159] - <==      Total: 4

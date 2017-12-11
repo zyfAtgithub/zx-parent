@@ -114,6 +114,10 @@
 					width : 100,
 					title : '资源层级'
 				}, {
+					field : 'permexp',
+					width : 100,
+					title : '权限表达式'
+				}, {
 					field : 'menuicon',
 					align : 'center',
 					width : 110,
@@ -174,7 +178,7 @@
 					type : 2, // iframe
 					title : '新增菜单',
 					//anim: 1,
-					area : [ '780px', '320px' ],
+					area : [ '780px', '400px' ],
 					// shade: 0,
 					// maxmin: true,
 					content : 'toadd?level='+curquery.level+"&parentid="+curquery.parentid,
@@ -300,7 +304,7 @@
 						type : 2, // iframe
 						//anim: 1,
 						title : '修改菜单',
-						area : [ '780px', '320px' ],
+						area : [ '780px', '400px' ],
 						// shade: 0,
 						// maxmin: true,
 						content : 'toedit?id='+data.id,

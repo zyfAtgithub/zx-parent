@@ -43,7 +43,7 @@
 				    <label class="layui-form-label">菜单url</label>
 				    <div class="layui-input-inline">
 				      <input type="text" name="menuurl" value="${menu.menuurl }"
-				       lay-verify="required" placeholder="请输入菜单url" autocomplete="off" class="layui-input">
+				        placeholder="请输入菜单url" autocomplete="off" class="layui-input">
 				    </div>
 				</div>
 			</div>
@@ -87,35 +87,47 @@
 			</div>
 		</div>
 		<div class="layui-row">
-			<div class="layui-col-sm4">
-				<label class="layui-form-label">排序</label>
-				<div class="layui-input-inline">
-				  <input type="number" name="menuorder" value="${menu.menuorder }" autocomplete="off"  
-				  lay-verify="required|number" placeholder="请输入排序" style="width:100px;" min="0" max="99" autocomplete="off" class="layui-input">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">排序</label>
+					<div class="layui-input-inline">
+					  <input type="number" name="menuorder" value="${menu.menuorder }" autocomplete="off"  
+					  lay-verify="required|number" placeholder="请输入排序" min="0" max="99" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">权限表达式</label>
+					<div class="layui-input-inline">
+					  <input type="text" name="permexp" value="${menu.permexp }" autocomplete="off"  
+					   placeholder="请输入权限表达式" autocomplete="off" class="layui-input">
+					</div>
 				</div>
 			</div>
-			<div class="layui-col-sm4">
-				<label class="layui-form-label">是否为按钮</label>
-				<div class="layui-input-inline">
-					<c:if test="${menu.isbtn }">
-						<input type="checkbox" name="isbtn" value="true" checked lay-verify="required" lay-skin="switch" lay-text="是|否">
-					</c:if>
-					<c:if test="${not menu.isbtn }">
-						<input type="checkbox" name="isbtn" value="true" lay-verify="required" lay-skin="switch" lay-text="是|否">
-					</c:if>
+		</div>
+		<div class="layui-row">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">是否为按钮</label>
+					<div class="layui-input-inline">
+						<c:if test="${menu.isbtn }">
+							<input type="checkbox" name="isbtn" value="true" checked lay-verify="required" lay-skin="switch" lay-text="是|否">
+						</c:if>
+						<c:if test="${not menu.isbtn }">
+							<input type="checkbox" name="isbtn" value="true" lay-verify="required" lay-skin="switch" lay-text="是|否">
+						</c:if>
+					</div>
 				</div>
-			</div>
-			<div class="layui-col-sm4">
-				<label class="layui-form-label">是否展示</label>
-				<div class="layui-input-inline">
-					<c:if test="${menu.isshow }">
-						<input type="checkbox" name="isshow" value="true" checked lay-verify="required" lay-skin="switch" lay-text="是|否">
-					</c:if>
-					<c:if test="${not menu.isshow }">
-						<input type="checkbox" name="isshow" value="true" lay-verify="required" lay-skin="switch" lay-text="是|否">
-					</c:if>
+				<div class="layui-inline">
+					<label class="layui-form-label">是否展示</label>
+					<div class="layui-input-inline">
+						<c:if test="${menu.isshow }">
+							<input type="checkbox" name="isshow" value="true" checked lay-verify="required" lay-skin="switch" lay-text="是|否">
+						</c:if>
+						<c:if test="${not menu.isshow }">
+							<input type="checkbox" name="isshow" value="true" lay-verify="required" lay-skin="switch" lay-text="是|否">
+						</c:if>
+					</div>
 				</div>
-			</div>
 		</div>
 		<div class="layui-row">
 			<div class="layui-col-sm4 layui-col-sm-offset4">

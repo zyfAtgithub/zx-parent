@@ -12,7 +12,6 @@ import com.github.pagehelper.PageInfo;
 import com.yf.zx.biz.sys.menu.dao.MenuMapper;
 import com.yf.zx.biz.sys.menu.entity.Menu;
 import com.yf.zx.biz.sys.menu.entity.MenuVo;
-import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.core.base.web.PageReturn;
 import com.yf.zx.core.base.web.ResultReturn;
 import com.yf.zx.core.util.common.StringUtils;

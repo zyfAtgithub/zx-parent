@@ -16,6 +16,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.yf.zx.biz.sys.menu.entity.Menu;
 import com.yf.zx.biz.sys.menu.entity.MenuVo;
 import com.yf.zx.biz.sys.menu.service.MenuService;
+import com.yf.zx.biz.sys.role.entity.Role;
+import com.yf.zx.biz.sys.role.entity.RoleVo;
+import com.yf.zx.biz.sys.role.service.RoleService;
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.entity.UserVo;
 import com.yf.zx.biz.sys.user.service.UserService;
@@ -35,6 +38,9 @@ public class AppTest {
 
 	@Autowired
 	MenuService menuService;
+
+	@Autowired
+	RoleService roleService;
 
     @Before
     public void before() {
@@ -165,4 +171,64 @@ public class AppTest {
     	ResultReturn ret = menuService.deleteMenuByIds(ids);
     	System.out.println(JSONObject.toJSONString(ret));
     }
+    
+    @Test
+    public void operator() {
+    	char c = '\u0000';
+     	System.out.println(c == ' ');
+    	int res = 10 << 3;
+    	System.out.println("2 * 8 = " + res);
+    }
+    
+    @Test
+    public void selectRole() {
+    	RoleVo roleVo = new RoleVo();
+    	roleVo.setPage(0);
+    	roleVo.setRows(20);
+    	roleVo.setOrderBy("id asc");
+    	PageReturn<Role> ret = roleService.findByPage(roleVo);
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
+    
+    @Test
+    public void addRole() {
+    	Role role = new Role();
+    	role.setRole("3");
+    	role.setDescription("角色3");
+//    	role.setPermids(new Long[] {2L,12L});
+    	ResultReturn ret = roleService.addRole(role);
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
+    
+    @Test
+    public void delRole() {
+    	String ids = "1|2|232|3|4";
+    	ResultReturn ret = roleService.deleteRoleByIds(ids);
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
+    
+    @Test
+    public void getRoleById() {
+    	ResultReturn ret = roleService.getRoleById(5l);
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
+    
+    @Test
+    public void editRole() {
+    	Role role = new Role();
+    	role.setId(5l);
+    	role.setRole("22434de");
+    	role.setPermids(new Long[] {44l});
+    	ResultReturn ret = roleService.updateRoleById(role);
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
+    
+    @Test
+    public void getPermids() {
+    	ResultReturn ret = roleService.getPermidsByRoleids(4l);
+    	System.out.println(JSONObject.toJSONString(ret));
+    }
+    
+    
+    
 }

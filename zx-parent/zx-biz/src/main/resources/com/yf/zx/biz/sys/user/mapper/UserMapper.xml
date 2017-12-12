@@ -142,7 +142,7 @@
   </insert>
   
   <!-- 条件查询 -->
-  <select id="selectUser" parameterType="com.yf.zx.biz.sys.user.entity.User" resultMap="BaseResultMap">
+  <select id="selectUser" parameterType="com.yf.zx.biz.sys.user.entity.UserVo" resultMap="BaseResultMap">
   	select <include refid="Base_Column_List"/>
   	from sys_users
   	<where>

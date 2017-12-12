@@ -4,14 +4,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
 import com.yf.zx.biz.sys.role.entity.Role;
 import com.yf.zx.biz.sys.role.entity.RoleVo;
 import com.yf.zx.biz.sys.role.service.RoleService;
+import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.core.base.web.PageReturn;
 import com.yf.zx.core.base.web.ResultReturn;
 
@@ -61,6 +64,14 @@ public class RoleController {
 	
 	@RequestMapping("toadd")
 	public String toAdd() {
+		return "sys/role/role_addOrEdit";
+	}
+	
+
+	@RequestMapping("toedit")
+	public String toEdit(@RequestParam(value="id", required=true) Long id, Model model) {
+		ResultReturn ret = roleService.getRoleById(id);
+		model.addAttribute("role", ret.getData());
 		return "sys/role/role_addOrEdit";
 	}
 }

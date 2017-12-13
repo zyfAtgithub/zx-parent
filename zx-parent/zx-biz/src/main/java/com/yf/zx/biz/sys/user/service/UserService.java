@@ -1,7 +1,9 @@
 package com.yf.zx.biz.sys.user.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.yf.zx.biz.sys.role.dao.RoleMapper;
+import com.yf.zx.biz.sys.role.entity.Role;
 import com.yf.zx.biz.sys.user.dao.UserMapper;
 import com.yf.zx.biz.sys.user.entity.User;
 import com.yf.zx.biz.sys.user.entity.UserRole;
@@ -26,6 +30,9 @@ public class UserService {
 	
 	@Autowired
 	UserMapper userDao;
+
+	@Autowired
+	RoleMapper roleDao;
 	
 	public PageReturn<User> findByPage(UserVo userVo) {
 		PageHelper.startPage(userVo.getPage(), userVo.getRows());
@@ -152,15 +159,33 @@ public class UserService {
 	}
 	
 	/**
-	 * 获取用户角色id
+	 * 加载角色[已选，未选]
 	 *  
 	 * @author zhang.yifeng 
 	 * @param userId
 	 * @return
 	 */
-	public String getRoleidsByUserId(Long userId) {
+	public ResultReturn loadRoles(Long userId) {
+		ResultReturn ret = new ResultReturn();
+		if (userId == null) {
+			ret.setResultCode("0");
+			ret.setResultMsg("用户id不能为空！");
+			return ret;
+		}
+		List<Role> roles = roleDao.selectRole(null);
 		List<Long> roleids = userDao.selectRoleidsByUserId(userId);
-		return StringUtils.join(roleids.toArray(), ",");
+		List<Role> roleSelected = new ArrayList<Role>();
+		for (Role role : roles) {
+			if (roleids.contains(role.getId())) {
+				roleSelected.add(role);
+				roles.remove(role);
+			}
+		}
+		Map<String, List<Role>> resultMap = new HashMap<String, List<Role>>();
+		resultMap.put("unselectedRole", roles);
+		resultMap.put("selectedRole", roleSelected);
+		ret.setData(resultMap);
+		return ret;
 	}
 
 	/**

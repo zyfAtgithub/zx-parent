@@ -232,7 +232,7 @@ layui.use([ 'form', 'table' ], function() {
 		} else if (obj.event == 'rolegrant') {
 			layer.open({
 				type : 2,
-				title : '修改用户',
+				title : '角色授权',
 				area : [ '580px', '420px' ],
 				// shade: 0,
 				// maxmin: true,

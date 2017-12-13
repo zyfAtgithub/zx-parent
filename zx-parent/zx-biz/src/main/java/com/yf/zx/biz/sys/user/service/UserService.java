@@ -173,16 +173,20 @@ public class UserService {
 			return ret;
 		}
 		List<Role> roles = roleDao.selectRole(null);
+		
 		List<Long> roleids = userDao.selectRoleidsByUserId(userId);
 		List<Role> roleSelected = new ArrayList<Role>();
+		List<Role> roleUnSelected = new ArrayList<Role>();
 		for (Role role : roles) {
 			if (roleids.contains(role.getId())) {
 				roleSelected.add(role);
-				roles.remove(role);
+			}
+			else {
+				roleUnSelected.add(role);
 			}
 		}
 		Map<String, List<Role>> resultMap = new HashMap<String, List<Role>>();
-		resultMap.put("unselectedRole", roles);
+		resultMap.put("unselectedRole", roleUnSelected);
 		resultMap.put("selectedRole", roleSelected);
 		ret.setData(resultMap);
 		return ret;

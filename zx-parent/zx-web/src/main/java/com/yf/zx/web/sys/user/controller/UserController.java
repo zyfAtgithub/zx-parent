@@ -138,6 +138,7 @@ public class UserController extends BaseController {
 	public String toGrantRole(@RequestParam(value="id", required=true) Long id, Model model) {
 		ResultReturn ret = userService.loadRoles(id);
 		model.addAttribute("roles", ret.getData());
+		model.addAttribute("id", id);
 		return "sys/user/user_roleGrant";
 	}
 	

@@ -25,34 +25,33 @@
 <body>
 
 <div class="layui-container">
-	cscsc${roles.unselectedRole[0]}
 	<form class="layui-form layui-form-pane" action="" onsubmit = "return false;" >
+	  <input name="id" type="hidden" value="${id}"/>
 	  <div class="layui-form-item">
 	  	<div class="layui-inline">
   	 	  <label for="select1">待选</label>
 	  	  <div>
 	          <select multiple="multiple"id="select1" lay-ignore>
-	            <option value="超级管理员">超级管理员xxxxxxxxxxxxxxxxxxx</option>
-	            <option value="普通管理员">普通管理员</option>
-	            <option value="信息发布员">信息发布员</option>
-	            <option value="财务管理员">财务管理员</option>
-	            <option value="产品管理员">产品管理员</option>
-	            <option value="资源管理员">资源管理员</option>
-	            <option value="管理员">管理员</option>
+	          	<c:forEach items="${roles.unselectedRole}" var="role">
+		            <option value="${role.id }">${role.role }</option>
+	          	</c:forEach>
 	          </select>
 	  	  </div>
 	  	</div>
 	  	<div class="layui-inline">
 	 		<label  for="select2">已选</label>
 	  		<div>
-	         	<select multiple="multiple" id="select2" lay-ignore></select>
+	         	<select multiple="multiple" id="select2" lay-ignore>
+		          	<c:forEach items="${roles.selectedRole}" var="role">
+			            <option value="${role.id }">${role.role }</option>
+		          	</c:forEach>
+	         	</select>
 	  		</div>
 	  	</div>
 	  </div>
 	  <div class="layui-form-item">
 	    <div class="layui-input-block">
-	      <button class="layui-btn layui-btn-normal layui-btn-small" lay-submit lay-filter="saveUser">提交</button>
-	      <button type="reset" class="layui-btn layui-btn-primary layui-btn-small">重置</button>
+	      <button class="layui-btn layui-btn-normal layui-btn-small" lay-submit lay-filter="saveRoleSel">提交</button>
 	    </div>
 	  </div>
 	</form>
@@ -73,6 +72,50 @@
 	       $("option:selected",this).appendTo('#select1');
 	    });
 	});
+	
+	layui.use('form', function() {
+		var form = layui.form;
+		form.on('submit(saveRoleSel)', function(data) {
+			var id = $("input[name='id']").val();
+			var selroles = $('#select2').find('option');
+			var roleids = '';
+			if (selroles) {
+				$.each(selroles, function(idx, role){
+					roleids += $(role).val() + ',';
+				}); 
+			}
+			roleids = roleids.substring(0, roleids.length - 1);
+			var user = {};
+			user.id = id;
+			user.roleids = roleids;
+			$.ajax({
+				url : "grantrole",
+				type : "POST",
+				dataType : "json",
+				data : user,
+				success : function(resultRet) {
+							console.log(resultRet);
+							if (resultRet.resultCode == '200') {
+									parent.document.getElementById('rolegrantRes').value = "200";
+								closeWin();
+							} else {
+								layer.alert(resultRet.resultMsg);
+							}
+						},
+				error : function(e) {
+							layer.open({
+								title : "请求出错！",
+								content : e.responseText
+							});
+						}
+				});
+		});
+	});
+	
+	function closeWin() {
+		var index = parent.layer.getFrameIndex(window.name);
+		parent.layer.close(index);
+	}
 	</script>
 </body>
 </html>

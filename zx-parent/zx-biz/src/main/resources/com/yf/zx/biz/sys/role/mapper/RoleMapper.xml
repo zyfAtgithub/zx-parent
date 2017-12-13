@@ -148,13 +148,13 @@
   <select id="selectPermidsByRoleId" parameterType="java.lang.Long" resultType="java.lang.Long">
   	select permission_id
   	  from sys_roles_permissions
-  	 where role_id = #{id,jdbcType=BIGINT}
+  	 where role_id = #{roleId,jdbcType=BIGINT}
   </select>
   
   <!-- 根据roleId删除角色权限关系 -->
   <delete id="delRolePermByRoleId" parameterType="java.lang.Long">
   	delete from sys_roles_permissions
-  	 where role_id = #{id,jdbcType=BIGINT}
+  	 where role_id = #{roleId,jdbcType=BIGINT}
   </delete>
   
   <!-- 批量插入角色权限关系 -->

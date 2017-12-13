@@ -67,12 +67,13 @@ public class RoleService {
 		//以下几个操作由事务控制
 		roleDao.insertAutoId(role);
 		roleDao.delRolePermByRoleId(role.getId());
-		if (role.getPermids() != null && role.getPermids().length > 0) {
+		if (role.getPermids() != null && role.getPermids().length() > 0) {
 			List<RolePermission> roleperms = new ArrayList<RolePermission>();
-			for (Long permId : role.getPermids()) {
+			List<String> permids = StringUtils.split2List(role.getPermids(), ",");
+			for (String permId : permids) {
 				RolePermission roleperm = new RolePermission();
 				roleperm.setRoleId(role.getId());
-				roleperm.setPermId(permId);
+				roleperm.setPermId(Long.valueOf(permId));
 				roleperms.add(roleperm);
 			}
 			roleDao.batchInserRolePerm(roleperms);
@@ -114,12 +115,13 @@ public class RoleService {
 		//以下几个操作由事务控制
 		roleDao.updateById(role);
 		roleDao.delRolePermByRoleId(role.getId());
-		if (role.getPermids() != null && role.getPermids().length > 0) {
+		if (role.getPermids() != null && role.getPermids().length() > 0) {
 			List<RolePermission> roleperms = new ArrayList<RolePermission>();
-			for (Long permId : role.getPermids()) {
+			List<String> permids = StringUtils.split2List(role.getPermids(), ",");
+			for (String permId : permids) {
 				RolePermission roleperm = new RolePermission();
 				roleperm.setRoleId(role.getId());
-				roleperm.setPermId(permId);
+				roleperm.setPermId(Long.valueOf(permId));
 				roleperms.add(roleperm);
 			}
 			roleDao.batchInserRolePerm(roleperms);
@@ -149,7 +151,7 @@ public class RoleService {
 			Role role = roleDao.selectByPrimaryKey(roleId);
 			List<Long> permIds = roleDao.selectPermidsByRoleId(roleId);
 			if (permIds != null && !permIds.isEmpty()) {
-				role.setPermids(permIds.toArray(new Long[permIds.size()]));
+				role.setPermids(StringUtils.join(permIds.toArray(), ","));
 			}
 			ret.setData(role);
 			ret.setResultCode("200");

@@ -218,7 +218,7 @@ public class AppTest {
     	Role role = new Role();
     	role.setId(5l);
     	role.setRole("22434de");
-    	role.setPermids(new Long[] {44l});
+    	role.setPermids("44");
     	ResultReturn ret = roleService.updateRoleById(role);
     	System.out.println(JSONObject.toJSONString(ret));
     }

@@ -76,6 +76,7 @@
 	<script type="text/html" id="toolBar">
 		  <a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>
 		  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
+		  <a class="layui-btn layui-btn-mini" lay-event="rolegrant">角色授权</a>
 		  <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
 		  
 		  <!-- 这里同样支持 laytpl 语法，如： -->
@@ -85,6 +86,6 @@
 	</script>
 	
 	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
-	<script src="${ctx }/webResources/js/user/userlist.js" type="text/javascript"></script>
+	<script src="${ctx }/webResources/js/sys/user/userlist.js" type="text/javascript"></script>
 </body>
 </html>

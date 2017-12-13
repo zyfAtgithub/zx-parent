@@ -21,6 +21,8 @@ public class User {
 
     private Date lastloginTime;
 
+    private String roleids;
+
     public Long getId() {
         return id;
     }
@@ -93,10 +95,19 @@ public class User {
         this.lastloginTime = lastloginTime;
     }
 
+	public String getRoleids() {
+		return roleids;
+	}
+
+	public void setRoleids(String roleids) {
+		this.roleids = roleids;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", loginname=" + loginname + ", username=" + username + ", password=" + password
 				+ ", salt=" + salt + ", phone=" + phone + ", email=" + email + ", locked=" + locked + ", lastloginTime="
-				+ lastloginTime + "]";
+				+ lastloginTime + ", roleids=" + roleids + "]";
 	}
+
 }

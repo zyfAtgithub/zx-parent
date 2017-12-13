@@ -1,7 +1,5 @@
 package com.yf.zx.biz.sys.role.entity;
 
-import java.util.Arrays;
-
 public class Role {
 	private Long id;
 
@@ -11,7 +9,7 @@ public class Role {
 
 	private Boolean available;
 
-	private Long[] permids;
+	private String permids;
 	
 	public Long getId() {
 		return id;
@@ -45,17 +43,17 @@ public class Role {
 		this.available = available;
 	}
 
-	public Long[] getPermids() {
+	public String getPermids() {
 		return permids;
 	}
 
-	public void setPermids(Long[] permids) {
+	public void setPermids(String permids) {
 		this.permids = permids;
 	}
 
 	@Override
 	public String toString() {
 		return "Role [id=" + id + ", role=" + role + ", description=" + description + ", available=" + available
-				+ ", permids=" + Arrays.toString(permids) + "]";
+				+ ", permids=" + permids + "]";
 	}
 }

@@ -134,4 +134,20 @@ public class UserController extends BaseController {
 		return JSONObject.toJSONString(ret);
 	}
 
+	@RequestMapping("tograntrole")
+	public String toGrantRole(@RequestParam(value="id", required=true) Long id, Model model) {
+		String roleids = userService.getRoleidsByUserId(id);
+		User user = new User();
+		user.setId(id);
+		user.setRoleids(roleids);
+		model.addAttribute("user", user);
+		return "sys/user/user_roleGrant";
+	}
+	
+	@RequestMapping(value = "grantrole", method=RequestMethod.POST)
+	@ResponseBody
+	public String grantRole(User user) {
+		ResultReturn ret = userService.grantRole(user);
+		return JSONObject.toJSONString(ret);
+	}
 }

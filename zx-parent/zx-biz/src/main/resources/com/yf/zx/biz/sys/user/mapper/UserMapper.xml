@@ -172,4 +172,24 @@
 	    #{id} 
 	</foreach>
   </delete>
+  
+  <select id="selectRoleidsByUserId" parameterType="java.lang.Long" resultType="java.lang.Long">
+  	select role_id
+  	  from sys_users_roles
+  	 where user_id = #{userId,jdbcType=BIGINT}
+  </select>
+  
+  <!-- 根据roleId删除角色权限关系 -->
+  <delete id="delUserRoleByUserId" parameterType="java.lang.Long">
+  	delete from sys_users_roles
+  	 where user_id = #{userId,jdbcType=BIGINT}
+  </delete>
+  
+  <!-- 批量插入角色权限关系 -->
+  <insert id="batchInserUserRole" parameterType="java.util.List">
+  	insert into sys_users_roles(user_id, role_id) values 
+  	<foreach collection="list" item="item" index="index" separator=",">
+  		(#{item.userId, jdbcType=BIGINT},#{item.roleId, jdbcType=BIGINT})
+  	</foreach>
+  </insert>
 </mapper>

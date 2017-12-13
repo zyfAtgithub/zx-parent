@@ -59,7 +59,7 @@
 	
 	<script src="${ctx }/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script>
 	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
-	<script src="${ctx }/webResources/js/user/user_addOrEdit.js" type="text/javascript" ></script>
+	<script src="${ctx }/webResources/js/sys/user/user_addOrEdit.js" type="text/javascript" ></script>
 
 </body>
 </html>

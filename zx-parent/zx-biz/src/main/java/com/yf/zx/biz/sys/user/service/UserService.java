@@ -1,16 +1,19 @@
 package com.yf.zx.biz.sys.user.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yf.zx.biz.sys.user.dao.UserMapper;
 import com.yf.zx.biz.sys.user.entity.User;
+import com.yf.zx.biz.sys.user.entity.UserRole;
 import com.yf.zx.biz.sys.user.entity.UserVo;
 import com.yf.zx.core.base.web.PageReturn;
 import com.yf.zx.core.base.web.ResultReturn;
@@ -145,6 +148,64 @@ public class UserService {
 			ret.setResultCode("0");
 			ret.setResultMsg("删除用户失败！");
 		}
+		return ret;
+	}
+	
+	/**
+	 * 获取用户角色id
+	 *  
+	 * @author zhang.yifeng 
+	 * @param userId
+	 * @return
+	 */
+	public String getRoleidsByUserId(Long userId) {
+		List<Long> roleids = userDao.selectRoleidsByUserId(userId);
+		return StringUtils.join(roleids.toArray(), ",");
+	}
+
+	/**
+	 * 获取用户权限
+	 *  
+	 * @author zhang.yifeng 
+	 * @param userId
+	 * @return
+	 */
+	public String getPermsByUserId(Long userId) {
+		List<Long> roleids = userDao.selectRoleidsByUserId(userId);
+		return StringUtils.join(roleids.toArray(), ",");
+	}
+	
+	/**
+	 * 授予角色[事务控制]
+	 *  
+	 * @author zhang.yifeng 
+	 * @param user
+	 */
+	@Transactional(rollbackFor=Exception.class)
+	public ResultReturn grantRole(User user) {
+		ResultReturn ret = new ResultReturn();
+		if (user == null || user.getId() == null) {
+			ret.setResultCode("0");
+			ret.setResultMsg("用户信息不能为空！");
+			return ret;
+		}
+		
+		//删除之前的用户角色关系
+		userDao.delUserRoleByUserId(user.getId());
+		//建立新的用户角色关系
+		if (StringUtils.isNotNullAndEmpty(user.getRoleids())) {
+			List<UserRole> userroles = new ArrayList<UserRole>();
+			List<String> roleids = StringUtils.split2List(user.getRoleids(), ",");
+			for (String roleId : roleids) {
+				UserRole userRole = new UserRole();
+				userRole.setUserId(user.getId());
+				userRole.setRoleId(Long.valueOf(roleId));
+				userroles.add(userRole);
+			}
+			userDao.batchInserUserRole(userroles);
+		}
+		ret.setResultCode("200");
+		ret.setResultMsg("角色授予成功！");
 		return ret;
 	}
 }

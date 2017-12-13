@@ -85,11 +85,11 @@
 					fixed : 'left'
 				}, {
 					field : 'role',
-					width : 120,
+					width : 150,
 					title : '角色名称'
 				}, {
 					field : 'description',
-					width : 120,
+					width : 240,
 					title : '描述'
 				},{
 					fixed : 'right',
@@ -130,7 +130,7 @@
 					type : 2, // iframe
 					title : '新增角色',
 					//anim: 1,
-					area : [ '780px', '400px' ],
+					area : [ '780px', '500px' ],
 					// shade: 0,
 					// maxmin: true,
 					content : 'toadd',
@@ -164,7 +164,7 @@
 				var checkStatus = table.checkStatus('dataTableRole');
 				var delMenus = checkStatus.data;
 				if (!delMenus.length) {
-					layer.alert('请选择要删除的菜单！');
+					layer.alert('请选择要删除的角色！');
 					return;
 				}
 				
@@ -256,7 +256,7 @@
 						type : 2, // iframe
 						//anim: 1,
 						title : '修改角色',
-						area : [ '780px', '400px' ],
+						area : [ '780px', '500px' ],
 						// shade: 0,
 						// maxmin: true,
 						content : 'toedit?id='+data.id,
@@ -271,9 +271,9 @@
 							layer.setTop(layero);
 						},
 						end : function() {
-							if ("200" == $("#editMenuRes").val()) {
-								$("#editMenuRes").val('');
-								layer.msg('修改菜单成功', {
+							if ("200" == $("#editRoleRes").val()) {
+								$("#editRoleRes").val('');
+								layer.msg('修改角色成功', {
 									icon : 1,
 									time : 1000
 								}, function() {

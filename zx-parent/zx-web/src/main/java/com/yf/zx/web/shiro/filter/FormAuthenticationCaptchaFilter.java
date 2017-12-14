@@ -107,7 +107,6 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
 
 	@Override
 	protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
-		
 		HttpServletRequest httpReq = (HttpServletRequest)request;
 		HttpServletResponse httpRsp = (HttpServletResponse)response;
 		if (HttpUtil.isAjax(httpReq)) {

@@ -1,9 +1,12 @@
 package com.yf.zx.biz.sys.user.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -192,6 +195,47 @@ public class UserService {
 		return ret;
 	}
 
+	/**
+	 * 根据用户名查询改用户拥有的角色
+	 *  
+	 * @author zhang.yifeng 
+	 * @param userName
+	 * @return
+	 */
+	public Set<String> getRolesByLoginName(String userName) {
+		List<String> roleList = userDao.selectRolesByLoginName(userName);
+		roleList.removeAll(Collections.singleton(null));
+		Set<String> roleSet = new HashSet<String>();
+		roleSet.addAll(roleList);
+		return roleSet;
+	}
+	
+	/**
+	 * 根据用户名查询改用户拥有的所有权限
+	 *  
+	 * @author zhang.yifeng 
+	 * @param userName
+	 * @return
+	 */
+	public Set<String> getPermsByLoginName(String userName) {
+		List<String> permList = userDao.selectPermsByLoginName(userName);
+		permList.removeAll(Collections.singleton(null));
+		Set<String> permSet = new HashSet<String>();
+		permSet.addAll(permList);
+		return permSet;
+	}
+
+	/**
+	 * 根据用户名查询改用户拥有的所有权限
+	 *  
+	 * @author zhang.yifeng 
+	 * @param userName
+	 * @return
+	 */
+	public List<Long> getPermIdsByLoginName(String userName) {
+		return userDao.selectPermidsByLoginName(userName);
+	}
+	
 	/**
 	 * 获取用户权限
 	 *  

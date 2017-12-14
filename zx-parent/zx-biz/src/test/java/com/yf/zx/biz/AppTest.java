@@ -2,6 +2,12 @@ package com.yf.zx.biz;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -119,7 +125,10 @@ public class AppTest {
 
     @Test
     public void getMenu() {
-    	ResultReturn ret = menuService.loadMenuList();
+    	List<Long> menuIds = new ArrayList<Long>();
+    	menuIds.add(2l);
+    	menuIds.add(4l);
+    	ResultReturn ret = menuService.loadMenuList(menuIds);
     	System.out.println(JSONObject.toJSONString(ret));
     }
 
@@ -229,6 +238,22 @@ public class AppTest {
     	System.out.println(JSONObject.toJSONString(ret));
     }
     
+    
+    @Test
+    public void getRoles() {
+    	Set<String> roles = userService.getRolesByLoginName("lm2");
+    	System.out.println(JSONObject.toJSONString(roles));
+    }
+    
+    @Test
+    public void getPerms() {
+    	Set<String> roles = userService.getPermsByLoginName("zhangyifeng");
+    	System.out.println(JSONObject.toJSONString(roles));
+    	
+    	Map<String, String> map = new HashMap<String, String>();
+    	map.put(null, "nihao");
+    	System.out.println(map.get(null));
+    }
     
     
 }

@@ -28,12 +28,12 @@ public class UserRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-//        String username = (String)principals.getPrimaryPrincipal();
-
+        String username = (String)principals.getPrimaryPrincipal();
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-//        authorizationInfo.setRoles(userService.findRoles(username));
-//        authorizationInfo.setStringPermissions(userService.findPermissions(username));
-
+        
+        //查询角色，权限。 后面考虑使用缓存，减少访问数据库的频次 TODO
+        authorizationInfo.setRoles(userService.getRolesByLoginName(username));
+        authorizationInfo.setStringPermissions(userService.getPermsByLoginName(username));
         return authorizationInfo;
     }
 

@@ -1,5 +1,6 @@
 package com.yf.zx.biz.sys.menu.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -30,12 +31,14 @@ public class MenuService {
 	 * @author zhang.yifeng 
 	 * @return
 	 */
-	public ResultReturn loadMenuList() {
+	public ResultReturn loadMenuList(List<Long> permMenuIds) {
 		ResultReturn ret = new ResultReturn();
 		try {
 			List<Menu> menuList = getTopMenuList();
+			filterMenuListByMenuIdList(menuList, permMenuIds);
 			for (Menu topMenu : menuList) {
 				List<Menu> subMenuList = getSubMenuList(topMenu.getId());
+				filterMenuListByMenuIdList(subMenuList, permMenuIds);
 				topMenu.setChildren(subMenuList.toArray(new Menu[subMenuList.size()]));
 			}
 			ret.setResultCode("200");
@@ -49,6 +52,30 @@ public class MenuService {
 		return ret;
 	}
 
+	/**
+	 * 根据menuid列表从指定的meunu列表中过滤出需要的menu
+	 *  
+	 * @author zhang.yifeng 
+	 * @param menuList
+	 * @param idList
+	 */
+	private void filterMenuListByMenuIdList(List<Menu> menuList, List<Long> idList) {
+		if (menuList == null || menuList.isEmpty() ||
+				idList == null) {
+			return;
+		}
+		if (idList.isEmpty()) {
+			menuList.clear();
+		}
+		List<Menu> listToRemove = new ArrayList<Menu>();
+		for (Menu menu : menuList) {
+			if (!idList.contains(menu.getId())) {
+				listToRemove.add(menu);
+			}
+		}
+		menuList.removeAll(listToRemove);
+	}
+	
 	/**
 	 * 加载菜单树
 	 *  

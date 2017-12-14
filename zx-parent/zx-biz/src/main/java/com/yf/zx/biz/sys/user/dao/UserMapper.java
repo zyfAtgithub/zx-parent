@@ -25,4 +25,10 @@ public interface UserMapper {
     int delUserRoleByUserId(Long userId);
     
     int batchInserUserRole(List<UserRole> list);
+    
+    List<String> selectRolesByLoginName(String userName);
+
+    List<String> selectPermsByLoginName(String userName);
+
+    List<Long> selectPermidsByLoginName(String userName);
 }

@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="${ctx }/webResources/css/sys/menu/menu.css">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${ctx }/webResources/plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<link rel="stylesheet" href="${ctx }/webResources/plugins/zTree_v3/css/zTreeIcon/zTreeIcon.css" type="text/css">
 </head>
 <body>
 	<div class="container">

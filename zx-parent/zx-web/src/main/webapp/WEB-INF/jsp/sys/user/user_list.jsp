@@ -34,8 +34,12 @@
 			    		</div>
 			    	</div>
 		    		<div class="layui-inline">	
-		    			<button class="layui-btn layui-btn-small" lay-submit lay-filter="queryUser">查询</button>
-		    			<button class="layui-btn layui-btn-primary layui-btn-small" type="reset">重置</button>
+		    			<shiro:hasPermission name="sys:user:query">
+			    			<button class="layui-btn layui-btn-small" lay-submit lay-filter="queryUser">查询</button>
+		    			</shiro:hasPermission>
+		    			<shiro:hasPermission name="sys:user:reset">
+			    			<button class="layui-btn layui-btn-primary layui-btn-small" type="reset">重置</button>
+		    			</shiro:hasPermission>
 		    		</div>
 		    	</div>			
 			</form>
@@ -43,15 +47,21 @@
 		<div class="layui-row">
 			<div class="batch-operation">
 				<div class="layui-btn-group">
+				<shiro:hasPermission name="sys:user:add">
 				  <button class="layui-btn  layui-btn-small" id="btn-add">
 				    <i class="layui-icon">&#xe654;</i>
 				  </button>
+				</shiro:hasPermission>
+				<shiro:hasPermission name="sys:user:batchdel">
 				  <button class="layui-btn layui-btn-danger layui-btn-small" id="btn-batch-del">
 				    <i class="layui-icon">&#xe640;</i>
 				  </button>
+				</shiro:hasPermission>
+				<shiro:hasPermission name="sys:user:refresh">
 				  <button class="layui-btn layui-btn-normal layui-btn-small" id="btn-refresh">
 				    <i class="layui-icon">&#x1002;</i>
 				  </button>
+				</shiro:hasPermission>
 				</div>
 			</div>
 			<div class="table-container">
@@ -73,17 +83,20 @@
 	<script type="text/html" id="lockedTpl">
 		{{ d.locked? '是' : '否' }}
 	</script>
-	
+
 	<script type="text/html" id="toolBar">
-		  <a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>
-		  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
-		  <a class="layui-btn layui-btn-mini" lay-event="rolegrant">角色授权</a>
-		  <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
-		  
-		  <!-- 这里同样支持 laytpl 语法，如： -->
-		  {{#  if(d.auth > 2){ }}
-		    <a class="layui-btn layui-btn-mini" lay-event="check">审核</a>
-		  {{#  } }}
+		<shiro:hasPermission name="sys:user:add">
+			<a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>
+		</shiro:hasPermission>
+		<shiro:hasPermission name="sys:user:update">
+			<a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
+		</shiro:hasPermission>
+		<shiro:hasPermission name="sys:user:rolegrant">
+		<a class="layui-btn layui-btn-mini" lay-event="rolegrant">角色授权</a>
+		</shiro:hasPermission>
+		<shiro:hasPermission name="sys:user:del">
+			<a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
+		</shiro:hasPermission>
 	</script>
 	
 	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>

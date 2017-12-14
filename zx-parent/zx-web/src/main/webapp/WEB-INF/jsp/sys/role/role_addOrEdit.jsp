@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="${ctx }/webResources/plugins/layui/css/layui.css">
 <link rel="stylesheet" href="${ctx }/webResources/plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
-<link rel="stylesheet" href="${ctx }/webResources/css/sys/menu/menu.css">
+<link rel="stylesheet" href="${ctx }/webResources/plugins/zTree_v3/css/zTreeIcon/zTreeIcon.css" type="text/css">
 	<style type="text/css">
 		.layui-container{
 			width:80%;
@@ -63,7 +63,7 @@
 	var setting = {
 			check: {
 				enable: true,
-				chkboxType: { "Y": "s", "N": "" }
+				chkboxType: { "Y": "s", "N": "s" }
 			},
 			data: {
 				simpleData: {

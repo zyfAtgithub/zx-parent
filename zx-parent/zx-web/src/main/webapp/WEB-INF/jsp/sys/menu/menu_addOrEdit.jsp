@@ -128,6 +128,7 @@
 						</c:if>
 					</div>
 				</div>
+			</div>
 		</div>
 		<div class="layui-row">
 			<div class="layui-col-sm4 layui-col-sm-offset4">

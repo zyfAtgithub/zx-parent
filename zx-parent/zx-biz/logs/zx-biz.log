@@ -7543,3 +7543,27 @@ java.lang.NullPointerException
 2017-12-14 09:49:57,204 DEBUG selectMenu[159] - ==>  Preparing: select id, menuname, menuurl, parentid, menuicon, menuorder, level, permexp, isbtn, treeIconSkin, isshow from sys_menus WHERE parentid = ? and level = ? and isbtn = ? and isshow = ? ORDER BY menuorder asc 
 2017-12-14 09:49:57,206 DEBUG selectMenu[159] - ==> Parameters: 2(Long), 2(Integer), false(Boolean), true(Boolean)
 2017-12-14 09:49:57,209 DEBUG selectMenu[159] - <==      Total: 3
+2018-02-19 15:55:02,533 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2018-02-19 15:55:02,576 DEBUG selectByLoginName[159] - ==> Parameters: admin(String)
+2018-02-19 15:55:02,592 DEBUG selectByLoginName[159] - <==      Total: 0
+2018-02-19 15:56:15,217 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2018-02-19 15:56:15,249 DEBUG selectByLoginName[159] - ==> Parameters: admin(String)
+2018-02-19 15:56:15,266 DEBUG selectByLoginName[159] - <==      Total: 0
+2018-02-19 15:57:16,007 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2018-02-19 15:57:16,036 DEBUG selectByLoginName[159] - ==> Parameters: lm2(String)
+2018-02-19 15:57:16,052 DEBUG selectByLoginName[159] - <==      Total: 0
+2018-02-19 15:57:16,074 DEBUG insertAutoId[159] - ==>  Preparing: insert into sys_users ( loginname, username, password, salt ) values ( ?, ?, ?, ? ) 
+2018-02-19 15:57:16,076 DEBUG insertAutoId[159] - ==> Parameters: lm2(String), 刘明2(String), 6168db58405a9eab7828e6a47ff73383(String), 28495018162ad6328783c3bde7364346(String)
+2018-02-19 15:57:16,076 DEBUG insertAutoId[159] - <==    Updates: 1
+2018-02-19 15:57:58,434 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2018-02-19 15:57:58,464 DEBUG selectByLoginName[159] - ==> Parameters: zyf(String)
+2018-02-19 15:57:58,479 DEBUG selectByLoginName[159] - <==      Total: 0
+2018-02-19 15:57:58,504 DEBUG insertAutoId[159] - ==>  Preparing: insert into sys_users ( loginname, username, password, salt ) values ( ?, ?, ?, ? ) 
+2018-02-19 15:57:58,506 DEBUG insertAutoId[159] - ==> Parameters: zyf(String), 张益峰(String), 6168db58405a9eab7828e6a47ff73383(String), 28495018162ad6328783c3bde7364346(String)
+2018-02-19 15:57:58,507 DEBUG insertAutoId[159] - <==    Updates: 1
+2018-02-19 15:58:25,111 DEBUG selectByLoginName[159] - ==>  Preparing: select id, loginname, username, password, salt, phone, email, locked, lastlogin_time from sys_users where loginname = ? 
+2018-02-19 15:58:25,140 DEBUG selectByLoginName[159] - ==> Parameters: admin(String)
+2018-02-19 15:58:25,155 DEBUG selectByLoginName[159] - <==      Total: 0
+2018-02-19 15:58:25,182 DEBUG insertAutoId[159] - ==>  Preparing: insert into sys_users ( loginname, username, password, salt ) values ( ?, ?, ?, ? ) 
+2018-02-19 15:58:25,184 DEBUG insertAutoId[159] - ==> Parameters: admin(String), 系统管理员(String), 6168db58405a9eab7828e6a47ff73383(String), 28495018162ad6328783c3bde7364346(String)
+2018-02-19 15:58:25,184 DEBUG insertAutoId[159] - <==    Updates: 1

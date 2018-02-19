@@ -1,9 +1,10 @@
 layui.use([ 'form', 'table' ], function() {
 	var table = layui.table, form = layui.form, $ = layui.jquery;
+	console.log('User List!!!');
 	var tbIns = table.render({
 		id : 'dataTableUser',
 		elem : '#userTb',
-		url : '/zx-web/sys/user/list',
+		url : 'list',
 		height : 'full-120',
 		size : 'sm',
 		cols : [ [ {
@@ -113,7 +114,7 @@ layui.use([ 'form', 'table' ], function() {
 				ids += item.id + "|";
 			});
 			$.ajax({
-				url : "/zx-web/sys/user/del",
+				url : "del",
 				type : "POST",
 				dataType : "json",
 				data : {
@@ -141,7 +142,7 @@ layui.use([ 'form', 'table' ], function() {
 
 	form.on('submit(queryUser)', function(data) {
 		tbIns.reload({
-			url : '/zx-web/sys/user/list',
+			url : 'list',
 			where : data.field
 		});
 		return false;
@@ -149,7 +150,7 @@ layui.use([ 'form', 'table' ], function() {
 
 	$('#btn-refresh').click(function() {
 		tbIns.reload({
-			url : '/zx-web/sys/user/list'
+			url : 'list'
 		});
 	});
 

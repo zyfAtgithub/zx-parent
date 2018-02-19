@@ -368,7 +368,7 @@ public class FtpUtils {
 //		FtpInfo ftpGov = new FtpInfo("10.0.0.2", 21, "zftp", "123456", "gbk", "cdn_home/1", "3333.txt", "F:\\ftp\\tst\\", 2);
 //		downLoadFile(ftpGov);
 		File f = new File("F:\\work_doc\\cdn_ism.sql");
-		FtpInfo ftpGov2 = new FtpInfo("42.123.92.9", 21, "ismftp", "ismftp", "gbk", "cdn_home/1/99", f, "cdn_ism.sql");
+		FtpInfo ftpGov2 = new FtpInfo("42.123.92.9", 21, "ismftp", "ismftpsss", "gbk", "cdn_home/1/99", f, "cdn_ism.sql");
 		uploadFile(ftpGov2);
 	}
 }

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yf.zx.biz.sys.role.dao.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.yf.zx.biz.sys.role.entity.Role" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="role" property="role" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="available" property="available" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, role, description, available
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_roles
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sys_roles
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.yf.zx.biz.sys.role.entity.Role" >
+    insert into sys_roles (id, role, description, 
+      available)
+    values (#{id,jdbcType=BIGINT}, #{role,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{available,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yf.zx.biz.sys.role.entity.Role" >
+    insert into sys_roles
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="available != null" >
+        available,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="available != null" >
+        #{available,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateById" parameterType="com.yf.zx.biz.sys.role.entity.Role" >
+    update sys_roles
+    <set >
+      <if test="role != null" >
+        role = #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="available != null" >
+        available = #{available,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.sys.role.entity.Role" >
+    update sys_roles
+    set role = #{role,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      available = #{available,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <!-- 主键自增，字段可选 -->
+  <insert id="insertAutoId" useGeneratedKeys="true" keyProperty="id" 
+ 		parameterType="com.yf.zx.biz.sys.role.entity.Role" >
+ 	insert into sys_roles
+ 	<trim prefix="(" suffix=")" suffixOverrides="," >
+	  <if test="role != null" >
+        role,
+      </if>
+	  <if test="description != null" >
+        description,
+      </if>
+	  <if test="available != null" >
+        available,
+      </if>
+ 	</trim>	
+ 	<trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="role != null" >
+        #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="available != null" >
+        #{available,jdbcType=VARCHAR},
+      </if>
+ 	</trim>		
+  </insert>
+  
+  <!-- 查询角色列表-->
+  <select id="selectRole" parameterType="com.yf.zx.biz.sys.role.entity.RoleVo"
+   resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List"/>
+  	from sys_roles
+  	<where>
+  		<if test="role != null and role != ''">
+  			and role = #{role, jdbcType=VARCHAR}
+  		</if>
+  		<if test="description != null and description != ''">
+  			and description = #{description, jdbcType=VARCHAR}
+  		</if>
+  	</where>
+  </select>
+
+  <!-- 查询角色列表-->
+  <select id="selectByRoleName" parameterType="com.yf.zx.biz.sys.role.entity.Role"
+   resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List"/>
+  	from sys_roles
+  	where role = #{role, jdbcType=VARCHAR}
+  	<if test="id != null">
+  			and id != #{id, jdbcType=BIGINT}
+ 	 </if>
+  </select>
+  
+   <!-- 根据id列表删除多个，物理删除 -->
+  <delete id="delByIds">
+  	delete from sys_roles
+  	 where id in
+  	 <foreach item="id" index="index" collection="array" open="(" separator="," close=")"> 
+	    #{id} 
+	</foreach>
+  </delete>
+  
+  <select id="selectPermidsByRoleId" parameterType="java.lang.Long" resultType="java.lang.Long">
+  	select permission_id
+  	  from sys_roles_permissions
+  	 where role_id = #{roleId,jdbcType=BIGINT}
+  </select>
+  
+  <!-- 根据roleId删除角色权限关系 -->
+  <delete id="delRolePermByRoleId" parameterType="java.lang.Long">
+  	delete from sys_roles_permissions
+  	 where role_id = #{roleId,jdbcType=BIGINT}
+  </delete>
+  
+  <!-- 批量插入角色权限关系 -->
+  <insert id="batchInserRolePerm" parameterType="java.util.List">
+  	insert into sys_roles_permissions(role_id, permission_id) values 
+  	<foreach collection="list" item="item" index="index" separator=",">
+  		(#{item.roleId, jdbcType=BIGINT},#{item.permId, jdbcType=BIGINT})
+  	</foreach>
+  </insert>
+</mapper>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+           http://www.springframework.org/schema/beans/spring-beans.xsd  
+           http://www.springframework.org/schema/context  
+           http://www.springframework.org/schema/context/spring-context.xsd  
+           http://www.springframework.org/schema/aop  
+           http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/jee
+           http://www.springframework.org/schema/jee/spring-jee.xsd 
+           http://www.springframework.org/schema/tx     
+           http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 默认的注解映射的支持 -->  
+    <context:annotation-config />  
+
+    <!-- 引入jdbc.properties属性文件 -->
+    <context:property-placeholder location="classpath:conf/jdbc.properties" />
+    <!-- ========================================配置数据源========================================= -->
+     <!--  数据源配置 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		 init-method="init" destroy-method="close"> 
+      <!-- 基本属性 url、user、password -->
+      <property name="url" value="${jdbc.url}" />
+      <property name="username" value="${jdbc.username}" />
+      <property name="password" value="${jdbc.password}" />
+      <property name="driverClassName" value="${jdbc.driverClassName}" />
+        
+      <!-- 配置初始化大小、最小、最大 -->
+      <property name="initialSize" value="1" />
+      <property name="minIdle" value="1" /> 
+      <property name="maxActive" value="20" />
+   
+      <!-- 配置获取连接等待超时的时间 -->
+      <property name="maxWait" value="60000" />
+   
+      <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+      <property name="timeBetweenEvictionRunsMillis" value="60000" />
+   
+      <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+      <property name="minEvictableIdleTimeMillis" value="30000" />
+    
+      <property name="validationQuery" value="SELECT 1" />
+      <property name="testWhileIdle" value="true" />
+      <property name="testOnBorrow" value="false" />
+      <property name="testOnReturn" value="false" />
+   
+      <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+      <property name="poolPreparedStatements" value="false" />
+      <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+   
+      <!-- 配置监控统计拦截的filters -->
+      <property name="filters" value="stat" /> 
+
+	  <!-- 参考 http://blog.csdn.net/wo8553456/article/details/40396401 -->
+      <property name="removeAbandoned" value="false" /> 
+      <property name="removeAbandonedTimeout" value="3600" /> 
+      <property name="logAbandoned" value="true" /> 
+      <property name="defaultAutoCommit" value="false" /> 
+  </bean>
+    
+    <!-- 自动扫描目录下所有SQL映射的xml文件, -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath:com/yf/zx/biz/sys/*/mapper/*.xml" />
+        <property name="configLocation" value="classpath:conf/mybatis-config.xml"></property>
+    	
+    	 <!-- 配置mybatis分页插件PageHelper -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <!-- 什么都不配，使用默认的配置 -->
+                        <value></value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    
+    </bean>
+    <!-- 扫描指定包以及子包下的所有映射接口类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <property name="basePackage" value="com.yf.zx.biz" />
+    </bean>
+
+    <!-- 配置Spring的事务管理器 -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 注解方式配置事物 -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

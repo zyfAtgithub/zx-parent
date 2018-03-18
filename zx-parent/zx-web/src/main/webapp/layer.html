@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>开始使用layui</title>
+<link rel="stylesheet" href="webResources/plugins/layui/css/layui.css">
+<link rel="stylesheet" href="webResources/plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+
+<style type="text/css">
+	.header-demo {
+		height: 60px;
+		border-bottom: none;
+	}
+	
+	.header {
+		height: 59px;
+		border-bottom: 1px solid #404553;
+		background-color: #393D49;
+	}
+	
+	.logo img {
+		width: 82px;
+		height: 31px;
+	}
+	
+	.header-demo .logo {
+		left: 40px;
+	}
+	
+	.logo {
+		position: absolute;
+		left: 0;
+		top: 16px;
+	}
+	
+	.right-content {
+		margin-left: 200px;
+	}
+	.layui-nav-item {
+	    line-height: 40px;
+	}
+	
+	.layui-nav-item a{
+		font-size:15px;
+	}
+	
+	.layui-nav-item a .dropdown{
+	    top: 20px;
+	    right: 10px;
+	    margin: 0;
+	    content: '';
+	    width: 0;
+	    height: 0;
+	    border-style: solid dashed dashed;
+	    border-color: #fff transparent transparent;
+	    overflow: hidden;
+	    cursor: pointer;
+	    transition: all .2s;
+	    -webkit-transition: all .2s;
+	    position: absolute;
+	    top: 50%;
+	    right: 3px;
+	    margin-top: -3px;
+	    border-width: 6px;
+	    border-top-color: rgba(255,255,255,.7);
+	}
+
+	.layui-nav-item a i.layui-icon{
+		margin-right:12px;
+		font-size: 25px;
+	}
+	.layui-nav-item a:hover{
+		color: #1E9FFF !important;
+	}
+
+	.layui-nav-child a{
+		font-size:14px;
+	}
+	
+	.layui-nav-child a i.layui-icon{
+		margin-right:15px;
+		font-size: 20px;
+	}
+	
+	.right-content .right-breadcrumb{
+		padding:6px 14px;
+	    border-bottom: 1px solid #eee;
+	}
+	.right-content .right-main {
+		
+	}
+	.tree-list {
+		margin-left:5px;
+		margin-top:5px;
+		padding:10px 8px;
+		border:1px solid #D9D9D9;
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+		height:500px;
+	    overflow: auto;
+	}
+	
+	.tree-view{
+		background: cyan;
+	}
+	
+	
+	
+</style>
+</head>
+<body>
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header header header-demo">
+			<div class="layui-main">
+				<a class="logo" href="http://127.0.0.1:8080/zx-web/layer.html"> <img
+					src="webResources/images/logo.png" alt="layui">
+				</a>
+			</div>
+		</div>
+
+		<!-- sidebar -->
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll" id="admin-navbar-side">
+				<ul class="layui-nav layui-nav-tree layui-bg-cyan layui-inline"  id="admin-side">
+				  <li class="layui-nav-item layui-nav-itemed">
+				    <a href="javascript:;"><i class="layui-icon">&#xe68e;</i>欢迎</a>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon">&#xe631;</i>系统管理</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href=""><i class="layui-icon">&#xe612;</i>用户管理</a>
+				      </dd>
+				      <dd><a href=""><i class="layui-icon">&#xe613;</i>角色管理</a></dd>
+				      <dd><a href=""><i class="layui-icon">&#xe605;</i>权限管理</a></dd>
+				    </dl>
+				  </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="right-content">
+		<div class="right-breadcrumb">
+			<span class="layui-breadcrumb">
+			  <a href="">首页</a>
+			  <a><cite>系统管理</cite></a>
+			  <a><cite>用户管理</cite></a>
+			</span>
+		</div>
+		<div class="right-main layui-row">
+			<div class="layui-col-md3 tree-list">
+				<ul id="treeDemo" class="ztree"></ul>
+			</div>
+			
+		    <div class="layui-col-md2 ">
+		    	这是第二列sss
+		    </div>
+		</div>
+	</div> -->
+	<script src="webResources/js/jquery-2.1.1.min.js"></script>
+	<script src="webResources/plugins/zTree_v3/js/jquery.ztree.core.js"></script>
+	<script src="webResources/js/layer.js"></script>
+	<script src="webResources/plugins/layui/layui.all.js"></script>
+	<script type="text/javascript">
+	</script>
+</body>
+</html>

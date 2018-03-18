@@ -1,0 +1,20 @@
+.layui-body{
+	height:calc(100% - 60px);
+}
+.right-topnav{
+	padding:6px 14px;
+    border-bottom: 1px solid #eee;
+	background: #E8E8E8;
+}
+
+.right-content{
+	padding:6px 12px;
+	width:100%;
+	height:calc(100% - 50px);
+}
+
+.right-content iframe{
+	width:98%;
+	height:100%;
+	border:0;
+}

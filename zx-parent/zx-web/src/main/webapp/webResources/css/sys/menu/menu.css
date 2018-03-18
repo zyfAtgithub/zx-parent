@@ -1,0 +1,14 @@
+.container {
+}
+.left-treeview {
+	height:532px;
+	overflow-x:auto;
+	overflow-y:auto; 
+	border:1px solid #D1D7DC;
+	border-radius:4px;
+	position: relative;
+}
+
+.right-listview {
+	padding-left: 4px;
+}

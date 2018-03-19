@@ -6,8 +6,6 @@ import com.github.pagehelper.PageInfo;
 import com.yf.zx.biz.log.login.dao.LoginLogMapper;
 import com.yf.zx.biz.log.login.entity.LoginLog;
 import com.yf.zx.biz.log.login.entity.LoginLogVo;
-import com.yf.zx.biz.sys.user.entity.User;
-import com.yf.zx.biz.sys.user.entity.UserVo;
 import com.yf.zx.core.base.web.PageReturn;
 import com.yf.zx.core.util.common.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

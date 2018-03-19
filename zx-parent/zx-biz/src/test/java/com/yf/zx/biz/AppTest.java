@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.yf.zx.biz.log.login.entity.LoginLog;
+import com.yf.zx.biz.log.login.entity.LoginLogVo;
+import com.yf.zx.biz.log.login.service.LoginLogService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,6 +51,9 @@ public class AppTest {
 	@Autowired
 	RoleService roleService;
 
+	@Autowired
+	LoginLogService loginLogService;
+
     @Before
     public void before() {
 //        logger.info("Before");
@@ -60,7 +66,7 @@ public class AppTest {
 
     @Test
     public void exitTest() {
-        assertEquals(userService.existUser("admin"), false);
+        assertEquals(userService.existUser("admin"), true);
     }
 
     @Test
@@ -254,6 +260,11 @@ public class AppTest {
     	map.put(null, "nihao");
     	System.out.println(map.get(null));
     }
-    
+
+    @Test
+	public void qryLoginLog() {
+		LoginLogVo loginLogVo = new LoginLogVo();
+		PageReturn<LoginLog> page = loginLogService.findByPage(loginLogVo);
+    }
     
 }

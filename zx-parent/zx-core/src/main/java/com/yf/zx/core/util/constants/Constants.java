@@ -7,7 +7,10 @@ public final class Constants {
 	
 	/** 当前系统登录用户 */
 	public static final String CUR_LOGIN_USER = "CurLoginUser";
-	
+
+	/** 当前登录日志id，退出时用*/
+	public static final String CUR_LOGIN_LOGID = "CurLoginlogId";
+
 	/**
 	 * 日志文件大小阀值（G）
 	 */

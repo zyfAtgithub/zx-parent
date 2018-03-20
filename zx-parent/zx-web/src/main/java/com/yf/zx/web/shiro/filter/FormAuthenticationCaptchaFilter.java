@@ -5,6 +5,11 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yf.zx.biz.log.login.entity.LoginLog;
+import com.yf.zx.biz.log.login.service.LoginLogService;
+import com.yf.zx.core.util.http.UserAgentUtils;
+import com.yf.zx.core.util.ip.IPUtil;
+import nl.bitwalker.useragentutils.UserAgent;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -22,6 +27,8 @@ import com.yf.zx.core.util.http.HttpUtil;
 import com.yf.zx.web.shiro.exception.CaptchaException;
 import com.yf.zx.web.shiro.token.UsernamePasswordCaptchaToken;
 
+import java.util.Date;
+
 public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
     private static final Logger logger = LoggerFactory.getLogger(FormAuthenticationCaptchaFilter.class);  
 
@@ -29,31 +36,44 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
     
 	@Autowired
     private UserService userService;
-	
+
+	@Autowired
+	private LoginLogService loginLogService;
+
     @Override  
     /** 
      * 登录验证 
      */  
     protected boolean executeLogin(ServletRequest request,  
             ServletResponse response) throws Exception {  
-    	UsernamePasswordCaptchaToken token = createToken(request, response);  
-        try {
+    	UsernamePasswordCaptchaToken token = createToken(request, response);
+		LoginLog loginLog = new LoginLog();
+    	try {
+			loginLog.setLogintime(new Date());
+    		loginLog.setLoginuser(token.getUsername());
+    		loginLog.setIp(IPUtil.getClientIp((HttpServletRequest) request));
+			UserAgent userAgent = UserAgentUtils.getClientInfo((HttpServletRequest) request);
+			loginLog.setLogindevice(userAgent.getOperatingSystem().getName());
         	if (vertifyCodeEnabled) {
         		/*图形验证码验证*/  
         		doCaptchaValidate((HttpServletRequest) request, token);  
         	}
             Subject subject = getSubject(request, response);  
             subject.login(token);//正常验证  
-            logger.info(token.getUsername()+"登录成功");  
-            
+            logger.info(token.getUsername()+"登录成功");
+			loginLog.setLoginResult("1");
+			loginLogService.addLog(loginLog);
             User user = userService.getUserByName(token.getUsername());
             user.setLastloginTime(DateUtils.getNowTime());
             userService.editById(user);
             Session session = subject.getSession();
             session.setAttribute(Constants.CUR_LOGIN_USER, user);
-            return onLoginSuccess(token, subject, request, response);  
+            session.setAttribute(Constants.CUR_LOGIN_LOGID, loginLog.getId());
+            return onLoginSuccess(token, subject, request, response);
         }catch (AuthenticationException e) {  
-        	logger.info(token.getUsername()+"登录失败--"+e);  
+        	logger.info(token.getUsername()+"登录失败--"+e);
+			loginLog.setLoginResult("0");
+			loginLogService.addLog(loginLog);
             return onLoginFailure(token, e, request, response);  
         }  
     }  

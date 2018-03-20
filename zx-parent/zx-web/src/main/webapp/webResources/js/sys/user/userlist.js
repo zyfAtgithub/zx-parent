@@ -1,6 +1,5 @@
 layui.use([ 'form', 'table' ], function() {
 	var table = layui.table, form = layui.form, $ = layui.jquery;
-	console.log('User List!!!');
 	var tbIns = table.render({
 		id : 'dataTableUser',
 		elem : '#userTb',

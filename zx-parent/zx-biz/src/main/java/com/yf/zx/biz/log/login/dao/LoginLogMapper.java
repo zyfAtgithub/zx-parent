@@ -20,4 +20,6 @@ public interface LoginLogMapper {
     int updateByPrimaryKey(LoginLog record);
 
     List<LoginLog> selectLoginLog(LoginLogVo loginLogVo);
+
+    int delByIds(String[] idArr);
 }

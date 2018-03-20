@@ -87,6 +87,9 @@
         <property name="loginUrl" value="${loginUrl}"/>
         <property name="successUrl" value="${successUrl}"/>
 	</bean>
+
+    <bean id="logout" class="com.yf.zx.web.shiro.filter.MyLogoutFilter" />
+
     <!-- Shiro的Web过滤器 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
@@ -95,15 +98,15 @@
         <property name="filters">
             <util:map>
                 <entry key="authc" value-ref="formAuthenticationCaptchaFilter"/>
+                <entry key="logout" value-ref="logout"/>
             </util:map>
         </property>
-        <!-- favicon.ico配置匿名访问 -->
         <property name="filterChainDefinitions">
             <value>
                 /logout = logout
                 /webResources/** = anon
                 /code/captcha-image = anon
-                /favicon.ico = anon
+                /favicon.ico = anon <!-- favicon.ico配置匿名访问 -->
                 /** = authc
             </value>
         </property>

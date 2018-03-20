@@ -2,11 +2,7 @@ package com.yf.zx.biz;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import com.yf.zx.biz.log.login.entity.LoginLog;
 import com.yf.zx.biz.log.login.entity.LoginLogVo;
@@ -75,7 +71,7 @@ public class AppTest {
     	logger.info(user.toString());
     }
     
-    @Test
+//    @Test
     public void addUsertest() {
     	User user = new User();
     	user.setLoginname("admin");
@@ -86,7 +82,7 @@ public class AppTest {
     	System.out.println(ret);
     }
     
-    @Test
+//    @Test
     public void delUser() {
     	ResultReturn ret = userService.deleteUserByIds("16|18");
     	System.out.println(JSONObject.toJSONString(ret));
@@ -114,7 +110,7 @@ public class AppTest {
     	System.out.println(json);
     }
     
-    @Test
+//    @Test
     public void addMenu() {
     	Menu menu = new Menu();
     	menu.setMenuname("菜单管理");
@@ -171,7 +167,7 @@ public class AppTest {
     	System.out.println(JSONObject.toJSONString(menu));
     }
     
-    @Test
+//    @Test
     public void updateMenu() {
     	Menu menu = new Menu();
     	menu.setId(11l);
@@ -180,7 +176,7 @@ public class AppTest {
     	System.out.println(JSONObject.toJSONString(ret));
     }
     
-    @Test
+//    @Test
     public void delMenu() {
     	String ids = "11|13|14";
     	ResultReturn ret = menuService.deleteMenuByIds(ids);
@@ -205,7 +201,7 @@ public class AppTest {
     	System.out.println(JSONObject.toJSONString(ret));
     }
     
-    @Test
+//    @Test
     public void addRole() {
     	Role role = new Role();
     	role.setRole("3");
@@ -215,7 +211,7 @@ public class AppTest {
     	System.out.println(JSONObject.toJSONString(ret));
     }
     
-    @Test
+//    @Test
     public void delRole() {
     	String ids = "1|2|232|3|4";
     	ResultReturn ret = roleService.deleteRoleByIds(ids);
@@ -228,7 +224,7 @@ public class AppTest {
     	System.out.println(JSONObject.toJSONString(ret));
     }
     
-    @Test
+//    @Test
     public void editRole() {
     	Role role = new Role();
     	role.setId(5l);
@@ -264,7 +260,33 @@ public class AppTest {
     @Test
 	public void qryLoginLog() {
 		LoginLogVo loginLogVo = new LoginLogVo();
+//		loginLogVo.setIp("127.0.0.1");
+		loginLogVo.setLogintimeBegin("2018-03-20 19:31:17");
+//		loginLogVo.setLogintimeEnd("2018-03-20 19:36:26");
+		loginLogVo.setLogindevice("%droi%");
 		PageReturn<LoginLog> page = loginLogService.findByPage(loginLogVo);
+		System.out.println(page);
+		System.out.println(JSONObject.toJSONString(page));
+	}
+
+    @Test
+	public void addLoginLog() {
+		LoginLog loginLog = new LoginLog();
+		loginLog.setIp("192.168.100.125");
+		loginLog.setLoginuser("zyf");
+		loginLog.setLogintime(new Date());
+		loginLog.setLoginResult("1");
+
+		ResultReturn ret = loginLogService.addLog(loginLog);
+		System.out.println(JSONObject.toJSONString(ret));
+		System.out.println(loginLog.getId());
+	}
+
+//    @Test
+	public void delLoginLog() {
+    	String ids = "1|2";
+		ResultReturn ret = loginLogService.deleteLoginLogByIds(ids);
+		System.out.println(JSONObject.toJSONString(ret));
     }
     
 }

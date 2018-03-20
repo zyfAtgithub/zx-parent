@@ -91,7 +91,7 @@ public class UserService {
 	 * 根据登录名查询用户[多个时返回第一个]
 	 *  
 	 * @author zhang.yifeng 
-	 * @param userName
+	 * @param loginName
 	 * @return
 	 */
 	public User getUserByName(String loginName) {

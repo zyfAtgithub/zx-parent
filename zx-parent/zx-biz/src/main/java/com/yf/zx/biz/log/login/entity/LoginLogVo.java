@@ -21,6 +21,9 @@ public class LoginLogVo extends BaseVo {
 
     private String logindevice;
 
+    /** 登录结果 */
+    private String loginResult;
+
     public Long getId() {
         return id;
     }
@@ -85,17 +88,27 @@ public class LoginLogVo extends BaseVo {
         this.logindevice = logindevice == null ? null : logindevice.trim();
     }
 
+
+    public String getLoginResult() {
+        return loginResult;
+    }
+
+    public void setLoginResult(String loginResult) {
+        this.loginResult = loginResult;
+    }
+
     @Override
     public String toString() {
         return "LoginLogVo{" +
                 "id=" + id +
-                ", logintimeBegin=" + logintimeBegin +
-                ", logintimeEnd=" + logintimeEnd +
-                ", logouttimeBegin=" + logouttimeBegin +
-                ", logouttimeEnd=" + logouttimeEnd +
+                ", logintimeBegin='" + logintimeBegin + '\'' +
+                ", logintimeEnd='" + logintimeEnd + '\'' +
+                ", logouttimeBegin='" + logouttimeBegin + '\'' +
+                ", logouttimeEnd='" + logouttimeEnd + '\'' +
                 ", ip='" + ip + '\'' +
                 ", loginuser='" + loginuser + '\'' +
                 ", logindevice='" + logindevice + '\'' +
+                ", loginResult='" + loginResult + '\'' +
                 '}';
     }
 }

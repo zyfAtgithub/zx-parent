@@ -8,9 +8,10 @@
     <result column="ip" property="ip" jdbcType="VARCHAR" />
     <result column="loginuser" property="loginuser" jdbcType="VARCHAR" />
     <result column="logindevice" property="logindevice" jdbcType="VARCHAR" />
+    <result column="loginResult" property="loginResult" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, logintime, logouttime, ip, loginuser, logindevice
+    id, logintime, logouttime, ip, loginuser, logindevice, loginResult
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -22,12 +23,13 @@
     delete from login_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yf.zx.biz.log.login.entity.LoginLog" >
-    insert into login_log (id, logintime, logouttime, 
-      ip, loginuser, logindevice
+  <insert id="insert" parameterType="com.yf.zx.biz.log.login.entity.LoginLog" useGeneratedKeys="true" keyProperty="id">
+    insert into login_log (logintime, logouttime,
+      ip, loginuser, logindevice, loginResult
       )
-    values (#{id,jdbcType=BIGINT}, #{logintime,jdbcType=TIMESTAMP}, #{logouttime,jdbcType=TIMESTAMP}, 
-      #{ip,jdbcType=VARCHAR}, #{loginuser,jdbcType=VARCHAR}, #{logindevice,jdbcType=VARCHAR}
+    values (#{logintime,jdbcType=TIMESTAMP}, #{logouttime,jdbcType=TIMESTAMP},
+      #{ip,jdbcType=VARCHAR}, #{loginuser,jdbcType=VARCHAR}, #{logindevice,jdbcType=VARCHAR},
+      #{loginResult,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.yf.zx.biz.log.login.entity.LoginLog" >
@@ -51,6 +53,9 @@
       <if test="logindevice != null" >
         logindevice,
       </if>
+      <if test="loginResult != null" >
+        loginResult,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -70,6 +75,9 @@
       </if>
       <if test="logindevice != null" >
         #{logindevice,jdbcType=VARCHAR},
+      </if>
+      <if test="loginResult != null" >
+        #{loginResult,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -91,6 +99,9 @@
       <if test="logindevice != null" >
         logindevice = #{logindevice,jdbcType=VARCHAR},
       </if>
+      <if test="loginResult != null" >
+        loginResult = #{loginResult,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -100,7 +111,8 @@
       logouttime = #{logouttime,jdbcType=TIMESTAMP},
       ip = #{ip,jdbcType=VARCHAR},
       loginuser = #{loginuser,jdbcType=VARCHAR},
-      logindevice = #{logindevice,jdbcType=VARCHAR}
+      logindevice = #{logindevice,jdbcType=VARCHAR},
+      loginResult = #{loginResult,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 
@@ -122,6 +134,10 @@
         and logindevice like #{logindevice,jdbcType=VARCHAR}
       </if>
 
+      <if test="loginResult != null and loginResult != ''">
+        and loginResult = #{loginResult,jdbcType=VARCHAR}
+      </if>
+
       <if test="logintimeBegin != null and logintimeBegin != ''">
         <![CDATA[and logintime >= #{logintimeBegin, jdbcType=VARCHAR}]]>
       </if>
@@ -139,4 +155,13 @@
       </if>
     </where>
   </select>
+
+  <!-- 根据id列表删除多个，物理删除 -->
+  <delete id="delByIds">
+    delete from login_log
+    where id in
+    <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </delete>
 </mapper>

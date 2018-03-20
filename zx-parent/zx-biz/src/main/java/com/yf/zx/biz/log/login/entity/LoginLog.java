@@ -15,6 +15,13 @@ public class LoginLog {
 
     private String logindevice;
 
+    /**
+     * 登录结果
+     * 1-登录成功
+     * 0-登录失败
+     */
+    private String loginResult;
+
     public Long getId() {
         return id;
     }
@@ -61,5 +68,13 @@ public class LoginLog {
 
     public void setLogindevice(String logindevice) {
         this.logindevice = logindevice == null ? null : logindevice.trim();
+    }
+
+    public String getLoginResult() {
+        return loginResult;
+    }
+
+    public void setLoginResult(String loginResult) {
+        this.loginResult = loginResult;
     }
 }

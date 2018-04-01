@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="serviceTarget" class="com.yf.zx.spring.aop.ServiceBeanImpl"/>
+    <bean id="logAdvisor" class="com.yf.zx.spring.aop.LogAdvisor"/>
+
+
+    <!-- 通过配置bean 实现了动态代理  proxyInterfaces:代理接口
+    target:实体类
+    intercepterNames:所动态生成的代理类拦截器-->
+    <bean id="service" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <value>com.yf.zx.spring.aop.ServiceBean</value>
+        </property>
+        <property name="target" ref = "serviceTarget"/>
+        <property name="interceptorNames">
+            <list>
+                <value>logAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

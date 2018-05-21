@@ -96,19 +96,4 @@ public class LoginLogVo extends BaseVo {
     public void setLoginResult(String loginResult) {
         this.loginResult = loginResult;
     }
-
-    @Override
-    public String toString() {
-        return "LoginLogVo{" +
-                "id=" + id +
-                ", logintimeBegin='" + logintimeBegin + '\'' +
-                ", logintimeEnd='" + logintimeEnd + '\'' +
-                ", logouttimeBegin='" + logouttimeBegin + '\'' +
-                ", logouttimeEnd='" + logouttimeEnd + '\'' +
-                ", ip='" + ip + '\'' +
-                ", loginuser='" + loginuser + '\'' +
-                ", logindevice='" + logindevice + '\'' +
-                ", loginResult='" + loginResult + '\'' +
-                '}';
-    }
 }

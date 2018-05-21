@@ -70,9 +70,7 @@ public class PasswordEncrypt {
      * 生成随机盐值对密码进行加密
      *  
      * @author zhang.yifeng 
-     * @param username[用户名]
-     * @param password[用户 明文密码]
-     * @return
+     * @param user [用户名 用户 明文密码]
      */
     public static void encrypt(User user) {
     	if (user == null || StringUtils.isNullOrEmpty(user.getLoginname()) 

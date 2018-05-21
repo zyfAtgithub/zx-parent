@@ -37,10 +37,6 @@ public class LoginLogController {
     @ResponseBody //处理 AJAX请求，返回响应的内容，而不是 View Name
     public String list(LoginLogVo loginLogVo) {
 
-        if (StringUtils.isNotNullAndEmpty(loginLogVo.getIp())) {
-            loginLogVo.setIp(loginLogVo.getIp());
-        }
-
         if (StringUtils.isNotNullAndEmpty(loginLogVo.getLoginuser())) {
             loginLogVo.setLoginuser("%" + loginLogVo.getLoginuser() + "%");
         }

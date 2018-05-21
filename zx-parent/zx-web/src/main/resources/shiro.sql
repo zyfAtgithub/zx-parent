@@ -26,6 +26,7 @@ CREATE TABLE `login_log` (
   `ip` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '登录ip',
   `loginuser` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '登录用户',
   `logindevice` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '登录设备',
+  `loginResult` varchar(8) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '登录结果',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

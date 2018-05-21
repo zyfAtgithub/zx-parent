@@ -49,7 +49,8 @@
 			    			<button class="layui-btn layui-btn-primary layui-btn-small" type="reset">重置</button>
 		    			</shiro:hasPermission>
 		    		</div>
-		    	</div>			
+		    	</div>
+				<input type="hidden" name="orderBy" value="logintime desc" />
 			</form>
 		</div>
 		<div class="layui-row">

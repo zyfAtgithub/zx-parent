@@ -123,6 +123,7 @@ layui.use([ 'form', 'table', 'laydate' ], function() {
     });
 
     form.on('submit(queryLoginLog)', function(data) {
+        debugger;
         tbIns.reload({
             url : 'list',
             where : data.field
@@ -131,6 +132,8 @@ layui.use([ 'form', 'table', 'laydate' ], function() {
     });
 
     $('#btn-refresh').click(function() {
+        debugger;
+        layer.alert('sss');
         tbIns.reload({
             url : 'list'
         });

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yf.zx.biz.log.syslog.dao.SysLogMapper" >
+  <resultMap id="BaseResultMap" type="com.yf.zx.biz.log.syslog.entity.SysLog" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <id column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="IP_ADDRESS" property="ipAddress" jdbcType="VARCHAR" />
+    <result column="GENERATE_TIME" property="generateTime" jdbcType="TIMESTAMP" />
+    <result column="LOG_LEVEL" property="logLevel" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yf.zx.biz.log.syslog.entity.SysLog" extends="BaseResultMap" >
+    <result column="MSG" property="msg" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, CREATE_TIME, IP_ADDRESS, GENERATE_TIME, LOG_LEVEL
+  </sql>
+  <sql id="Blob_Column_List" >
+    MSG
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.yf.zx.biz.log.syslog.entity.SysLogKey" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from switch_syslog
+    where ID = #{id,jdbcType=BIGINT}
+      and CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.yf.zx.biz.log.syslog.entity.SysLogKey" >
+    delete from switch_syslog
+    where ID = #{id,jdbcType=BIGINT}
+      and CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+  </delete>
+  <insert id="insert" parameterType="com.yf.zx.biz.log.syslog.entity.SysLog" >
+    insert into switch_syslog (ID, CREATE_TIME, IP_ADDRESS, 
+      GENERATE_TIME, LOG_LEVEL, MSG
+      )
+    values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{ipAddress,jdbcType=VARCHAR}, 
+      #{generateTime,jdbcType=TIMESTAMP}, #{logLevel,jdbcType=VARCHAR}, #{msg,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yf.zx.biz.log.syslog.entity.SysLog" >
+    insert into switch_syslog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="ipAddress != null" >
+        IP_ADDRESS,
+      </if>
+      <if test="generateTime != null" >
+        GENERATE_TIME,
+      </if>
+      <if test="logLevel != null" >
+        LOG_LEVEL,
+      </if>
+      <if test="msg != null" >
+        MSG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ipAddress != null" >
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="generateTime != null" >
+        #{generateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logLevel != null" >
+        #{logLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null" >
+        #{msg,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yf.zx.biz.log.syslog.entity.SysLog" >
+    update switch_syslog
+    <set >
+      <if test="ipAddress != null" >
+        IP_ADDRESS = #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="generateTime != null" >
+        GENERATE_TIME = #{generateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logLevel != null" >
+        LOG_LEVEL = #{logLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null" >
+        MSG = #{msg,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+      and CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yf.zx.biz.log.syslog.entity.SysLog" >
+    update switch_syslog
+    set IP_ADDRESS = #{ipAddress,jdbcType=VARCHAR},
+      GENERATE_TIME = #{generateTime,jdbcType=TIMESTAMP},
+      LOG_LEVEL = #{logLevel,jdbcType=VARCHAR},
+      MSG = #{msg,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+      and CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yf.zx.biz.log.syslog.entity.SysLog" >
+    update switch_syslog
+    set IP_ADDRESS = #{ipAddress,jdbcType=VARCHAR},
+      GENERATE_TIME = #{generateTime,jdbcType=TIMESTAMP},
+      LOG_LEVEL = #{logLevel,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+      and CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+  </update>
+
+
+  <!-- 条件查询 -->
+  <select id="selectSysLog" parameterType="com.yf.zx.biz.log.syslog.entity.SysLogVo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />,
+    <include refid="Blob_Column_List" />
+    from switch_syslog
+    <where>
+      <if test="createTimeBegin != null and createTimeBegin != ''" >
+        <![CDATA[and CREATE_TIME >= #{createTimeBegin,jdbcType=VARCHAR}]]>
+      </if>
+      <if test="createTimeEnd != null and createTimeEnd != ''" >
+        <![CDATA[and CREATE_TIME <= #{createTimeEnd,jdbcType=VARCHAR}]]>
+      </if>
+      <if test="ipAddress != null and ipAddress != ''" >
+        and IP_ADDRESS = #{ipAddress,jdbcType=VARCHAR}
+      </if>
+      <if test="generateTimeBegin != null and generateTimeBegin != ''" >
+        <![CDATA[and GENERATE_TIME >= #{generateTimeBegin,jdbcType=VARCHAR}]]>
+      </if>
+      <if test="generateTimeEnd != null and generateTimeEnd != ''" >
+        <![CDATA[and GENERATE_TIME <= #{generateTimeEnd,jdbcType=VARCHAR}]]>
+      </if>
+      <if test="logLevel != null and logLevel != ''" >
+        and LOG_LEVEL = #{logLevel,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+</mapper>

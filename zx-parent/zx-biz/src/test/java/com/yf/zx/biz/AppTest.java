@@ -7,6 +7,9 @@ import java.util.*;
 import com.yf.zx.biz.log.login.entity.LoginLog;
 import com.yf.zx.biz.log.login.entity.LoginLogVo;
 import com.yf.zx.biz.log.login.service.LoginLogService;
+import com.yf.zx.biz.log.syslog.entity.SysLog;
+import com.yf.zx.biz.log.syslog.entity.SysLogVo;
+import com.yf.zx.biz.log.syslog.service.SysLogService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,23 +35,26 @@ import com.yf.zx.core.base.web.ResultReturn;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
-    "classpath:conf/spring-*.xml"
+        "classpath:conf/spring-*.xml"
 })
 public class AppTest {
-	
-	Logger logger = LoggerFactory.getLogger(AppTest.class);
-	
-	@Autowired
-	UserService userService;
 
-	@Autowired
-	MenuService menuService;
+    Logger logger = LoggerFactory.getLogger(AppTest.class);
 
-	@Autowired
-	RoleService roleService;
+    @Autowired
+    UserService userService;
 
-	@Autowired
-	LoginLogService loginLogService;
+    @Autowired
+    MenuService menuService;
+
+    @Autowired
+    RoleService roleService;
+
+    @Autowired
+    LoginLogService loginLogService;
+
+    @Autowired
+    SysLogService sysLogService;
 
     @Before
     public void before() {
@@ -67,226 +73,239 @@ public class AppTest {
 
     @Test
     public void selectTest() {
-    	User user = userService.getUserByName("admin");
-    	logger.info(user.toString());
+        User user = userService.getUserByName("admin");
+        logger.info(user.toString());
     }
-    
-//    @Test
+
+    //    @Test
     public void addUsertest() {
-    	User user = new User();
-    	user.setLoginname("admin");
-    	user.setUsername("系统管理员");
-    	user.setPassword("6168db58405a9eab7828e6a47ff73383");//123456
-    	user.setSalt("28495018162ad6328783c3bde7364346");
-    	ResultReturn ret = userService.addUser(user);
-    	System.out.println(ret);
+        User user = new User();
+        user.setLoginname("admin");
+        user.setUsername("系统管理员");
+        user.setPassword("6168db58405a9eab7828e6a47ff73383");//123456
+        user.setSalt("28495018162ad6328783c3bde7364346");
+        ResultReturn ret = userService.addUser(user);
+        System.out.println(ret);
     }
-    
-//    @Test
+
+    //    @Test
     public void delUser() {
-    	ResultReturn ret = userService.deleteUserByIds("16|18");
-    	System.out.println(JSONObject.toJSONString(ret));
+        ResultReturn ret = userService.deleteUserByIds("16|18");
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
-    
+
+
     @Test
     public void findUserByPage() {
-    	UserVo userVo = new UserVo();
-    	userVo.setPage(0);
-    	userVo.setRows(1);
+        UserVo userVo = new UserVo();
+        userVo.setPage(0);
+        userVo.setRows(1);
 //    	userVo.setUsername("张益峰");
 //    	userVo.setLoginname("%a%");
-    	userVo.setOrderBy("lastlogin_time desc");
-    	
-    	PageReturn<User> page = userService.findByPage(userVo);
-    	String json = JSONObject.toJSONString(page);
-    	
-    	JSONObject jsonObject = new JSONObject();
-    	jsonObject.put("code",0);
-    	jsonObject.put("count",100);
-    	jsonObject.put("msg","");
-    	System.out.println( jsonObject.toString());
-    	System.out.println( jsonObject.toJSONString());
-    	System.out.println(json);
+        userVo.setOrderBy("lastlogin_time desc");
+
+        PageReturn<User> page = userService.findByPage(userVo);
+        String json = JSONObject.toJSONString(page);
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("code", 0);
+        jsonObject.put("count", 100);
+        jsonObject.put("msg", "");
+        System.out.println(jsonObject.toString());
+        System.out.println(jsonObject.toJSONString());
+        System.out.println(json);
     }
-    
-//    @Test
+
+    //    @Test
     public void addMenu() {
-    	Menu menu = new Menu();
-    	menu.setMenuname("菜单管理");
-    	menu.setMenuurl("sys/menu/tolist");
-    	menu.setMenuicon("fa fa-sitemap faa-flash");
-    	menu.setMenuorder(4);
-    	menu.setIsshow(true);
-    	menu.setParentid(2l);
-    	menu.setLevel(2);
-    	menu.setIsbtn(false);
-    	ResultReturn ret = menuService.addMenu(menu);
-    	System.out.println(JSONObject.toJSONString(ret));
+        Menu menu = new Menu();
+        menu.setMenuname("菜单管理");
+        menu.setMenuurl("sys/menu/tolist");
+        menu.setMenuicon("fa fa-sitemap faa-flash");
+        menu.setMenuorder(4);
+        menu.setIsshow(true);
+        menu.setParentid(2l);
+        menu.setLevel(2);
+        menu.setIsbtn(false);
+        ResultReturn ret = menuService.addMenu(menu);
+        System.out.println(JSONObject.toJSONString(ret));
     }
 
     @Test
     public void getMenu() {
-    	List<Long> menuIds = new ArrayList<Long>();
-    	menuIds.add(2l);
-    	menuIds.add(4l);
-    	ResultReturn ret = menuService.loadMenuList(menuIds);
-    	System.out.println(JSONObject.toJSONString(ret));
+        List<Long> menuIds = new ArrayList<Long>();
+        menuIds.add(2l);
+        menuIds.add(4l);
+        ResultReturn ret = menuService.loadMenuList(menuIds);
+        System.out.println(JSONObject.toJSONString(ret));
     }
 
     @Test
     public void loadMenuTree() {
-    	ResultReturn ret = menuService.loadMenuTree();
-    	System.out.println(JSONObject.toJSONString(ret));
+        ResultReturn ret = menuService.loadMenuTree();
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
+
     @Test
     public void getSubMenu() {
-    	Long parentId = 2l;
-    	MenuVo menuVo = new MenuVo();
-    	menuVo.setParentid(parentId);
-    	menuVo.setLevel(2);
-    	PageReturn<Menu> page = menuService.findMenuByPage(menuVo);
-    	System.out.println(JSONObject.toJSONString(page));
+        Long parentId = 2l;
+        MenuVo menuVo = new MenuVo();
+        menuVo.setParentid(parentId);
+        menuVo.setLevel(2);
+        PageReturn<Menu> page = menuService.findMenuByPage(menuVo);
+        System.out.println(JSONObject.toJSONString(page));
     }
 
     @Test
     public void getOperationBtn() {
-    	Long parentId = 3l;
-    	MenuVo menuVo = new MenuVo();
-    	menuVo.setParentid(parentId);
-    	menuVo.setLevel(3);
-    	menuVo.setIsbtn(true);
-    	PageReturn<Menu> page = menuService.findMenuByPage(menuVo);
-    	System.out.println(JSONObject.toJSONString(page));
+        Long parentId = 3l;
+        MenuVo menuVo = new MenuVo();
+        menuVo.setParentid(parentId);
+        menuVo.setLevel(3);
+        menuVo.setIsbtn(true);
+        PageReturn<Menu> page = menuService.findMenuByPage(menuVo);
+        System.out.println(JSONObject.toJSONString(page));
     }
-    
+
     @Test
     public void findMenuById() {
-    	Menu menu= menuService.findById(2l);
-    	System.out.println(JSONObject.toJSONString(menu));
+        Menu menu = menuService.findById(2l);
+        System.out.println(JSONObject.toJSONString(menu));
     }
-    
-//    @Test
+
+    //    @Test
     public void updateMenu() {
-    	Menu menu = new Menu();
-    	menu.setId(11l);
-    	menu.setMenuname("菜单管理");
-    	ResultReturn ret = menuService.editById(menu);
-    	System.out.println(JSONObject.toJSONString(ret));
+        Menu menu = new Menu();
+        menu.setId(11l);
+        menu.setMenuname("菜单管理");
+        ResultReturn ret = menuService.editById(menu);
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
-//    @Test
+
+    //    @Test
     public void delMenu() {
-    	String ids = "11|13|14";
-    	ResultReturn ret = menuService.deleteMenuByIds(ids);
-    	System.out.println(JSONObject.toJSONString(ret));
+        String ids = "11|13|14";
+        ResultReturn ret = menuService.deleteMenuByIds(ids);
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
+
     @Test
     public void operator() {
-    	char c = '\u0000';
-     	System.out.println(c == ' ');
-    	int res = 10 << 3;
-    	System.out.println("2 * 8 = " + res);
+        char c = '\u0000';
+        System.out.println(c == ' ');
+        int res = 10 << 3;
+        System.out.println("2 * 8 = " + res);
     }
-    
+
     @Test
     public void selectRole() {
-    	RoleVo roleVo = new RoleVo();
-    	roleVo.setPage(0);
-    	roleVo.setRows(20);
-    	roleVo.setOrderBy("id asc");
-    	PageReturn<Role> ret = roleService.findByPage(roleVo);
-    	System.out.println(JSONObject.toJSONString(ret));
+        RoleVo roleVo = new RoleVo();
+        roleVo.setPage(0);
+        roleVo.setRows(20);
+        roleVo.setOrderBy("id asc");
+        PageReturn<Role> ret = roleService.findByPage(roleVo);
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
-//    @Test
+
+    //    @Test
     public void addRole() {
-    	Role role = new Role();
-    	role.setRole("3");
-    	role.setDescription("角色3");
+        Role role = new Role();
+        role.setRole("3");
+        role.setDescription("角色3");
 //    	role.setPermids(new Long[] {2L,12L});
-    	ResultReturn ret = roleService.addRole(role);
-    	System.out.println(JSONObject.toJSONString(ret));
+        ResultReturn ret = roleService.addRole(role);
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
-//    @Test
+
+    //    @Test
     public void delRole() {
-    	String ids = "1|2|232|3|4";
-    	ResultReturn ret = roleService.deleteRoleByIds(ids);
-    	System.out.println(JSONObject.toJSONString(ret));
+        String ids = "1|2|232|3|4";
+        ResultReturn ret = roleService.deleteRoleByIds(ids);
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
+
     @Test
     public void getRoleById() {
-    	ResultReturn ret = roleService.getRoleById(5l);
-    	System.out.println(JSONObject.toJSONString(ret));
+        ResultReturn ret = roleService.getRoleById(5l);
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
-//    @Test
+
+    //    @Test
     public void editRole() {
-    	Role role = new Role();
-    	role.setId(5l);
-    	role.setRole("22434de");
-    	role.setPermids("44");
-    	ResultReturn ret = roleService.updateRoleById(role);
-    	System.out.println(JSONObject.toJSONString(ret));
+        Role role = new Role();
+        role.setId(5l);
+        role.setRole("22434de");
+        role.setPermids("44");
+        ResultReturn ret = roleService.updateRoleById(role);
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
+
     @Test
     public void getPermids() {
-    	ResultReturn ret = roleService.getPermidsByRoleids(4l);
-    	System.out.println(JSONObject.toJSONString(ret));
+        ResultReturn ret = roleService.getPermidsByRoleids(4l);
+        System.out.println(JSONObject.toJSONString(ret));
     }
-    
-    
+
+
     @Test
     public void getRoles() {
-    	Set<String> roles = userService.getRolesByLoginName("lm2");
-    	System.out.println(JSONObject.toJSONString(roles));
+        Set<String> roles = userService.getRolesByLoginName("lm2");
+        System.out.println(JSONObject.toJSONString(roles));
     }
-    
+
     @Test
     public void getPerms() {
-    	Set<String> roles = userService.getPermsByLoginName("zhangyifeng");
-    	System.out.println(JSONObject.toJSONString(roles));
-    	
-    	Map<String, String> map = new HashMap<String, String>();
-    	map.put(null, "nihao");
-    	System.out.println(map.get(null));
+        Set<String> roles = userService.getPermsByLoginName("zhangyifeng");
+        System.out.println(JSONObject.toJSONString(roles));
+
+        Map<String, String> map = new HashMap<String, String>();
+        map.put(null, "nihao");
+        System.out.println(map.get(null));
     }
 
     @Test
-	public void qryLoginLog() {
-		LoginLogVo loginLogVo = new LoginLogVo();
+    public void qryLoginLog() {
+        LoginLogVo loginLogVo = new LoginLogVo();
 //		loginLogVo.setIp("127.0.0.1");
-		loginLogVo.setLogintimeBegin("2018-03-20 19:31:17");
+        loginLogVo.setLogintimeBegin("2018-03-20 19:31:17");
 //		loginLogVo.setLogintimeEnd("2018-03-20 19:36:26");
-		loginLogVo.setLogindevice("%droi%");
-		PageReturn<LoginLog> page = loginLogService.findByPage(loginLogVo);
-		System.out.println(page);
-		System.out.println(JSONObject.toJSONString(page));
-	}
+        loginLogVo.setLogindevice("%droi%");
+        PageReturn<LoginLog> page = loginLogService.findByPage(loginLogVo);
+        System.out.println(page);
+        System.out.println(JSONObject.toJSONString(page));
+    }
 
     @Test
-	public void addLoginLog() {
-		LoginLog loginLog = new LoginLog();
-		loginLog.setIp("192.168.100.125");
-		loginLog.setLoginuser("zyf");
-		loginLog.setLogintime(new Date());
-		loginLog.setLoginResult("1");
+    public void addLoginLog() {
+        LoginLog loginLog = new LoginLog();
+        loginLog.setIp("192.168.100.125");
+        loginLog.setLoginuser("zyf");
+        loginLog.setLogintime(new Date());
+        loginLog.setLoginResult("1");
 
-		ResultReturn ret = loginLogService.addLog(loginLog);
-		System.out.println(JSONObject.toJSONString(ret));
-		System.out.println(loginLog.getId());
-	}
-
-//    @Test
-	public void delLoginLog() {
-    	String ids = "1|2";
-		ResultReturn ret = loginLogService.deleteLoginLogByIds(ids);
-		System.out.println(JSONObject.toJSONString(ret));
+        ResultReturn ret = loginLogService.addLog(loginLog);
+        System.out.println(JSONObject.toJSONString(ret));
+        System.out.println(loginLog.getId());
     }
-    
+
+    //    @Test
+    public void delLoginLog() {
+        String ids = "1|2";
+        ResultReturn ret = loginLogService.deleteLoginLogByIds(ids);
+        System.out.println(JSONObject.toJSONString(ret));
+    }
+
+
+    @Test
+    public void findSyslogByPage() {
+        SysLogVo sysLogVo = new SysLogVo();
+        sysLogVo.setPage(0);
+        sysLogVo.setRows(10);
+        sysLogVo.setOrderBy("create_time desc");
+
+        PageReturn<SysLog> page = sysLogService.findByPage(sysLogVo);
+        String json = JSONObject.toJSONString(page);
+        System.out.println(json);
+    }
+
 }

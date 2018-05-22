@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="${ctx }/webResources/css/sidebar-menu.css">
 <link rel="stylesheet" href="${ctx }/webResources/css/right-content.css">
 <link rel="stylesheet" href="${ctx }/webResources/css/common.css">
+<script type="text/javascript" src="${ctx }/webResources/js/common.js"></script>
 <script type="text/javascript">
      window.ctx = "${ctx}";
 </script>

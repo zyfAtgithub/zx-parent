@@ -1,5 +1,24 @@
 $(function() {
 	loadMenu();
+
+	$('.openCloseLeftBtn').click(function () {
+		var $arrow = $(this).find('i');
+		if ($arrow.hasClass('fa-caret-left')) {
+            $('.sidebar-outer').animate({width: '0'}, "fast");
+            $('.right-main .layui-body').animate({left : '0'},'fast');
+            $arrow.removeClass('fa-caret-left');
+            $arrow.addClass('fa-caret-right');
+            $(this).find('a').attr('title', '显示菜单');
+		}
+		else {
+            $('.sidebar-outer').animate({width: '200px'}, "fast");
+            $('.right-main .layui-body').animate({left : '200px'},'fast');
+            $arrow.removeClass('fa-caret-right');
+            $arrow.addClass('fa-caret-left');
+            $(this).find('a').attr('title', '隐藏菜单');
+		}
+
+    });
 });
 
 function loadMenu() {

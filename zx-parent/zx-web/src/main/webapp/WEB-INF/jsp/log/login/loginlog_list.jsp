@@ -85,6 +85,10 @@
 		{{ formatDatebox(d.logouttime) }}
 	</script>
 
+	<script type="text/html" id="logResTpl">
+		{{ d.loginResult == '1' ? '成功' : '失败' }}
+	</script>
+
 	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script src="${ctx }/webResources/js/log/loginlog.js" type="text/javascript"></script>
 </body>

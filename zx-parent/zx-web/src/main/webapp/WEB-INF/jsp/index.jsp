@@ -31,19 +31,24 @@
 		
 		<!-- 左侧菜单栏 -->
 		<div class="sidebar-outer">
-			<div  class="sidebar-inner">
+			<div class="sidebar-inner">
 				<ul class="sidebar-menu"></ul> 
 			</div>
 		</div>
 
-		<div class="layui-body">
-		  	<div class="right-topnav">
-				<span class="layui-breadcrumb">
-					<a href="#">首页</a>
-				</span>
-		  	</div>
-		  	<div class="right-content"></div>
-	  	</div>
+		<div class="right-main">
+			<div class="layui-body">
+				<div class="right-topnav">
+					<span class="layui-breadcrumb">
+						<a href="#">首页</a>
+
+					</span>
+				</div>
+				<div class="openCloseLeftBtn">
+					<a href = 'javascript:;' title="隐藏菜单"><i class="fa fa-caret-left"  aria-hidden="true"></i></a></div>
+				<div class="right-content"></div>
+			</div>
+		</div>
 	</div>
 	<script  type="text/javascript" src="${ctx }/webResources/js/jquery-2.1.1.min.js"></script>
 	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>

@@ -37,7 +37,8 @@ layui.use([ 'form', 'table', 'laydate' ], function() {
             field : 'loginResult',
             align : 'center',
             width : 150,
-            title : '登录结果'
+            title : '登录结果',
+            templet : '#logResTpl'
         }] ],
         limit : 10,
         limits : [ 5, 10, 15, 20 ],
@@ -123,7 +124,6 @@ layui.use([ 'form', 'table', 'laydate' ], function() {
     });
 
     form.on('submit(queryLoginLog)', function(data) {
-        debugger;
         tbIns.reload({
             url : 'list',
             where : data.field
@@ -132,8 +132,6 @@ layui.use([ 'form', 'table', 'laydate' ], function() {
     });
 
     $('#btn-refresh').click(function() {
-        debugger;
-        layer.alert('sss');
         tbIns.reload({
             url : 'list'
         });

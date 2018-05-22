@@ -1,12 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@include file="../../common/taglib.jsp"%>
-<%@include file="../../common/include.jsp"%>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%@include file="../../common/include.jsp"%>
 
 <title>角色管理</title>
 
@@ -67,9 +67,6 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="${ctx }/webResources/js/jquery-2.1.1.min.js"></script>
-	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
-	<script type="text/javascript" src="${ctx }/webResources/plugins/zTree_v3/js/jquery.ztree.core.js"></script>
 	<script type="text/html" id="toolBar">
 		<shiro:hasPermission name="sys:role:view">
 			<a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>

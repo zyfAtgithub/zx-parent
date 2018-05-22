@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@include file="../../common/taglib.jsp"%>
-<%@include file="../../common/include.jsp"%>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -10,10 +9,10 @@
 
 <title>菜单管理</title>
 
+<%@include file="../../common/include.jsp"%>
 <link rel="stylesheet" href="${ctx }/webResources/css/sys/menu/menu.css">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${ctx }/webResources/plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
-<link rel="stylesheet" href="${ctx }/webResources/plugins/zTree_v3/css/zTreeIcon/zTreeIcon.css" type="text/css">
+
 </head>
 <body>
 	<div class="container">
@@ -74,10 +73,6 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="${ctx }/webResources/js/jquery-2.1.1.min.js"></script>
-	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
-	<script type="text/javascript" src="${ctx }/webResources/plugins/zTree_v3/js/jquery.ztree.core.js"></script>
-	
 	<!-- 图标可视化 -->
 	<script type="text/html" id="iconTpl">
 		<i class="{{d.menuicon}}"></i>

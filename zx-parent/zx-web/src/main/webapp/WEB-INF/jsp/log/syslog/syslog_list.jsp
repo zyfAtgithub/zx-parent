@@ -1,15 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@include file="../../common/taglib.jsp"%>
-<%@include file="../../common/include.jsp"%>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<%@include file="../../common/include.jsp"%>
 <title>交换机Syslog</title>
-<link rel="stylesheet" href="${ctx }/webResources/css/sys/user/user.css">
 </head>
 <body>
 	<div class="container">
@@ -99,7 +97,6 @@
 
 		{{ fn(d.logLevel)}}
 	</script>
-	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script src="${ctx }/webResources/js/log/syslog.js" type="text/javascript"></script>
 </body>
 </html>

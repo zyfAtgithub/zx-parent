@@ -239,7 +239,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="right-content">
+	 <div class="right-content">
 		<div class="right-breadcrumb">
 			<span class="layui-breadcrumb">
 			  <a href="">首页</a>
@@ -248,20 +248,35 @@
 			</span>
 		</div>
 		<div class="right-main layui-row">
-			<div class="layui-col-md3 tree-list">
-				<ul id="treeDemo" class="ztree"></ul>
-			</div>
-			
-		    <div class="layui-col-md2 ">
-		    	这是第二列sss
-		    </div>
+			<table class="layui-hide" id="test"></table>
 		</div>
-	</div> -->
+	</div>
 	<script src="webResources/js/jquery-2.1.1.min.js"></script>
 	<script src="webResources/plugins/zTree_v3/js/jquery.ztree.core.js"></script>
 	<script src="webResources/js/layer.js"></script>
 	<script src="webResources/plugins/layui/layui.all.js"></script>
 	<script type="text/javascript">
+        layui.use('table', function(){
+            var table = layui.table;
+            table.render({
+                elem: '#test'
+                ,url:'user.json'
+                ,cols: [[
+                    { checkbox : true,
+                        fixed : 'left'}
+                    ,{field:'id', width:80, title: 'ID', sort: true}
+                    ,{field:'username', width:80, title: '用户名'}
+                    ,{field:'sex', width:80, title: '性别', sort: true}
+                    ,{field:'city', width:80, title: '城市'}
+                    ,{field:'sign', title: '签名', minWidth: 100}
+                    ,{field:'experience', width:80, title: '积分', sort: true}
+                    ,{field:'score', width:80, title: '评分', sort: true}
+                    ,{field:'classify', width:80, title: '职业'}
+                    ,{field:'wealth', width:135, title: '财富', sort: true}
+                ]]
+                ,page: true
+            });
+        });
 	</script>
 </body>
 </html>

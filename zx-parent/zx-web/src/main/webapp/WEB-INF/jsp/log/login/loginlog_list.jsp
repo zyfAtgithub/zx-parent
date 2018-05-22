@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@include file="../../common/taglib.jsp"%>
-<%@include file="../../common/include.jsp"%>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -9,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>登录日志管理</title>
-<link rel="stylesheet" href="${ctx }/webResources/css/sys/user/user.css">
+<%@include file="../../common/include.jsp"%>
 </head>
 <body>
 	<div class="container">
@@ -89,7 +88,6 @@
 		{{ d.loginResult == '1' ? '成功' : '失败' }}
 	</script>
 
-	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script src="${ctx }/webResources/js/log/loginlog.js" type="text/javascript"></script>
 </body>
 </html>

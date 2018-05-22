@@ -6,8 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="${ctx }/webResources/plugins/layui/css/layui.css">
-<link rel="stylesheet" href="${ctx }/webResources/plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+	<%@include file="../../common/include.jsp" %>
 
 	<style type="text/css">
 		.layui-container{
@@ -146,10 +145,7 @@
 	</div>
 </div>
 	
-	<script src="${ctx }/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script>
-	<script src="${ctx }/webResources/plugins/dropDownMenu.js" type="text/javascript"></script>
-	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
-	<script type="text/javascript" src="${ctx }/webResources/plugins/zTree_v3/js/jquery.ztree.core.js"></script>
+
 	<script type="text/javascript" >
 	layui.use('form', function() {
 		var $ = layui.jquery, form = layui.form;

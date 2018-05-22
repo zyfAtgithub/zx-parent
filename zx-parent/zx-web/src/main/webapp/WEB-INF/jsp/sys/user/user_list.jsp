@@ -72,7 +72,7 @@
 		<input type="hidden" id="rolegrantRes"/>
 	</div>
 
-
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<!-- 日期格式化 -->
 	<script type="text/html" id="timeTpl">
 		{{ formatDatebox(d.lastloginTime) }}
@@ -97,7 +97,8 @@
 			<a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
 		</shiro:hasPermission>
 	</script>
-	
+
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script src="${ctx }/webResources/js/sys/user/userlist.js" type="text/javascript"></script>
 </body>
 </html>

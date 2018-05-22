@@ -75,7 +75,7 @@
 		<input type="hidden" name="logouttimeEnd"/>
 	</div>
 
-
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<!-- 日期格式化 -->
 	<script type="text/html" id="logintimeTpl">
 		{{ formatDatebox(d.logintime) }}

@@ -12,7 +12,6 @@
 
 <script src="${ctx }/webResources/js/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script src="${ctx }/webResources/plugins/dropDownMenu.js" type="text/javascript"></script>
-<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 <script type="text/javascript" src="${ctx }/webResources/plugins/zTree_v3/js/jquery.ztree.core.js"></script>
 <script type="text/javascript" src="${ctx }/webResources/plugins/zTree_v3/js/jquery.ztree.excheck.js"></script>
 <script type="text/javascript" src="${ctx }/webResources/js/common.js"></script>

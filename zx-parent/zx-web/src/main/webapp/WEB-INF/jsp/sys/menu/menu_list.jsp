@@ -73,6 +73,9 @@
 		</div>
 	</div>
 
+
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
+
 	<!-- 图标可视化 -->
 	<script type="text/html" id="iconTpl">
 		<i class="{{d.menuicon}}"></i>

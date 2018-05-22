@@ -144,8 +144,8 @@
 		<ul id="menuTreeSel" class="ztree" style="margin-top:0; width:160px;"></ul>
 	</div>
 </div>
-	
 
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script type="text/javascript" >
 	layui.use('form', function() {
 		var $ = layui.jquery, form = layui.form;

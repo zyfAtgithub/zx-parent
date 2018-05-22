@@ -56,7 +56,8 @@
 		  </div>
 		</form>
 	</div>
-	
+
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script src="${ctx }/webResources/js/sys/user/user_addOrEdit.js" type="text/javascript" ></script>
 
 </body>

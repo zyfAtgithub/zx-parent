@@ -67,6 +67,7 @@
 		</div>
 	</div>
 
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script type="text/html" id="toolBar">
 		<shiro:hasPermission name="sys:role:view">
 			<a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>

@@ -51,7 +51,7 @@
 		<input type="hidden" name="logouttimeEnd"/>
 	</div>
 
-
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<!-- 日期格式化 -->
 	<script type="text/html" id="createtimeTpl">
 		{{ formatDatebox(d.createTime) }}
@@ -97,6 +97,7 @@
 
 		{{ fn(d.logLevel)}}
 	</script>
+
 	<script src="${ctx }/webResources/js/log/syslog.js" type="text/javascript"></script>
 </body>
 </html>

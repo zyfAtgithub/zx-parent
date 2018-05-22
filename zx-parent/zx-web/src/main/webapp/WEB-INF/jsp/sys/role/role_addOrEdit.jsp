@@ -49,7 +49,8 @@
 		  </div>
 		</form>
 	</div>
-	
+
+	<script src="${ctx }/webResources/plugins/layui/layui.all.js" type="text/javascript"></script>
 	<script src="${ctx }/webResources/js/sys/role/role_addOrEdit.js" type="text/javascript" ></script>
 	<script type="text/javascript">
 	var permids = '${role.permids}';

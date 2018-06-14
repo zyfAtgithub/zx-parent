@@ -5,7 +5,7 @@
 <generatorConfiguration>
 	<!--数据库驱动 -->
 <!-- 	<classPathEntry location="mysql-connector-java-5.1.34.jar" /> -->
-	<properties url="file:///E:/study/idea_ws/zx-parent/zx-parent/zx-mybatisgenerator/generate.properties"/>
+	<properties url="file:///F:/stu/idea_ws/zx-parent/zx-parent/zx-parent/zx-mybatisgenerator/generate.properties"/>
 	<context id="DB2Tables" targetRuntime="MyBatis3">
 	 	<property name="beginningDelimiter" value="${generator.beginningDelimiter}"/>
         <property name="endingDelimiter" value="${generator.endingDelimiter}"/>

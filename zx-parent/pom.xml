@@ -14,7 +14,7 @@
 		<module>zx-mybatisgenerator</module>
 	    <module>zx-test</module>
 	    <module>zx-shiro</module>
-  </modules>
+    </modules>
 
 	<properties>
 		<!-- spring版本号 -->

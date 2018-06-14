@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"
+       default-lazy-init="true">
+
+	<description>Spring JDBC配置</description>
+	<!-- 本文件的命名以及其中所有Bean的命名涉及框架其他应用，请勿修改 -->
+
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+
+	<bean id="dataSource4Hawq" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
+      <!-- 基本属性 url、user、password -->
+      <property name="url" value="${db.postgresql.url}" />
+      <property name="username" value="${db.postgresql.username}" />
+      <property name="password" value="${db.postgresql.password}" />
+        
+      <!-- 配置初始化大小、最小、最大 -->
+      <property name="initialSize" value="1" />
+      <property name="minIdle" value="1" /> 
+      <property name="maxActive" value="20" />
+   
+      <!-- 配置获取连接等待超时的时间 -->
+      <property name="maxWait" value="60000" />
+   
+      <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+      <property name="timeBetweenEvictionRunsMillis" value="60000" />
+   
+      <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+      <property name="minEvictableIdleTimeMillis" value="30000" />
+    
+      <property name="validationQuery" value="SELECT 1" />
+      <property name="testWhileIdle" value="true" />
+      <property name="testOnBorrow" value="false" />
+      <property name="testOnReturn" value="false" />
+   
+      <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+      <property name="poolPreparedStatements" value="false" />
+      <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+   
+      <!-- 配置监控统计拦截的filters -->
+      <property name="filters" value="stat" /> 
+
+      <property name="removeAbandoned" value="true" /> 
+      <property name="removeAbandonedTimeout" value="1800" /> 
+      <property name="logAbandoned" value="true" /> 
+      <property name="defaultAutoCommit" value="true" /> 
+  </bean>
+
+	<bean id="dataSource4Hawq2" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
+      <!-- 基本属性 url、user、password -->
+      <property name="url" value="${db.postgresql.url2}" />
+      <property name="username" value="${db.postgresql.username}" />
+      <property name="password" value="${db.postgresql.password}" />
+        
+      <!-- 配置初始化大小、最小、最大 -->
+      <property name="initialSize" value="1" />
+      <property name="minIdle" value="1" /> 
+      <property name="maxActive" value="20" />
+   
+      <!-- 配置获取连接等待超时的时间 -->
+      <property name="maxWait" value="60000" />
+   
+      <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+      <property name="timeBetweenEvictionRunsMillis" value="60000" />
+   
+      <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+      <property name="minEvictableIdleTimeMillis" value="30000" />
+    
+      <property name="validationQuery" value="SELECT 1" />
+      <property name="testWhileIdle" value="true" />
+      <property name="testOnBorrow" value="false" />
+      <property name="testOnReturn" value="false" />
+   
+      <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+      <property name="poolPreparedStatements" value="false" />
+      <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+   
+      <!-- 配置监控统计拦截的filters -->
+      <property name="filters" value="stat" /> 
+
+      <property name="removeAbandoned" value="true" /> 
+      <property name="removeAbandonedTimeout" value="1800" /> 
+      <property name="logAbandoned" value="true" /> 
+      <property name="defaultAutoCommit" value="true" /> 
+  </bean>
+	
+    <!-- Hawq 数据源配置 -->
+  <!--   <bean id="dataSource4Hawq"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${db.postgresql.driverClassName}" />
+		<property name="url" value="${db.postgresql.url}" />
+		<property name="username" value="${db.postgresql.username}" />
+		<property name="password" value="${db.postgresql.password}" />
+		<property name="maxActive" value="${dataSource.maxActive}" />
+		<property name="maxIdle" value="${dataSource.maxIdle}" />
+		<property name="minIdle" value="${dataSource.minIdle}" />
+		<property name="maxWait" value="${dataSource.maxWait}" />
+		<property name="defaultAutoCommit"
+			value="true" />
+		<property name="removeAbandoned"
+			value="${dataSource.removeAbandoned}" />
+		<property name="removeAbandonedTimeout"
+			value="${dataSource.removeAbandonedTimeout}" />
+		<property name="logAbandoned"
+			value="${dataSource.logAbandoned}" />			
+		<property name= "testWhileIdle" value="${dataSource.testWhileIdle}" />
+        <property name= "testOnBorrow" value="${dataSource.testOnBorrow}" />
+        <property name= "testOnReturn" value="${dataSource.testOnReturn}" />
+        <property name= "validationQuery" value="SELECT COUNT(1)" />
+        <property name= "timeBetweenEvictionRunsMillis" value="30000" />
+        <property name= "numTestsPerEvictionRun" value="${dataSource.maxActive}" />
+        <property name= "minEvictableIdleTimeMillis" value="1800000" />
+	</bean> -->
+
+    <!-- Hawq 数据源配置 -->
+  <!--   <bean id="dataSource4Hawq2"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${db.postgresql.driverClassName}" />
+		<property name="url" value="${db.postgresql.url2}" />
+		<property name="username" value="${db.postgresql.username}" />
+		<property name="password" value="${db.postgresql.password}" />
+		<property name="maxActive" value="${dataSource.maxActive}" />
+		<property name="maxIdle" value="${dataSource.maxIdle}" />
+		<property name="minIdle" value="${dataSource.minIdle}" />
+		<property name="maxWait" value="${dataSource.maxWait}" />
+		<property name="defaultAutoCommit"
+			value="true" />
+		<property name="removeAbandoned"
+			value="${dataSource.removeAbandoned}" />
+		<property name="removeAbandonedTimeout"
+			value="${dataSource.removeAbandonedTimeout}" />
+		<property name="logAbandoned"
+			value="${dataSource.logAbandoned}" />			
+		<property name= "testWhileIdle" value="${dataSource.testWhileIdle}" />
+        <property name= "testOnBorrow" value="${dataSource.testOnBorrow}" />
+        <property name= "testOnReturn" value="${dataSource.testOnReturn}" />
+        <property name= "validationQuery" value="SELECT COUNT(1)" />
+        <property name= "timeBetweenEvictionRunsMillis" value="30000" />
+        <property name= "numTestsPerEvictionRun" value="${dataSource.maxActive}" />
+        <property name= "minEvictableIdleTimeMillis" value="1800000" />
+	</bean> -->
+	
+	<!-- 为DAO操作模型设置数据源[ism_monitorlog_p] -->
+	<bean id="jdbcTemplate4Hawq" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg ref="dataSource4Hawq" />
+	</bean>
+
+	<!-- 为DAO操作模型设置数据源[videolog_p] -->
+	<bean id="jdbcTemplate4Hawq2" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg ref="dataSource4Hawq2" />
+	</bean>
+</beans>

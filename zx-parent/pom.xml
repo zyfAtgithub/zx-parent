@@ -14,6 +14,8 @@
 		<module>zx-mybatisgenerator</module>
 	    <module>zx-test</module>
 	    <module>zx-shiro</module>
+        <module>zx-parent/zxcrawler</module>
+        <module>zxcrawler</module>
     </modules>
 
 	<properties>

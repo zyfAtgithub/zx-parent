@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/zx-biz/zx-biz.iml" filepath="$PROJECT_DIR$/zx-biz/zx-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zx-core/zx-core.iml" filepath="$PROJECT_DIR$/zx-core/zx-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zx-kafka/zx-kafka.iml" filepath="$PROJECT_DIR$/zx-kafka/zx-kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zx-mybatisgenerator/zx-mybatisgenerator.iml" filepath="$PROJECT_DIR$/zx-mybatisgenerator/zx-mybatisgenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zx-parent.iml" filepath="$PROJECT_DIR$/zx-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zx-shiro/zx-shiro.iml" filepath="$PROJECT_DIR$/zx-shiro/zx-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zx-test/zx-test.iml" filepath="$PROJECT_DIR$/zx-test/zx-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zx-web/zx-web.iml" filepath="$PROJECT_DIR$/zx-web/zx-web.iml" />
+    </modules>
+  </component>
+</project>

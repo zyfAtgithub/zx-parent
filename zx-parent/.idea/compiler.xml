@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zx-biz" />
+        <module name="zx-core" />
+        <module name="zx-kafka" />
+        <module name="zx-mybatisgenerator" />
+        <module name="zx-shiro" />
+        <module name="zx-test" />
+        <module name="zx-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="zx-biz" target="1.8" />
+      <module name="zx-core" target="1.8" />
+      <module name="zx-crawler" target="1.8" />
+      <module name="zx-kafka" target="1.8" />
+      <module name="zx-mybatisgenerator" target="1.8" />
+      <module name="zx-parent" target="1.8" />
+      <module name="zx-shiro" target="1.8" />
+      <module name="zx-test" target="1.8" />
+      <module name="zx-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
